@@ -1,68 +1,43 @@
 {
-  "name": "typescript-npm-package-template",
-  "version": "0.0.0-development",
-  "description": "A template for creating npm packages using TypeScript and VSCode",
-  "main": "./lib/src/index.js",
+  "name": "chair-flight-question-bank",
+  "version": "0.0.3",
+  "description": "An open source Aviation Question bank",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "PupoSDC",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "node --experimental-specifier-resolution=node --loader ts-node/esm  src/index.ts",
     "clean": "rm -rf ./lib/",
-    "cm": "cz",
-    "coverage": "codecov",
-    "lint": "eslint ./src/ --fix",
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ryansonshine/typescript-npm-package-template.git"
-  },
   "license": "MIT",
-  "author": {
-    "name": "Ryan Sonshine",
-    "email": "ryansonshine@users.noreply.github.com",
-    "url": "https://github.com/ryansonshine"
-  },
   "engines": {
     "node": ">=12.0"
   },
-  "keywords": [
-    "boilerplate",
-    "template",
-    "typescript",
-    "vscode",
-    "jest",
-    "husky",
-    "commitizen",
-    "semantic-release",
-    "codecov"
-  ],
-  "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
-  },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.11",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
     "codecov": "^3.8.1",
     "commitizen": "^4.2.4",
+    "commitlint": "^16.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.25.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "gray-matter": "^4.0.3",
     "husky": "^6.0.0",
     "jest": "^27.2.0",
     "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
+    "prettier": "^2.5.1",
+    "remark": "^14.0.2",
+    "remark-mdx": "^2.0.0-rc.2",
     "semantic-release": "^17.4.7",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
@@ -74,11 +49,17 @@
     }
   },
   "lint-staged": {
-    "*.ts": "eslint --cache --cache-location .eslintcache --fix"
+    "**/*.{ts,tsx}": "bash -c tsc",
+    "**/*.{js,jsx,ts,tsx,html,css,json,md}": "yarn prettier --write"
   },
   "release": {
     "branches": [
       "main"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
