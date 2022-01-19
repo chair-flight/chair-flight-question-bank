@@ -12,6 +12,7 @@ const contentIndex = files
   .reverse()
   .reduce<QuestionBankIndex>(
     (sum, fileName) => {
+      console.log(`Parsing ${fileName}`);
       const markdownWithMeta = fs.readFileSync(
         `./questionBank/${fileName}.mdx`
       );
