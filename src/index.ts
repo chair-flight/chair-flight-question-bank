@@ -28,7 +28,11 @@ const contentIndex = files
 
       lodash.set(
         sum.contentTree,
-        blocks.map((_, i) => blocks.slice(0, i + 1).join('.')),
+        blocks.map((_, i) =>
+          i === 0 && blocks[0] === '071' && blocks.length > 1
+            ? '070'
+            : blocks.slice(0, i + 1).join('.')
+        ),
         {}
       );
 
