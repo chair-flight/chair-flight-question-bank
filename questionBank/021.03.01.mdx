@@ -1,13 +1,13 @@
 ---
 SyllabusReference: 021.03.01
-Title: "Hydromechanics: basic principles"
+Title: 'Hydromechanics: basic principles'
 ---
 
 # Hydromechanics: basic principles
 
 ## Learning Objectives
 
-1. [021.03.01.01.01] -- Explain the concept and basic principles of
+1. **021.03.01.01.01** -- Explain the concept and basic principles of
    hydromechanics including: hydrostatic pressure; Pascal"s law; the
    relationship between pressure, force and area; transmission of power:
    multiplication of force, decrease of displacement.
@@ -18,19 +18,20 @@ Title: "Hydromechanics: basic principles"
 
 ## Summary
 
-### Pressure 
+### Pressure
 
 ```js
-P = F / A  // (N / m^2 => Pa) 
+P = F / A; // (N / m^2 => Pa)
 ```
+
 In Aviation, it's typical to use PSI instead of the SI unit, Pascal.
 
 ### Pascal's law
 
-> Pressure in an enclosed container is transmitted equally and undiminished to all parts of 
+> Pressure in an enclosed container is transmitted equally and undiminished to all parts of
 > the container and acts at right angles to the enclosing walls.
 
-Or, in simpler terms: you can assume that the pressure is constant in the 
+Or, in simpler terms: you can assume that the pressure is constant in the
 entire fluid. That includes the walls. For example:
 
 ```
@@ -50,22 +51,22 @@ you can calculate F2:
 ```js
 P = F1 / A = F2 / (2 * A)
 
-F2 = (2 * A * F1) / A => F2 = 2 * F1 
+F2 = (2 * A * F1) / A => F2 = 2 * F1
 ```
 
-### Pump Power 
+### Pump Power
 
 A pump deliver a certain mass flow (`m^3 / s`) with a certain Pressure (`Pa => N / m^2`).
 Pump Power can be calculated by multiplying these two values:
 
 ```js
-Power = m_flow * P // `m^3 / s * N / m^2 => (N m) / s => W
+Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
 ```
 
 ## Questions
 
 <Question variant="calculation" id="ZLrZrAAp">
-  <Text A="[10, 20, 40, 50]" B="[5]" C="[10, 20, 50, 100]">
+  <Text A="**10, 20, 40, 50]" B="[5]" C="[10, 20, 50, 100**">
     knowing 
     - F1 = <A /> N
     - A = <B /> N
@@ -81,7 +82,7 @@ Power = m_flow * P // `m^3 / s * N / m^2 => (N m) / s => W
     |                                          |
     |__________________________________________|
     ```
+
   </Text>
   <Option id="ZLrZrAAp-1" answer="A * B / C"><Answer />N</Option>
 </Question>
-
