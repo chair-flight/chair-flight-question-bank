@@ -5,6 +5,9 @@ import { QuestionBankIndex } from './types';
 import { getQuestionsFromMdx } from './questionParser';
 
 const files = fs.readdirSync('./questionBank').filter(f => f.includes('.mdx'));
+const images = fs
+  .readdirSync('./questionBank/images')
+  .filter(f => f.includes('.png'));
 
 const contentIndex = files
   .map(f => f.replace('.mdx', ''))
@@ -35,6 +38,12 @@ const contentIndex = files
         questions: Object.keys(questions),
       };
 
+      Object.keys(questions).forEach(q => {
+        if (sum.questions[q]) {
+          throw new Error(`Found duplicate question ${q}`);
+        }
+      });
+
       sum.questions = {
         ...sum.questions,
         ...questions,
@@ -58,11 +67,15 @@ export declare const questionBank : QuestionBankIndex;
 `;
 
 fs.rmdirSync('./lib', { recursive: true });
-fs.mkdirSync('./lib/content', { recursive: true });
+fs.mkdirSync('./lib/content/images', { recursive: true });
 fs.writeFileSync('./lib/index.js', indexFile);
 fs.writeFileSync('./lib/index.json', jsonFile);
 fs.writeFileSync('./lib/index.d.ts', typesFile);
 
 files.forEach(f =>
   fs.copyFileSync(`./questionBank/${f}`, `./lib/content/${f}`)
+);
+
+images.forEach(f =>
+  fs.copyFileSync(`./questionBank/images/${f}`, `./lib/content/images/${f}`)
 );
