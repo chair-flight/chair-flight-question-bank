@@ -13,6 +13,7 @@ export type OptionAttributes = {
 
 export type QuestionAttributes = {
   id: string;
+  variant: 'oneTwo' | 'definition' | 'oneCorrect';
   lo?: string | string[];
   explanation?: string;
 };

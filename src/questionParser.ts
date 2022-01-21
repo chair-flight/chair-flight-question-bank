@@ -44,6 +44,8 @@ const getQuestionText = getNodeInnerText;
 
 const getQuestionAttributes = (node: Node): QuestionAttributes => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
+  variant: (node.attributes.find(n => n.name === 'id')?.value ??
+    '') as QuestionAttributes['variant'],
   lo: node.attributes.find(n => n.name === 'lo')?.value,
   explanation: node.attributes.find(n => n.name === 'explanation')?.value,
 });
@@ -91,6 +93,10 @@ export const getQuestionsFromMdx = (
 
         if (!attributes.id) {
           throw new Error(`Missing question Id, question text:${texts[0]}`);
+        }
+
+        if (!attributes.variant) {
+          throw new Error(`Question Id ${attributes.id}, is missing a variant`);
         }
 
         questions[attributes.id] = {
