@@ -3,16 +3,25 @@ export type QuestionId = string;
 export type QuestionBlockId = string;
 export type ContentId = string;
 
-export type QuestionOptionMetadata = {
-  attributes: Record<string, string>;
-  content: string;
+export type OptionAttributes = {
+  id: string;
+  innerText: string;
+  correct?: boolean;
+  why?: string;
+  subject?: string | string[];
+};
+
+export type QuestionAttributes = {
+  id: string;
+  lo?: string | string[];
+  explanation?: string;
 };
 
 export type QuestionMetadata = {
   contentId: ContentId;
-  content: string;
-  attributes: Record<string, string>;
-  options: Array<QuestionOptionMetadata>;
+  attributes: QuestionAttributes;
+  texts: Array<string>;
+  options: Array<OptionAttributes>;
 };
 
 export type QuestionBankContentMetaData = {
@@ -31,22 +40,3 @@ export type QuestionBankIndex = {
   contentTree: Record<ContentId, QuestionBankContentMap>;
   questions: Record<QuestionId, QuestionMetadata>;
 };
-
-export interface Node {
-  type: string;
-  name: string;
-  attributes: {
-    type: string;
-    name: string;
-    value: string;
-  }[];
-  children: Node[];
-  position: {
-    start: { line: number; column: number; offset: number };
-    end: { line: number; column: number; offset: number };
-  };
-}
-
-export interface Tree {
-  children: Node[];
-}
