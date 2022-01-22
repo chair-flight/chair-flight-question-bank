@@ -8,13 +8,13 @@ export type OptionAttributes = {
   innerText: string;
   correct?: boolean;
   why?: string;
-  subject?: string | string[];
+  subject?: string[];
 };
 
 export type QuestionAttributes = {
   id: string;
-  variant: 'oneTwo' | 'definition' | 'oneCorrect';
-  lo?: string | string[];
+  variant: 'oneTwo' | 'definition' | 'oneCorrect' | 'multipleCorrect';
+  lo?: string[];
   explanation?: string;
 };
 

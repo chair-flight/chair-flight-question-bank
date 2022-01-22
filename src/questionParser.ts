@@ -44,26 +44,28 @@ const getQuestionText = getNodeInnerText;
 
 const getQuestionAttributes = (node: Node): QuestionAttributes => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
-  variant: (node.attributes.find(n => n.name === 'id')?.value ??
+  variant: (node.attributes.find(n => n.name === 'variant')?.value ??
     '') as QuestionAttributes['variant'],
-  lo: node.attributes.find(n => n.name === 'lo')?.value,
+  lo: getAttributeValueAsArray(
+    node.attributes.find(n => n.name === 'lo')?.value
+  ),
   explanation: node.attributes.find(n => n.name === 'explanation')?.value,
 });
 
-const getAttributeValue = (
+const getAttributeValueAsArray = (
   value: string | NodeAttribute | undefined
-): undefined | string | string[] => {
+): undefined | string[] => {
   if (!value) {
     return undefined;
   }
   if (typeof value === 'string') {
-    return value;
+    return [value];
   }
   const assumeNodeAttribute = value as NodeAttribute;
   try {
     return JSON.parse(assumeNodeAttribute.value);
   } catch (e) {
-    return assumeNodeAttribute.value;
+    return [assumeNodeAttribute.value];
   }
 };
 
@@ -71,7 +73,7 @@ const getOptionData = (node: Node, mdxFile: string): OptionAttributes => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
   correct: !!node.attributes.find(n => n.name === 'correct') || undefined,
   why: node.attributes.find(n => n.name === 'why')?.value,
-  subject: getAttributeValue(
+  subject: getAttributeValueAsArray(
     node.attributes.find(n => n.name === 'subject')?.value
   ),
   innerText: getNodeInnerText(node, mdxFile),
@@ -95,8 +97,16 @@ export const getQuestionsFromMdx = (
           throw new Error(`Missing question Id, question text:${texts[0]}`);
         }
 
-        if (!attributes.variant) {
-          throw new Error(`Question Id ${attributes.id}, is missing a variant`);
+        if (
+          ![
+            'oneCorrect',
+            'definition',
+            'oneTwo',
+            'calculation',
+            'multipleCorrect',
+          ].includes(attributes.variant)
+        ) {
+          throw new Error(`Question Id ${attributes.id}, has invalid variant`);
         }
 
         questions[attributes.id] = {
