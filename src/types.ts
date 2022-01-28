@@ -23,6 +23,7 @@ export type QuestionMetadata = {
   attributes: QuestionAttributes;
   texts: Array<string>;
   options: Array<OptionAttributes>;
+  variables?: Record<string, number[]>;
 };
 
 export type QuestionBankContentMetaData = {

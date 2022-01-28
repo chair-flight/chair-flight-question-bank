@@ -12,7 +12,7 @@ import { Tree } from './typesParser';
 const getRelevantNodes = (node: Node, depth = 1): Node[] => {
   const relevantNodes: Node[] = [];
   (node.children ?? []).forEach(node => {
-    if (['Text', 'Option'].includes(node.name)) {
+    if (['Text', 'Option', 'Variables'].includes(node.name)) {
       relevantNodes.push(node);
       return;
     }
@@ -27,10 +27,12 @@ const getQuestionData = (node: Node) => {
   const relevantNodes = getRelevantNodes(node);
   const questionTextNodes = relevantNodes.filter(node => node.name === 'Text');
   const optionNodes = relevantNodes.filter(node => node.name === 'Option');
+  const variablesNode = relevantNodes.find(node => node.name === 'Variables');
 
   return {
     questionTextNodes,
     optionNodes,
+    variablesNode,
   };
 };
 
@@ -69,6 +71,22 @@ const getAttributeValueAsArray = (
   }
 };
 
+const getAttributeValueAsMap = (
+  value: string | NodeAttribute | undefined
+): undefined | Record<string, number[]> => {
+  if (!value) {
+    return undefined;
+  }
+  const assumeNodeAttribute = value as NodeAttribute;
+  try {
+    let response;
+    eval(`response = ${assumeNodeAttribute.value}`);
+    return response as unknown as Record<string, number[]>;
+  } catch (e) {
+    throw new Error('Unable to retrieve value for attribute :(');
+  }
+};
+
 const getOptionData = (node: Node, mdxFile: string): OptionAttributes => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
   correct: !!node.attributes.find(n => n.name === 'correct') || undefined,
@@ -79,6 +97,11 @@ const getOptionData = (node: Node, mdxFile: string): OptionAttributes => ({
   innerText: getNodeInnerText(node, mdxFile),
 });
 
+const getVariableData = (node?: Node): Record<string, number[]> | undefined => {
+  const candidate = node?.attributes?.find(n => n.name === 'data')?.value;
+  return getAttributeValueAsMap(candidate);
+};
+
 export const getQuestionsFromMdx = (
   mdxFile: string,
   contentId: string
@@ -88,10 +111,12 @@ export const getQuestionsFromMdx = (
   const remarkGetQuestions = () => (tree: Tree) => {
     tree.children.forEach(leaf => {
       if (leaf.name === 'Question') {
-        const { questionTextNodes, optionNodes } = getQuestionData(leaf);
+        const { questionTextNodes, optionNodes, variablesNode } =
+          getQuestionData(leaf);
         const attributes = getQuestionAttributes(leaf);
         const texts = questionTextNodes.map(n => getQuestionText(n, mdxFile));
         const options = optionNodes.map(n => getOptionData(n, mdxFile));
+        const variables = getVariableData(variablesNode);
 
         if (!attributes.id) {
           throw new Error(`Missing question Id, question text:${texts[0]}`);
@@ -114,6 +139,7 @@ export const getQuestionsFromMdx = (
           texts,
           options,
           contentId,
+          variables,
         };
       }
     });
