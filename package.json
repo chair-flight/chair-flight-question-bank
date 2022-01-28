@@ -1,6 +1,6 @@
 {
   "name": "chair-flight-question-bank",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "An open source Aviation Question bank",
   "type": "module",
   "main": "lib/index.js",
@@ -22,7 +22,9 @@
   "engines": {
     "node": ">=12.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chair-flight-question-bank": "^0.0.17"
+  },
   "devDependencies": {
     "@commitlint/config-conventional": "^16.0.0",
     "@types/jest": "^26.0.24",
