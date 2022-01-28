@@ -1,13 +1,9 @@
 import { remark } from 'remark';
 import remarkMdx from 'remark-mdx';
 import { Node, NodeAttribute } from './typesParser';
-import {
-  QuestionId,
-  QuestionMetadata,
-  QuestionAttributes,
-  OptionAttributes,
-} from './types';
+import { QuestionId, QuestionMetadata, QuestionVariant } from './types';
 import { Tree } from './typesParser';
+import { questionValidator } from './questionValidator';
 
 const getRelevantNodes = (node: Node, depth = 1): Node[] => {
   const relevantNodes: Node[] = [];
@@ -44,10 +40,10 @@ const getNodeInnerText = (node: Node, mdxFile: string): string => {
 
 const getQuestionText = getNodeInnerText;
 
-const getQuestionAttributes = (node: Node): QuestionAttributes => ({
+const getQuestionAttributes = (node: Node) => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
   variant: (node.attributes.find(n => n.name === 'variant')?.value ??
-    '') as QuestionAttributes['variant'],
+    '') as QuestionVariant,
   lo: getAttributeValueAsArray(
     node.attributes.find(n => n.name === 'lo')?.value
   ),
@@ -87,7 +83,7 @@ const getAttributeValueAsMap = (
   }
 };
 
-const getOptionData = (node: Node, mdxFile: string): OptionAttributes => ({
+const getOptionData = (node: Node, mdxFile: string) => ({
   id: node.attributes.find(n => n.name === 'id')?.value ?? '',
   correct: !!node.attributes.find(n => n.name === 'correct') || undefined,
   why: node.attributes.find(n => n.name === 'why')?.value,
@@ -134,13 +130,13 @@ export const getQuestionsFromMdx = (
           throw new Error(`Question Id ${attributes.id}, has invalid variant`);
         }
 
-        questions[attributes.id] = {
+        questions[attributes.id] = questionValidator.parse({
           attributes,
           texts,
           options,
           contentId,
           variables,
-        };
+        });
       }
     });
   };

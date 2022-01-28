@@ -70,3 +70,5 @@ Which Of these Statements is true regarding differential pressure ice accretion 
 - large holes melt first
 - It is based on the measurement of temperature and moisture
 ```
+
+### Calculation
