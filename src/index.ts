@@ -25,16 +25,17 @@ const contentIndex = files
       const id = frontMatter.SyllabusReference as string;
       const questions = getQuestionsFromMdx(content, id);
       const blocks = id.split('.');
-
-      lodash.set(
-        sum.contentTree,
-        blocks.map((_, i) =>
+      const blockPath = blocks
+        .map((_, i) =>
           i === 0 && blocks[0] === '071' && blocks.length > 1
             ? '070'
             : blocks.slice(0, i + 1).join('.')
-        ),
-        {}
-      );
+        )
+        .filter(
+          (name, index, arr) => !!sum.content[name] || index === arr.length - 1
+        );
+
+      lodash.set(sum.contentTree, blockPath, {});
 
       sum.content[id] = {
         id: id,
