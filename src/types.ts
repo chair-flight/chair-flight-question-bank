@@ -2,29 +2,73 @@ export type AnswerId = string;
 export type QuestionId = string;
 export type QuestionBlockId = string;
 export type ContentId = string;
+export type jsStringFunction = string;
 
 export type OptionAttributes = {
   id: string;
   innerText: string;
-  correct?: boolean;
   why?: string;
-  subject?: string[];
 };
 
-export type QuestionAttributes = {
+export type QuestionVariant =
+  | 'oneTwo'
+  | 'definition'
+  | 'oneCorrect'
+  | 'multipleCorrect'
+  | 'calculation';
+
+export type OptionBaseAttributes = {
   id: string;
-  variant: 'oneTwo' | 'definition' | 'oneCorrect' | 'multipleCorrect';
+  innerText: string;
+};
+
+export type QuestionBaseAttributes<V extends QuestionVariant> = {
+  variant: V;
+  id: string;
+  contentId: ContentId;
   lo?: string[];
   explanation?: string;
 };
 
-export type QuestionMetadata = {
-  contentId: ContentId;
-  attributes: QuestionAttributes;
-  texts: Array<string>;
-  options: Array<OptionAttributes>;
-  variables?: Record<string, number[]>;
-};
+export type QuestionMetadata =
+  | (QuestionBaseAttributes<'oneTwo'> & {
+      texts: Array<string>;
+      options: Array<
+        OptionAttributes & {
+          correct?: boolean;
+        }
+      >;
+    })
+  | (QuestionBaseAttributes<'oneCorrect'> & {
+      texts: Array<string>;
+      options: Array<
+        OptionAttributes & {
+          correct?: boolean;
+        }
+      >;
+    })
+  | (QuestionBaseAttributes<'multipleCorrect'> & {
+      texts: Array<string>;
+      options: Array<
+        OptionAttributes & {
+          correct?: boolean;
+        }
+      >;
+    })
+  | (QuestionBaseAttributes<'definition'> & {
+      texts: Array<string>;
+      options: Array<
+        OptionAttributes & {
+          subject?: string;
+        }
+      >;
+    })
+  | (QuestionBaseAttributes<'calculation'> & {
+      texts: Array<string>;
+      answerFunction: jsStringFunction;
+      variables: Record<string, number[]>;
+      options: [OptionAttributes];
+    });
 
 export type QuestionBankContentMetaData = {
   id: ContentId;
