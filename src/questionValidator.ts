@@ -62,7 +62,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
       .array(
         z.object({
           ...optionBaseAttributes,
-          subject: z.string().optional(),
+          subject: z.array(z.string()).min(1).optional(),
         })
       )
       .min(4)

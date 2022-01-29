@@ -67,6 +67,22 @@ const getAttributeValueAsArray = (
   }
 };
 
+const getAttributeValueAsString = (
+  value: string | NodeAttribute | undefined
+): undefined | string => {
+  if (!value) {
+    return undefined;
+  }
+  if (typeof value === 'string') {
+    return value;
+  }
+  const assumeNodeAttribute = value as NodeAttribute;
+  if (typeof assumeNodeAttribute.value === 'string') {
+    return assumeNodeAttribute.value;
+  }
+  throw new Error('something went very wrong :(');
+};
+
 const getAttributeValueAsMap = (
   value: string | NodeAttribute | undefined
 ): undefined | Record<string, number[]> => {
@@ -93,9 +109,15 @@ const getOptionData = (node: Node, mdxFile: string) => ({
   innerText: getNodeInnerText(node, mdxFile),
 });
 
-const getVariableData = (node?: Node): Record<string, number[]> | undefined => {
-  const candidate = node?.attributes?.find(n => n.name === 'data')?.value;
-  return getAttributeValueAsMap(candidate);
+const getVariablesData = (node?: Node) => {
+  const variables = node?.attributes?.find(n => n.name === 'variables')?.value;
+  const answerFunction = node?.attributes?.find(
+    n => n.name === 'answerFunction'
+  )?.value;
+  return {
+    variables: getAttributeValueAsMap(variables),
+    answerFunction: getAttributeValueAsString(answerFunction),
+  };
 };
 
 export const getQuestionsFromMdx = (
@@ -112,31 +134,22 @@ export const getQuestionsFromMdx = (
         const attributes = getQuestionAttributes(leaf);
         const texts = questionTextNodes.map(n => getQuestionText(n, mdxFile));
         const options = optionNodes.map(n => getOptionData(n, mdxFile));
-        const variables = getVariableData(variablesNode);
-
-        if (!attributes.id) {
-          throw new Error(`Missing question Id, question text:${texts[0]}`);
-        }
-
-        if (
-          ![
-            'oneCorrect',
-            'definition',
-            'oneTwo',
-            'calculation',
-            'multipleCorrect',
-          ].includes(attributes.variant)
-        ) {
-          throw new Error(`Question Id ${attributes.id}, has invalid variant`);
-        }
-
-        questions[attributes.id] = questionValidator.parse({
-          attributes,
+        const { variables, answerFunction } = getVariablesData(variablesNode);
+        const question = {
+          ...attributes,
           texts,
           options,
           contentId,
           variables,
-        });
+          answerFunction,
+        };
+
+        try {
+          questions[attributes.id] = questionValidator.parse(question);
+        } catch (e) {
+          console.error('error parsing question, question: ', question);
+          throw e;
+        }
       }
     });
   };
