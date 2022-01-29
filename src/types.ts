@@ -59,7 +59,7 @@ export type QuestionMetadata =
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
-          subject?: string;
+          subject?: string[];
         }
       >;
     })
