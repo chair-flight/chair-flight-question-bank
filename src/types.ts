@@ -16,6 +16,7 @@ export type CourseName =
 
 export type QuestionVariant =
   | "oneTwo"
+  | "oneTwoDefinition"
   | "definition"
   | "oneCorrect"
   | "multipleCorrect"
@@ -42,6 +43,14 @@ export type QuestionBaseAttributes<V extends QuestionVariant> = {
 
 export type QuestionMetadata =
   | (QuestionBaseAttributes<"oneTwo"> & {
+      texts: Array<string>;
+      options: Array<
+        OptionAttributes & {
+          subject?: string[];
+        }
+      >;
+    })
+  | (QuestionBaseAttributes<"oneTwoDefinition"> & {
       texts: Array<string>;
       options: Array<
         OptionAttributes & {

@@ -1,5 +1,5 @@
-import { ZodSchema, z } from 'zod';
-import { QuestionMetadata } from './types';
+import { ZodSchema, z } from "zod";
+import { QuestionMetadata } from "./types";
 
 const questionBaseAttributes = {
   id: z.string(),
@@ -15,7 +15,7 @@ const optionBaseAttributes = {
 
 export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
   z.object({
-    variant: z.enum(['oneTwo']),
+    variant: z.enum(["oneTwo"]),
     ...questionBaseAttributes,
     texts: z.array(z.string()),
     options: z
@@ -28,7 +28,20 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
       .min(4),
   }),
   z.object({
-    variant: z.enum(['oneCorrect']),
+    variant: z.enum(["oneTwoDefinition"]),
+    ...questionBaseAttributes,
+    texts: z.array(z.string()),
+    options: z
+      .array(
+        z.object({
+          ...optionBaseAttributes,
+          subject: z.array(z.string()).min(1).optional(),
+        })
+      )
+      .min(4),
+  }),
+  z.object({
+    variant: z.enum(["oneCorrect"]),
     ...questionBaseAttributes,
     texts: z.array(z.string()),
     options: z
@@ -39,10 +52,10 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         })
       )
       .min(4)
-      .refine(v => !!v.find(v => !!v.correct)),
+      .refine((v) => !!v.find((v) => !!v.correct)),
   }),
   z.object({
-    variant: z.enum(['multipleCorrect']),
+    variant: z.enum(["multipleCorrect"]),
     ...questionBaseAttributes,
     texts: z.array(z.string()),
     options: z
@@ -55,7 +68,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
       .min(4),
   }),
   z.object({
-    variant: z.enum(['definition']),
+    variant: z.enum(["definition"]),
     ...questionBaseAttributes,
     texts: z.array(z.string()),
     options: z
@@ -66,10 +79,10 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         })
       )
       .min(4)
-      .refine(v => !!v.find(v => !!v.subject)),
+      .refine((v) => !!v.find((v) => !!v.subject)),
   }),
   z.object({
-    variant: z.enum(['calculation']),
+    variant: z.enum(["calculation"]),
     ...questionBaseAttributes,
     texts: z.array(z.string()),
     options: z.tuple([
