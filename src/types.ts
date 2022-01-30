@@ -10,12 +10,7 @@ export type OptionAttributes = {
   why?: string;
 };
 
-export type QuestionVariant =
-  | 'oneTwo'
-  | 'definition'
-  | 'oneCorrect'
-  | 'multipleCorrect'
-  | 'calculation';
+export type QuestionVariant = 'oneTwo' | 'definition' | 'oneCorrect' | 'multipleCorrect' | 'calculation';
 
 export type OptionBaseAttributes = {
   id: string;
@@ -26,7 +21,7 @@ export type QuestionBaseAttributes<V extends QuestionVariant> = {
   variant: V;
   id: string;
   contentId: ContentId;
-  lo?: string[];
+  lo: string[];
   explanation?: string;
 };
 
@@ -76,10 +71,7 @@ export type QuestionBankContentMetaData = {
   questions: QuestionId[];
 };
 
-export type QuestionBankContentMap = Record<
-  ContentId,
-  Record<ContentId, Record<ContentId, {}>>
->;
+export type QuestionBankContentMap = Record<ContentId, Record<ContentId, Record<ContentId, {}>>>;
 
 export type QuestionBankIndex = {
   content: Record<ContentId, QuestionBankContentMetaData>;

@@ -4,7 +4,7 @@ import { QuestionMetadata } from './types';
 const questionBaseAttributes = {
   id: z.string(),
   contentId: z.string(),
-  lo: z.array(z.string()).optional(),
+  lo: z.array(z.string()),
   explanation: z.string().optional(),
 };
 
