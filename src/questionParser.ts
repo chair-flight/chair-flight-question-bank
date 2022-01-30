@@ -1,14 +1,14 @@
-import { remark } from 'remark';
-import remarkMdx from 'remark-mdx';
-import { Node, NodeAttribute } from './typesParser';
-import { QuestionId, QuestionMetadata, QuestionVariant } from './types';
-import { Tree } from './typesParser';
-import { questionValidator } from './questionValidator';
+import { remark } from "remark";
+import remarkMdx from "remark-mdx";
+import { Node, NodeAttribute } from "./typesParser";
+import { QuestionId, QuestionMetadata, QuestionVariant } from "./types";
+import { Tree } from "./typesParser";
+import { questionValidator } from "./questionValidator";
 
 const getRelevantNodes = (node: Node, depth = 1): Node[] => {
   const relevantNodes: Node[] = [];
-  (node.children ?? []).forEach(node => {
-    if (['Text', 'Option', 'Variables'].includes(node.name)) {
+  (node.children ?? []).forEach((node) => {
+    if (["Text", "Option", "Variables"].includes(node.name)) {
       relevantNodes.push(node);
       return;
     }
@@ -21,9 +21,11 @@ const getRelevantNodes = (node: Node, depth = 1): Node[] => {
 
 const getQuestionData = (node: Node) => {
   const relevantNodes = getRelevantNodes(node);
-  const questionTextNodes = relevantNodes.filter(node => node.name === 'Text');
-  const optionNodes = relevantNodes.filter(node => node.name === 'Option');
-  const variablesNode = relevantNodes.find(node => node.name === 'Variables');
+  const questionTextNodes = relevantNodes.filter(
+    (node) => node.name === "Text"
+  );
+  const optionNodes = relevantNodes.filter((node) => node.name === "Option");
+  const variablesNode = relevantNodes.find((node) => node.name === "Variables");
 
   return {
     questionTextNodes,
@@ -41,13 +43,13 @@ const getNodeInnerText = (node: Node, mdxFile: string): string => {
 const getQuestionText = getNodeInnerText;
 
 const getQuestionAttributes = (node: Node) => ({
-  id: node.attributes.find(n => n.name === 'id')?.value ?? '',
-  variant: (node.attributes.find(n => n.name === 'variant')?.value ??
-    '') as QuestionVariant,
+  id: node.attributes.find((n) => n.name === "id")?.value ?? "",
+  variant: (node.attributes.find((n) => n.name === "variant")?.value ??
+    "") as QuestionVariant,
   lo: getAttributeValueAsArray(
-    node.attributes.find(n => n.name === 'lo')?.value
+    node.attributes.find((n) => n.name === "lo")?.value
   ),
-  explanation: node.attributes.find(n => n.name === 'explanation')?.value,
+  explanation: node.attributes.find((n) => n.name === "explanation")?.value,
 });
 
 const getAttributeValueAsArray = (
@@ -56,7 +58,7 @@ const getAttributeValueAsArray = (
   if (!value) {
     return undefined;
   }
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     return [value];
   }
   const assumeNodeAttribute = value as NodeAttribute;
@@ -73,14 +75,14 @@ const getAttributeValueAsString = (
   if (!value) {
     return undefined;
   }
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     return value;
   }
   const assumeNodeAttribute = value as NodeAttribute;
-  if (typeof assumeNodeAttribute.value === 'string') {
+  if (typeof assumeNodeAttribute.value === "string") {
     return assumeNodeAttribute.value;
   }
-  throw new Error('something went very wrong :(');
+  throw new Error("something went very wrong :(");
 };
 
 const getAttributeValueAsMap = (
@@ -95,24 +97,26 @@ const getAttributeValueAsMap = (
     eval(`response = ${assumeNodeAttribute.value}`);
     return response as unknown as Record<string, number[]>;
   } catch (e) {
-    throw new Error('Unable to retrieve value for attribute :(');
+    throw new Error("Unable to retrieve value for attribute :(");
   }
 };
 
 const getOptionData = (node: Node, mdxFile: string) => ({
-  id: node.attributes.find(n => n.name === 'id')?.value ?? '',
-  correct: !!node.attributes.find(n => n.name === 'correct') || undefined,
-  why: node.attributes.find(n => n.name === 'why')?.value,
+  id: node.attributes.find((n) => n.name === "id")?.value ?? "",
+  correct: !!node.attributes.find((n) => n.name === "correct") || undefined,
+  why: node.attributes.find((n) => n.name === "why")?.value,
   subject: getAttributeValueAsArray(
-    node.attributes.find(n => n.name === 'subject')?.value
+    node.attributes.find((n) => n.name === "subject")?.value
   ),
   innerText: getNodeInnerText(node, mdxFile),
 });
 
 const getVariablesData = (node?: Node) => {
-  const variables = node?.attributes?.find(n => n.name === 'variables')?.value;
+  const variables = node?.attributes?.find(
+    (n) => n.name === "variables"
+  )?.value;
   const answerFunction = node?.attributes?.find(
-    n => n.name === 'answerFunction'
+    (n) => n.name === "answerFunction"
   )?.value;
   return {
     variables: getAttributeValueAsMap(variables),
@@ -127,13 +131,13 @@ export const getQuestionsFromMdx = (
   const questions: Record<QuestionId, QuestionMetadata> = {};
 
   const remarkGetQuestions = () => (tree: Tree) => {
-    tree.children.forEach(leaf => {
-      if (leaf.name === 'Question') {
+    tree.children.forEach((leaf) => {
+      if (leaf.name === "Question") {
         const { questionTextNodes, optionNodes, variablesNode } =
           getQuestionData(leaf);
         const attributes = getQuestionAttributes(leaf);
-        const texts = questionTextNodes.map(n => getQuestionText(n, mdxFile));
-        const options = optionNodes.map(n => getOptionData(n, mdxFile));
+        const texts = questionTextNodes.map((n) => getQuestionText(n, mdxFile));
+        const options = optionNodes.map((n) => getOptionData(n, mdxFile));
         const { variables, answerFunction } = getVariablesData(variablesNode);
         const question = {
           ...attributes,
@@ -147,7 +151,7 @@ export const getQuestionsFromMdx = (
         try {
           questions[attributes.id] = questionValidator.parse(question);
         } catch (e) {
-          console.error('error parsing question, question: ', question);
+          console.error("error parsing question, question: ", question);
           throw e;
         }
       }
