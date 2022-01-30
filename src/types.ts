@@ -2,15 +2,30 @@ export type AnswerId = string;
 export type QuestionId = string;
 export type QuestionBlockId = string;
 export type ContentId = string;
+export type LearningObject = string;
 export type jsStringFunction = string;
+
+export type CourseName =
+  | "ATPL(A)"
+  | "CPL(A)"
+  | "ATPL(H)/IR"
+  | "ATPL(H)/VFR"
+  | "CPL(H)"
+  | "IR"
+  | "CBIR(A)";
+
+export type QuestionVariant =
+  | "oneTwo"
+  | "definition"
+  | "oneCorrect"
+  | "multipleCorrect"
+  | "calculation";
 
 export type OptionAttributes = {
   id: string;
   innerText: string;
   why?: string;
 };
-
-export type QuestionVariant = 'oneTwo' | 'definition' | 'oneCorrect' | 'multipleCorrect' | 'calculation';
 
 export type OptionBaseAttributes = {
   id: string;
@@ -26,7 +41,7 @@ export type QuestionBaseAttributes<V extends QuestionVariant> = {
 };
 
 export type QuestionMetadata =
-  | (QuestionBaseAttributes<'oneTwo'> & {
+  | (QuestionBaseAttributes<"oneTwo"> & {
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
@@ -34,7 +49,7 @@ export type QuestionMetadata =
         }
       >;
     })
-  | (QuestionBaseAttributes<'oneCorrect'> & {
+  | (QuestionBaseAttributes<"oneCorrect"> & {
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
@@ -42,7 +57,7 @@ export type QuestionMetadata =
         }
       >;
     })
-  | (QuestionBaseAttributes<'multipleCorrect'> & {
+  | (QuestionBaseAttributes<"multipleCorrect"> & {
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
@@ -50,7 +65,7 @@ export type QuestionMetadata =
         }
       >;
     })
-  | (QuestionBaseAttributes<'definition'> & {
+  | (QuestionBaseAttributes<"definition"> & {
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
@@ -58,7 +73,7 @@ export type QuestionMetadata =
         }
       >;
     })
-  | (QuestionBaseAttributes<'calculation'> & {
+  | (QuestionBaseAttributes<"calculation"> & {
       texts: Array<string>;
       answerFunction: jsStringFunction;
       variables: Record<string, number[]>;
@@ -71,9 +86,13 @@ export type QuestionBankContentMetaData = {
   questions: QuestionId[];
 };
 
-export type QuestionBankContentMap = Record<ContentId, Record<ContentId, Record<ContentId, {}>>>;
+export type QuestionBankContentMap = Record<
+  ContentId,
+  Record<ContentId, Record<ContentId, {}>>
+>;
 
 export type QuestionBankIndex = {
+  los: Record<LearningObject, CourseName[]>;
   content: Record<ContentId, QuestionBankContentMetaData>;
   contentTree: Record<ContentId, QuestionBankContentMap>;
   questions: Record<QuestionId, QuestionMetadata>;
