@@ -1,16 +1,19 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import lodash from 'lodash';
-import { QuestionBankIndex } from './types';
-import { getQuestionsFromMdx } from './questionParser';
+import fs from "fs";
+import matter from "gray-matter";
+import lodash from "lodash";
+import { QuestionBankIndex } from "./types";
+import { getQuestionsFromMdx } from "./questionParser";
+import { getLosFormMdx } from "./losParer";
 
-const files = fs.readdirSync('./questionBank').filter(f => f.includes('.mdx'));
+const files = fs
+  .readdirSync("./questionBank")
+  .filter((f) => f.includes(".mdx"));
 const images = fs
-  .readdirSync('./questionBank/images')
-  .filter(f => f.includes('.png'));
+  .readdirSync("./questionBank/images")
+  .filter((f) => f.includes(".png"));
 
 const contentIndex = files
-  .map(f => f.replace('.mdx', ''))
+  .map((f) => f.replace(".mdx", ""))
   .sort((a, b) => b.localeCompare(a))
   .reverse()
   .reduce<QuestionBankIndex>(
@@ -24,12 +27,13 @@ const contentIndex = files
 
       const id = frontMatter.SyllabusReference as string;
       const questions = getQuestionsFromMdx(content, id);
-      const blocks = id.split('.');
+      const los = getLosFormMdx(content);
+      const blocks = id.split(".");
       const blockPath = blocks
         .map((_, i) =>
-          i === 0 && blocks[0] === '071' && blocks.length > 1
-            ? '070'
-            : blocks.slice(0, i + 1).join('.')
+          i === 0 && blocks[0] === "071" && blocks.length > 1
+            ? "070"
+            : blocks.slice(0, i + 1).join(".")
         )
         .filter(
           (name, index, arr) => !!sum.content[name] || index === arr.length - 1
@@ -43,7 +47,7 @@ const contentIndex = files
         questions: Object.keys(questions),
       };
 
-      Object.keys(questions).forEach(q => {
+      Object.keys(questions).forEach((q) => {
         if (sum.questions[q]) {
           throw new Error(`Found duplicate question ${q}`);
         }
@@ -54,9 +58,15 @@ const contentIndex = files
         ...questions,
       };
 
+      sum.los = {
+        ...sum.los,
+        ...los,
+      };
+
       return sum;
     },
     {
+      los: {},
       content: {},
       contentTree: {},
       questions: {},
@@ -64,23 +74,23 @@ const contentIndex = files
   );
 
 const jsonFile = JSON.stringify(contentIndex, null, 2);
-const originalTypesFile = fs.readFileSync('./src/types.ts').toString();
+const originalTypesFile = fs.readFileSync("./src/types.ts").toString();
 const indexFile = `export const questionBank = ${jsonFile}`;
 const typesFile = `${originalTypesFile}
  
 export declare const questionBank : QuestionBankIndex; 
 `;
 
-fs.rmdirSync('./lib', { recursive: true });
-fs.mkdirSync('./lib/content/images', { recursive: true });
-fs.writeFileSync('./lib/index.js', indexFile);
-fs.writeFileSync('./lib/index.json', jsonFile);
-fs.writeFileSync('./lib/index.d.ts', typesFile);
+fs.rmdirSync("./lib", { recursive: true });
+fs.mkdirSync("./lib/content/images", { recursive: true });
+fs.writeFileSync("./lib/index.js", indexFile);
+fs.writeFileSync("./lib/index.json", jsonFile);
+fs.writeFileSync("./lib/index.d.ts", typesFile);
 
-files.forEach(f =>
+files.forEach((f) =>
   fs.copyFileSync(`./questionBank/${f}`, `./lib/content/${f}`)
 );
 
-images.forEach(f =>
+images.forEach((f) =>
   fs.copyFileSync(`./questionBank/images/${f}`, `./lib/content/images/${f}`)
 );
