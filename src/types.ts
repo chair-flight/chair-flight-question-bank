@@ -46,7 +46,7 @@ export type QuestionMetadata =
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
-          subject?: string[];
+          correct?: boolean;
         }
       >;
     })
@@ -54,7 +54,7 @@ export type QuestionMetadata =
       texts: Array<string>;
       options: Array<
         OptionAttributes & {
-          correct?: boolean;
+          subject?: string[];
         }
       >;
     })

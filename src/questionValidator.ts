@@ -2,15 +2,22 @@ import { ZodSchema, z } from "zod";
 import { QuestionMetadata } from "./types";
 
 const questionBaseAttributes = {
-  id: z.string(),
+  id: z.string().min(6),
   contentId: z.string(),
   lo: z.array(z.string()),
   explanation: z.string().optional(),
 };
 
 const optionBaseAttributes = {
-  id: z.string(),
+  id: z.string().min(6),
   innerText: z.string(),
+};
+
+const noDuplicateIds = (): [(arr: { id: string }[]) => boolean, string] => {
+  return [
+    (arr) => arr.length === [...new Set(arr.map((i) => i.id))].length,
+    "No duplicate Id's allowed!",
+  ];
 };
 
 export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
@@ -25,7 +32,8 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           correct: z.boolean().default(false),
         })
       )
-      .min(4),
+      .min(4)
+      .refine(...noDuplicateIds()),
   }),
   z.object({
     variant: z.enum(["oneTwoDefinition"]),
@@ -38,7 +46,8 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           subject: z.array(z.string()).min(1).optional(),
         })
       )
-      .min(4),
+      .min(4)
+      .refine(...noDuplicateIds()),
   }),
   z.object({
     variant: z.enum(["oneCorrect"]),
@@ -52,6 +61,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         })
       )
       .min(4)
+      .refine(...noDuplicateIds())
       .refine((v) => !!v.find((v) => !!v.correct)),
   }),
   z.object({
@@ -79,6 +89,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         })
       )
       .min(4)
+      .refine(...noDuplicateIds())
       .refine((v) => !!v.find((v) => !!v.subject)),
   }),
   z.object({
