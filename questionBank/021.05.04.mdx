@@ -5,6 +5,283 @@ Title: "Aeroplane: fly-by-wire (FBW) control systems"
 
 # Aeroplane: fly-by-wire (FBW) control systems
 
-## Content
+## Learning Objectives
 
-- <Link href="021.05.04.01" />
+1. **021.05.04.01.01** -- Explain that an FBW flight control system is composed
+   of the following: pilot"s input command (control column/sidestick/rudder
+   pedals); electrical signalling paths, including: pilot input to computer;
+   computer to flight control surfaces; feedback from aircraft response to
+   computer; flight control computers; actuators; flight control surfaces.
+2. **021.05.04.01.02** -- State the advantages of an FBW system in comparison
+   with a conventional flight control system including: weight; pilot workload;
+   flight-envelope protection.
+3. **021.05.04.01.03** -- Explain why an FBW system is always irreversible.
+4. **021.05.04.01.04** -- Explain the different modes of operation: normal
+   operation (e.g. normal law or normal mode); downgraded operation (e.g.
+   alternate law or secondary mode); direct law.
+5. **021.05.04.01.05** -- Describe the implications of mode degradation in
+   relation to pilot workload and flight-envelope protection.
+6. **021.05.04.01.07** -- For aircraft using sidestick for manual control,
+   describe the implications of: dual control input made by the pilot; the
+   control takeover facility available to the pilot.
+7. **021.05.04.01.09** -- Explain why several types of computers are needed and
+   why they should be dissimilar.
+8. **021.05.04.01.10** -- Explain why several control surfaces on every axis
+   are needed on FBW aircraft.
+9. **021.05.04.01.11** -- Explain why several sensors are needed on critical
+   parameters.
+
+|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
+| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
+| 021.05.04.01.01 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.02 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.03 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.04 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.05 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.07 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.09 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.10 | X       | X      |            |             |        |     |         |
+| 021.05.04.01.11 | X       | X      |            |             |        |     |         |
+
+## Summary
+
+- **PFC**: Primary Flight Computer. Receives Pilot commands, checks them for viability and
+  errors, and converts them into the final digital signal to be sent to the **ACE**.
+- **ACE**: Actuator Control Electronics. Recieves a digital signal from the **PFC** and converts
+  it into an analogue signal to be sent to the **PCU**.
+- **PCU**: Power Control Unit. Receives electric analogue and activates an Hydraulic actuator
+
+## Questions
+
+<Question id="Zmu5RnBjvh" variant="correct" lo={["021.05.04.01.01"]}>
+  <Text variant="oneCorrect">
+    Flight by wire systems. Which statement is correct?
+  </Text>
+  <Text variant="oneTwo">
+    Flight by wire systems. Which statement are correct?
+  </Text>
+  <Text variant="multipleCorrect" select={5}>
+    Flight by wire systems. Which statement are correct?
+  </Text>
+  <Option id="Zmu5RnBjvh-1" correct why="">
+    PCUs are operated by analogue signals
+  </Option>
+  <Option id="Zmu5RnBjvh-2" correct why="">
+    PCUs operate an hydraulic actuator
+  </Option>
+  <Option id="Zmu5RnBjvh-3" correct why="">
+    ACEs are operated by digital signals
+  </Option>
+  <Option id="Zmu5RnBjvh-4" correct why="">
+    ACEs convert digital signals into analogue signals
+  </Option>
+  <Option id="Zmu5RnBjvh-5" correct why="">
+    ACEs operate the PCU using an analogue signal
+  </Option>
+  <Option id="Zmu5RnBjvh-6" correct why="">
+    PFCs send digital signals to the ACE
+  </Option>
+  <Option id="Zmu5RnBjvh-7" why="">
+    PCUs covert digital signals into analogue signals
+  </Option>
+  <Option id="Zmu5RnBjvh-8" why="">
+    PCUs covert digital signals into hydraulic actuator movements
+  </Option>
+  <Option id="Zmu5RnBjvh-9" why="">
+    Control wires feed pilot control movements into the PCUs
+  </Option>
+  <Option id="Zmu5RnBjvh-A" why="">
+    ACEs convert analogue signals into digital signals
+  </Option>
+  <Option id="Zmu5RnBjvh-B" why="">
+    ACEs convert digital signals into hydraulic actuator movements
+  </Option>
+  <Option id="Zmu5RnBjvh-C" why="">
+    Flight controls are connected to control surfaces directly
+  </Option>
+</Question>
+
+<Question
+  id="JapXkzpwTD"
+  variant="correct"
+  lo={["021.05.04.01.02", "021.05.04.01.05"]}
+>
+  <Text variant="oneCorrect">
+    Which of the following protections is available ona fly-by-wire control
+    system?
+  </Text>
+  <Option id="JapXkzpwTD-1" superCorrect>
+    All of The Above
+  </Option>
+  <Option id="JapXkzpwTD-2" correct>
+    Excessive g load
+  </Option>
+  <Option id="JapXkzpwTD-3" correct>
+    Stall
+  </Option>
+  <Option id="JapXkzpwTD-4" correct>
+    Excessive Bank Angle
+  </Option>
+  <Option id="JapXkzpwTD-5" correct>
+    Excessive Pitch Angle
+  </Option>
+  <Option id="JapXkzpwTD-6" correct>
+    Overspeed
+  </Option>
+  <Option id="JapXkzpwTD-7">Flight into ground obstacles</Option>
+  <Option id="JapXkzpwTD-8">Flight into other aircraft</Option>
+  <Option id="JapXkzpwTD-9">Flight into restricted airspeed</Option>
+</Question>
+
+<Question id="elkK3dIQRe" variant="correct" lo={["021.05.04.01.02"]}>
+  <Text variant="oneCorrect">
+    Which of these statements reflect an advantage of Fly-By-Wire systems?
+  </Text>
+  <Text variant="oneTwo">
+    Which of these statements is correct in regards to advantages of Fly-By-Wire
+    systems?
+  </Text>
+  <Text variant="multipleCorrect" select={5}>
+    The advantages of Fly-By-Wire control are...
+  </Text>
+  <Option id="elkK3dIQRe-1" correct why="">
+    Reduced weight
+  </Option>
+  <Option id="elkK3dIQRe-2" correct why="">
+    Improved piloting quality
+  </Option>
+  <Option id="elkK3dIQRe-3" why="">
+    Reduction of electric and hydraulic power required to operate control
+    surfaces
+  </Option>
+  <Option id="elkK3dIQRe-4" why="">
+    Improved resistance against lightning strikes
+  </Option>
+  <Option id="elkK3dIQRe-5" why="">
+    Immunity from interference signals
+  </Option>
+  <Option id="elkK3dIQRe-6" why="">
+    Profile Drag Reduction
+  </Option>
+  <Option id="elkK3dIQRe-7" correct why="">
+    Mach Number Reduction
+  </Option>
+  <Option id="elkK3dIQRe-8" correct why="">
+    Increased Flight Envelope
+  </Option>
+</Question>
+
+<Question id="UmfmeJGcrj" variant="correct" lo={["021.05.04.01.03"]}>
+  <Text variant="oneCorrect">
+    A Fly by Wire system is always irreversible because...
+  </Text>
+  <Option id="UmfmeJGcrj-1" correct>
+    The link between the pilot inputs and control surfaces is done indirectly
+    via a computer
+  </Option>
+  <Option id="UmfmeJGcrj-2">
+    A pilot can reverse the inputs of the autopilot system as they also have a
+    direct link to the hydraulic actuators of the control surfaces
+  </Option>
+  <Option id="UmfmeJGcrj-3">
+    it is linked mechanically to a computer and then to the flight control
+    surfaces
+  </Option>
+  <Option id="UmfmeJGcrj-4">
+    the flight computer simulates the feedback of the control surface movement
+    by applying a resistance force on the sidestick
+  </Option>
+</Question>
+
+<Question id="R1IpKqEYyn" variant="definition" lo={["021.05.04.01.04"]}>
+  <Text variant="oneCorrect">
+    In a Modern fly-by-wire system, what best describes "<Subject />" ?
+  </Text>
+  <Option
+    id="R1IpKqEYyn-1"
+    subject={["Normal Law", "Normal mode"]}
+    why="Normal Mode is the Boeing equivalent to Airbus' Normal Law"
+  >
+    Used throughout the entire flight from the chocks off to chocks on. It
+    contains multiple submodules appropriate to each phase of flight that
+    transition between each other automatically.
+  </Option>
+  <Option
+    id="R1IpKqEYyn-2"
+    subject={["Alternate Law", "Secondary Mode"]}
+    why="Secondary Mode is the Boeing equivalent to Airbus' Alternate Law"
+  >
+    A reduced mode of operation that is activated on deterioration of the
+    fly-by-wire system. Most protections will remain active, while some will be
+    replaced by warnings to the pilot.
+  </Option>
+  <Option
+    id="R1IpKqEYyn-3"
+    subject={["Direct Law"]}
+    why="This is an 'airbus only' mode. NOTE: this is not part of the LO's"
+  >
+    In this mode all protections are lost. The flight control movements are
+    directly proportional to sidestick inputs.
+  </Option>
+  <Option
+    id="R1IpKqEYyn-4"
+    subject={["Mechanical Backup"]}
+    why="This is an 'airbus only' mode. NOTE: this is not part of the LO's"
+  >
+    In this mode control via primary control surfaces is not possible, and the
+    aircraft is controlled by the stabilizer trim system and rudder pedals only.
+  </Option>
+  <Option id="R1IpKqEYyn-5" why="No such a thing exists">
+    A reduced mode of operation that activates in the most uneventful portions
+    of the flight such as cruise.
+  </Option>
+</Question>
+
+<Question id="LCfqc4lcpD" variant="definition" lo={["021.05.04.01.04"]}>
+  <Text variant="oneCorrect">
+    On a fly-by-wire system which mode of operation is the most <Subject />
+  </Text>
+  <Option id="LCfqc4lcpD-1" subject="basic" why="">
+    Direct Mode
+  </Option>
+  <Option id="LCfqc4lcpD-2" subject="complete" why="">
+    Normal mode{" "}
+  </Option>
+  <Option id="LCfqc4lcpD-3" subject="basic" why="">
+    Direct Mode
+  </Option>
+  <Option id="LCfqc4lcpD-4" subject="complete" why="">
+    Normal Law{" "}
+  </Option>
+  <Option id="LCfqc4lcpD-5" why="">
+    Direct computer Mode
+  </Option>
+  <Option id="LCfqc4lcpD-6" why="">
+    Alternate mode
+  </Option>
+  <Option id="LCfqc4lcpD-7" why="">
+    Secondary mode
+  </Option>
+</Question>
+
+<Question id="Q0pGjCUmXB" variant="correct" lo={["21.05.04.01.07"]}>
+  <Text variant="oneCorrect">
+    When operating an aircraft with a side stick, how can a captain take over
+    flight control from either the co-pilot or the autopilot?
+  </Text>
+  <Option id="Q0pGjCUmXB-1" correct why="">
+    By use of a takeover push button on the sidestick
+  </Option>
+  <Option id="Q0pGjCUmXB-3" why="">
+    By saying out loud "I have control"
+  </Option>
+  <Option id="Q0pGjCUmXB-4" why="">
+    By operating the sidestick in conjunction with the autopilot
+  </Option>
+  <Option id="Q0pGjCUmXB-5" why="">
+    By operating the sidestick as the commander has priority
+  </Option>
+  <Option id="Q0pGjCUmXB-6" why="">
+    By disarming the autopilot and disabling the copilot sidestick
+  </Option>
+</Question>
