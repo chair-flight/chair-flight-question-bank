@@ -7,17 +7,15 @@ Title: "Fuel: types, characteristics, limitations"
 
 ## Learning Objectives
 
-1. **021.08.02.01.01** -- State the types of fuel used by a gas turbine engine:
-   JET-A; JET-A1; JET-B.
-2. **021.08.02.01.02** -- State the main characteristics of these fuels and give
-   typical values regarding their flash points, freezing points and density.
+1. **021.08.02.01.01** -- State the types of fuel used by a gas turbine engine: JET-A; JET-A1; JET-B.
+2. **021.08.02.01.02** -- State the main characteristics of these fuels and give typical values regarding their flash points, freezing points and density.
 3. **021.08.02.01.03** -- State the existence of additives for freezing.
 
-|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
-| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
-| 021.08.02.01.01 | X       | X      | X          | X           | X      |     |         |
-| 021.08.02.01.02 | X       | X      | X          | X           | X      |     |         |
-| 021.08.02.01.03 | X       | X      | X          | X           | X      |     |         |
+|  | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR | CBIR(A) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 021.08.02.01.01 | X | X | X | X | X |  |  |
+| 021.08.02.01.02 | X | X | X | X | X |  |  |
+| 021.08.02.01.03 | X | X | X | X | X |  |  |
 
 ## Summary
 
@@ -36,8 +34,7 @@ TLDR memorize this table:
 
 ### Additives for freezing
 
-Fuel system icing inhibitors are additives added to jet fuel to reduce the
-freezing point and prevent ice crystal formation.
+Fuel system icing inhibitors are additives added to jet fuel to reduce the freezing point and prevent ice crystal formation.
 
 ## Questions
 
@@ -47,7 +44,7 @@ freezing point and prevent ice crystal formation.
   lo="021.08.02.01.02"
   explanation="#properties-of-fuels"
 >
-  <Text>
+  <Text variant="oneCorrect">
     What is the flashpoint of <Subject />?
   </Text>
   <Option id="5VpxD3cDJA-1" subject={["jet A", "jet A1"]}>
@@ -71,7 +68,7 @@ freezing point and prevent ice crystal formation.
   lo="021.08.02.01.02"
   explanation="#properties-of-fuels"
 >
-  <Text>
+  <Text variant="oneCorrect">
     What is the density of <Subject />?
   </Text>
   <Option id="MBijkVRq5S-1" subject={["jet A", "jet A1", "jet B"]}>
@@ -93,7 +90,7 @@ freezing point and prevent ice crystal formation.
   lo="021.08.02.01.02"
   explanation="#properties-of-fuels"
 >
-  <Text>
+  <Text variant="oneCorrect">
     What is the Freezing Point of <Subject />?
   </Text>
   <Option id="URnK4baSEr-1" subject="jet A">
@@ -114,7 +111,7 @@ freezing point and prevent ice crystal formation.
 </Question>
 
 <Question id="CwY1OtBy6z" variant="definition" lo="021.08.02.01.02">
-  <Text>
+  <Text variant="oneCorrect">
     The correct order for of <Subject /> for the three mentioned fuels is...
   </Text>
   <Option
@@ -133,8 +130,11 @@ freezing point and prevent ice crystal formation.
   <Option id="CwY1OtBy6z-4">Jet B, Jet A, Jet A-1</Option>
 </Question>
 
-<Question id="4qsxl4dnOF" variant="oneTwo" lo="021.08.02.01.02">
-  <Text>Which statemets are correct in regards to different fuels?</Text>
+<Question id="4qsxl4dnOF" variant="correct" lo="021.08.02.01.02">
+  <Text variant="oneCorrect">Which statement is correct in regards to different fuels?</Text>
+  <Text variant="multipleCorrect" select={5}>Which statements are correct in regards to different fuels?</Text>
+  <Text variant="oneTwo">Which statements are correct in regards to different fuels?</Text>
+
   <Option id="4qsxl4dnOF-1" correct>
     The freezing point for Jet A is at a higher temperature than that for Jet B
   </Option>
@@ -159,28 +159,30 @@ freezing point and prevent ice crystal formation.
 
 <Question
   id="DsbQDR21pd"
-  variant="oneCorrect"
+  variant="correct"
   lo="021.08.02.01.03"
   explanation="#additives-for-freezing"
 >
-  <Text>Turbine fuel may contain additives in order to...</Text>
+  <Text variant="oneCorrect">
+    Turbine fuel may contain additives in order to...
+  </Text>
   <Option id="DsbQDR21pd-1" correct>
     Reduce the risk of ice crystal formation
   </Option>
   <Option
-    id="DsbQDR21pd-12"
+    id="DsbQDR21pd-2"
     correct
-    why="waxing of jet fuel describe the transition of jet fuel into a partially crystaline state in low temperatures"
+    why="waxing of jet fuel describe the transition of jet fuel into a partially crystalline state in low temperatures"
   >
     prevent waxing of the fuel in low temperatures
   </Option>
-  <Option id="DsbQDR21pd-2">increase viscosity at high temperatures</Option>
-  <Option id="DsbQDR21pd-3">enhance combustion temperature</Option>
-  <Option id="DsbQDR21pd-4">
+  <Option id="DsbQDR21pd-3">increase viscosity at high temperatures</Option>
+  <Option id="DsbQDR21pd-4">enhance combustion temperature</Option>
+  <Option id="DsbQDR21pd-5">
     improve overall performance at all temperature ranges
   </Option>
   <Option
-    id="DsbQDR21pd-5"
+    id="DsbQDR21pd-6"
     why="not increasing but decreasing the freezing point would be correct."
   >
     Increase the freezing point when operating in low temperatures
