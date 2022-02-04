@@ -94,3 +94,32 @@ files.forEach((f) =>
 images.forEach((f) =>
   fs.copyFileSync(`./questionBank/images/${f}`, `./lib/content/images/${f}`)
 );
+
+const coveredLos = Object.values(contentIndex.questions).reduce<string[]>(
+  (sum, q) => [...sum, ...q.lo],
+  []
+);
+
+const statistics = Object.keys(contentIndex.los).reduce<
+  Record<string, [number, number]>
+>((sum, lo) => {
+  const index = lo.split(".")[0] ?? "";
+  console.log(contentIndex.content[lo]);
+  return {
+    ...sum,
+    [index]: [
+      (sum[index]?.[0] ?? 0) + Number(coveredLos.includes(lo)),
+      (sum[index]?.[1] ?? 0) + 1,
+    ],
+  };
+}, {});
+
+Object.entries(statistics)
+  .map(
+    ([module, [covered, total]]) =>
+      `https://img.shields.io/badge/coverage%20${module}-${covered}%2F${total}%20${(
+        (covered / total) *
+        100
+      ).toFixed()}%25-red`
+  )
+  .map((entry) => console.log(entry));
