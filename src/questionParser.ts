@@ -8,7 +8,7 @@ import { questionValidator } from "./questionValidator";
 const getRelevantNodes = (node: Node, depth = 1): Node[] => {
   const relevantNodes: Node[] = [];
   (node.children ?? []).forEach((node) => {
-    if (["Text", "Option", "Variables"].includes(node.name)) {
+    if (["Text", "Option", "Variables", "Explanation"].includes(node.name)) {
       relevantNodes.push(node);
       return;
     }
@@ -21,16 +21,18 @@ const getRelevantNodes = (node: Node, depth = 1): Node[] => {
 
 const getQuestionData = (node: Node) => {
   const relevantNodes = getRelevantNodes(node);
-  const questionTextNodes = relevantNodes.filter(
-    (node) => node.name === "Text"
-  );
+  const textNodes = relevantNodes.filter((node) => node.name === "Text");
   const optionNodes = relevantNodes.filter((node) => node.name === "Option");
   const variablesNode = relevantNodes.find((node) => node.name === "Variables");
+  const explanationNode = relevantNodes.find(
+    (node) => node.name === "Explanation"
+  );
 
   return {
-    questionTextNodes,
+    textNodes,
     optionNodes,
     variablesNode,
+    explanationNode,
   };
 };
 
@@ -40,16 +42,18 @@ const getNodeInnerText = (node: Node, mdxFile: string): string => {
   return mdxFile.slice(start, end);
 };
 
-const getQuestionText = getNodeInnerText;
-
 const getQuestionAttributes = (node: Node) => ({
   id: node.attributes.find((n) => n.name === "id")?.value ?? "",
-  variant: (node.attributes.find((n) => n.name === "variant")?.value ??
-    "") as QuestionVariant,
+  variant: node.attributes.find((n) => n.name === "variant")?.value ?? "",
   lo: getAttributeValueAsArray(
     node.attributes.find((n) => n.name === "lo")?.value
   ),
   explanation: node.attributes.find((n) => n.name === "explanation")?.value,
+});
+
+const getTextAttributes = (node: Node, mdxFile: string) => ({
+  variant: node.attributes.find((n) => n.name === "variant")?.value ?? "",
+  text: getNodeInnerText(node, mdxFile),
 });
 
 const getAttributeValueAsArray = (
@@ -63,7 +67,9 @@ const getAttributeValueAsArray = (
   }
   const assumeNodeAttribute = value as NodeAttribute;
   try {
-    return JSON.parse(assumeNodeAttribute.value);
+    let response;
+    eval(`response = ${assumeNodeAttribute.value}`);
+    return Array.isArray(response) ? response : [assumeNodeAttribute.value];
   } catch (e) {
     return [assumeNodeAttribute.value];
   }
@@ -103,12 +109,12 @@ const getAttributeValueAsMap = (
 
 const getOptionData = (node: Node, mdxFile: string) => ({
   id: node.attributes.find((n) => n.name === "id")?.value ?? "",
-  correct: !!node.attributes.find((n) => n.name === "correct") || undefined,
+  correct: !!node.attributes.find((n) => n.name === "correct"),
   why: node.attributes.find((n) => n.name === "why")?.value,
+  innerText: getNodeInnerText(node, mdxFile),
   subject: getAttributeValueAsArray(
     node.attributes.find((n) => n.name === "subject")?.value
   ),
-  innerText: getNodeInnerText(node, mdxFile),
 });
 
 const getVariablesData = (node?: Node) => {
@@ -133,12 +139,17 @@ export const getQuestionsFromMdx = (
   const remarkGetQuestions = () => (tree: Tree) => {
     tree.children.forEach((leaf) => {
       if (leaf.name === "Question") {
-        const { questionTextNodes, optionNodes, variablesNode } =
+        const { textNodes, optionNodes, variablesNode, explanationNode } =
           getQuestionData(leaf);
         const attributes = getQuestionAttributes(leaf);
-        const texts = questionTextNodes.map((n) => getQuestionText(n, mdxFile));
+        const texts = textNodes.map((n) => getTextAttributes(n, mdxFile));
         const options = optionNodes.map((n) => getOptionData(n, mdxFile));
         const { variables, answerFunction } = getVariablesData(variablesNode);
+        const explanation = explanationNode
+          ? getNodeInnerText(explanationNode, mdxFile)
+          : "";
+        const related: string[] = []; // TODO parse related question Ids and add them here
+        const annexes: string[] = []; // TODO parse annex references and add them here
         const question = {
           ...attributes,
           texts,
@@ -146,6 +157,9 @@ export const getQuestionsFromMdx = (
           contentId,
           variables,
           answerFunction,
+          explanation,
+          annexes,
+          related,
         };
 
         try {

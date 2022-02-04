@@ -14,79 +14,51 @@ export type CourseName =
   | "IR"
   | "CBIR(A)";
 
-export type QuestionVariant =
-  | "oneTwo"
-  | "oneTwoDefinition"
-  | "definition"
-  | "oneCorrect"
-  | "multipleCorrect"
-  | "calculation";
+export type QuestionVariant = "correct" | "definition" | "calculation";
 
-export type OptionAttributes = {
-  id: string;
-  innerText: string;
-  why?: string;
-};
-
-export type OptionBaseAttributes = {
-  id: string;
-  innerText: string;
-};
+export type QuestionTextVariant = "oneTwo" | "oneCorrect" | "multipleCorrect";
 
 export type QuestionBaseAttributes<V extends QuestionVariant> = {
   variant: V;
   id: string;
   contentId: ContentId;
   lo: string[];
-  explanation?: string;
+  related: string[];
+  annexes: string[];
+  explanation: string;
 };
 
 export type QuestionMetadata =
-  | (QuestionBaseAttributes<"oneTwo"> & {
-      texts: Array<string>;
-      options: Array<
-        OptionAttributes & {
-          correct?: boolean;
-        }
-      >;
-    })
-  | (QuestionBaseAttributes<"oneTwoDefinition"> & {
-      texts: Array<string>;
-      options: Array<
-        OptionAttributes & {
-          subject?: string[];
-        }
-      >;
-    })
-  | (QuestionBaseAttributes<"oneCorrect"> & {
-      texts: Array<string>;
-      options: Array<
-        OptionAttributes & {
-          correct?: boolean;
-        }
-      >;
-    })
-  | (QuestionBaseAttributes<"multipleCorrect"> & {
-      texts: Array<string>;
-      options: Array<
-        OptionAttributes & {
-          correct?: boolean;
-        }
-      >;
+  | (QuestionBaseAttributes<"correct"> & {
+      texts: Array<{
+        variant: "oneCorrect" | "oneTwo" | "multipleCorrect";
+        text: string;
+      }>;
+      options: Array<{
+        id: string;
+        innerText: string;
+        why?: string;
+        correct: boolean;
+      }>;
     })
   | (QuestionBaseAttributes<"definition"> & {
-      texts: Array<string>;
-      options: Array<
-        OptionAttributes & {
-          subject?: string[];
-        }
-      >;
+      texts: Array<{
+        variant: "oneCorrect" | "oneTwo";
+        text: string;
+      }>;
+      options: Array<{
+        id: string;
+        innerText: string;
+        why?: string;
+        subject?: string[];
+      }>;
     })
   | (QuestionBaseAttributes<"calculation"> & {
-      texts: Array<string>;
+      texts: Array<{
+        text: string;
+      }>;
       answerFunction: jsStringFunction;
       variables: Record<string, number[]>;
-      options: [OptionAttributes];
     });
 
 export type QuestionBankContentMetaData = {

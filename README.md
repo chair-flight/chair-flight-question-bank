@@ -4,126 +4,143 @@ An Open source aviation question bank. **Still in (super early) development ;)**
 
 ## Contributing
 
-All content contributions are more than welcome. Content is written using
-[MDX](https://mdxjs.com/), which is a superset of
-[Markdown](https://en.wikipedia.org/wiki/Markdown). All boilerplate is already
-put in place, so if you want to write some content, or add questions... go
-ahead!
+All content contributions are more than welcome. Content is written using [MDX](https://mdxjs.com/), which is a superset of [Markdown](https://en.wikipedia.org/wiki/Markdown). All boilerplate is already put in place, so if you want to write some content, or add questions... go ahead!
 
 ## Versioning
 
-The goal is to use semantic version, nevertheless until version 1.0.0 is
-released, we reserve the right of doing breaking changes unannounced on minor
-releases. (i.e version `0.0.22` may contain breaking changes from version
-`0.0.21`).
+The goal is to use semantic version, nevertheless until version 1.0.0 is released, we reserve the right of doing breaking changes unannounced on minor releases. (i.e version `0.0.22` may contain breaking changes from version `0.0.21`).
 
 ## Using it
 
-This package is distributed
-[via NPM](https://www.npmjs.com/package/chair-flight-question-bank). The
-distribution includes all MDX files, under `lib/content`, a json export with
-metadata of all the content, and the same metadata export as a `JS`/`TS`
-friendly package.
+This package is distributed [via NPM](https://www.npmjs.com/package/chair-flight-question-bank). The distribution includes all MDX files, under `lib/content`, a json export with metadata of all the content, and the same metadata export as a `JS`/`TS` friendly package.
 
 ## Question variants
 
-Questions are always written in a very limited subset of JSX that does not allow
-for variables... basically HTML, with custom tags (so, no variables allowed...).
-Each variant represents a different type of question. Each question has three
-mandatory parameters
+Questions are always written in a very limited subset of JSX that does not allow for variables... basically HTML, with custom tags (so, no variables allowed...). Each variant represents a different type of question. Each question has three mandatory parameters
 
-```tsx
-<Question
-  variant="oneTwoDefinition"
-  id="iP2fRJB3" // unique for each question
-  lo="021.01.01.01.01" // can also be ana array for multiple lo's ['lo1', 'lo2']
-/>
+### Correct
+
+Example:
+
+```jsx
+<Question id="uniqueId" variant="correct" lo={["021.04.03.04.01"]}>
+  <Text variant="oneCorrect">
+    The correct statement in relation to the autobrake system is...
+  </Text>
+  <Text variant="oneTwo">
+    Which of these statements in relation to the autobrake system are correct?
+  </Text>
+  <Text variant="multipleCorrect" select={5}>
+    Which of these statements in relation to the autobrake system are correct?
+  </Text>
+  <Option
+    id="uniqueId-1"
+    correct
+    why="This is true, and required by technical requirements for type certification."
+  >
+    Without pilot interference an autobrake system continues to operate until
+    standstill
+  </Option>
+  <Option id="uniqueId-2" correct>
+    During landing and RTO, an autobrake keeps operating until the pilot presses
+    the brake pedals
+  </Option>
+  <Option id="uniqueId-3" correct>
+    During landing an autobrake keeps operating when reverse thrust is selected
+  </Option>
+  <Option
+    id="uniqueId-4"
+    why="Not correct since in most aircraft the autobrake engages a couple of seconds after touch down"
+  >
+    An armed autobrake system will always try to achieve the selected
+    deceleration level directly after main wheel touchdown
+  </Option>
+  <Option
+    id="uniqueId-5"
+    why="Not correct since it also depends on pressure altitude, temperature, and a myriad of other factors"
+  >
+    For a given touchdown speed on a dry runway without the use of reverse
+    thrust, the stopping distance solely depends on the selected ABS setting and
+    weight of the aeroplane.
+  </Option>
+  <Option
+    id="uniqueId-6"
+    why="This is not necessarily true, and depends a lot on aircraft type."
+  >
+    A take-off warning will be generated if the autobrake system has not been
+    armed.
+  </Option>
+</Question>
 ```
 
-### One Two Definition
+Can be used to generate:
 
-A question with two statements that can be either correct or incorrect.
+```yml
+# oneCorrect sub-variant
+The correct statement in relation to the autobrake system is...
+- An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
+- During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals # CORRECT!
+- For a given touchdown speed on a dry runway without the use of reverse thrust, the stopping distance solely depends on the selected ABS setting and weight of the aeroplane.
+- A take-off warning will be generated if the autobrake system has not been armed.
 
-```tsx
-<Question variant="oneTwoDefinition" id="iP2fRJB3" lo="021.01.01.01.01">
-  <Text>
-    Which Of these Statements about <Subject /> are correct?
+
+# oneTwo sub-variant
+Which of these statements in relation to the autobrake system are correct?
+  1) During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals
+  2) A take-off warning will be generated if the autobrake system has not been armed.
+- 1 and 2
+- 1 only # CORRECT!
+- 2 only
+- none
+
+# multipleCorrect sub-variant
+Which of these statements in relation to the autobrake system are correct?
+  1) An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
+  2) During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals
+  3) A take-off warning will be generated if the autobrake system has not been armed.
+  4) During landing an autobrake keeps operating when reverse thrust is selected
+  5) Without pilot interference an autobrake system continues to operate until standstill
+- 2 and 4 # Correct!
+- 1, 2, and 3
+- 2, and 3
+- 4, and 5
+```
+
+### Definition
+
+Example:
+
+```jsx
+<Question variant="definition" id="uniqueId" lo="021.01.01.01.01">
+  <Text variant="oneCorrect">
+    Which statements about <Subject /> are correct?
   </Text>
-  <Option subject="Structural design principles" id="iP2fRJB3-1">
+  <Text variant="oneTwo">
+    Which Of these statements about <Subject /> are correct?
+  </Text>
+  <Option id="uniqueId-1" subject="Structural design principles">
     Fail Safe implies multiple load Paths
   </Option>
-  <Option subject="Structural design principles" id="iP2fRJB3-2">
+  <Option id="uniqueId-2" subject="Structural design principles">
     A safe life structure is based on use during a limited time period or number
     of cycles
   </Option>
-  <Option id="iP2fRJB3-3">
+  <Option id="uniqueId-3">
     Fail Safe implies the structure will fail, when one component fails
   </Option>
-  <Option id="iP2fRJB3-4">
+  <Option id="uniqueId-4">
     Safe life is the preferred design technique for aircraft
   </Option>
 </Question>
 ```
 
-Can be used to generate
+Can be used to generate:
 
 ```yml
-Which Of these Statements is true regarding differential pressure ice accretion detector?
-- Large holes freeze first
-- Small holes melt first # CORRECT!
-- large holes melt first
-- It is based on the measurement of temperature and moisture
+# oneCorrect sub-variant
+The correct statement in relation to the autobrake system is...
+- An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
+- During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals # CORRECT!
+- For a given touchdown speed on a dry runway without the use of reverse thrust, the stopping distance solely depends on the selected ABS setting and weight of the aeroplane.
+- A take-off warning will be generated if the autobrake system has not been armed.
 ```
-
-### One Correct
-
-One question containing multiple possible correct answers, and incorrect
-answers. At least 3 incorrect and 1 correct answer need to be included. Example:
-
-```tsx
-<Question
-  variant="oneCorrect"
-  id="gjpGbSOEfW"
-  lo="021.07.02.01.01"
-  explanation="#mechanical-systems-using-air-pressure"
->
-  <Text>
-    Which Of these Statements is true regarding differential pressure ice
-    accretion detector?
-  </Text>
-  <Option id="gjpGbSOEfW-1">Large holes freeze first</Option>
-  <Option id="gjpGbSOEfW-1" correct>
-    Small holes freeze first
-  </Option>
-  <Option id="gjpGbSOEfW-1" correct>
-    Small holes melt first
-  </Option>
-  <Option id="gjpGbSOEfW-1">Small holes are heated first</Option>
-  <Option id="gjpGbSOEfW-1">
-    Small and big holes are heated at the same time
-  </Option>
-  <Option id="gjpGbSOEfW-1" correct>
-    An alarm light is activated in the cockpit when a pressure difference is
-    measured between small and big apertures
-  </Option>
-  <Option id="gjpGbSOEfW-1">large holes melt first</Option>
-  <Option id="gjpGbSOEfW-1">
-    The torque of a rotating serrated shat is measured
-  </Option>
-  <Option id="gjpGbSOEfW-1">
-    It is based on the measurement of temperature and moisture
-  </Option>
-</Question>
-```
-
-Could be used to generate
-
-```yml
-Which Of these Statements is true regarding differential pressure ice accretion detector?
-- Large holes freeze first
-- Small holes melt first # CORRECT!
-- large holes melt first
-- It is based on the measurement of temperature and moisture
-```
-
-### Calculation

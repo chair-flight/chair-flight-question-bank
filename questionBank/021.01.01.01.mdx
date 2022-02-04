@@ -7,10 +7,10 @@ Title: Design concepts
 
 ## Learning Objectives
 
-|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
-| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
-| 021.01.01.01.01 | X       | X      | X          | X           | X      |     |         |
-| 021.01.01.01.02 | X       | X      | X          | X           | X      |     |         |
+|  | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR | CBIR(A) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 021.01.01.01.01 | X | X | X | X | X |  |  |
+| 021.01.01.01.02 | X | X | X | X | X |  |  |
 
 1. **021.01.01.01.01** -- Describe the following structural design philosophies:
    - safe life;
@@ -22,136 +22,114 @@ Title: Design concepts
 
 ### Safe life
 
-In safe-life design, products are intended to be removed from service at a
-specific design life.
+In safe-life design, products are intended to be removed from service at a specific design life.
 
-Safe-life is particularly relevant to simple metal aircraft, where airframe
-components are subjected to alternating loads over the lifetime of the aircraft
-which makes them susceptible to metal fatigue. In certain areas such as in wing
-or tail components, structural failure in flight would be catastrophic.
+Safe-life is particularly relevant to simple metal aircraft, where airframe components are subjected to alternating loads over the lifetime of the aircraft which makes them susceptible to metal fatigue. In certain areas such as in wing or tail components, structural failure in flight would be catastrophic.
 
 <Source href="https://en.wikipedia.org/wiki/Safe-life_design" />
 
 ### Fail Safe
 
-In engineering, a fail-safe is a design feature or practice that in the event of
-a specific type of failure, inherently responds in a way that will cause minimal
-or no harm to other equipment, to the environment or to people. Unlike inherent
-safety to a particular hazard, a system being "fail-safe" does not mean that
-failure is impossible or improbable, but rather that the system's design
-prevents or mitigates unsafe consequences of the system's failure. That is, if
-and when a "fail-safe" system fails, it remains at least as safe as it was
-before the failure.
+In engineering, a fail-safe is a design feature or practice that in the event of a specific type of failure, inherently responds in a way that will cause minimal or no harm to other equipment, to the environment or to people. Unlike inherent safety to a particular hazard, a system being "fail-safe" does not mean that failure is impossible or improbable, but rather that the system's design prevents or mitigates unsafe consequences of the system's failure. That is, if and when a "fail-safe" system fails, it remains at least as safe as it was before the failure.
 
 <Source href="https://en.wikipedia.org/wiki/Fail-safe" />
 
 ### Damage tolerant
 
-Damage tolerance is a property of a structure relating to its ability to sustain
-defects safely until repair can be effected. The approach to engineering design
-to account for damage tolerance is based on the assumption that flaws can exist
-in any structure and such flaws propagate with usage.
+Damage tolerance is a property of a structure relating to its ability to sustain defects safely until repair can be effected. The approach to engineering design to account for damage tolerance is based on the assumption that flaws can exist in any structure and such flaws propagate with usage.
 
 <Source href="https://en.wikipedia.org/wiki/Damage_tolerance" />
 
 ### Redundancy
 
-Redundancy can be defined as the duplication or triplication of critical
-components or functions of a system with the intention of increasing reliability
-of said system.
+Redundancy can be defined as the duplication or triplication of critical components or functions of a system with the intention of increasing reliability of said system.
 
-Keep this in mind as the definition of redundancy can easily be confused with
-the definition of Fail safe. Redundancy is a key component of fail-safe
-structures, but not the only component
+Keep this in mind as the definition of redundancy can easily be confused with the definition of Fail safe. Redundancy is a key component of fail-safe structures, but not the only component
 
 ## Questions
 
-<Question variant="oneTwoDefinition" id="iP2fRJB3" lo="021.01.01.01.01">
-  <Text>
-    Which Of these Statements about <Subject /> are correct?
+<Question id="C1mmf3wUeM" variant="correct" lo={["021.01.01.01.01"]}>
+  <Text variant="oneCorrect">
+    Which Of these Statements about Structural design principles is correct?
   </Text>
-  <Option subject="Structural design principles" id="iP2fRJB3-1">
+  <Text variant="oneTwo">
+    Which Of these Statements about Structural design principles are correct?
+  </Text>
+  <Option correct id="C1mmf3wUeM-1">
     Fail Safe implies multiple load Paths
   </Option>
-  <Option subject="Structural design principles" id="iP2fRJB3-2">
+  <Option correct id="C1mmf3wUeM-2">
     A safe life structure is based on use during a limited time period or number
     of cycles
   </Option>
-  <Option id="iP2fRJB3-3">
+  <Option correct id="C1mmf3wUeM-3">
+    Safe life requires a structure to have a minimum stated design life within
+    which no catastrophic damage will occur
+  </Option>
+  <Option id="C1mmf3wUeM-4">
     Fail Safe implies the structure will fail, when one component fails
   </Option>
-  <Option id="iP2fRJB3-4">
+  <Option id="C1mmf3wUeM-5">
     Safe life is the preferred design technique for aircraft
+  </Option>
+  <Option id="C1mmf3wUeM-6">
+    Fail-safe structures are preferred to damage tolerant structures as they are
+    lighter due to not requiring extra structural members
+  </Option>
+  <Option id="C1mmf3wUeM-7">
+    Safe life requires a structure to have a maximum stated design life within
+    which no catastrophic damage will occur
+  </Option>
+  <Option id="C1mmf3wUeM-8">
+    Fail-safe Implies the structure will fail when one component fails
   </Option>
 </Question>
 
 <Question
-  variant="definition"
   id="ifq2fRJB3"
+  variant="definition"
   lo={["021.01.01.01.01", "021.01.01.01.02"]}
 >
-  <Text>
-    Select the option that best describes <Subject />
+  <Text variant="oneCorrect">
+    Select the option that best describes <Subject />:
   </Text>
   <Option id="ifq2fRJB3-1" subject="a fail-safe designed structure">
     A structure that has built-in redundancy with multiple load paths
   </Option>
-  <Option id="ifq2fRJB3-2" subject="a Safe-life structure">
+  <Option id="ifq2fRJB3-2" subject="a fail-safe designed structure">
+    A structure that has built-in redundancy with multiple load paths
+  </Option>
+  <Option id="ifq2fRJB3-3" subject="a Safe-life structure">
     One load path is sufficient and the structural element can be removed at the
     end of its lifetime
   </Option>
-  <Option id="ifq2fRJB3-3" subject="a Safe-life structure">
+  <Option id="ifq2fRJB3-4" subject="a Safe-life structure">
     The replacement of a part after a given number of cycles or hours of use.
   </Option>
-  <Option id="ifq2fRJB3-4" subject="a Damage tolerant structure">
+  <Option id="ifq2fRJB3-5" subject="a Damage tolerant structure">
     A structure capable of enduring damage safely until repairs can be
     performed.
   </Option>
-  <Option id="ifq2fRJB3-5" subject="Redundancy">
+  <Option id="ifq2fRJB3-6" subject="Redundancy">
     The duplication or triplication of critical components or functions of a
     system with the intention of increasing reliability of said system.
   </Option>
-  <Option id="ifq2fRJB3-6">
+  <Option
+    id="ifq2fRJB3-7"
+    why="This is a mix of the definition of a safe-life and a fail-safe structure"
+  >
     Multiple load paths through a structure that is replaced after limited usage
   </Option>
-  <Option id="ifq2fRJB3-7">
+  <Option
+    id="ifq2fRJB3-8"
+    why="Different components have different design safety factors."
+  >
     A single load path can withstand 1.5 times the maximum design load
   </Option>
-</Question>
-
-<Question variant="oneCorrect" id="tL3SJLG3" lo="021.01.01.01.01">
-  <Text>Which statement is true:</Text>
-  <Option id="tL3SJLG3-1">
-    Fail-safe structures are preferred to damage tolerant structures as they are
-    lighter due to not requiring extra structural members
-  </Option>
-  <Option id="tL3SJLG3-2">
-    Safe life requires a structure to have a maximum stated design life within
-    which no catastrophic damage will occur
-  </Option>
-  <Option id="tL3SJLG3-3">
-    Fail-safe Implies the structure will fail when one component fails
-  </Option>
-  <Option id="tL3SJLG3-4" correct>
-    Safe life requires a structure to have a minimum stated design life within
-    which no catastrophic damage will occur
-  </Option>
-</Question>
-
-<Question variant="oneCorrect" id="Gf2iDuuo" lo="021.01.01.01.01">
-  <Text>For a safe-life designed structure:</Text>
-  <Option id="Gf2iDuuo-1" correct>
-    One load path is sufficient and the structural element is removed at the end
-    of the lifecycle
-  </Option>
-  <Option id="Gf2iDuuo-2">
+  <Option
+    id="ifq2fRJB3-9"
+    why="A fail-safe structure does not necessarily have only one load path with all other being redundant"
+  >
     One Load path is sufficient and the structure should be redundant
-  </Option>
-  <Option id="Gf2iDuuo-3">
-    There is more than one load path and the structural element is removed at
-    the end of the lifecycle
-  </Option>
-  <Option id="Gf2iDuuo-4">
-    There is more than one load path and the structure is redundant
   </Option>
 </Question>

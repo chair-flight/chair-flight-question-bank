@@ -7,14 +7,11 @@ Title: "Hydromechanics: basic principles"
 
 ## Learning Objectives
 
-1. **021.03.01.01.01** -- Explain the concept and basic principles of
-   hydromechanics including: hydrostatic pressure; Pascal"s law; the
-   relationship between pressure, force and area; transmission of power:
-   multiplication of force, decrease of displacement.
+1. **021.03.01.01.01** -- Explain the concept and basic principles of hydromechanics including: hydrostatic pressure; Pascal"s law; the relationship between pressure, force and area; transmission of power: multiplication of force, decrease of displacement.
 
-|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
-| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
-| 021.03.01.01.01 | X       | X      | X          | X           | X      |     |         |
+|  | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR | CBIR(A) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 021.03.01.01.01 | X | X | X | X | X |  |  |
 
 ## Summary
 
@@ -28,11 +25,9 @@ In Aviation, it's typical to use PSI instead of the SI unit, Pascal.
 
 ### Pascal's law
 
-> Pressure in an enclosed container is transmitted equally and undiminished to
-> all parts of the container and acts at right angles to the enclosing walls.
+> Pressure in an enclosed container is transmitted equally and undiminished to all parts of the container and acts at right angles to the enclosing walls.
 
-Or, in simpler terms: you can assume that the pressure is constant in the entire
-fluid. That includes the walls. For example:
+Or, in simpler terms: you can assume that the pressure is constant in the entire fluid. That includes the walls. For example:
 
 ```
     F1                             F2
@@ -45,8 +40,7 @@ fluid. That includes the walls. For example:
 |__________________________________________|
 ```
 
-At any surface you can assume that a constant P exists. So you if you know F1
-you can calculate F2:
+At any surface you can assume that a constant P exists. So you if you know F1 you can calculate F2:
 
 ```js
 P = F1 / A = F2 / (2 * A)
@@ -56,8 +50,7 @@ F2 = (2 * A * F1) / A => F2 = 2 * F1
 
 ### Pump Power
 
-A pump deliver a certain mass flow (`m^3 / s`) with a certain Pressure
-(`Pa => N / m^2`). Pump Power can be calculated by multiplying these two values:
+A pump deliver a certain mass flow (`m^3 / s`) with a certain Pressure (`Pa => N / m^2`). Pump Power can be calculated by multiplying these two values:
 
 ```js
 Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
@@ -72,7 +65,7 @@ Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
       B: [5],
       C: [10, 20, 50, 100]
     }}
-    answerFunction={(A, B, C) => A * B / C}
+    answerFunction={(A, B, C) => `${A * B / C}N`}
   />
   <Text>
     knowing 
@@ -92,5 +85,4 @@ Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
     ```
 
   </Text>
-  <Option id="ZLrZrAAp-1"><Answer />N</Option>
 </Question>
