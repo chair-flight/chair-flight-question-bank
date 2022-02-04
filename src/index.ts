@@ -104,7 +104,6 @@ const statistics = Object.keys(contentIndex.los).reduce<
   Record<string, [number, number]>
 >((sum, lo) => {
   const index = lo.split(".")[0] ?? "";
-  console.log(contentIndex.content[lo]);
   return {
     ...sum,
     [index]: [
