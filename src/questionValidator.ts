@@ -18,10 +18,17 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
     related: z.array(z.string()),
     annexes: z.array(z.string()),
     texts: z.array(
-      z.object({
-        text: z.string(),
-        variant: z.enum(["oneTwo", "oneCorrect", "multipleCorrect"]),
-      })
+      z.union([
+        z.object({
+          text: z.string(),
+          variant: z.enum(["oneTwo", "oneCorrect"]),
+        }),
+        z.object({
+          text: z.string(),
+          variant: z.enum(["multipleCorrect"]),
+          select: z.number().min(4),
+        }),
+      ])
     ),
     options: z
       .array(
@@ -43,10 +50,17 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
     related: z.array(z.string()),
     annexes: z.array(z.string()),
     texts: z.array(
-      z.object({
-        text: z.string(),
-        variant: z.enum(["oneCorrect", "oneTwo", "multipleCorrect"]),
-      })
+      z.union([
+        z.object({
+          text: z.string(),
+          variant: z.enum(["oneTwo", "oneCorrect"]),
+        }),
+        z.object({
+          text: z.string(),
+          variant: z.enum(["multipleCorrect"]),
+          select: z.number().min(4),
+        }),
+      ])
     ),
     options: z
       .array(

@@ -51,10 +51,15 @@ const getQuestionAttributes = (node: Node) => ({
   explanation: node.attributes.find((n) => n.name === "explanation")?.value,
 });
 
-const getTextAttributes = (node: Node, mdxFile: string) => ({
-  variant: node.attributes.find((n) => n.name === "variant")?.value ?? "",
-  text: getNodeInnerText(node, mdxFile),
-});
+const getTextAttributes = (node: Node, mdxFile: string) => {
+  const selectNode = node.attributes.find((n) => n.name === "select")?.value;
+  const selectAsString = getAttributeValueAsString(selectNode);
+  return {
+    variant: node.attributes.find((n) => n.name === "variant")?.value ?? "",
+    select: selectAsString ? Number(selectAsString) : undefined,
+    text: getNodeInnerText(node, mdxFile),
+  };
+};
 
 const getAttributeValueAsArray = (
   value: string | NodeAttribute | undefined
