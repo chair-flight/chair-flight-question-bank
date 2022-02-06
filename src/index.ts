@@ -116,9 +116,9 @@ const statistics = Object.keys(contentIndex.los).reduce<
 Object.entries(statistics)
   .map(
     ([module, [covered, total]]) =>
-      `https://img.shields.io/badge/coverage%20${module}-${covered}%2F${total}%20${(
+      `<img src="https://img.shields.io/badge/coverage%20${module}-${covered}%2F${total}%20${(
         (covered / total) *
         100
-      ).toFixed()}%25-red`
+      ).toFixed()}%25-red" />`
   )
   .map((entry) => console.log(entry));

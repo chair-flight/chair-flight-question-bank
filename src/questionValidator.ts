@@ -45,7 +45,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
     texts: z.array(
       z.object({
         text: z.string(),
-        variant: z.enum(["oneCorrect", "oneTwo"]),
+        variant: z.enum(["oneCorrect", "oneTwo", "multipleCorrect"]),
       })
     ),
     options: z

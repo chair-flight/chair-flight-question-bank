@@ -43,7 +43,7 @@ export type QuestionMetadata =
     })
   | (QuestionBaseAttributes<"definition"> & {
       texts: Array<{
-        variant: "oneCorrect" | "oneTwo";
+        variant: "oneCorrect" | "oneTwo" | "multipleCorrect";
         text: string;
       }>;
       options: Array<{
