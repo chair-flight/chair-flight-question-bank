@@ -12,18 +12,22 @@ Title: Autobrake
 3. **021.04.03.04.03** -- Explain the difference between the three modes of operation of an autobrake system: OFF (system off or reset); Armed (the system is ready to operate under certain conditions); Activated/Deactivated (application of pressure on brakes).
 4. **021.04.03.04.04** -- Describe how an autobrake system setting will either apply maximum braking (RTO or MAX) or result in a given rate of deceleration, where the amount of braking applied may be affected by: the use of reverse thrust; slippery runway.
 
-|  | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR | CBIR(A) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 021.04.03.04.01 | X | X |  |  |  |  |  |
-| 021.04.03.04.02 | X | X |  |  |  |  |  |
-| 021.04.03.04.03 | X | X |  |  |  |  |  |
-| 021.04.03.04.04 | X | X |  |  |  |  |  |
+|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
+| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
+| 021.04.03.04.01 | X       | X      |            |             |        |     |         |
+| 021.04.03.04.02 | X       | X      |            |             |        |     |         |
+| 021.04.03.04.03 | X       | X      |            |             |        |     |         |
+| 021.04.03.04.04 | X       | X      |            |             |        |     |         |
 
 ## Summary
 
 ## Questions
 
-<Question id="Hm2XB00lDW" variant="correct" lo={["021.04.03.04.01"]}>
+<Question
+  id="Hm2XB00lDW"
+  variant="correct"
+  lo={["021.04.03.04.01", "021.04.03.04.02", "021.04.03.04.04"]}
+>
   <Text variant="oneCorrect">
     The correct statement in relation to the autobrake system is...
   </Text>
@@ -51,6 +55,13 @@ Title: Autobrake
   <Option id="Hm2XB00lDW-4" correct why="">
     When using the lowest autobrake setting and reverse thrust, the brake
     temperature will be reduced.
+  </Option>
+  <Option
+    id="Hm2XB00lDW-C"
+    correct
+    why="The autobrake system maintains a pre-selected deceleration rate, adapting the brake force as the plane slows down, or as other means of breaking become active (i.e: thrust reverser). Do not confuse with RTO mode where all the available brake pressure is applied!"
+  >
+    An autobrake gives constant deceleration on dry runway
   </Option>
   <Option
     id="Hm2XB00lDW-5"
@@ -90,6 +101,19 @@ Title: Autobrake
   <Option id="Hm2XB00lDW-A" why="">
     In most aircraft, there is an option in the autobrake to select the exact
     landing distance.
+  </Option>
+  <Option
+    id="Hm2XB00lDW-B"
+    why="Aerobraking with INOP anti-skid would result in a hydroplaning aircraft for wet runways which is not a good idea."
+  >
+    An autobrake can be used if anti-skid is inoperative
+  </Option>
+  <Option
+    id="Hm2XB00lDW-E"
+    why="This is not correct, as the autobrake maintains a constant deceleration ratio. Only in RTO mode is the deceleration rate maximum"
+  >
+    An autobrake will always stop the aeroplane within the shortest possible
+    distance
   </Option>
 </Question>
 
