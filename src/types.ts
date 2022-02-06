@@ -30,10 +30,17 @@ export type QuestionBaseAttributes<V extends QuestionVariant> = {
 
 export type QuestionMetadata =
   | (QuestionBaseAttributes<"correct"> & {
-      texts: Array<{
-        variant: "oneCorrect" | "oneTwo" | "multipleCorrect";
-        text: string;
-      }>;
+      texts: Array<
+        | {
+            variant: "oneCorrect" | "oneTwo";
+            text: string;
+          }
+        | {
+            variant: "multipleCorrect";
+            text: string;
+            select: number;
+          }
+      >;
       options: Array<{
         id: string;
         innerText: string;
@@ -42,10 +49,17 @@ export type QuestionMetadata =
       }>;
     })
   | (QuestionBaseAttributes<"definition"> & {
-      texts: Array<{
-        variant: "oneCorrect" | "oneTwo" | "multipleCorrect";
-        text: string;
-      }>;
+      texts: Array<
+        | {
+            variant: "oneCorrect" | "oneTwo";
+            text: string;
+          }
+        | {
+            variant: "multipleCorrect";
+            text: string;
+            select: number;
+          }
+      >;
       options: Array<{
         id: string;
         innerText: string;
