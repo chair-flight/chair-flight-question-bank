@@ -1,6 +1,6 @@
 {
   "name": "chair-flight-question-bank",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "description": "An open source Aviation Question bank",
   "type": "module",
   "main": "lib/index.js",
@@ -10,7 +10,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "node --experimental-specifier-resolution=node --loader ts-node/esm  src/index.ts",
+    "build": "tsc & node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
     "clean": "rm -rf ./lib/",
     "prepare": "husky install && yarn build",
     "semantic-release": "semantic-release",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^16.0.0",
+    "@open-wc/building-rollup": "^2.0.1",
     "@types/jest": "^26.0.24",
     "@types/node": "^12.20.11",
     "codecov": "^3.8.1",
@@ -40,6 +41,7 @@
     "prettier": "^2.5.1",
     "remark": "^14.0.2",
     "remark-mdx": "^2.0.0-rc.2",
+    "rollup": "^2.67.2",
     "semantic-release": "^17.4.7",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
