@@ -4,7 +4,7 @@
     "module": "es6",
     "moduleResolution": "Node",
     "declaration": true,
-    "outDir": "./lib/",
+    "outDir": "./lib-tsc-out/",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,

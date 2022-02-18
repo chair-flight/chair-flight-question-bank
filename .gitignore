@@ -1,4 +1,5 @@
 node_modules
+lib-tsc-out
 lib
 .vscode
 .DS_Store
