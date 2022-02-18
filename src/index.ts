@@ -3,7 +3,7 @@ import matter from "gray-matter";
 import lodash from "lodash";
 import { QuestionBankIndex } from "./types";
 import { getQuestionsFromMdx } from "./questionParser";
-import { getLosFormMdx } from "./losParer";
+import { getLosFormMdx } from "./losParser";
 
 const files = fs
   .readdirSync("./questionBank")
@@ -86,6 +86,8 @@ fs.mkdirSync("./lib/content/images", { recursive: true });
 fs.writeFileSync("./lib/index.js", indexFile);
 fs.writeFileSync("./lib/index.json", jsonFile);
 fs.writeFileSync("./lib/index.d.ts", typesFile);
+fs.copyFileSync(`./lib-tsc-out/src/losParser.js`, `./lib/losParser.js`);
+fs.copyFileSync(`./lib-tsc-out/src/losParser.d.ts`, `./lib/losParser.d.ts`);
 
 files.forEach((f) =>
   fs.copyFileSync(`./questionBank/${f}`, `./lib/content/${f}`)
