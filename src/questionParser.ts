@@ -27,12 +27,16 @@ const getQuestionData = (node: Node) => {
   const explanationNode = relevantNodes.find(
     (node) => node.name === "Explanation"
   );
+  const explanationRef = node.attributes.find(
+    (attr) => attr.name === "explanation"
+  )?.value;
 
   return {
     textNodes,
     optionNodes,
     variablesNode,
     explanationNode,
+    explanationRef,
   };
 };
 
@@ -135,6 +139,20 @@ const getVariablesData = (node?: Node) => {
   };
 };
 
+const getExplanationTag = (explanationRef: string, mdxFile: string) => {
+  try {
+    const level = Math.max(explanationRef.match(/#/g)?.length ?? 0, 2);
+    const matchAfter = mdxFile.split(explanationRef);
+    const matchBefore = matchAfter[1].split(
+      new RegExp(`^#{1,${level - 1}} `, "gm")
+    );
+    return matchBefore[0];
+  } catch (e) {
+    console.error(e);
+    throw new Error(`Error retrieving explanation with tag: ${explanationRef}`);
+  }
+};
+
 export const getQuestionsFromMdx = (
   mdxFile: string,
   contentId: string
@@ -144,15 +162,21 @@ export const getQuestionsFromMdx = (
   const remarkGetQuestions = () => (tree: Tree) => {
     tree.children.forEach((leaf) => {
       if (leaf.name === "Question") {
-        const { textNodes, optionNodes, variablesNode, explanationNode } =
-          getQuestionData(leaf);
+        const {
+          textNodes,
+          optionNodes,
+          variablesNode,
+          explanationNode,
+          explanationRef,
+        } = getQuestionData(leaf);
         const attributes = getQuestionAttributes(leaf);
         const texts = textNodes.map((n) => getTextAttributes(n, mdxFile));
         const options = optionNodes.map((n) => getOptionData(n, mdxFile));
         const { variables, answerFunction } = getVariablesData(variablesNode);
-        const explanation = explanationNode
-          ? getNodeInnerText(explanationNode, mdxFile)
-          : "";
+        const explanation =
+          (explanationNode && getNodeInnerText(explanationNode, mdxFile)) ??
+          (explanationRef && getExplanationTag(explanationRef, mdxFile)) ??
+          "";
         const related: string[] = []; // TODO parse related question Ids and add them here
         const annexes: string[] = []; // TODO parse annex references and add them here
         const question = {

@@ -8,9 +8,7 @@ import { getLosFormMdx } from "./losParser";
 const files = fs
   .readdirSync("./questionBank")
   .filter((f) => f.includes(".mdx"));
-const images = fs
-  .readdirSync("./questionBank/images")
-  .filter((f) => f.includes(".png"));
+const images = fs.readdirSync("./questionBank/images");
 
 const contentIndex = files
   .map((f) => f.replace(".mdx", ""))
