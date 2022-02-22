@@ -8,7 +8,7 @@ An Open source aviation question bank. **Still in (super early) development ;)**
 
 <p align="center">
   <img src="https://img.shields.io/badge/coverage%20010-0%2F507%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20021-61%2F667%209%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20021-70%2F667%2010%25-red" />
   <img src="https://img.shields.io/badge/coverage%20022-13%2F471%203%25-red" />
   <img src="https://img.shields.io/badge/coverage%20031-0%2F86%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20032-0%2F243%200%25-red" />
@@ -26,19 +26,33 @@ An Open source aviation question bank. **Still in (super early) development ;)**
 
 ## Contributing
 
-All content contributions are more than welcome. Content is written using [MDX](https://mdxjs.com/), which is a superset of [Markdown](https://en.wikipedia.org/wiki/Markdown). All boilerplate is already put in place, so if you want to write some content, or add questions... go ahead!
+All content contributions are more than welcome. Content is written using
+[MDX](https://mdxjs.com/), which is a superset of
+[Markdown](https://en.wikipedia.org/wiki/Markdown). All boilerplate is already
+put in place, so if you want to write some content, or add questions... go
+ahead!
 
 ## Versioning
 
-The goal is to use semantic version, nevertheless until version 1.0.0 is released, we reserve the right of doing breaking changes unannounced on minor releases. (i.e version `0.0.22` may contain breaking changes from version `0.0.21`).
+The goal is to use semantic version, nevertheless until version 1.0.0 is
+released, we reserve the right of doing breaking changes unannounced on minor
+releases. (i.e version `0.0.22` may contain breaking changes from version
+`0.0.21`).
 
 ## Using it
 
-This package is distributed [via NPM](https://www.npmjs.com/package/chair-flight-question-bank). The distribution includes all MDX files, under `lib/content`, a json export with metadata of all the content, and the same metadata export as a `JS`/`TS` friendly package.
+This package is distributed
+[via NPM](https://www.npmjs.com/package/chair-flight-question-bank). The
+distribution includes all MDX files, under `lib/content`, a json export with
+metadata of all the content, and the same metadata export as a `JS`/`TS`
+friendly package.
 
 ## Question variants
 
-Questions are always written in a very limited subset of JSX that does not allow for variables... basically HTML, with custom tags (so, no variables allowed...). Each variant represents a different type of question. Each question has three mandatory parameters
+Questions are always written in a very limited subset of JSX that does not allow
+for variables... basically HTML, with custom tags (so, no variables allowed...).
+Each variant represents a different type of question. Each question has three
+mandatory parameters
 
 ### Correct
 

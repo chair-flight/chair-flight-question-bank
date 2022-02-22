@@ -4,6 +4,7 @@ import { Node, NodeAttribute } from "./typesParser";
 import { QuestionId, QuestionMetadata, QuestionVariant } from "./types";
 import { Tree } from "./typesParser";
 import { questionValidator } from "./questionValidator";
+import { default as dedent } from "dedent-js";
 
 const getRelevantNodes = (node: Node, depth = 1): Node[] => {
   const relevantNodes: Node[] = [];
@@ -43,7 +44,11 @@ const getQuestionData = (node: Node) => {
 const getNodeInnerText = (node: Node, mdxFile: string): string => {
   const start = node.children[0].position.start.offset;
   const end = node.children[node.children.length - 1].position.end.offset;
-  return mdxFile.slice(start, end);
+  return mdxFile
+    .slice(start, end)
+    .split("\n")
+    .map((l) => l.trim())
+    .join("\n");
 };
 
 const getQuestionAttributes = (node: Node) => ({
@@ -52,7 +57,7 @@ const getQuestionAttributes = (node: Node) => ({
   lo: getAttributeValueAsArray(
     node.attributes.find((n) => n.name === "lo")?.value
   ),
-  explanation: node.attributes.find((n) => n.name === "explanation")?.value,
+  explanation: node.attributes.find((n) => n.name === "explanation"),
 });
 
 const getTextAttributes = (node: Node, mdxFile: string) => {
