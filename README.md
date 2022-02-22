@@ -2,10 +2,6 @@
 
 An Open source aviation question bank. **Still in (super early) development ;)**
 
-<a>
-<img href="https://img.shields.io/badge/coverage%20010-0%2F507%200%25-red"  />
-</a>
-
 <p align="center">
   <img src="https://img.shields.io/badge/coverage%20010-0%2F507%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20021-70%2F667%2010%25-red" />
