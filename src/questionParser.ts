@@ -206,7 +206,8 @@ export const getQuestionsFromMdx = (
     });
   };
 
-  remark().use(remarkMdx).use(remarkGetQuestions).processSync(mdxFile);
+  const questionsPart = mdxFile.split("# Questions").pop();
+  remark().use(remarkMdx).use(remarkGetQuestions).processSync(questionsPart);
 
   return questions;
 };

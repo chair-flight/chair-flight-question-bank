@@ -2,7 +2,7 @@ export type AnswerId = string;
 export type QuestionId = string;
 export type QuestionBlockId = string;
 export type ContentId = string;
-export type LearningObject = string;
+export type LearningObjective = string;
 export type jsStringFunction = string;
 
 export type CourseName =
@@ -86,8 +86,13 @@ export type QuestionBankContentMap = Record<
   Record<ContentId, Record<ContentId, {}>>
 >;
 
+export type LearningObjectiveMetadata = {
+  courses: CourseName[];
+  text: string;
+};
+
 export type QuestionBankIndex = {
-  los: Record<LearningObject, CourseName[]>;
+  los: Record<LearningObjective, LearningObjectiveMetadata>;
   content: Record<ContentId, QuestionBankContentMetaData>;
   contentTree: Record<ContentId, QuestionBankContentMap>;
   questions: Record<QuestionId, QuestionMetadata>;
