@@ -124,10 +124,12 @@ const getAttributeValueAsMap = (
 const getOptionData = (node: Node, mdxFile: string) => ({
   id: node.attributes.find((n) => n.name === "id")?.value ?? "",
   correct: !!node.attributes.find((n) => n.name === "correct"),
-  why: node.attributes.find((n) => n.name === "why")?.value,
   innerText: getNodeInnerText(node, mdxFile),
   subject: getAttributeValueAsArray(
     node.attributes.find((n) => n.name === "subject")?.value
+  ),
+  why: getAttributeValueAsString(
+    node.attributes.find((n) => n.name === "why")?.value
   ),
 });
 
@@ -163,6 +165,7 @@ export const getQuestionsFromMdx = (
   contentId: string
 ): Record<QuestionId, QuestionMetadata> => {
   const questions: Record<QuestionId, QuestionMetadata> = {};
+  const questionsMdx = mdxFile.split("# Questions").pop() ?? "";
 
   const remarkGetQuestions = () => (tree: Tree) => {
     tree.children.forEach((leaf) => {
@@ -175,12 +178,13 @@ export const getQuestionsFromMdx = (
           explanationRef,
         } = getQuestionData(leaf);
         const attributes = getQuestionAttributes(leaf);
-        const texts = textNodes.map((n) => getTextAttributes(n, mdxFile));
-        const options = optionNodes.map((n) => getOptionData(n, mdxFile));
+        const texts = textNodes.map((n) => getTextAttributes(n, questionsMdx));
+        const options = optionNodes.map((n) => getOptionData(n, questionsMdx));
         const { variables, answerFunction } = getVariablesData(variablesNode);
         const explanation =
-          (explanationNode && getNodeInnerText(explanationNode, mdxFile)) ??
-          (explanationRef && getExplanationTag(explanationRef, mdxFile)) ??
+          (explanationNode &&
+            getNodeInnerText(explanationNode, questionsMdx)) ??
+          (explanationRef && getExplanationTag(explanationRef, questionsMdx)) ??
           "";
         const related: string[] = []; // TODO parse related question Ids and add them here
         const annexes: string[] = []; // TODO parse annex references and add them here
@@ -206,8 +210,7 @@ export const getQuestionsFromMdx = (
     });
   };
 
-  const questionsPart = mdxFile.split("# Questions").pop();
-  remark().use(remarkMdx).use(remarkGetQuestions).processSync(questionsPart);
+  remark().use(remarkMdx).use(remarkGetQuestions).processSync(questionsMdx);
 
   return questions;
 };

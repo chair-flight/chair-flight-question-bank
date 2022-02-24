@@ -36,6 +36,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           id: z.string().min(6),
           innerText: z.string(),
           correct: z.boolean(),
+          why: z.string().optional(),
         })
       )
       .min(4)
@@ -68,6 +69,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           id: z.string().min(6),
           innerText: z.string(),
           subject: z.array(z.string()).optional(),
+          why: z.string().optional(),
         })
       )
       .min(4)
