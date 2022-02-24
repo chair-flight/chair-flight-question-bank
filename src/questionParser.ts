@@ -184,7 +184,7 @@ export const getQuestionsFromMdx = (
         const explanation =
           (explanationNode &&
             getNodeInnerText(explanationNode, questionsMdx)) ??
-          (explanationRef && getExplanationTag(explanationRef, questionsMdx)) ??
+          (explanationRef && getExplanationTag(explanationRef, mdxFile)) ??
           "";
         const related: string[] = []; // TODO parse related question Ids and add them here
         const annexes: string[] = []; // TODO parse annex references and add them here
