@@ -1,7 +1,8 @@
 name: Publish Package to npm
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,7 +15,7 @@ jobs:
           tag_name: "v%s"
           tag_message: "v%s"
           create_tag: "true"
-          commit_pattern: "^chore: release v(\\S+)"
+          commit_pattern: "^chore(release): v(\\S+)"
           workspace: "."
           publish_command: "yarn"
           publish_args: "--non-interactive"
