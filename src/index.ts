@@ -43,6 +43,7 @@ const contentIndex = files
         id: id,
         title: frontMatter.Title,
         questions: Object.keys(questions),
+        los: Object.keys(los),
       };
 
       Object.keys(questions).forEach((q) => {

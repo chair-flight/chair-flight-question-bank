@@ -79,6 +79,7 @@ export type QuestionBankContentMetaData = {
   id: ContentId;
   title: string;
   questions: QuestionId[];
+  los: LearningObjective[];
 };
 
 export type QuestionBankContentMap = Record<
