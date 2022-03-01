@@ -12,8 +12,8 @@ An Open source aviation question bank. **Still in (super early) development ;)**
   <img src="https://img.shields.io/badge/coverage%20034-0%2F85%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20040-0%2F363%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20050-0%2F465%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20061-0%2F119%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20062-0%2F328%200%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20061-8%2F119%207%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20062-1%2F328%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20071-0%2F388%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20081-2%2F498%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20082-0%2F204%200%25-red" />
