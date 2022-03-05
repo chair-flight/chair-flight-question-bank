@@ -117,7 +117,6 @@ times higher or lower.
   lo={["062.01.01.03.01", "062.02.01.01.01"]}
 >
   <Text variant="oneCorrect">
-    {" "}
     The VHF direction finder uses the following wave lengths....
   </Text>
   <Option
@@ -131,9 +130,15 @@ times higher or lower.
   <Option id="xXs0JfqOdQab-3">Centimetric</Option>
   <Option id="xXs0JfqOdQab-4">Hectometric</Option>
   <Explanation>
-    This question is really asking you the order of magnitude of the amplitude
-    for waves used in VHF (30-300 MHz) transmissions: The best answer is
-    therefore metres.
+    {`This question is really asking you the order of magnitude of the amplitude
+    for waves used in VHF (30-300 MHz) transmissions: 
+    
+    $$
+    \frac{3\times10^{8} m/s}{(30 - 300)\times10^{6} hz} \approx (0.2 - 2)m
+    $$
+
+    The best answer is therefore metres.`}
+
   </Explanation>
 </Question>
 

@@ -123,3 +123,10 @@ Object.entries(statistics)
       ).toFixed()}%25-red" />`
   )
   .map((entry) => console.log(entry));
+
+const a = Object.values(statistics).reduce(
+  (sum, [covered, total]) => [sum[0] + covered, sum[1] + total],
+  [0, 0]
+);
+
+console.log(a);
