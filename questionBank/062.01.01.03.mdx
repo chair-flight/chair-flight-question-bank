@@ -79,6 +79,15 @@ times higher or lower.
   - A -> Aural telegraphy, intended to be decoded by hear (i.e.: Morse code)
   - E -> Voice communications
 
+### SSB
+
+SSB is a form of amplitude modulation that allows for more efficient use of
+bandwidth at a cost of increased device complexity and more difficult tuning to
+the frequency. It is used for:
+
+- VOLMET
+- HF two way communication
+
 ## Questions
 
 <Question id="xXs0JfqOdQai" variant="definition" lo={["062.01.01.03.01"]}>
@@ -114,32 +123,77 @@ times higher or lower.
 <Question
   id="xXs0JfqOdQab"
   variant="definition"
-  lo={["062.01.01.03.01", "062.02.01.01.01"]}
+  lo={["062.01.01.03.01", "062.02.01.01.01", "062.02.04.01.01"]}
 >
   <Text variant="oneCorrect">
-    The VHF direction finder uses the following wave lengths....
+    The <Subject /> uses the following wave lengths....
   </Text>
   <Option
     id="xXs0JfqOdQab-1"
-    correct
-    why=" VHF range is between 30-300Mhz. When we divide the speed of light by this value we get a wave length between 0.2 and 2metres."
+    subject="VHF direction finder"
+    why="VHF range is between 30-300Mhz. When we divide the speed of light by this value we get a wave length between 1 and 10 metres."
   >
     Metric
   </Option>
-  <Option id="xXs0JfqOdQab-2">Decimetric</Option>
+  <Option 
+    id="xXs0JfqOdQab-2"
+    subject="Distance MEasuring Equipment (DME)"
+    why="DME range is between 960 - 1213 MHz in the UHF band. When we divide the speed of light by this value we get a wave length between 0.3 and 0.24 metres."
+  >
+    Decimetric
+  </Option>
   <Option id="xXs0JfqOdQab-3">Centimetric</Option>
   <Option id="xXs0JfqOdQab-4">Hectometric</Option>
   <Explanation>
     {`This question is really asking you the order of magnitude of the amplitude
-    for waves used in VHF (30-300 MHz) transmissions: 
+    for waves used in givent spectrum.
+    
+    For VHF (30-300 MHz) transmissions: 
     
     $$
-    \frac{3\times10^{8} m/s}{(30 - 300)\times10^{6} hz} \approx (0.2 - 2)m
+    \frac{3\times10^{8} m/s}{(30 - 300)\times10^{6} hz} \approx (1 - 10)m
     $$
 
-    The best answer is therefore metres.`}
+    The best answer is therefore metres.
+
+    For DME (960 - 1213 MHz)
+
+    $$
+    \frac{3\times10^{8} m/s}{(960 - 1213)\times10^{6} hz} \approx (0.24 - 0.3)m
+    $$
+
+    The best answer is therefore Decimetres (0.1 metres = 1 Decimetre).
+
+`}
 
   </Explanation>
+</Question>
+
+<Question
+  id="g1AcXFB2ei"
+  variant="correct"
+  lo={["062.01.01.03.03"]}
+  explanation="# SSB"
+>
+  <Text variant="oneCorrect">Where is Single Side Band used?</Text>
+  <Option id="g1AcXFB2ei-1" correct>
+    in HF two-way communication
+  </Option>
+  <Option id="g1AcXFB2ei-2" correct>
+    in VOLMET transmissions
+  </Option>
+  <Option
+    id="g1AcXFB2ei-3"
+    why="METARs transmissions are not a thing. VOLMETs are transmitted using SSB while MET Reports are not."
+  >
+    in METAR transmissions
+  </Option>
+  <Option id="g1AcXFB2ei-4" why="">
+    in NDB transmissions
+  </Option>
+  <Option id="g1AcXFB2ei-5" why="">
+    in VHF transmissions
+  </Option>
 </Question>
 
 <Question
