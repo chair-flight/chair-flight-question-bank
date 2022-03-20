@@ -123,7 +123,7 @@ the frequency. It is used for:
 <Question
   id="xXs0JfqOdQab"
   variant="definition"
-  lo={["062.01.01.03.01", "062.02.01.01.01", "062.02.04.01.01"]}
+  lo={["062.01.01.03.01", "062.02.01.01.01", "062.02.04.01.01", "062.02.06.01.02"]}
 >
   <Text variant="oneCorrect">
     The <Subject /> uses the following wave lengths....
@@ -142,7 +142,13 @@ the frequency. It is used for:
   >
     Decimetric
   </Option>
-  <Option id="xXs0JfqOdQab-3">Centimetric</Option>
+  <Option 
+    id="xXs0JfqOdQab-a"
+    subject="Microwave Landing System (MLS)"
+    why="MLS uses SHF, which is between  3-30 GHz. hen we divide the speed of light by this value we get a wave length between 1 and 10 centimetres."
+  >
+    Centimetric
+  </Option>
   <Option id="xXs0JfqOdQab-4">Hectometric</Option>
   <Explanation>
     {`This question is really asking you the order of magnitude of the amplitude
@@ -162,9 +168,7 @@ the frequency. It is used for:
     \frac{3\times10^{8} m/s}{(960 - 1213)\times10^{6} hz} \approx (0.24 - 0.3)m
     $$
 
-    The best answer is therefore Decimetres (0.1 metres = 1 Decimetre).
-
-`}
+    The best answer is therefore Decimetres (0.1 metres = 1 Decimetre).`}
 
   </Explanation>
 </Question>
@@ -212,14 +216,14 @@ the frequency. It is used for:
     subject={["First"]}
     why="definition for first symbol"
   >
-    Type of modulation of the main carrier{" "}
+    Type of modulation of the main carrier
   </Option>
   <Option
     id="xXs0JOdQai-2"
     subject={["First"]}
     why="definition for first symbol"
   >
-    Nature of modulation of the main carrier{" "}
+    Nature of modulation of the main carrier
   </Option>
   <Option
     id="xXs0JOdQai-3"
