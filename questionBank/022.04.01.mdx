@@ -4,3 +4,101 @@ Title: "Gyroscope: basic principles"
 ---
 
 # Gyroscope: basic principles
+
+## Learning Objectives
+
+1. **022.04.01.01.01** -- Define a "gyro".
+2. **022.04.01.01.02** -- Explain the fundamentals of the theory of gyroscopic
+   forces.
+3. **022.04.01.01.03** -- Define the "degrees of freedom" of a gyro. Remark: As
+   a convention, the degrees of freedom of a gyroscope do not include its own
+   axis of rotation (the spin axis).
+4. **022.04.01.01.04** -- Explain the following terms: rigidity; precession;
+   wander (drift/topple).
+5. **022.04.01.01.05** -- Explain the three types of gyro wander: real wander;
+   apparent wander; transport wander.
+6. **022.04.01.01.06** -- Describe the two ways of driving gyroscopes and any
+   associated indications: air/vacuum; electrically.
+
+|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
+| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
+| 022.04.01.01.01 | X       | X      | X          | X           | X      | X   | X       |
+| 022.04.01.01.02 | X       | X      | X          | X           | X      | X   | X       |
+| 022.04.01.01.03 | X       | X      | X          | X           | X      | X   | X       |
+| 022.04.01.01.04 | X       | X      | X          | X           | X      | X   |         |
+| 022.04.01.01.05 | X       | X      | X          | X           | X      | X   |         |
+| 022.04.01.01.06 | X       | X      | X          | X           | X      | X   | X       |
+
+## Summary
+
+### Definitions
+
+- **Rigidity**:
+- **Precession**
+- **Drift**: Movement of the gyro spi naxis along the horizontal plane
+- **Topple**: Movement of the gyro spin axis in the vertical plane
+- **Rate Gyro**: Gyro having freedom to rate around only one axis. Used for Rate
+  of Turn indicator.
+
+## Questions
+
+<Question id="5ihhLlu3bc" variant="correct" lo={["022.04.01.01.04"]}>
+  <Text variant="multipleCorrect" select={5}>
+    The basic properties of a Gyroscope are...
+  </Text>
+  <Option id="5ihhLlu3bc-1" correct why="">
+    Gyroscopic Precession
+  </Option>
+  <Option id="5ihhLlu3bc-2" correct why="">
+    Rigidity in space
+  </Option>
+  <Option id="5ihhLlu3bc-3" why="">
+    Gyroscopic drift
+  </Option>
+  <Option id="5ihhLlu3bc-4" why="">
+    nutation
+  </Option>
+  <Option id="5ihhLlu3bc-5" why="">
+    High RPM
+  </Option>
+  <Option id="5ihhLlu3bc-6" why="">
+    High weight
+  </Option>
+</Question>
+
+<Question
+  id="IDHERE"
+  variant="definition"
+  lo={["022.04.01.01.03", "022.04.03.01.03"]}
+>
+  <Text variant="oneCorrect">
+    An airborne instrument equipped with <Subject /> is...
+  </Text>
+  <Option
+    id="IDHERE-1"
+    subject={["a gyro with 2 degrees of freedom and an horizontal spin axis"]}
+  >
+    A directional gyros
+  </Option>
+  <Option
+    id="IDHERE-2"
+    subject={["a gyro with 1 degree of freedom and a horizontal spin axis"]}
+  >
+    A turn indicator
+  </Option>
+  <Option
+    id="IDHERE-3"
+    subject={["a gyro with 2 degrees of freedom and a vertical spin axis"]}
+  >
+    An Artificial Horizon
+  </Option>
+  <Option
+    id="IDHERE-4"
+    subject={["a gyro with 2 degrees of freedom and a vertical spin axis"]}
+  >
+    An Attitude indicator
+  </Option>
+  <Option id="IDHERE-6" why="does not use a gyro.">
+    A fluxgate compass
+  </Option>
+</Question>
