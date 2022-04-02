@@ -8,11 +8,16 @@ Title: "Pitot/static system: design and errors"
 ## Learning Objectives
 
 1. **022.02.01.02.01** -- Describe the design and the operating principle of a:
-   static port/source; pitot tube; combined pitot/static probe.
+   - static port/source;
+   - pitot tube;
+   - combined pitot/static probe.
 2. **022.02.01.02.02** -- For each of these indicate the various locations and
    describe the following associated errors and how to correct, minimise the
-   effect of or compensate for them: position errors; instrument errors; errors
-   due to a non-longitudinal axial flow (including manoeuvre-induced errors).
+   effect of or compensate for them:
+   - position errors;
+   - instrument errors;
+   - errors due to a non-longitudinal axial flow (including manoeuvre-induced
+     errors).
 3. **022.02.01.02.03** -- Describe a typical pitot/static system and list the
    possible outputs.
 4. **022.02.01.02.04** -- Explain the redundancy and the interconnections that
@@ -38,3 +43,79 @@ Title: "Pitot/static system: design and errors"
 ## Summary
 
 ## Questions
+
+<Question variant="definition" lo={["022.02.01.02.02"]} id="2I7zoG0J" >
+  <Text variant="oneCorrect">
+    If the <Subject /> the instrument will:
+  </Text>
+  <Option id="2I7zoG0J-1" >gradually indicate zero</Option>
+  <Option id="2I7zoG0J-2">indicate a height equivalent to the setting on the millibar subscale</Option>
+  <Option id="acLWrC2r-3" subject={[
+     "static source to an airspeed indicator (ASI) becomes blocked during a climb"
+  ]}>
+   under-read
+  </Option>
+  <Option id="acLWrC2r-4" subject={[
+     "static source to an airspeed indicator (ASI) becomes blocked during a descent"
+  ]}>
+   over-read
+  </Option>
+  <Option id="2I7zoG0J-5" subject={[
+     "static source of an altimeter becomes blocked during a descent", 
+     "static source of an altimeter becomes blocked during a climb", 
+   ]}>
+      continue to display the reading at which the blockage occurred
+   </Option>      
+  <Explanation>
+   The altimeter's only input source is static pressure. 
+   If this becomes blocked, the instrument will simply 'freeze',
+   indicating the altitude at which the blockage occurred.
+
+The Airspeed indicator has 2 inputs: The pitot tube and the static port.
+Velocity is computed from the difference between the total pressure and the
+static pressure. The higher the difference, the higher the speed.
+
+When the static port becomes blocked, the base value for this comparison
+stagnates.
+
+In case of a climb, the outside air pressure will be decreasing, while our
+instrument will be measuring a value that is higher than the real value. The
+total pressure pressure will also be decreasing, meaning that our instrument
+will begin to under read the velocity.
+
+The opposite is true during a descent where the static port will be
+under-reading the static pressure, but the dynamic pressure will keep
+increasing, leading to an over-read of the velocity.
+
+  </Explanation>
+</Question>
+
+<Question variant="correct" lo={[""]} id="aL3Lcv8J">
+  <Text variant="oneCorrect">
+    The error in altimeter readings caused by the variation of the static
+    pressure near the source is known as:
+  </Text>
+  <Option id="aL3Lcv8J-0">barometric error.</Option>
+  <Option id="aL3Lcv8J-1" correct>
+    position pressure error
+  </Option>
+  <Option id="aL3Lcv8J-2">hysteresis effect.</Option>
+  <Option id="aL3Lcv8J-3">instrument error.</Option>
+</Question>{" "}
+
+<Question variant="definition" lo={[""]} id="ZAbWwcqC">
+  <Text variant="oneCorrect">
+    When flying in <Subject />, the altimeter will:
+  </Text>
+  <Option id="ZAbWwcqC-0" subject="warm air (warm than standard atmosphere)">
+    underestimate
+  </Option>
+  <Option id="ZAbWwcqC-1">be just as correct as before</Option>
+  <Option id="ZAbWwcqC-2" subject="cold air (colder than standard atmosphere)">
+    overestimate
+  </Option>
+  <Option id="ZAbWwcqC-3">show the actual height above ground</Option>
+  <Explanation>
+    > From High to low, beware below! From Hot to cold, don't be bold!
+  </Explanation>
+</Question>{" "}

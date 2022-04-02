@@ -26,7 +26,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         z.object({
           text: z.string(),
           variant: z.enum(["multipleCorrect"]),
-          select: z.number().min(4),
+          select: z.number().min(3),
         }),
       ])
     ),
@@ -39,7 +39,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           why: z.string().optional(),
         })
       )
-      .min(4)
+      .min(3)
       .refine(...noDuplicateIds()),
   }),
   z.object({
@@ -59,7 +59,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
         z.object({
           text: z.string(),
           variant: z.enum(["multipleCorrect"]),
-          select: z.number().min(4),
+          select: z.number().min(3),
         }),
       ])
     ),
@@ -72,7 +72,7 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
           why: z.string().optional(),
         })
       )
-      .min(4)
+      .min(3)
       .refine(...noDuplicateIds()),
   }),
   z.object({

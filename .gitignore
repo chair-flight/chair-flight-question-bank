@@ -3,3 +3,4 @@ lib-tsc-out
 lib
 .vscode
 .DS_Store
+.private
