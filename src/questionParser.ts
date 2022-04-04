@@ -47,6 +47,7 @@ const getTextAttributes = (node: Node, mdxFile: string) => ({
   variant: node.attributes.find((n) => n.name === "variant")?.value ?? "",
   select: getAttributeValueAsNumber(node, "select"),
   text: getNodeInnerText(node, mdxFile),
+  subject: getAttributeValueAsString(node, "subject"),
   sameKey: getAttributeValueAsBoolean(node, "sameKey"),
   uniqueKey: getAttributeValueAsBoolean(node, "uniqueKey"),
 });

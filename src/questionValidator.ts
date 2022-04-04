@@ -22,18 +22,21 @@ export const questionValidator: ZodSchema<QuestionMetadata> = z.object({
         text: z.string(),
         variant: z.enum(["oneTwo"]),
         sameKey: z.boolean().default(false),
+        subject: z.string().optional(), // TODO allow only subjects from options
         uniqueKey: z.boolean().default(false),
       }),
       z.object({
         text: z.string(),
         variant: z.enum(["oneCorrect"]),
         sameKey: z.boolean().default(false),
+        subject: z.string().optional(), // TODO allow only subjects from options
         uniqueKey: z.boolean().default(false),
       }),
       z.object({
         text: z.string(),
         variant: z.enum(["multipleCorrect"]),
         select: z.number().min(3),
+        subject: z.string().optional(), // TODO allow only subjects from options
         sameKey: z.boolean().default(false),
         uniqueKey: z.boolean().default(false),
       }),

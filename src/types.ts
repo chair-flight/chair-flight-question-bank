@@ -32,12 +32,14 @@ export type QuestionMetadata = QuestionBaseAttributes & {
         variant: "oneCorrect";
         text: string;
         sameKey?: boolean;
+        subject?: string;
         uniqueKey?: boolean;
       }
     | {
         variant: "oneTwo";
         text: string;
         sameKey?: boolean;
+        subject?: string;
         uniqueKey?: boolean;
       }
     | {
