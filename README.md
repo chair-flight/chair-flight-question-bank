@@ -55,7 +55,7 @@ mandatory parameters
 Example:
 
 ```jsx
-<Question id="uniqueId" variant="correct" lo={["021.04.03.04.01"]}>
+<Question id="uniqueId" lo={["021.04.03.04.01"]}>
   <Text variant="oneCorrect">
     The correct statement in relation to the autobrake system is...
   </Text>
@@ -143,7 +143,7 @@ Which of these statements in relation to the autobrake system are correct?
 Example:
 
 ```jsx
-<Question variant="definition" id="uniqueId" lo="021.01.01.01.01">
+<Question id="uniqueId" lo="021.01.01.01.01">
   <Text variant="oneCorrect">
     Which statements about <Subject /> are correct?
   </Text>

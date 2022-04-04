@@ -8,87 +8,49 @@ const noDuplicateIds = (): [(arr: { id: string }[]) => boolean, string] => {
   ];
 };
 
-export const questionValidator: ZodSchema<QuestionMetadata> = z.union([
-  z.object({
-    variant: z.enum(["correct"]),
-    id: z.string().min(6),
-    contentId: z.string(),
-    lo: z.array(z.string()),
-    explanation: z.string(),
-    related: z.array(z.string()),
-    annexes: z.array(z.string()),
-    texts: z.array(
-      z.union([
-        z.object({
-          text: z.string(),
-          variant: z.enum(["oneTwo", "oneCorrect"]),
-        }),
-        z.object({
-          text: z.string(),
-          variant: z.enum(["multipleCorrect"]),
-          select: z.number().min(3),
-        }),
-      ])
-    ),
-    options: z
-      .array(
-        z.object({
-          id: z.string().min(6),
-          innerText: z.string(),
-          correct: z.boolean(),
-          why: z.string().optional(),
-        })
-      )
-      .min(3)
-      .refine(...noDuplicateIds()),
-  }),
-  z.object({
-    variant: z.enum(["definition"]),
-    id: z.string().min(6),
-    contentId: z.string(),
-    lo: z.array(z.string()),
-    explanation: z.string(),
-    related: z.array(z.string()),
-    annexes: z.array(z.string()),
-    texts: z.array(
-      z.union([
-        z.object({
-          text: z.string(),
-          variant: z.enum(["oneTwo", "oneCorrect"]),
-        }),
-        z.object({
-          text: z.string(),
-          variant: z.enum(["multipleCorrect"]),
-          select: z.number().min(3),
-        }),
-      ])
-    ),
-    options: z
-      .array(
-        z.object({
-          id: z.string().min(6),
-          innerText: z.string(),
-          subject: z.array(z.string()).optional(),
-          why: z.string().optional(),
-        })
-      )
-      .min(3)
-      .refine(...noDuplicateIds()),
-  }),
-  z.object({
-    variant: z.enum(["calculation"]),
-    id: z.string().min(6),
-    contentId: z.string(),
-    lo: z.array(z.string()),
-    explanation: z.string(),
-    related: z.array(z.string()),
-    annexes: z.array(z.string()),
-    variables: z.record(z.array(z.number()).min(1)),
-    answerFunction: z.string(),
-    texts: z.array(
+export const questionValidator: ZodSchema<QuestionMetadata> = z.object({
+  id: z.string().min(6),
+  contentId: z.string(),
+  lo: z.array(z.string()),
+  related: z.array(z.string()),
+  annexes: z.array(z.string()),
+  explanation: z.string(),
+  explanationRef: z.string().optional(),
+  texts: z.array(
+    z.union([
       z.object({
         text: z.string(),
+        variant: z.enum(["oneTwo"]),
+        sameKey: z.boolean().default(false),
+        uniqueKey: z.boolean().default(false),
+      }),
+      z.object({
+        text: z.string(),
+        variant: z.enum(["oneCorrect"]),
+        sameKey: z.boolean().default(false),
+        uniqueKey: z.boolean().default(false),
+      }),
+      z.object({
+        text: z.string(),
+        variant: z.enum(["multipleCorrect"]),
+        select: z.number().min(3),
+        sameKey: z.boolean().default(false),
+        uniqueKey: z.boolean().default(false),
+      }),
+    ])
+  ),
+  options: z
+    .array(
+      z.object({
+        id: z.string().min(6),
+        why: z.string().default(""),
+        key: z.number().optional(),
+        innerText: z.string(),
+        correct: z.boolean(),
+        neverCorrect: z.boolean().default(false),
+        subject: z.record(z.string()).optional(),
       })
-    ),
-  }),
-]);
+    )
+    .min(3)
+    .refine(...noDuplicateIds()),
+});

@@ -14,66 +14,50 @@ export type CourseName =
   | "IR"
   | "CBIR(A)";
 
-export type QuestionVariant = "correct" | "definition" | "calculation";
-
 export type QuestionTextVariant = "oneTwo" | "oneCorrect" | "multipleCorrect";
 
-export type QuestionBaseAttributes<V extends QuestionVariant> = {
-  variant: V;
+export type QuestionBaseAttributes = {
   id: string;
   contentId: ContentId;
   lo: string[];
   related: string[];
   annexes: string[];
   explanation: string;
+  explanationRef?: string;
 };
 
-export type QuestionMetadata =
-  | (QuestionBaseAttributes<"correct"> & {
-      texts: Array<
-        | {
-            variant: "oneCorrect" | "oneTwo";
-            text: string;
-          }
-        | {
-            variant: "multipleCorrect";
-            text: string;
-            select: number;
-          }
-      >;
-      options: Array<{
-        id: string;
-        innerText: string;
-        why?: string;
-        correct: boolean;
-      }>;
-    })
-  | (QuestionBaseAttributes<"definition"> & {
-      texts: Array<
-        | {
-            variant: "oneCorrect" | "oneTwo";
-            text: string;
-          }
-        | {
-            variant: "multipleCorrect";
-            text: string;
-            select: number;
-          }
-      >;
-      options: Array<{
-        id: string;
-        innerText: string;
-        why?: string;
-        subject?: string[];
-      }>;
-    })
-  | (QuestionBaseAttributes<"calculation"> & {
-      texts: Array<{
+export type QuestionMetadata = QuestionBaseAttributes & {
+  texts: Array<
+    | {
+        variant: "oneCorrect";
         text: string;
-      }>;
-      answerFunction: jsStringFunction;
-      variables: Record<string, number[]>;
-    });
+        sameKey?: boolean;
+        uniqueKey?: boolean;
+      }
+    | {
+        variant: "oneTwo";
+        text: string;
+        sameKey?: boolean;
+        uniqueKey?: boolean;
+      }
+    | {
+        variant: "multipleCorrect";
+        text: string;
+        select: number;
+        sameKey?: boolean;
+        uniqueKey?: boolean;
+      }
+  >;
+  options: Array<{
+    id: string;
+    innerText: string;
+    why?: string;
+    correct?: boolean;
+    neverCorrect?: boolean;
+    key?: number;
+    subject?: Record<string, string>;
+  }>;
+};
 
 export type QuestionBankContentMetaData = {
   id: ContentId;
