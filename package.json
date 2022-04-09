@@ -1,6 +1,6 @@
 {
   "name": "chair-flight-question-bank",
-  "version": "0.0.61",
+  "version": "0.0.62",
   "description": "An open source Aviation Question bank",
   "type": "module",
   "main": "lib/index.js",
