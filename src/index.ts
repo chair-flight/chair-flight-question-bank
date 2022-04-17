@@ -41,6 +41,7 @@ const contentIndex = files
 
       sum.content[id] = {
         id: id,
+        text: "",
         title: frontMatter.Title,
         questions: Object.keys(questions),
         los: Object.keys(los),

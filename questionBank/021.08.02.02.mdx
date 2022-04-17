@@ -56,65 +56,51 @@ data tables in the aircraft documentation.
 
 ## Questions
 
-<Question
-  id="NoE78czeBf"
-  lo="021.08.02.02.01"
-  explanation="### Baffles and Baffle valves"
->
+<Question lo="021.08.02.02.01" explanation="### Baffles and Baffle valves">
   <Text variant="oneCorrect">
     The purpose of <Subject /> in wing fuel tanks is to...
   </Text>
-  <Option id="NoE78czeBf-1" subject="baffles">
+  <Option subject={[["baffles"]]}>
     Dampen the movement of fuel inside the tank
   </Option>
   <Option
-    id="NoE78czeBf-6"
-    subject="baffles"
+    subject={[["baffles"]]}
     why="restrict as in 'make harder', not as in 'make impossible'."
   >
     Restrict fuel movement in the tank
   </Option>
-  <Option id="NoE78czeBf-2" subject={["baffle valves", "baffle check valves"]}>
+  <Option subject={[["baffle valves"], ["baffle check valves"]]}>
     Prevent fuel movement to the wing tips
   </Option>
-  <Option id="NoE78czeBf-3">Close the vent lines in case of turbulence</Option>
-  <Option id="NoE78czeBf-4">Prevent positive buildup inside the tank</Option>
-  <Option id="NoE78czeBf-5">
-    Limit high fuel flow during refuelling operations
-  </Option>
+  <Option>Close the vent lines in case of turbulence</Option>
+  <Option>Prevent positive buildup inside the tank</Option>
+  <Option>Limit high fuel flow during refuelling operations</Option>
 </Question>
 
-<Question id="omECWfTeNs" lo="021.08.02.02.01">
+<Question lo="021.08.02.02.01">
   <Text variant="oneCorrect">
     The operating pressure of a booster pump in a fuel supply system of a gas
     turbine aircraft is...
   </Text>
-  <Option id="omECWfTeNs-1" correct>
-    20 to 100 PSI
-  </Option>
-  <Option id="omECWfTeNs-2">5 to 20 PSI</Option>
-  <Option id="omECWfTeNs-3">1 to 5 PSI</Option>
-  <Option id="omECWfTeNs-4">100 to 300 PSI</Option>
+  <Option alwaysCorrect>20 to 100 PSI</Option>
+  <Option>5 to 20 PSI</Option>
+  <Option>1 to 5 PSI</Option>
+  <Option>100 to 300 PSI</Option>
 </Question>
 
-<Question id="3kx6xVm1Wh" lo="021.08.02.02.05" explanation="#dip-sticks">
+<Question lo="021.08.02.02.05" explanation="#dip-sticks">
   <Text variant="oneCorrect">
     The quantity of fuel measure by a dip stick is determined using...
   </Text>
-  <Option id="3kx6xVm1Wh-1" correct>
+  <Option alwaysCorrect>
     measurements from the dip stick and data tables in the aircraft
     documentation
   </Option>
-  <Option
-    id="3kx6xVm1Wh-2"
-    why="although this is commonly done in small aircraft, it's too unreliable for large aircraft with significant temperature operational ranges"
-  >
+  <Option why="although this is commonly done in small aircraft, it's too unreliable for large aircraft with significant temperature operational ranges">
     measurements alone
   </Option>
-  <Option id="3kx6xVm1Wh-3">
+  <Option>
     measurements from the dipstick and the fuel's specific gravity.
   </Option>
-  <Option id="3kx6xVm1Wh-4">
-    measurements from the dipstick and the current OAT.
-  </Option>
+  <Option>measurements from the dipstick and the current OAT.</Option>
 </Question>

@@ -21,6 +21,23 @@ export const getAttributeValueAsArray = (
   }
 };
 
+export const getAttributeValueAs2dArray = (
+  node: Node,
+  name: string
+): undefined | string[][] => {
+  const value = node.attributes.find((n) => n.name === name)?.value;
+  if (!value) {
+    return undefined;
+  }
+  if (typeof value === "string") {
+    return [[value]];
+  }
+  const assumeNodeAttribute = value as NodeAttribute;
+  let response;
+  eval(`response = ${assumeNodeAttribute.value}`);
+  return response;
+};
+
 export const getAttributeValueAsBoolean = (
   node: Node,
   name: string
@@ -55,35 +72,6 @@ export const getAttributeValueAsNumber = (
     value = value.value;
   }
   return isNaN(value as unknown as number) ? undefined : Number(value);
-};
-
-export const getAttributeValueAsMap = (
-  node: Node,
-  name: string
-): undefined | Record<string, string> => {
-  let value: any = node.attributes.find((n) => n.name === name)?.value;
-  try {
-    if (!value) {
-      return undefined;
-    }
-    if (value.type === "mdxJsxAttributeValueExpression") {
-      try {
-        value = JSON.parse(value.value);
-      } catch (e) {
-        value = value.value;
-      }
-    }
-    if (typeof value === "string") {
-      return { "0": value };
-    }
-    if (Array.isArray(value)) {
-      return value.reduce((s, e, i) => ({ ...s, [i]: e }), {});
-    }
-    throw new Error();
-  } catch (e) {
-    console.error(e);
-    throw new Error("Unable to retrieve value for attribute : " + value);
-  }
 };
 
 export const getNodeInnerText = (node: Node, mdxFile: string): string => {

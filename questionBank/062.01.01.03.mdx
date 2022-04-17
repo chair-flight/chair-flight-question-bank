@@ -90,66 +90,50 @@ the frequency. It is used for:
 
 ## Questions
 
-<Question id="xXs0JfqOdQai" lo={["062.01.01.03.01"]}>
+<Question lo={["062.01.01.03.01"]}>
   <Text variant="oneCorrect">
     <Subject /> appears in the frequency spectrum of...
   </Text>
-  <Option id="xXs0JfqOdQai-1" subject={["VLF"]}>
-    3-30 kHz
-  </Option>
-  <Option id="xXs0JfqOdQai-2" subject={["LF"]}>
-    30-300 kHz
-  </Option>
-  <Option id="xXs0JfqOdQai-3" subject={["MF"]}>
-    300-3 000 kHz
-  </Option>
-  <Option id="xXs0JfqOdQai-4" subject={["HF"]}>
-    3-30 MHz
-  </Option>
-  <Option id="xXs0JfqOdQai-5" subject={["VHF"]}>
-    30-300 MHz
-  </Option>
-  <Option id="xXs0JfqOdQai-6" subject={["UHF"]}>
-    300-3 000 MHz
-  </Option>
-  <Option id="xXs0JfqOdQai-7" subject={["SHF"]}>
-    3-30 GHz
-  </Option>
-  <Option id="xXs0JfqOdQai-8" subject={["EHF"]}>
-    30-300 GHz
-  </Option>
+  <Option subject={[["VLF"]]}>3-30 kHz</Option>
+  <Option subject={[["LF"]]}>30-300 kHz</Option>
+  <Option subject={[["MF"]]}>300-3 000 kHz</Option>
+  <Option subject={[["HF"]]}>3-30 MHz</Option>
+  <Option subject={[["VHF"]]}>30-300 MHz</Option>
+  <Option subject={[["UHF"]]}>300-3 000 MHz</Option>
+  <Option subject={[["SHF"]]}>3-30 GHz</Option>
+  <Option subject={[["EHF"]]}>30-300 GHz</Option>
 </Question>
 
 <Question
-  id="xXs0JfqOdQab"
+  
   
   lo={["062.01.01.03.01", "062.02.01.01.01", "062.02.04.01.01", "062.02.06.01.02"]}
 >
-  <Text variant="oneCorrect">
+  <Text  variant="oneCorrect">
     The <Subject /> uses the following wave lengths....
   </Text>
   <Option
-    id="xXs0JfqOdQab-1"
-    subject="VHF direction finder"
+    
+    subject={[["VHF direction finder"]]}
     why="VHF range is between 30-300Mhz. When we divide the speed of light by this value we get a wave length between 1 and 10 metres."
   >
     Metric
   </Option>
   <Option 
-    id="xXs0JfqOdQab-2"
-    subject="Distance MEasuring Equipment (DME)"
+    
+    subject={[["Distance MEasuring Equipment (DME)"]]}
     why="DME range is between 960 - 1213 MHz in the UHF band. When we divide the speed of light by this value we get a wave length between 0.3 and 0.24 metres."
   >
     Decimetric
   </Option>
   <Option 
-    id="xXs0JfqOdQab-a"
-    subject="Microwave Landing System (MLS)"
+    
+    subject={[["Microwave Landing System (MLS)"]]}
     why="MLS uses SHF, which is between  3-30 GHz. hen we divide the speed of light by this value we get a wave length between 1 and 10 centimetres."
   >
     Centimetric
   </Option>
-  <Option id="xXs0JfqOdQab-4">Hectometric</Option>
+  <Option >Hectometric</Option>
   <Explanation>
     {`This question is really asking you the order of magnitude of the amplitude
     for waves used in givent spectrum.
@@ -173,84 +157,45 @@ the frequency. It is used for:
   </Explanation>
 </Question>
 
-<Question id="g1AcXFB2ei" lo={["062.01.01.03.03"]} explanation="# SSB">
+<Question lo={["062.01.01.03.03"]} explanation="# SSB">
   <Text variant="oneCorrect">Where is Single Side Band used?</Text>
-  <Option id="g1AcXFB2ei-1" correct>
-    in HF two-way communication
-  </Option>
-  <Option id="g1AcXFB2ei-2" correct>
-    in VOLMET transmissions
-  </Option>
-  <Option
-    id="g1AcXFB2ei-3"
-    why="METARs transmissions are not a thing. VOLMETs are transmitted using SSB while MET Reports are not."
-  >
+  <Option alwaysCorrect>in HF two-way communication</Option>
+  <Option alwaysCorrect>in VOLMET transmissions</Option>
+  <Option why="METARs transmissions are not a thing. VOLMETs are transmitted using SSB while MET Reports are not.">
     in METAR transmissions
   </Option>
-  <Option id="g1AcXFB2ei-4" why="">
-    in NDB transmissions
-  </Option>
-  <Option id="g1AcXFB2ei-5" why="">
-    in VHF transmissions
-  </Option>
+  <Option>in NDB transmissions</Option>
+  <Option>in VHF transmissions</Option>
 </Question>
 
-<Question
-  id="xXs0JOdQai"
-  lo={["062.01.01.03.04"]}
-  explanation="### ITU abbreviations"
->
+<Question lo={["062.01.01.03.04"]} explanation="### ITU abbreviations">
   <Text variant="oneCorrect">
     In light of the classifications according to International Telecommunication
     Union (ITU) regulations, what does the
     <Subject /> symbol indicate? (i.e.: A2A)
   </Text>
-  <Option
-    id="xXs0JOdQai-1"
-    subject={["First"]}
-    why="definition for first symbol"
-  >
+  <Option subject={[["First"]]} why="definition for first symbol">
     Type of modulation of the main carrier
   </Option>
-  <Option
-    id="xXs0JOdQai-2"
-    subject={["First"]}
-    why="definition for first symbol"
-  >
+  <Option subject={[["First"]]} why="definition for first symbol">
     Nature of modulation of the main carrier
   </Option>
-  <Option
-    id="xXs0JOdQai-3"
-    subject={["Second"]}
-    why="definition for second symbol"
-  >
+  <Option subject={[["Second"]]} why="definition for second symbol">
     Type of the signals Modulating the main carrier
   </Option>
-  <Option
-    id="xXs0JOdQai-4"
-    subject={["Second"]}
-    why="definition for second symbol"
-  >
+  <Option subject={[["Second"]]} why="definition for second symbol">
     Nature of the signals Modulating the main carrier
   </Option>
-  <Option
-    id="xXs0JOdQai-5"
-    subject={["Third"]}
-    why="definition for third symbol"
-  >
+  <Option subject={[["Third"]]} why="definition for third symbol">
     Type of Information being transmitted
   </Option>
-  <Option
-    id="xXs0JOdQai-6"
-    subject={["Third"]}
-    why="definition for third symbol"
-  >
+  <Option subject={[["Third"]]} why="definition for third symbol">
     Nature of the Information being transmitted
   </Option>
-  <Option id="xXs0JOdQai-7" why="No such thing as a secondary carrier">
+  <Option why="No such thing as a secondary carrier">
     Type of modulation of the secondary carrier
   </Option>
-  <Option id="xXs0JOdQai-8" why="No such thing as a secondary carrier">
+  <Option why="No such thing as a secondary carrier">
     Nature of modulation of the secondary carrier
   </Option>
 </Question>

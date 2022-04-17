@@ -26,102 +26,73 @@ Title: General
 
 ## Questions
 
-<Question
-  id="8097KOjU52"
-  lo={["062.06.01.01.01", "062.06.02.02.07", "062.06.02.04.02"]}
->
+<Question lo={["062.06.01.01.01", "062.06.02.02.07", "062.06.02.04.02"]}>
   <Text variant="oneCorrect">
     Which of the following is a name of a <Subject /> system
   </Text>
   <Text variant="multipleCorrect" select={5}>
     Which of the following are names of <Subject /> systems
   </Text>
-  <Option
-    id="8097KOjU52-1"
-    subject={"GNSS"}
-    why="Chinese GNSS System (under construction)"
-  >
+  <Option subject={[["GNSS"]]} why="Chinese GNSS System (under construction)">
     BeiDou
   </Option>
-  <Option
-    id="8097KOjU52-2"
-    subject={"GNSS"}
-    why="European GNSS System (under construction)"
-  >
+  <Option subject={[["GNSS"]]} why="European GNSS System (under construction)">
     Galileo
   </Option>
-  <Option id="8097KOjU52-3" subject={"GNSS"} why="American GNSS System (GPS)">
+  <Option subject={[["GNSS"]]} why="American GNSS System (GPS)">
     NAVSTAR
   </Option>
-  <Option id="8097KOjU52-4" subject={"GNSS"} why="Russian GNSS System">
+  <Option subject={[["GNSS"]]} why="Russian GNSS System">
     GLONASS
   </Option>
   <Option
-    id="8097KOjU52-5"
-    subject={"ABAS using only GNSS"}
+    subject={[["ABAS using only GNSS"]]}
     why="RAIM stands for Receiver Autonomous Integrity Monitoring"
   >
     RAIM
   </Option>
   <Option
-    id="8097KOjU52-6"
-    subject={"SBAS"}
+    subject={[["SBAS"]]}
     why="European Satellite-based augmentation systems (SBASs)"
   >
     EGNOS
   </Option>
   <Option
-    id="8097KOjU52-7"
-    subject={"SBAS"}
+    subject={[["SBAS"]]}
     why="American Satellite-based augmentation systems (SBASs)"
   >
     WAAS
   </Option>
   <Option
-    id="8097KOjU52-8"
-    subject={"SBAS"}
+    subject={[["SBAS"]]}
     why="Japanse Satellite-based augmentation systems (SBASs)"
   >
     MSAS
   </Option>
   <Option
-    id="8097KOjU52-9"
-    subject={"SBAS"}
+    subject={[["SBAS"]]}
     why="Indian Satellite-based augmentation systems (SBASs)"
   >
     GAGAN
   </Option>
 </Question>
 
-<Question id="0XsRCUote7" lo={["062.06.01.01.02"]}>
+<Question lo={["062.06.01.01.02"]}>
   <Text variant="oneCorrect">
     Which statement is correct with regards to NAVSTAR
     GPS/GLONASS/GALILEO/BeiDou?
   </Text>
-  <Option
-    id="0XsRCUote7-1"
-    correct
-    why="This is the basic principle of all GNSS systems"
-  >
+  <Option alwaysCorrect why="This is the basic principle of all GNSS systems">
     All three systems use time measurements to determine position
   </Option>
-  <Option
-    id="0XsRCUote7-2"
-    why="All systems use a different frequency and require separate receivers."
-  >
+  <Option why="All systems use a different frequency and require separate receivers.">
     They are all using a common frequency requiring only one receiver to benefit
     of the 3 systems.
   </Option>
-  <Option
-    id="0XsRCUote7-3"
-    why="Only GPS and GALILEO use this model. Fun fact! The WGS84 model was designed to produce the least ammount of errors for the continental USA. As such it's often inadequate in distant places like Russia and China."
-  >
+  <Option why="Only GPS and GALILEO use this model. Fun fact! The WGS84 model was designed to produce the least ammount of errors for the continental USA. As such it's often inadequate in distant places like Russia and China.">
     All 3 systems are based on the WGS84 ellipsoid
   </Option>
-  <Option
-    id="0XsRCUote7-4"
-    why="All these systems are designed to provide better coverage and accuracy for users in the sub-polar zones."
-  >
+  <Option why="All these systems are designed to provide better coverage and accuracy for users in the sub-polar zones.">
     They are the most accurate in Polar areas
   </Option>
 </Question>

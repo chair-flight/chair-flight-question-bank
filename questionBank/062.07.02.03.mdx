@@ -75,9 +75,21 @@ least).
 | RNP App     | x        |           |         |                      |                           |
 | RNP AR APCH | x        |           |         |                      |                           |
 
+|             | Approach | Departure | arrival | ER-C | ER-O |
+| ----------- | -------- | --------- | ------- | ---- | ---- |
+| RNAV 10     |          |           |         |      | x    |
+| RNAV 5      |          |           | x       | x    |      |
+| RNAV 2      |          | x         | x       | x    |      |
+| RNAV 1      | x        | x         | x       |      |      |
+| RNP 4       |          |           |         |      | x    |
+| RNP 2       |          |           |         | x    | x    |
+| RNP 1       | x        | x         | x       |      |      |
+| RNP App     | x        |           |         |      |      |
+| RNP AR APCH | x        |           |         |      |      |
+
 ## Questions
 
-<Question id="PGvi8l7PHO" lo={["062.07.02.03.01"]}>
+<Question lo={["062.07.02.03.01"]}>
   <Text variant="oneCorrect">
     The "X" in "<Subject /> X" is interpreted as the ______ navigation (LNAV)
     accuracy (total system error) in _______, which is expected to be achieved
@@ -85,31 +97,29 @@ least).
     within the given airspace, route or procedure.
   </Text>
   <Option
-    id="PGvi8l7PHO-1"
-    subject={["RNP", "RNAV"]}
+    subject={[["RNP"], ["RNAV"]]}
     why="For both RNAV and RNP, the definition is the same."
   >
     lateral, NM, 95%
   </Option>
-  <Option id="PGvi8l7PHO-3">lateral, NM, 90%</Option>
-  <Option id="PGvi8l7PHO-4">lateral, NM, 85%</Option>
-  <Option id="PGvi8l7PHO-5">lateral, NM, 100%</Option>
-  <Option id="PGvi8l7PHO-6">lateral, km, 95%</Option>
-  <Option id="PGvi8l7PHO-7">lateral, km, 90%</Option>
-  <Option id="PGvi8l7PHO-8">lateral, km, 85%</Option>
-  <Option id="PGvi8l7PHO-9">lateral, km, 100%</Option>
-  <Option id="PGvi8l7PHO-a">longitudinal, NM, 95%</Option>
-  <Option id="PGvi8l7PHO-b">longitudinal, NM, 90%</Option>
-  <Option id="PGvi8l7PHO-c">longitudinal, NM, 85%</Option>
-  <Option id="PGvi8l7PHO-d">longitudinal, NM, 100%</Option>
-  <Option id="PGvi8l7PHO-e">longitudinal, km, 95%</Option>
-  <Option id="PGvi8l7PHO-f">longitudinal, km, 90%</Option>
-  <Option id="PGvi8l7PHO-g">longitudinal, km, 85%</Option>
-  <Option id="PGvi8l7PHO-h">longitudinal, km, 100%</Option>
+  <Option>lateral, NM, 90%</Option>
+  <Option>lateral, NM, 85%</Option>
+  <Option>lateral, NM, 100%</Option>
+  <Option>lateral, km, 95%</Option>
+  <Option>lateral, km, 90%</Option>
+  <Option>lateral, km, 85%</Option>
+  <Option>lateral, km, 100%</Option>
+  <Option>longitudinal, NM, 95%</Option>
+  <Option>longitudinal, NM, 90%</Option>
+  <Option>longitudinal, NM, 85%</Option>
+  <Option>longitudinal, NM, 100%</Option>
+  <Option>longitudinal, km, 95%</Option>
+  <Option>longitudinal, km, 90%</Option>
+  <Option>longitudinal, km, 85%</Option>
+  <Option>longitudinal, km, 100%</Option>
 </Question>
 
 <Question
-  id="mtejuJ9Srx"
   explanation="### RNAV and RNP specifications"
   lo={[
     "062.07.02.03.03",
@@ -127,36 +137,36 @@ least).
   <Text variant="oneCorrect">
     <Subject /> might be used for...
   </Text>
-  <Option id="mtejuJ9Srx-1" subject={["RNAV 10", "RNP 4", "RNP 2"]}>
+  <Option subject={[["RNAV 10"], ["RNP 4"], ["RNP 2"]]}>
     oceanic phases of a flight.
   </Option>
-  <Option id="mtejuJ9Srx-2" subject={["RNAV 10", "RNP 4", "RNP 2"]}>
+  <Option subject={[["RNAV 10"], ["RNP 4"], ["RNP 2"]]}>
     remote phases of a flight.
   </Option>
-  <Option id="mtejuJ9Srx-3" subject={["RNAV 5", "RNAV 2", "RNP 2"]}>
+  <Option subject={[["RNAV 5"], ["RNAV 2"], ["RNP 2"]]}>
     en-route phase phases of a flight
   </Option>
-  <Option id="mtejuJ9Srx-4" subject={["RNAV 5", "RNAV 2", "RNAV 1", "RNP 1"]}>
+  <Option subject={[["RNAV 5"], ["RNAV 2"], ["RNAV 1"], ["RNP 1"]]}>
     arrival phase phases of a flight
   </Option>
-  <Option id="mtejuJ9Srx-5" subject={["RNAV 5", "RNAV 2", "RNAV 1", "RNP 1"]}>
+  <Option subject={[["RNAV 5"], ["RNAV 2"], ["RNAV 1"], ["RNP 1"]]}>
     arrival phase phases of a flight
   </Option>
-  <Option id="mtejuJ9Srx-6" subject={["RNAV 2", "RNAV 1", "RNP 1"]}>
+  <Option subject={[["RNAV 2"], ["RNAV 1"], ["RNP 1"]]}>
     departure phases of a flight
   </Option>
-  <Option id="mtejuJ9Srx-7" subject={["RNP 0.3"]}>
+  <Option subject={[["RNP 0.3"]]}>
     all phases of flight except for oceanic/remote and final approach, primarily
     for helicopters
   </Option>
-  <Option id="mtejuJ9Srx-8" subject={["RNAV 1", "RNP 1", "RNP 0.3"]}>
+  <Option subject={[["RNAV 1"], ["RNP 1"], ["RNP 0.3"]]}>
     en-route phases of low-level instrument flight rule (IFR) helicopter
     flights.
   </Option>
-  <Option id="mtejuJ9Srx-9" subject={["RNAV APCH", "RNP AR APCH"]}>
+  <Option subject={[["RNAV APCH"], ["RNP AR APCH"]]}>
     approach phase of a flight.
   </Option>
-  <Option id="mtejuJ9Srx-a" why="No specification is used for all phases.">
+  <Option why="No specification is used for all phases.">
     In all phases of flight.
   </Option>
 </Question>

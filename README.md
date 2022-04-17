@@ -55,7 +55,7 @@ mandatory parameters
 Example:
 
 ```jsx
-<Question id="uniqueId" lo={["021.04.03.04.01"]}>
+<Question lo={["021.04.03.04.01"]}>
   <Text variant="oneCorrect">
     The correct statement in relation to the autobrake system is...
   </Text>
@@ -66,39 +66,29 @@ Example:
     Which of these statements in relation to the autobrake system are correct?
   </Text>
   <Option
-    id="uniqueId-1"
     correct
     why="This is true, and required by technical requirements for type certification."
   >
     Without pilot interference an autobrake system continues to operate until
     standstill
   </Option>
-  <Option id="uniqueId-2" correct>
+  <Option correct>
     During landing and RTO, an autobrake keeps operating until the pilot presses
     the brake pedals
   </Option>
-  <Option id="uniqueId-3" correct>
+  <Option correct>
     During landing an autobrake keeps operating when reverse thrust is selected
   </Option>
-  <Option
-    id="uniqueId-4"
-    why="Not correct since in most aircraft the autobrake engages a couple of seconds after touch down"
-  >
+  <Option why="Not correct since in most aircraft the autobrake engages a couple of seconds after touch down">
     An armed autobrake system will always try to achieve the selected
     deceleration level directly after main wheel touchdown
   </Option>
-  <Option
-    id="uniqueId-5"
-    why="Not correct since it also depends on pressure altitude, temperature, and a myriad of other factors"
-  >
+  <Option why="Not correct since it also depends on pressure altitude, temperature, and a myriad of other factors">
     For a given touchdown speed on a dry runway without the use of reverse
     thrust, the stopping distance solely depends on the selected ABS setting and
     weight of the aeroplane.
   </Option>
-  <Option
-    id="uniqueId-6"
-    why="This is not necessarily true, and depends a lot on aircraft type."
-  >
+  <Option why="This is not necessarily true, and depends a lot on aircraft type.">
     A take-off warning will be generated if the autobrake system has not been
     armed.
   </Option>
@@ -143,26 +133,24 @@ Which of these statements in relation to the autobrake system are correct?
 Example:
 
 ```jsx
-<Question id="uniqueId" lo="021.01.01.01.01">
+<Question lo="021.01.01.01.01">
   <Text variant="oneCorrect">
     Which statements about <Subject /> are correct?
   </Text>
   <Text variant="oneTwo">
     Which Of these statements about <Subject /> are correct?
   </Text>
-  <Option id="uniqueId-1" subject="Structural design principles">
+  <Option subject={[["Structural design principles"]]}>
     Fail Safe implies multiple load Paths
   </Option>
-  <Option id="uniqueId-2" subject="Structural design principles">
+  <Option subject={[["Structural design principles"]]}>
     A safe life structure is based on use during a limited time period or number
     of cycles
   </Option>
-  <Option id="uniqueId-3">
+  <Option>
     Fail Safe implies the structure will fail, when one component fails
   </Option>
-  <Option id="uniqueId-4">
-    Safe life is the preferred design technique for aircraft
-  </Option>
+  <Option>Safe life is the preferred design technique for aircraft</Option>
 </Question>
 ```
 

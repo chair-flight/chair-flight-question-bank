@@ -223,113 +223,99 @@ Pipes that connect "used" hydraulic fluid back to the reservoir.
 
 ## Questions
 
-<Question id="fasA3nh" lo="021.03.02.02.07">
+<Question lo="021.03.02.02.07">
   <Text variant="oneCorrect">
     What is the <Subject /> operating pressure of high-pressure hydraulic system
     in large aircraft
   </Text>
-  <Option id="fasA3nh-1" subject="typical">
-    3000 psi
-  </Option>
-  <Option id="fasA3nh-2" subject="maximum">
-    4000 psi
-  </Option>
-  <Option id="fasA3nh-3"> 2000 psi</Option>
-  <Option id="fasA3nh-4"> 1000 psi</Option>
+  <Option subject={[["typical"]]}>3000 psi</Option>
+  <Option subject={[["maximum"]]}>4000 psi</Option>
+  <Option> 2000 psi</Option>
+  <Option> 1000 psi</Option>
 </Question>
 
-<Question id="Q1H90hQaVm" lo={["021.03.02.02.13"]} explanation="### Components">
+<Question lo={["021.03.02.02.13"]} explanation="### Components">
   <Text variant="oneCorrect">
     In a modern hydraulic system, what is the function of <Subject />?
   </Text>
-  <Option id="Q1H90hQaVm-1" key="1" subject={["reservoirs"]}>
+  <Option key="1" subject={[["reservoirs"]]}>
     A tank in which adequate supply of fluid for the system is stored
   </Option>
-  <Option id="Q1H90hQaVm-L" key="1" subject={["pressurized reservoirs"]}>
+  <Option key="1" subject={[["pressurized reservoirs"]]}>
     To assure the pump inlet is provided with a continuos and adequate supply of
     fluid free from foaming
   </Option>
-  <Option id="Q1H90hQaVm-2" subject={["accumulators"]}>
+  <Option subject={[["accumulators"]]}>
     To Dampen pressure surges in the hydraulic system
   </Option>
-  <Option id="Q1H90hQaVm-3" subject={["accumulators"]}>
+  <Option subject={[["accumulators"]]}>
     To Store power for the limited operation of a hydraulic unit when the pump
     is not operating
   </Option>
-  {/** <Option id="Q1H90hQaVm-4" subject={['case drain lines and fluid cooler return lines']}> </Option> **/}
-  <Option id="Q1H90hQaVm-5" subject={["piston actuators"]}>
+  {/** <Option  subject={[["case drain lines and fluid cooler return lines'"]]}> </Option> **/}
+  <Option subject={[["piston actuators"]]}>
     To convert the hydraulic force into linear mechanical force.
   </Option>
-  <Option id="Q1H90hQaVm-6" subject={["hydraulic motors"]}>
+  <Option subject={[["hydraulic motors"]]}>
     To convert the hydraulic force into rotary mechanical force
   </Option>
-  <Option id="Q1H90hQaVm-7" subject={["filters"]} explanation="filter">
+  <Option subject={[["filters"]]} explanation="filter">
     To remove undesired particles and contaminating substances from the system.
   </Option>
-  <Option id="Q1H90hQaVm-8" subject={["non-return (check) valves"]}>
+  <Option subject={[["non-return (check) valves"]]}>
     To allow fluid to flow in one direction only.
   </Option>
-  <Option id="Q1H90hQaVm-9" subject={["shuttle Valves"]}>
+  <Option subject={[["shuttle Valves"]]}>
     To switch to the secondary system in case of leak in the primary system.
   </Option>
-  <Option id="Q1H90hQaVm-A" subject={["relief valves"]}>
+  <Option subject={[["relief valves"]]}>
     To prevent excessive pressure from building up inside the system.
   </Option>
-  <Option id="Q1H90hQaVm-B" subject={["restrictor valves"]}>
+  <Option subject={[["restrictor valves"]]}>
     To reduce the rate of actuator movement.
   </Option>
-  <Option id="Q1H90hQaVm-C" subject={["Selector valves"]}>
+  <Option subject={[["Selector valves"]]}>
     To allow for the control of the direction of movement of an hydraulic
     actuator
   </Option>
-  <Option id="Q1H90hQaVm-D" subject={["bypass valves"]}>
+  <Option subject={[["bypass valves"]]}>
     To allow fluid to flow around a filter unit in case of blockage.
   </Option>
-  <Option id="Q1H90hQaVm-E" subject={["fire shut‑off valves"]}>
+  <Option subject={[["fire shut‑off valves"]]}>
     To restrict hydraulic flow in case of fire with the intention to prevent
     hydraulic fluid ignition.
   </Option>
-  <Option id="Q1H90hQaVm-F" subject={["priority valves"]}>
+  <Option subject={[["priority valves"]]}>
     To maintain enough hydraulic pressure in critical systems in case of low
     overall system pressure.
   </Option>
-  <Option id="Q1H90hQaVm-G" subject={["fuse valves", "hydraulic fuse"]}>
+  <Option subject={[["fuse valves", "hydraulic fuse"]]}>
     To prevent total system loss in case of a hydraulic leak.
   </Option>
-  {/** <Option id="Q1H90hQaVm-H" subject={['pressure return pipes']}></Option> **/}
-  <Option
-    id="Q1H90hQaVm-H"
-    why="Hydraulic fluids are incompressible. No device in an hydraulic system has this function."
-  >
+  {/** <Option  subject={[["pressure return pipes'"]]}></Option> **/}
+  <Option why="Hydraulic fluids are incompressible. No device in an hydraulic system has this function.">
     To compress hydraulic fluids
   </Option>
-  <Option
-    id="IDHERE-X"
-    why="The closest valid definition is the accumulator, but that stores power / dampens pressure surges."
-  >
+  <Option why="The closest valid definition is the accumulator, but that stores power / dampens pressure surges.">
     To store pressure.
   </Option>
 </Question>
 
-<Question
-  id="kLOewcyTa8"
-  lo={["021.03.02.02.13"]}
-  explanations="#### Selector Valve"
->
+<Question lo={["021.03.02.02.13"]} explanations="#### Selector Valve">
   <Text variant="oneCorrect">
     An aircraft hydraulic selector valve which <Subject />
     when the system actuating mechanism is at idle is a....
   </Text>
-  <Option id="kLOewcyTa8-1" subject={["has a low pressure fluid flow"]}>
+  <Option subject={[["has a low pressure fluid flow"]]}>
     An open centre hydraulic selector valve
   </Option>
-  <Option id="kLOewcyTa8-2" subject={["has no fluid flow"]}>
+  <Option subject={[["has no fluid flow"]]}>
     A Closed centre hydraulic selector valve
   </Option>
-  <Option id="kLOewcyTa8-3" why="There is no such a thing..">
+  <Option why="There is no such a thing..">
     A positive return selector valve
   </Option>
-  <Option id="kLOewcyTa8-4" why="There is no such a thing.">
+  <Option why="There is no such a thing.">
     A pressure neutral hydraulic valve
   </Option>
 </Question>

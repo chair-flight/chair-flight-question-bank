@@ -1,59 +1,69 @@
 import { ZodSchema, z } from "zod";
-import { QuestionMetadata } from "./types";
+import { default as hash } from "object-hash";
+import {
+  Question,
+  QuestionKeyVariant,
+  QuestionOption,
+  QuestionText,
+  QuestionTextVariant,
+} from "./types";
+import { has } from "lodash";
 
-const noDuplicateIds = (): [(arr: { id: string }[]) => boolean, string] => {
-  return [
-    (arr) => arr.length === [...new Set(arr.map((i) => i.id))].length,
-    "No duplicate Id's allowed!",
-  ];
+const appendId = (val: unknown) => {
+  const castVal = val as Record<string, unknown>;
+  return {
+    ...castVal,
+    id: hash(castVal),
+  };
 };
 
-export const questionValidator: ZodSchema<QuestionMetadata> = z.object({
-  id: z.string().min(6),
-  contentId: z.string(),
-  lo: z.array(z.string()),
-  related: z.array(z.string()),
-  annexes: z.array(z.string()),
-  explanation: z.string(),
-  explanationRef: z.string().optional(),
-  texts: z.array(
-    z.union([
-      z.object({
-        text: z.string(),
-        variant: z.enum(["oneTwo"]),
-        sameKey: z.boolean().default(false),
-        subject: z.string().optional(), // TODO allow only subjects from options
-        uniqueKey: z.boolean().default(false),
-      }),
-      z.object({
-        text: z.string(),
-        variant: z.enum(["oneCorrect"]),
-        sameKey: z.boolean().default(false),
-        subject: z.string().optional(), // TODO allow only subjects from options
-        uniqueKey: z.boolean().default(false),
-      }),
-      z.object({
-        text: z.string(),
-        variant: z.enum(["multipleCorrect"]),
-        select: z.number().min(3),
-        subject: z.string().optional(), // TODO allow only subjects from options
-        sameKey: z.boolean().default(false),
-        uniqueKey: z.boolean().default(false),
-      }),
-    ])
-  ),
-  options: z
-    .array(
-      z.object({
-        id: z.string().min(6),
-        why: z.string().default(""),
-        key: z.number().optional(),
-        innerText: z.string(),
-        correct: z.boolean(),
-        neverCorrect: z.boolean().default(false),
-        subject: z.record(z.string()).optional(),
-      })
-    )
-    .min(3)
-    .refine(...noDuplicateIds()),
-});
+export const questionTextSchema: ZodSchema<
+  QuestionText,
+  {},
+  Partial<QuestionText>
+> = z.preprocess(
+  appendId,
+  z.object({
+    id: z.string(),
+    text: z.string(),
+    key: z.number().default(-1),
+    select: z.number().default(-1),
+    variant: z.nativeEnum(QuestionTextVariant),
+    keying: z.nativeEnum(QuestionKeyVariant).default(QuestionKeyVariant.random),
+    subject: z.array(z.array(z.string())).default([]),
+  })
+);
+
+export const questionOptionSchema: ZodSchema<
+  QuestionOption,
+  {},
+  Partial<QuestionOption>
+> = z.preprocess(
+  appendId,
+  z.object({
+    id: z.string(),
+    text: z.string(),
+    why: z.string().default(""),
+    key: z.number().default(-1),
+    alwaysCorrect: z.boolean().default(false),
+    subject: z.array(z.array(z.string())).default([]),
+  })
+);
+
+export const questionSchema: ZodSchema<
+  Question,
+  {},
+  Partial<Question>
+> = z.preprocess(
+  appendId,
+  z.object({
+    id: z.string(),
+    contentId: z.string(),
+    lo: z.array(z.string()).default([]),
+    annexes: z.array(z.string()).default([]),
+    explanation: z.string().default(""),
+    contentRef: z.string().nullable().default(null),
+    texts: z.array(questionTextSchema as ZodSchema<QuestionText>).min(1),
+    options: z.array(questionOptionSchema as ZodSchema<QuestionOption>).min(3),
+  })
+);

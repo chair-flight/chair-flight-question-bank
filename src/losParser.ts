@@ -3,16 +3,6 @@ import { CourseName, LearningObjectiveMetadata } from "./types";
 const MATCH_LOS_TABLE_REGEX = /(?=| ) (0.*) (?= \|)/gm;
 const MATCH_LOS_TEXT = /(?:\. \*\*0.*\*\* -- )((?:.|\n)*?)\n(?:\d|##|\|)/gm;
 
-const ALL_MODES: CourseName[] = [
-  "ATPL(A)",
-  "CPL(A)",
-  "ATPL(H)/IR",
-  "ATPL(H)/VFR",
-  "CPL(H)",
-  "IR",
-  "CBIR(A)",
-];
-
 export const getLosFormMdx = (
   mdx: string
 ): Record<string, LearningObjectiveMetadata> => {
@@ -35,7 +25,7 @@ export const getLosFormMdx = (
     (sum, entry, index) => {
       const [lo, ...values] = entry.split("|").map((e) => e.trim());
       sum[lo] = {
-        courses: ALL_MODES.filter((_, i) => !!values[i]),
+        courses: Object.values(CourseName).filter((_, i) => !!values[i]),
         text: losTextEntries[index] ?? "",
       };
       return sum;
