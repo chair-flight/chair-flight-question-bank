@@ -3,7 +3,7 @@ import remarkMdx from "remark-mdx";
 import { Node } from "./typesParser";
 import { QuestionId, Question } from "./types";
 import { Tree } from "./typesParser";
-import { questionOptionSchema, questionSchema } from "./questionValidator";
+import { questionSchema } from "./questionValidator";
 import {
   getAttributeValueAsArray,
   getAttributeValueAsBoolean,
@@ -11,7 +11,7 @@ import {
   getAttributeValueAsNumber,
   getNodeInnerText,
   getAttributeValueAs2dArray,
-} from "./nodeParser";
+} from "./parseNodes";
 
 const getQuestionData = (node: Node) => {
   const getRelevantNodes = (node: Node, depth = 1) =>

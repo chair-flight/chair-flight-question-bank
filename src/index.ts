@@ -2,8 +2,9 @@ import fs from "fs";
 import matter from "gray-matter";
 import lodash from "lodash";
 import { QuestionBankIndex } from "./types";
-import { getQuestionsFromMdx } from "./questionParser";
-import { getLosFormMdx } from "./losParser";
+import { getQuestionsFromMdx } from "./parseQuestions";
+import { getLosFormMdx } from "./parseLearningObjectives";
+import { getTextFromMdx } from "./parseText";
 
 const files = fs
   .readdirSync("./questionBank")
@@ -41,7 +42,7 @@ const contentIndex = files
 
       sum.content[id] = {
         id: id,
-        text: "",
+        text: getTextFromMdx(content),
         title: frontMatter.Title,
         questions: Object.keys(questions),
         los: Object.keys(los),
