@@ -1,6 +1,6 @@
 {
   "name": "chair-flight-question-bank",
-  "version": "0.0.65",
+  "version": "0.0.67",
   "description": "An open source Aviation Question bank",
   "type": "module",
   "main": "lib/index.js",
@@ -13,6 +13,7 @@
     "build": "tsc && node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
     "clean": "rm -rf ./lib/",
     "prepare": "husky install && yarn build",
+    "format": "yarn prettier . --write",
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest --coverage",
