@@ -53,9 +53,8 @@ const getTextAttributes = (node: Node, mdxFile: string) => ({
 const getOptionAttributes = (node: Node, mdxFile: string) => ({
   key: getAttributeValueAsNumber(node, "key"),
   text: getNodeInnerText(node, mdxFile),
-  alwaysCorrect: getAttributeValueAsBoolean(node, "alwaysCorrect"),
-  subject: getAttributeValueAsBoolean(node, "alwaysCorrect")
-    ? []
+  subject: getAttributeValueAsBoolean(node, "correct")
+    ? [[]]
     : getAttributeValueAs2dArray(node, "subject"),
   why: getAttributeValueAsString(node, "why"),
 });
@@ -89,9 +88,14 @@ export const getQuestionsFromMdx = (
           );
           const annexes: string[] = []; // TODO parse annex references and add them here
 
-          const subjects = [...texts, ...options]
+          const subjectsWithDuplicates = [...texts, ...options]
             .flatMap((e) => e.subject)
-            .filter<string[]>((e): e is string[] => !!e);
+            .filter<string[]>((e): e is string[] => !!e)
+            .map((e) => JSON.stringify(e));
+
+          const subjects = [...new Set(subjectsWithDuplicates)].map((e) =>
+            JSON.parse(e)
+          );
 
           const question = questionSchema.parse({
             ...attributes,
