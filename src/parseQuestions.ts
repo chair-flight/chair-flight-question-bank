@@ -47,15 +47,19 @@ const getTextAttributes = (node: Node, mdxFile: string) => ({
   text: getNodeInnerText(node, mdxFile),
   variant: getAttributeValueAsString(node, "variant"),
   select: getAttributeValueAsNumber(node, "select"),
-  subject: getAttributeValueAs2dArray(node, "subject"),
+  subject: getAttributeValueAs2dArray(node, "subject")?.map(
+    (e) => `<>${e.join(`</><>`)}</>`
+  ),
 });
 
 const getOptionAttributes = (node: Node, mdxFile: string) => ({
   key: getAttributeValueAsNumber(node, "key"),
   text: getNodeInnerText(node, mdxFile),
   subject: getAttributeValueAsBoolean(node, "correct")
-    ? [[]]
-    : getAttributeValueAs2dArray(node, "subject"),
+    ? [""]
+    : getAttributeValueAs2dArray(node, "subject")?.map(
+        (e) => `<>${e.join(`</><>`)}</>`
+      ),
   why: getAttributeValueAsString(node, "why"),
 });
 
@@ -88,14 +92,12 @@ export const getQuestionsFromMdx = (
           );
           const annexes: string[] = []; // TODO parse annex references and add them here
 
-          const subjectsWithDuplicates = [...texts, ...options]
-            .flatMap((e) => e.subject)
-            .filter<string[]>((e): e is string[] => !!e)
-            .map((e) => JSON.stringify(e));
-
-          const subjects = [...new Set(subjectsWithDuplicates)].map((e) =>
-            JSON.parse(e)
-          );
+          const subjects = [
+            ...new Set([
+              ...texts.flatMap((t) => t.subject),
+              ...options.flatMap((t) => t.subject),
+            ]),
+          ].filter((e) => !!e);
 
           const question = questionSchema.parse({
             ...attributes,
