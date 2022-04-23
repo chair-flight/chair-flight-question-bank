@@ -65,5 +65,6 @@ export const questionSchema: ZodSchema<
     contentRef: z.string().nullable().default(null),
     texts: z.array(questionTextSchema as ZodSchema<QuestionText>).min(1),
     options: z.array(questionOptionSchema as ZodSchema<QuestionOption>).min(3),
+    subjects: z.array(z.array(z.string())).default([]),
   })
 );

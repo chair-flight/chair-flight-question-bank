@@ -95,6 +95,10 @@ signal and split bounced signals based on their incoming direction.
     Which of the following are a source error that affects the accuracy and
     reliability of GPS systems
   </Text>
+  <Text variant="oneCorrect">
+    One of the more significant errors that reduces the accuracy of the GNSS
+    signal-in-space is ...
+  </Text>
   <Option alwaysCorrect why="Satellite atomic clocks drift leading to errors">
     Satellite clock
   </Option>
@@ -116,17 +120,24 @@ signal and split bounced signals based on their incoming direction.
   >
     Tight Clustering of satellites
   </Option>
-  <Option subject={[[]]} why="Causes ionospheric propagation delay">
+  <Option alwaysCorrect why="Causes ionospheric propagation delay">
     Atmospheric Propagation
   </Option>
-  <Option subject={[[]]} why="Describes multipath effects">
+  <Option alwaysCorrect why="Describes multipath effects">
     Reflection of satellite signals from terrain
+  </Option>
+  <Option alwaysCorrect>
+    dilution of precision caused by the relative positions of the navigation
+    satellites.
   </Option>
   <Option why="The existence of a Satellite - ground lag is the working principle of GPS, not a source of error">
     Satellite ground time lag
   </Option>
-  <Option why="Satellite signals do not interfere with each other.">
+  <Option why="Satellite signals do not interfere with each other." key={1}>
     Satellite mutual interference
+  </Option>
+  <Option why="" key={1}>
+    interference from other space vehicles operating in the same frequency band.
   </Option>
   <Option why="There is no such thing as frequency drift. Only clock drift">
     Frequency Drift
@@ -134,10 +145,14 @@ signal and split bounced signals based on their incoming direction.
   <Option why="No such thing as lunar winds exist">
     Lunar winds and gravitation of the sun, moon, and planets
   </Option>
-  <Option why="These do not cause satellite erros directly.">
+  <Option why="These do not cause satellite errors directly.">
     Earth and Lunar precession
   </Option>
-  <Option why="These do not cause satellite erros directly.">
-    Soalr and Lunar precission
+  <Option why="These do not cause satellite errors directly.">
+    Solar and Lunar precession
+  </Option>
+  <Option why="GNSS is affected by ionospheric errors, not tropospheric.">
+    tropospheric propagation delay caused by pollution in lower atmospheric
+    layers
   </Option>
 </Question>

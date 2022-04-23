@@ -86,12 +86,17 @@ export const getQuestionsFromMdx = (
           );
           const annexes: string[] = []; // TODO parse annex references and add them here
 
+          const subjects = [...texts, ...options]
+            .flatMap((e) => e.subject)
+            .filter<string[]>((e): e is string[] => !!e);
+
           const question = questionSchema.parse({
             ...attributes,
             texts,
             options,
             contentId,
             explanation,
+            subjects,
             annexes,
           });
 

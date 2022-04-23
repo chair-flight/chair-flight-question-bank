@@ -23,7 +23,6 @@
     "node": ">=12.0"
   },
   "dependencies": {
-    "chair-flight-question-bank": "^0.0.17",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

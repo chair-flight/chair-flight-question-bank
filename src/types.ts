@@ -30,6 +30,7 @@ export type Question = {
   id: string;
   contentId: ContentId;
   lo: string[];
+  subjects: string[][];
   annexes: string[];
   explanation: string;
   contentRef: string | null;
