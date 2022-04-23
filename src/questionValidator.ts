@@ -26,10 +26,9 @@ export const questionTextSchema: ZodSchema<
   z.object({
     id: z.string(),
     text: z.string(),
-    key: z.number().default(-1),
+    key: z.array(z.number()).nullable().default(null),
     select: z.number().default(-1),
     variant: z.nativeEnum(QuestionTextVariant),
-    keying: z.nativeEnum(QuestionKeyVariant).default(QuestionKeyVariant.random),
     subject: z.array(z.array(z.string())).default([]),
   })
 );
@@ -44,7 +43,7 @@ export const questionOptionSchema: ZodSchema<
     id: z.string(),
     text: z.string(),
     why: z.string().default(""),
-    key: z.number().default(-1),
+    key: z.number().nullable().default(null),
     alwaysCorrect: z.boolean().default(false),
     subject: z.array(z.array(z.string())).default([]),
   })

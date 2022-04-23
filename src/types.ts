@@ -43,18 +43,16 @@ export type QuestionText = {
   variant: QuestionTextVariant;
   text: string;
   select: number;
-  key: number;
-  keying: QuestionKeyVariant;
-  subject: string[][];
+  key: number[] | null;
+  subject: string[][] | null;
 };
 
 export type QuestionOption = {
   id: string;
   text: string;
   why: string;
-  alwaysCorrect: boolean;
-  key: number;
-  subject: string[][];
+  key: number | null;
+  subject: string[][] | null;
 };
 
 export type QuestionBankContentMetaData = {

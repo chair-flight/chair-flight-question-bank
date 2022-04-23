@@ -43,124 +43,65 @@ distribution includes all MDX files, under `lib/content`, a json export with
 metadata of all the content, and the same metadata export as a `JS`/`TS`
 friendly package.
 
-## Question variants
+## Questions
 
-Questions are always written in a very limited subset of JSX that does not allow
-for variables... basically HTML, with custom tags (so, no variables allowed...).
-Each variant represents a different type of question. Each question has three
-mandatory parameters
+Minimalistic Example:
 
-### Correct
-
-Example:
-
-```jsx
-<Question lo={["021.04.03.04.01"]}>
-  <Text variant="oneCorrect">
-    The correct statement in relation to the autobrake system is...
-  </Text>
-  <Text variant="oneTwo">
-    Which of these statements in relation to the autobrake system are correct?
-  </Text>
-  <Text variant="multipleCorrect" select={5}>
-    Which of these statements in relation to the autobrake system are correct?
-  </Text>
-  <Option
-    correct
-    why="This is true, and required by technical requirements for type certification."
-  >
-    Without pilot interference an autobrake system continues to operate until
-    standstill
-  </Option>
-  <Option correct>
-    During landing and RTO, an autobrake keeps operating until the pilot presses
-    the brake pedals
-  </Option>
-  <Option correct>
-    During landing an autobrake keeps operating when reverse thrust is selected
-  </Option>
-  <Option why="Not correct since in most aircraft the autobrake engages a couple of seconds after touch down">
-    An armed autobrake system will always try to achieve the selected
-    deceleration level directly after main wheel touchdown
-  </Option>
-  <Option why="Not correct since it also depends on pressure altitude, temperature, and a myriad of other factors">
-    For a given touchdown speed on a dry runway without the use of reverse
-    thrust, the stopping distance solely depends on the selected ABS setting and
-    weight of the aeroplane.
-  </Option>
-  <Option why="This is not necessarily true, and depends a lot on aircraft type.">
-    A take-off warning will be generated if the autobrake system has not been
-    armed.
-  </Option>
-</Question>
+```tsx
+<Question id="123" lo={["021.04.03.04.01"]}>
+  <Text variant="oneCorrect">What color is the sky?</Text>
+  <Option alwaysCorrect>Blue</Option>
+  <Option>Red</Option>
+  <Option>Green</Option>
+  <Option>Orange</Option>
+</Subject>
 ```
 
 Can be used to generate:
 
-```yml
-# oneCorrect sub-variant
-The correct statement in relation to the autobrake system is...
-- An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
-- During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals # CORRECT!
-- For a given touchdown speed on a dry runway without the use of reverse thrust, the stopping distance solely depends on the selected ABS setting and weight of the aeroplane.
-- A take-off warning will be generated if the autobrake system has not been armed.
+```md
+> What color is the sky?
 
-
-# oneTwo sub-variant
-Which of these statements in relation to the autobrake system are correct?
-  1) During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals
-  2) A take-off warning will be generated if the autobrake system has not been armed.
-- 1 and 2
-- 1 only # CORRECT!
-- 2 only
-- none
-
-# multipleCorrect sub-variant
-Which of these statements in relation to the autobrake system are correct?
-  1) An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
-  2) During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals
-  3) A take-off warning will be generated if the autobrake system has not been armed.
-  4) During landing an autobrake keeps operating when reverse thrust is selected
-  5) Without pilot interference an autobrake system continues to operate until standstill
-- 2 and 4 # Correct!
-- 1, 2, and 3
-- 2, and 3
-- 4, and 5
+- Blue **Correct!**
+- Red
+- Green
+- Orange
 ```
 
-### Definition
+A more complicated example
 
-Example:
+```tsx
+<Question id="123" lo={["021.04.03.04.01"]}>
+  <Text key={1} variant="oneCorrect">What color is the <Subject />?</Text>
+  <Option key={1}  subject={[["sky"]]}>Blue</Option>
+  <Option key={1}  subject={[["ground"]]}>Green</Option>
+  <Option key={1} >Red</Option>
+  <Option key={1} >Orange</Option>
 
-```jsx
-<Question lo="021.01.01.01.01">
-  <Text variant="oneCorrect">
-    Which statements about <Subject /> are correct?
-  </Text>
-  <Text variant="oneTwo">
-    Which Of these statements about <Subject /> are correct?
-  </Text>
-  <Option subject={[["Structural design principles"]]}>
-    Fail Safe implies multiple load Paths
-  </Option>
-  <Option subject={[["Structural design principles"]]}>
-    A safe life structure is based on use during a limited time period or number
-    of cycles
-  </Option>
-  <Option>
-    Fail Safe implies the structure will fail, when one component fails
-  </Option>
-  <Option>Safe life is the preferred design technique for aircraft</Option>
-</Question>
+  <Text key={[2,3]} variant="oneCorrect">What statement is correct?</Text>
+  <Text key={[2,3]} variant="multipleCorrect" select={4}>What statements are correct?</Text>
+  <Option key={2} subject={[["sky"]]}>the <Subject /> is Blue</Option>
+  <Option key={2} subject={[["ground"]]}>The <Subject /> is Green</Option>
+  <Option key={2}>The <Subject /> is red</Option>
+  <Option key={2}>The <Subject /> is Orange</Option>
+
+  <Option key={3} subject={[["sky"]]}>the <Subject /> is supposed to be above you</Option>
+  <Option key={3} subject={[["ground"]]}>The <Subject /> is supposed to be below you</Option>
+</Subject>
 ```
 
-Can be used to generate:
+Can be used to generate, for example:
 
-```yml
-# oneCorrect sub-variant
-The correct statement in relation to the autobrake system is...
-- An armed autobrake system will always try to achieve the selected deceleration level directly after main wheel touchdown
-- During landing and RTO, an autobrake keeps operating until the pilot presses the brake pedals # CORRECT!
-- For a given touchdown speed on a dry runway without the use of reverse thrust, the stopping distance solely depends on the selected ABS setting and weight of the aeroplane.
-- A take-off warning will be generated if the autobrake system has not been armed.
+```md
+> What statements are correct?
+>
+> 1. the Sky is Blue
+> 2. the Ground is Orange
+> 3. the sky is supposed to be above you
+> 4. the ground is supposed to be below you
+
+- 1
+- 1, 3, 4 **Correct!**
+- 3, 4
+- 1, 2, 3, 4
 ```

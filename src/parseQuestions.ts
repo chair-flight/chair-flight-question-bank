@@ -40,7 +40,7 @@ const getQuestionData = (node: Node) => {
 const getQuestionAttributes = (node: Node) => ({
   id: getAttributeValueAsString(node, "id"),
   lo: getAttributeValueAsArray(node, "lo"),
-  explanationRef: getAttributeValueAsString(node, "explanation"),
+  contentRef: getAttributeValueAsString(node, "contentRef"),
 });
 
 const getTextAttributes = (node: Node, mdxFile: string) => ({
@@ -54,7 +54,9 @@ const getOptionAttributes = (node: Node, mdxFile: string) => ({
   key: getAttributeValueAsNumber(node, "key"),
   text: getNodeInnerText(node, mdxFile),
   alwaysCorrect: getAttributeValueAsBoolean(node, "alwaysCorrect"),
-  subject: getAttributeValueAs2dArray(node, "subject"),
+  subject: getAttributeValueAsBoolean(node, "alwaysCorrect")
+    ? []
+    : getAttributeValueAs2dArray(node, "subject"),
   why: getAttributeValueAsString(node, "why"),
 });
 
