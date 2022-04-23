@@ -38,6 +38,7 @@ const getQuestionData = (node: Node) => {
 };
 
 const getQuestionAttributes = (node: Node) => ({
+  id: getAttributeValueAsString(node, "id"),
   lo: getAttributeValueAsArray(node, "lo"),
   explanationRef: getAttributeValueAsString(node, "explanation"),
 });

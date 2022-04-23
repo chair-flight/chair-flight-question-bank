@@ -54,17 +54,14 @@ export const questionSchema: ZodSchema<
   Question,
   {},
   Partial<Question>
-> = z.preprocess(
-  appendId,
-  z.object({
-    id: z.string(),
-    contentId: z.string(),
-    lo: z.array(z.string()).default([]),
-    annexes: z.array(z.string()).default([]),
-    explanation: z.string().default(""),
-    contentRef: z.string().nullable().default(null),
-    texts: z.array(questionTextSchema as ZodSchema<QuestionText>).min(1),
-    options: z.array(questionOptionSchema as ZodSchema<QuestionOption>).min(3),
-    subjects: z.array(z.array(z.string())).default([]),
-  })
-);
+> = z.object({
+  id: z.string(),
+  contentId: z.string(),
+  lo: z.array(z.string()).default([]),
+  annexes: z.array(z.string()).default([]),
+  explanation: z.string().default(""),
+  contentRef: z.string().nullable().default(null),
+  texts: z.array(questionTextSchema as ZodSchema<QuestionText>).min(1),
+  options: z.array(questionOptionSchema as ZodSchema<QuestionOption>).min(3),
+  subjects: z.array(z.array(z.string())).default([]),
+});
