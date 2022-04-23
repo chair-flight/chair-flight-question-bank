@@ -29,7 +29,7 @@ export const questionTextSchema: ZodSchema<
     key: z.array(z.number()).nullable().default(null),
     select: z.number().default(-1),
     variant: z.nativeEnum(QuestionTextVariant),
-    subject: z.array(z.string()).default([""]),
+    subject: z.array(z.string()).nullable().default(null),
   })
 );
 
