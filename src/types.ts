@@ -30,7 +30,6 @@ export type Question = {
   id: string;
   contentId: ContentId;
   lo: string[];
-  subjects: string[];
   annexes: string[];
   explanation: string;
   contentRef: string | null;
@@ -44,7 +43,6 @@ export type QuestionText = {
   text: string;
   select: number;
   key: number[] | null;
-  subject: string[] | null;
 };
 
 export type QuestionOption = {
