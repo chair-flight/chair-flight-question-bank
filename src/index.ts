@@ -76,7 +76,21 @@ const contentIndex = files
 
 const jsonFile = JSON.stringify(contentIndex, null, 2);
 const originalTypesFile = fs.readFileSync("./src/types.ts").toString();
-const indexFile = `export const questionBank = ${jsonFile}`;
+const indexFile = `
+export const questionBank = ${jsonFile}
+
+export var CourseName;
+(function (CourseName) {
+    CourseName["ATPL_A"] = "ATPL(A)";
+    CourseName["CPL_A"] = "CPL(A)";
+    CourseName["ATPL_H_IR"] = "ATPL(H)/IR";
+    CourseName["ATPL_H_VFR"] = "ATPL(H)/VFR";
+    CourseName["CPL_H"] = "CPL(H)";
+    CourseName["IR"] = "IR";
+    CourseName["CBIR_A"] = "CBIR(A)";
+})(CourseName || (CourseName = {}));
+`;
+
 const typesFile = `${originalTypesFile}
  
 export declare const questionBank : QuestionBankIndex; 
