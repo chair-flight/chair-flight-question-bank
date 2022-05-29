@@ -15,7 +15,7 @@
     "clean": "rm -rf ./lib/",
     "prepare": "husky install && yarn build",
     "format:code": "yarn prettier . --write",
-    "format:qb": "remark ./questionBank -qfo && remark ./questionBank -e mdx -u mdx -qfo && xo --fix",
+    "format:qb": "remark ./questionBank -e mdx -u mdx -qfo",
     "semantic-release": "semantic-release",
     "test:watch": "jest --watch",
     "test": "jest --coverage",
@@ -46,7 +46,9 @@
     "prettier": "^2.5.1",
     "remark": "^14.0.2",
     "remark-cli": "^10.0.1",
+    "remark-frontmatter": "^4.0.1",
     "remark-mdx": "^2.0.0-rc.2",
+    "remark-mdx-frontmatter": "^1.1.1",
     "remark-preset-wooorm": "^9.1.0",
     "semantic-release": "^17.4.7",
     "ts-jest": "^27.0.5",
@@ -62,6 +64,8 @@
   },
   "remarkConfig": {
     "plugins": [
+      "remark-frontmatter",
+      "remark-mdx-frontmatter",
       "preset-wooorm",
       [
         "lint-no-html",
