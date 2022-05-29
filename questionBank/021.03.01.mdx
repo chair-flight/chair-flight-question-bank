@@ -7,14 +7,14 @@ Title: "Hydromechanics: basic principles"
 
 ## Learning Objectives
 
-1. **021.03.01.01.01** -- Explain the concept and basic principles of
-   hydromechanics including: hydrostatic pressure; Pascal"s law; the
-   relationship between pressure, force and area; transmission of power:
-   multiplication of force, decrease of displacement.
+1.  **021.03.01.01.01** -- Explain the concept and basic principles of
+    hydromechanics including: hydrostatic pressure; Pascal"s law; the
+    relationship between pressure, force and area; transmission of power:
+    multiplication of force, decrease of displacement.
 
-|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR  | CBIR(A) |
-| --------------- | ------- | ------ | ---------- | ----------- | ------ | --- | ------- |
-| 021.03.01.01.01 | X       | X      | X          | X           | X      |     |         |
+|                 | ATPL(A) | CPL(A) | ATPL(H)/IR | ATPL(H)/VFR | CPL(H) | IR | CBIR(A) |
+| --------------- | ------- | ------ | ---------- | ----------- | ------ | -- | ------- |
+| 021.03.01.01.01 | X       | X      | X          | X           | X      |    |         |
 
 ## Summary
 
@@ -65,20 +65,22 @@ Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
 
 ## Questions
 
-<FunctionQuestion variant="calculation"  lo="021.03.01.01.01">
-  <Variables 
+<FunctionQuestion variant="calculation" lo="021.03.01.01.01">
+  <Variables
     variables={{
-      A: [10, 20, 40, 50],
-      B: [5],
-      C: [10, 20, 50, 100]
+    A: [10, 20, 40, 50],
+    B: [5],
+    C: [10, 20, 50, 100]
     }}
     answerFunction={(A, B, C) => `${A * B / C}N`}
   />
+
   <Text>
-    knowing 
-    - F1 = <A /> N
-    - A = <B /> N
-    - B = <C /> m^2
+    knowing
+
+    *   F1 = <A /> N
+    *   A = <B /> N
+    *   B = <C /> m^2
 
     ```
        F1                             F2
@@ -90,6 +92,5 @@ Power = m_flow * P; // `m^3 / s * N / m^2 => (N m) / s => W
     |                                          |
     |__________________________________________|
     ```
-
   </Text>
 </FunctionQuestion>

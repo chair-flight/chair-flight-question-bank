@@ -7,6 +7,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": "PupoSDC",
+  "license": "MIT",
   "files": [
     "lib/**/*"
   ],
@@ -21,7 +22,6 @@
     "test": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
-  "license": "MIT",
   "engines": {
     "node": ">=12.0"
   },
