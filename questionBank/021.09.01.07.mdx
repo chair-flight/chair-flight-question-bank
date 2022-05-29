@@ -54,3 +54,18 @@ Title: Circuit protection
   <Option>limit the current in the field circuit</Option>
   <Option>instantaneously rupture to limit the current in the load</Option>
 </Question>
+
+<Question lo={["021.09.01.07.07"]} id="FC9U0Xgf">
+  <Text variant="oneCorrect">Which statement is correct?</Text>
+  <Option
+    correct
+    why="Short term overcurrent is normal, specially when you have inductive loads in your system. For example, a generator when starting will cause a short spike in current before stabilizing."
+  >
+    Short term overcurrent is normal.
+  </Option>
+  <Option why="over current situations may be transient, so a tolerance is given to avoid triggering the fuse unnecessarily. (note: in the domain of electronics, 'transient' is measured in microseconds, a fuse will trigger instantaneously from a 'human' perspective ).">
+    Protective devices must trip as soon as a overcurrent is detected.
+  </Option>
+  <Option>Overcurrent is normal.</Option>
+  <Option>Any overcurrent is abnormal.</Option>
+</Question>{" "}
