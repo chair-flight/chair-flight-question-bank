@@ -43,8 +43,6 @@ distribution includes all MDX files, under `lib/content`, a json export with
 metadata of all the content, and the same metadata export as a `JS`/`TS`
 friendly package.
 
-## Questions
-
 Minimalistic Example:
 
 ```tsx

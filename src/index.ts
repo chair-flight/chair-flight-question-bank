@@ -1,9 +1,10 @@
+/** 
 import fs from "fs";
 import matter from "gray-matter";
 import lodash from "lodash";
 import { QuestionBankIndex } from "./types";
 import { getQuestionsFromMdx } from "./parseQuestions";
-import { getLosFormMdx } from "./parseLearningObjectives";
+import { getLosFormMdx } from "./base/parseLearningObjectives";
 import { getTextFromMdx } from "./parseText";
 
 const files = fs
@@ -146,3 +147,4 @@ const a = Object.values(statistics).reduce(
 );
 
 console.log(a);
+*/

@@ -14,45 +14,25 @@ export enum CourseName {
   CBIR_A = "CBIR(A)",
 }
 
-export enum QuestionTextVariant {
-  oneTwo = "oneTwo",
-  oneCorrect = "oneCorrect",
-  multipleCorrect = "multipleCorrect",
-}
-
-export enum QuestionKeyVariant {
-  random = "random",
-  sameKey = "sameKey",
-  uniqueKey = "uniqueKey",
-}
-
-export type Question = {
-  id: string;
-  contentId: ContentId;
-  lo: string[];
-  subjects: string[];
-  annexes: string[];
-  explanation: string;
-  contentRef: string | null;
-  texts: Array<QuestionText>;
-  options: Array<QuestionOption>;
-};
-
-export type QuestionText = {
-  id: string;
-  variant: QuestionTextVariant;
-  text: string;
-  select: number;
-  key: number[] | null;
-  subject: string[] | null;
-};
-
 export type QuestionOption = {
   id: string;
   text: string;
   why: string;
-  key: number | null;
-  subject: string[] | null;
+};
+
+export type Question = {
+  question: string;
+  correct: string;
+  options: [QuestionOption, QuestionOption, QuestionOption, QuestionOption];
+  annexes: string[];
+  explanation: string;
+};
+
+export type FunctionQuestion = {
+  id: QuestionId;
+  version: number;
+  learningObjectives: LearningObjectiveId[];
+  generate: (seed: string) => Question;
 };
 
 export type QuestionBankContentMetaData = {
@@ -77,5 +57,5 @@ export type QuestionBankIndex = {
   los: Record<LearningObjectiveId, LearningObjectiveMetadata>;
   content: Record<ContentId, QuestionBankContentMetaData>;
   contentTree: Record<ContentId, QuestionBankContentMap>;
-  questions: Record<QuestionId, Question>;
+  questions: Record<QuestionId, FunctionQuestion>;
 };

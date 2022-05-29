@@ -1,0 +1,53 @@
+import { default as fs } from "fs";
+
+export const CourseName = {
+  ATPL_A: "ATPL(A)",
+  CPL_A: "CPL(A)",
+  ATPL_H_IR: "ATPL(H)/IR",
+  ATPL_H_VFR: "ATPL(H)/VFR",
+  CPL_H: "CPL(H)",
+  IR: "IR",
+  CBIR_A: "CBIR(A)",
+};
+
+const MATCH_LOS_TABLE_REGEX = /^\|(.*)/gm;
+const MATCH_LOS_FROM_TABLE_REGEX = /(?=| ) (0.*) (?= \|)/gm;
+const MATCH_LOS_TEXT_REGEX = /(?:\d\.[ \t]+\*\*0.*\*\* -- )/gm;
+
+export const getLosFormMdx = (mdx) => {
+  const textSection =
+    mdx?.split("## Learning Objectives")[1]?.split("## Summary")[0] ?? "";
+  const losTableEntries = textSection?.match(MATCH_LOS_FROM_TABLE_REGEX) ?? [];
+  const losTextEntries =
+    textSection
+      ?.replace(MATCH_LOS_TABLE_REGEX, "")
+      ?.split(MATCH_LOS_TEXT_REGEX)
+      ?.map((n) => n.trim())
+      ?.filter((n) => !!n) ?? [];
+
+  if (losTableEntries.length !== losTextEntries.length) {
+    console.error(losTableEntries, losTextEntries);
+    throw new Error("Mismatch between the size of los texts, and los numbers!");
+  }
+
+  return losTableEntries.reduce((sum, entry, index) => {
+    const [lo, ...values] = entry.split("|").map((e) => e.trim());
+    sum[lo] = {
+      courses: Object.values(CourseName).filter((_, i) => !!values[i]),
+      text: losTextEntries[index] ?? "",
+    };
+    return sum;
+  }, {});
+};
+
+export const learningObjectives = fs
+  .readdirSync("./pages")
+  .filter((fileName) => fileName.includes(".mdx"))
+  .map((fileName) => fs.readFileSync(`./pages/${fileName}`).toString())
+  .reduce(
+    (sum, doc) => ({
+      ...sum,
+      ...getLosFormMdx(doc),
+    }),
+    {}
+  );
