@@ -34,7 +34,7 @@ export const questionOneCorrect = (props: {
             : entry.text,
         }))
         .sort(shuffle);
-      const correctOption = shuffledCorrect.pop();
+      const correctOption = shuffledCorrect[0];
       const questionFn = Array.isArray(props.question)
         ? props.question.sort(shuffle)[0]
         : props.question;
@@ -47,12 +47,13 @@ export const questionOneCorrect = (props: {
         props.correctOptions.length > 0,
         "Not enough correct options passed!"
       );
-      invariant(
-        correctOption !== undefined,
-        "Not enough correct options passed!"
-      );
 
-      const wrongOptions = [...props.otherOptions, ...shuffledCorrect]
+      const wrongOptions = [
+        ...props.otherOptions,
+        ...shuffledCorrect.filter(
+          ({ subject }) => subject !== correctOption.subject
+        ),
+      ]
         .sort(shuffle)
         .slice(0, 3);
 

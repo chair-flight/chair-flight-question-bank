@@ -1,6 +1,9 @@
 node_modules
 lib-tsc-out
 lib
+src/generated
+yarn-error.log
+
 .vscode
 .DS_Store
 .private
