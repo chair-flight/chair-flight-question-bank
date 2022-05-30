@@ -1,5 +1,7 @@
 import { default as fs } from "fs";
 
+const TARGET_DIR = "./src/generated";
+
 export const CourseName = {
   ATPL_A: "ATPL(A)",
   CPL_A: "CPL(A)",
@@ -9,6 +11,10 @@ export const CourseName = {
   IR: "IR",
   CBIR_A: "CBIR(A)",
 };
+
+if (!fs.existsSync(TARGET_DIR)) {
+  fs.mkdirSync(TARGET_DIR);
+}
 
 const MATCH_LOS_TABLE_REGEX = /^\|(.*)/gm;
 const MATCH_LOS_FROM_TABLE_REGEX = /(?=| ) (0.*) (?= \|)/gm;
@@ -40,7 +46,7 @@ export const getLosFormMdx = (mdx) => {
   }, {});
 };
 
-export const learningObjectives = fs
+const learningObjectives = fs
   .readdirSync("./pages")
   .filter((fileName) => fileName.includes(".mdx"))
   .map((fileName) => fs.readFileSync(`./pages/${fileName}`).toString())
@@ -51,3 +57,17 @@ export const learningObjectives = fs
     }),
     {}
   );
+
+fs.writeFileSync(
+  `${TARGET_DIR}/learningObjectives.ts`,
+  `
+import { CourseName, QuestionBankIndex } from "../types";
+
+export const learningObjectives : QuestionBankIndex["learningObjectives"] = ${Object.entries(
+    CourseName
+  ).reduce(
+    (sum, [k, v]) => sum.replaceAll(`"${v}"`, `CourseName.${k}`),
+    JSON.stringify(learningObjectives, null, 2)
+  )}
+`
+);

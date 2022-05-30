@@ -1,6 +1,6 @@
 import { CourseName, QuestionBankIndex } from "../types";
 
-export const learningObjectives: QuestionBankIndex["los"] = {
+export const learningObjectives: QuestionBankIndex["learningObjectives"] = {
   "010.01.01.01.01": {
     courses: [
       CourseName.ATPL_A,

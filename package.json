@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsc && node --experimental-specifier-resolution=node --loader ts-node/esm src/index.ts",
-    "pre-build": "yarn run pre-build:los & yarn run pre-build:content & yarn run pre-build:contentTree",
+    "pre-build": "yarn run pre-build:los && yarn run pre-build:content && yarn run pre-build:contentTree",
     "pre-build:los": "node scripts/parseLearningObjectives.js",
     "pre-build:content": "node scripts/parseContent.js",
     "pre-build:contentTree": "node scripts/parseContentTree.js",

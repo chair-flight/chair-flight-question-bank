@@ -54,7 +54,7 @@ export type LearningObjectiveMetadata = {
 };
 
 export type QuestionBankIndex = {
-  los: Record<LearningObjectiveId, LearningObjectiveMetadata>;
+  learningObjectives: Record<LearningObjectiveId, LearningObjectiveMetadata>;
   content: Record<ContentId, QuestionBankContentMetaData>;
   contentTree: Record<ContentId, QuestionBankContentMap>;
   questions: Record<QuestionId, FunctionQuestion>;

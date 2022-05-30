@@ -32,7 +32,7 @@ fs.writeFileSync(
   `
 import { QuestionBankIndex } from "../types";
 
-export const contentTree : QuestionBankIndex["content"] = ${JSON.stringify(
+export const content : QuestionBankIndex["content"] = ${JSON.stringify(
     content,
     null,
     2
