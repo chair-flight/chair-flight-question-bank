@@ -3,6 +3,8 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "Node",
+    "noEmitOnError": true,
+    "lib": ["ES2020"],
     "declaration": true,
     "outDir": "./lib-tsc-out/",
     "strict": true,
@@ -10,5 +12,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "test/**/*.ts"]
+  "include": ["src/**/*.ts"]
 }

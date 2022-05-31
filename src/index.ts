@@ -1,13 +1,9 @@
 import { QuestionBankIndex } from "./types";
-import { content } from "./generated/content";
-import { contentTree } from "./generated/contentTree";
-import { learningObjectives } from "./generated/learningObjectives";
 
-const index: QuestionBankIndex = {
-  content,
-  contentTree,
-  learningObjectives,
-  questions: {},
-};
+import * as untypedQuestions from "./questions";
 
-export default index;
+export const questions: QuestionBankIndex["questions"] = untypedQuestions;
+export { content } from "./generated/content";
+export { contentTree } from "./generated/contentTree";
+export { learningObjectives } from "./generated/learningObjectives";
+export * from "./types";

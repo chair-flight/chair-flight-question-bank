@@ -77,3 +77,43 @@ export const QYF5KU1GMF = questionOneCorrect({
     This allows to distinguish between a faulty state and a fire state.
   `,
 });
+
+export const QRYNQ9UIYU = questionOneCorrect({
+  id: "QRYNQ9UIYU",
+  version: 1,
+  learningObjectives: ["021.12.02.02.02"],
+  question: () => dedent`
+    Gas-filled fire detectors work on the principle that heat causes the 
+    internal pressure to..
+  `,
+  correctOptions: [
+    {
+      id: "QRYNQ9UIYU-3",
+      subject: "",
+      why: "",
+      text: "increase, causing a fire warning indication.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QRYNQ9UIYU-0",
+      why: "",
+      text: "reduce, causing a fire warning indication.",
+    },
+    {
+      id: "QRYNQ9UIYU-1",
+      why: "",
+      text: "reduce, causing a loop fault indication.",
+    },
+    {
+      id: "QRYNQ9UIYU-2",
+      why: "",
+      text: "increase, causing a loop fault indication.",
+    },
+  ],
+  explanation: dedent`
+    A gaseous loop indicator is triggered when the pressure inside the loop
+    increases due to an increase of temperature. A rupture in the tube has
+    the opposite effect reducing the pressure. 
+  `,
+});

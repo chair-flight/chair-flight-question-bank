@@ -92,3 +92,48 @@ export const QQOLLEVRAW = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const Q4O4T9FX57 = questionOneCorrect({
+  id: "Q4O4T9FX57",
+  version: 1,
+  learningObjectives: ["021.10.10.01.04"],
+  question: () => dedent`
+    The air in a piston engine turbocharger enters the centrifugal 
+    compressor at...
+  `,
+  correctOptions: [
+    {
+      id: "Q4O4T9FX57-2",
+      subject: "",
+      why: "",
+      text: dedent`
+        the eye of the impeller and leaves it almost at a tangent to the 
+        periphery.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "Q4O4T9FX57-0",
+      why: "",
+      text: dedent`
+        the periphery and leaves via the eye of the impeller.
+      `,
+    },
+    {
+      id: "Q4O4T9FX57-1",
+      why: "",
+      text: dedent`
+        a tangent to the rotor and leaves via the stator.
+      `,
+    },
+    {
+      id: "Q4O4T9FX57-3",
+      why: "",
+      text: dedent`
+        the diffuser and is fed to the impeller at the optimum angle of attack.
+      `,
+    },
+  ],
+  explanation: dedent``,
+});

@@ -203,3 +203,48 @@ export const QJX11PHDQB = questionOneCorrect({
     - Large Rotorcraft => CS-29
   `,
 });
+
+export const QOKF03CAOL = questionOneCorrect({
+  id: "QOKF03CAOL",
+  version: 1,
+  learningObjectives: ["021.01.02.01.01"],
+  question: (subject) => dedent`
+    "${subject} deformation" in relation to aircraft structures is a 
+    shape change that..
+  `,
+  correctOptions: [
+    {
+      id: "QOKF03CAOL-1",
+      subject: "Elastic",
+      why: "Definition of elastic deformation",
+      text: "is temporary and is reversed after the force is removed.",
+    },
+    {
+      id: "QOKF03CAOL-1",
+      subject: "Plastic",
+      why: "Definition of plastic deformation",
+      text: "will cause irreversible buckling of the aircraft`s skin.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QOKF03CAOL-0",
+      why: "",
+      text: "will cause visible cracks to appear in the aircraft`s skin.",
+    },
+    {
+      id: "QOKF03CAOL-3",
+      why: "",
+      text: "is temporary but its not reversed after the force is removed.",
+    },
+  ],
+  explanation: dedent`
+    __(This question is only marginally related to the LOs but it's still a 
+    common appearance in exams)__
+
+    - **Plastic Deformation**: will cause irreversible buckling of the 
+      aircraft's skin.
+    - **Elastic Deformation**: is temporary and is reversed after the 
+      §force is removed.
+  `,
+});

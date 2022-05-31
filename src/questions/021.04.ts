@@ -199,3 +199,102 @@ export const QSXHKE4HRU = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QOKLUX0MEE = questionOneCorrect({
+  id: "QOKLUX0MEE",
+  version: 1,
+  learningObjectives: ["021.04.04.01.03"],
+  question: () => dedent`
+    Thermal plugs are installed...
+  `,
+  correctOptions: [
+    {
+      id: "QOKLUX0MEE-1",
+      subject: "",
+      why: dedent`
+        Thermal plugs allow for tires to deflate when reaching critical 
+        temperatures preventing an explosion.
+      `,
+      text: ["on wheel hubs.", "on the wheels"],
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QOKLUX0MEE-0",
+      why: "",
+      text: "on cabin windows.",
+    },
+    {
+      id: "QOKLUX0MEE-2",
+      why: "",
+      text: "in fire warning systems.",
+    },
+    {
+      id: "QOKLUX0MEE-3",
+      why: "",
+      text: "in cargo compartments.",
+    },
+    {
+      id: "QOKLUX0MEE-3",
+      why: "",
+      text: "in landing gear axels.",
+    },
+    {
+      id: "QOKLUX0MEE-3",
+      why: "",
+      text: "in hydraulic dampers.",
+    },
+    {
+      id: "QOKLUX0MEE-3",
+      why: "Plugs are installed on the wheels themselves, not the tyres!",
+      text: "in tyres.",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QZNCPQHCBC = questionOneCorrect({
+  id: "QZNCPQHCBC",
+  version: 1,
+  learningObjectives: ["021.04.04.01.02"],
+  question: () => dedent`
+    What is tyre creep?
+  `,
+  correctOptions: [
+    {
+      id: "QZNCPQHCBC-1",
+      subject: "",
+      why: "",
+      text: dedent`
+        The circumferential movement of the tyre in relation to the wheel rim.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QZNCPQHCBC-0",
+      why: "",
+      text: dedent`
+        A gradual decrease in the circumferential movement of the tyre due to 
+        wear.
+      `,
+    },
+    {
+      id: "QZNCPQHCBC-2",
+      why: "",
+      text: dedent`
+        The decrease in inflation pressure due to increase in ambient 
+        temperature.
+      `,
+    },
+    {
+      id: "QZNCPQHCBC-3",
+      why: "",
+      text: dedent`
+        The increase in inflation pressure due to decrease in ambient 
+        temperature.
+      `,
+    },
+  ],
+  explanation: dedent``,
+});

@@ -423,3 +423,85 @@ export const QLIF9KJKLS = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QVZWMIKLSR = questionOneCorrect({
+  id: "QVZWMIKLSR",
+  version: 1,
+  learningObjectives: ["021.11.02.04.08"],
+  question: () => dedent`
+    The maximum operating temperature of a gas turbine engine is usually imposed 
+    due to temperature limitations on the...
+  `,
+  correctOptions: [
+    {
+      id: "QVZWMIKLSR-0",
+      subject: "",
+      why: "",
+      text: "turbine section.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QVZWMIKLSR-1",
+      why: "",
+      text: "compressor section.",
+    },
+    {
+      id: "QVZWMIKLSR-2",
+      why: "",
+      text: "casing of the combustion chamber.",
+    },
+    {
+      id: "QVZWMIKLSR-3",
+      why: "",
+      text: "jet pipe.",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QN5ISCAVG5 = questionOneCorrect({
+  id: "QN5ISCAVG5",
+  version: 1,
+  learningObjectives: ["021.11.01.02.02"],
+  question: () => dedent`
+    In a theoretical gas turbine cycle, combustion takes place...
+  `,
+  correctOptions: [
+    {
+      id: "QN5ISCAVG5-0",
+      subject: "",
+      why: "",
+      text: "at constant pressure.",
+    },
+    {
+      id: "QN5ISCAVG5-1",
+      subject: "",
+      why: "",
+      text: "continuously.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QN5ISCAVG5-2",
+      why: "",
+      text: "intermittently",
+    },
+    {
+      id: "QN5ISCAVG5-3",
+      why: "",
+      text: "at constant energy",
+    },
+    {
+      id: "QN5ISCAVG5-4",
+      why: "This is the case for reciprocal engines.",
+      text: "at constant volume",
+    },
+    {
+      id: "QN5ISCAVG5-5",
+      why: "",
+      text: "temperature",
+    },
+  ],
+  explanation: dedent``,
+});
