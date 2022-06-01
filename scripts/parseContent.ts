@@ -1,7 +1,8 @@
 import { default as fs } from "fs";
 import { default as matter } from "gray-matter";
-import { QuestionBankIndex } from "../src/types.js";
-import { getLosFormMdx } from "./parseLearningObjectives.js";
+import { questions } from "../src/questions";
+import { QuestionBankIndex } from "../src/types";
+import { getLosFormMdx } from "./parseLearningObjectives";
 
 const TARGET_DIR = "./src/generated";
 
@@ -20,9 +21,11 @@ const content = fs
 
     sum[id] = {
       id: id,
-      text: content,
+      text: content.split("## Summary")[1] ?? "",
       title: frontMatter.Title,
-      questions: [], //Object.keys(questions),
+      questions: Object.values(questions)
+        .filter(({ learningObjectives }, i) => learningObjectives.includes(id))
+        .map(({ id }) => id),
       los: Object.keys(los),
     };
     return sum;

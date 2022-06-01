@@ -30,7 +30,7 @@ export default [
     plugins: [
       dts(),
       copy({
-        targets: [{ src: "pages", dest: "lib/pages" }],
+        targets: [{ src: "pages/images", dest: "lib/images" }],
       }),
     ],
     output: {
