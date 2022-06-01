@@ -1,12 +1,12 @@
 import { default as invariant } from "tiny-invariant";
-import { FunctionQuestion, LearningObjectiveId } from "../types";
+import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
 import { getRandomShuffler } from "./random";
 
 export const questionOneCorrect = (props: {
-  id: string;
+  id: QuestionId;
   version: number;
-  question: ((subject: string) => string) | ((subject: string) => string)[];
   learningObjectives: LearningObjectiveId[];
+  question: ((subject: string) => string) | ((subject: string) => string)[];
   correctOptions: Array<{
     id: string;
     subject: string;
