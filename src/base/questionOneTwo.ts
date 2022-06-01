@@ -1,5 +1,5 @@
-import dedent from "dedent";
 import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
+import { dedent } from "./dedent";
 import { getRandomShuffler } from "./random";
 
 export const questionOneTwo = (props: {

@@ -1,4 +1,4 @@
-import dedent from "dedent";
+import { dedent } from "../base/dedent";
 import { mergeQuestionVariants } from "../base/mergeQuestionVariants";
 import { questionOneCorrect } from "../base/questionOneCorrect";
 import { questionOneTwo } from "../base/questionOneTwo";

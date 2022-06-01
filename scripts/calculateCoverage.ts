@@ -1,4 +1,3 @@
-import dedent from "dedent";
 import { learningObjectives } from "../src/";
 
 const statistics = Object.entries(learningObjectives).reduce<

@@ -1,4 +1,4 @@
-import dedent from "dedent";
+import { dedent } from "../base/dedent";
 import { questionOneCorrect } from "../base/questionOneCorrect";
 
 export const QQW4B4EAVJ = questionOneCorrect({
