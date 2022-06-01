@@ -248,3 +248,79 @@ export const QOKF03CAOL = questionOneCorrect({
       §force is removed.
   `,
 });
+
+export const QEXXTPLLUJ = questionOneCorrect({
+  id: "QEXXTPLLUJ",
+  version: 1,
+  learningObjectives: ["021.01.03.01.04"],
+  question: () => dedent`
+    A steady tensile load combined with corrosive conditions, can produce a 
+    form of metal fatigue known as...
+  `,
+  correctOptions: [
+    {
+      id: "QEXXTPLLUJ-2",
+      subject: "",
+      why: "",
+      text: "stress corrosion.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QEXXTPLLUJ-0",
+      why: "",
+      text: "intergrannular corrosion.",
+    },
+    {
+      id: "QEXXTPLLUJ-1",
+      why: "",
+      text: "creep.",
+    },
+    {
+      id: "QEXXTPLLUJ-3",
+      why: "",
+      text: "strain.",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QP9EYOS6KH = questionOneCorrect({
+  id: "QP9EYOS6KH",
+  version: 1,
+  learningObjectives: ["021.08.01.02.07", "021.11.03.01.03"],
+  question: () => dedent`
+    Fuel flow information for gas turbine engines is measured...
+  `,
+  correctOptions: [
+    {
+      id: "QP9EYOS6KH-0",
+      subject: "",
+      why: "",
+      text: "in the line between the fuel control unit and the engine burners.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QP9EYOS6KH-1",
+      why: "",
+      text: "in the line between the booster pump and the engine.",
+    },
+    {
+      id: "QP9EYOS6KH-2",
+      why: "",
+      text: "at the outlet of the high pressure fuel pump.",
+    },
+    {
+      id: "QP9EYOS6KH-3",
+      why: "",
+      text: "in the inlet of the high-pressure fuel pump.",
+    },
+  ],
+  explanation: dedent`
+    This question is not explicitly mentioned in any Learning Objective, but 
+    in any case it's interesting to know that the fuel flow information is 
+    measured at the latest possible point, before going to the burners, and
+    after passing through the fuel control unit.
+  `,
+});

@@ -18,12 +18,12 @@ export const questionOneTwo = (props: {
     learningObjectives: ["010.01.01.03.03"],
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
-      const isFirstCorrect = shuffle() > 0.5;
-      const isSecondCorrect = shuffle() > 0.5;
-      const shuffledStatements = props.statementPairs.sort(shuffle);
+      const isFirstCorrect = shuffle([true, false])[0];
+      const isSecondCorrect = shuffle([true, false])[0];
+      const shuffledStatements = shuffle(props.statementPairs);
 
       const getText = (arr: string | string[]): string => {
-        return Array.isArray(arr) ? arr.sort(shuffle)[0] : arr;
+        return Array.isArray(arr) ? shuffle(arr)[0] : arr;
       };
 
       const question = dedent`
@@ -37,7 +37,7 @@ export const questionOneTwo = (props: {
         )}
       `;
 
-      const finalOptions = [
+      const finalOptions = shuffle([
         {
           id: "both-correct",
           text: "Both Statements are correct",
@@ -58,7 +58,7 @@ export const questionOneTwo = (props: {
           text: "None of the statements are correct",
           why: "",
         },
-      ].sort(shuffle);
+      ]);
 
       const correct = (() => {
         if (isFirstCorrect && isSecondCorrect) {

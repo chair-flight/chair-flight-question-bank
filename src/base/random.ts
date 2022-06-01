@@ -32,9 +32,10 @@ export const getRandomGenerator = (seed: string): (() => number) => {
   return sfc32(seeder(), seeder(), seeder(), seeder());
 };
 
-export const getRandomShuffler = (seed: string): (() => number) => {
+export const getRandomShuffler = (seed: string): (<T>(arr: T[]) => T[]) => {
   const random = getRandomGenerator(seed);
-  return () => random() - 0.5;
+  const shuffleFn = () => random() - 0.5;
+  return (arr) => [...arr].sort(shuffleFn);
 };
 
 export const getRandomId = () => {

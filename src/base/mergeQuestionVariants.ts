@@ -13,7 +13,7 @@ export const mergeQuestionVariants = <T extends CommonProps>(
     ...props,
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
-      const handler = handlers.sort(shuffle)[0];
+      const handler = shuffle(handlers)[0];
       return handler.generate(seed);
     },
   };

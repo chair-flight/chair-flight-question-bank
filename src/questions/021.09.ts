@@ -143,3 +143,54 @@ export const QNBLC3VWYP = questionOneCorrect({
     microseconds, a fuse will trigger instantaneously from a 'human' 
     perspective).`,
 });
+
+export const Q183L3D0SR = questionOneCorrect({
+  id: "Q183L3D0SR",
+  version: 1,
+  learningObjectives: ["021.09.04.04.05"],
+  question: () => dedent`
+    When carrying out a battery condition check using the aircraft's 
+    voltmeter...
+  `,
+  correctOptions: [
+    {
+      id: "Q183L3D0SR-1",
+      subject: "",
+      why: "",
+      text: dedent`
+        a load should be applied to the battery in order to give a better 
+        indication of condition.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "Q183L3D0SR-0",
+      why: "",
+      text: dedent`
+        the load condition is unimportant.
+      `,
+    },
+    {
+      id: "Q183L3D0SR-2",
+      why: "",
+      text: dedent`
+        the battery should be isolated.
+      `,
+    },
+    {
+      id: "Q183L3D0SR-3",
+      why: "",
+      text: dedent`
+        no load should be applied to the battery because it would reduce the 
+        voltage.
+      `,
+    },
+  ],
+  explanation: dedent`
+    A condition check of a battery usually consists in comparing the battery
+    state with and without a load applied. A battery in poor condition might 
+    indicate a high voltage without any load, but drop to a very low voltage
+    as soon as a load is applied.
+  `,
+});

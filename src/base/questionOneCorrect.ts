@@ -1,5 +1,10 @@
 import { default as invariant } from "tiny-invariant";
-import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
+import {
+  FunctionQuestion,
+  LearningObjectiveId,
+  QuestionId,
+  QuestionOption,
+} from "../types";
 import { getRandomShuffler } from "./random";
 
 export const questionOneCorrect = (props: {
@@ -9,7 +14,7 @@ export const questionOneCorrect = (props: {
   question: ((subject: string) => string) | ((subject: string) => string)[];
   correctOptions: Array<{
     id: string;
-    subject: string;
+    subject: string | string[];
     why: string;
     text: string | string[];
   }>;
@@ -26,41 +31,46 @@ export const questionOneCorrect = (props: {
     learningObjectives: ["010.01.01.03.03"],
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
-      const shuffledCorrect = props.correctOptions
-        .map((entry) => ({
-          ...entry,
-          text: Array.isArray(entry.text)
-            ? entry.text.sort(shuffle)[0]
-            : entry.text,
-        }))
-        .sort(shuffle);
-      const correctOption = shuffledCorrect[0];
+      const correctSubject = shuffle(props.correctOptions).reduce<string[]>(
+        (sum, item) =>
+          Array.isArray(item.subject)
+            ? [...sum, ...item.subject]
+            : [...sum, item.subject],
+        []
+      )[0];
+
+      const resolvedCorrectOptionTemplates = shuffle(props.correctOptions).map(
+        (item) => ({
+          id: item.id,
+          why: item.why,
+          text: Array.isArray(item.text) ? shuffle(item.text)[0] : item.text,
+          subject: item.subject,
+        })
+      );
+
+      const correctOption = resolvedCorrectOptionTemplates.find(
+        ({ subject }) =>
+          subject === correctSubject || subject.includes(correctSubject)
+      );
+
+      invariant(!!correctOption, "No correctOption option could be found!");
+
+      const wrongOptions = shuffle([
+        ...props.otherOptions,
+        ...resolvedCorrectOptionTemplates.filter(
+          ({ subject }) =>
+            subject !== correctSubject || !subject.includes(correctSubject)
+        ),
+      ]).slice(0, 3);
+
       const questionFn = Array.isArray(props.question)
-        ? props.question.sort(shuffle)[0]
+        ? shuffle(props.question)[0]
         : props.question;
 
-      invariant(
-        props.correctOptions.length + props.otherOptions.length > 4,
-        "Not enough options passed!"
-      );
-      invariant(
-        props.correctOptions.length > 0,
-        "Not enough correct options passed!"
-      );
-
-      const wrongOptions = [
-        ...props.otherOptions,
-        ...shuffledCorrect.filter(
-          ({ subject }) => subject !== correctOption.subject
-        ),
-      ]
-        .sort(shuffle)
-        .slice(0, 3);
-
-      const finalOptions = [...wrongOptions, correctOption].sort(shuffle);
+      const finalOptions = shuffle([...wrongOptions, correctOption]);
 
       return {
-        question: questionFn(correctOption.subject),
+        question: questionFn(correctSubject),
         correct: correctOption.id,
         annexes: [],
         explanation: props.explanation,

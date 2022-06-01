@@ -505,3 +505,49 @@ export const QN5ISCAVG5 = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QV6XVWMC52 = questionOneCorrect({
+  id: "QV6XVWMC52",
+  version: 1,
+  learningObjectives: ["021.11.04.01.07"],
+  question: () => dedent`
+    The purpose of gas turbine engine trending is to...
+  `,
+  correctOptions: [
+    {
+      id: "QV6XVWMC52-1",
+      subject: "",
+      why: "",
+      text: "enhance maintenance planning and detect anomalies.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QV6XVWMC52-0",
+      why: "",
+      text: "obtain a timely indication when an engine requires to be shut down due to problems.",
+    },
+    {
+      id: "QV6XVWMC52-2",
+      why: "",
+      text: "collect metal particles from the oil system.",
+    },
+    {
+      id: "QV6XVWMC52-3",
+      why: "",
+      text: "assess engine condition using non-destructive inspection.",
+    },
+  ],
+  explanation: dedent`
+    Engine Trend Analysis is a method of assessing the health of an engine over
+    time. This allows to enhance maintenance planning and detect anomalies. For
+    example, An engine operating limits may set the normal operating range of 
+    oil temperatures between 65º and 95º, but when monitoring the trend of a 
+    specific engine it is verified the normal operating engine is below 70º 
+    over 99.5% of the time. 
+    
+    In this scenario an operating speed of 75º may be sufficient to trigger an
+    investigation of engine condition since despite being within limits, 
+    something may be off.
+  `,
+});

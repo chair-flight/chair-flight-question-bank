@@ -63,17 +63,17 @@ export const QQOLLEVRAW = questionOneCorrect({
       subject: "",
       why: "",
       text: dedent`
-      enable proper functioning of a piston engine during throttle advance.
-    `,
+        enable proper functioning of a piston engine during throttle advance.
+      `,
     },
   ],
   otherOptions: [
     {
       id: "QQOLLEVRAW-0",
       why: dedent`
-      NOTE: engines with accelerator pumps can use them to serve the function 
-      of a primer
-    `,
+        NOTE: engines with accelerator pumps can use them to serve the function 
+        of a primer
+      `,
       text: "enable engine starting.",
     },
     {
@@ -85,9 +85,9 @@ export const QQOLLEVRAW = questionOneCorrect({
       id: "QQOLLEVRAW-3",
       why: "",
       text: dedent`
-      maintain a constant mixture in a piston engine at low and high power 
-      settings.
-    `,
+        maintain a constant mixture in a piston engine at low and high power 
+        settings.
+      `,
     },
   ],
   explanation: dedent``,
@@ -136,4 +136,59 @@ export const Q4O4T9FX57 = questionOneCorrect({
     },
   ],
   explanation: dedent``,
+});
+
+export const QKDV2J6I8Q = questionOneCorrect({
+  id: "QKDV2J6I8Q",
+  version: 1,
+  learningObjectives: ["021.10.04.01.08"],
+  question: () => dedent`When applying carburettor heating...`,
+  correctOptions: [
+    {
+      id: "QKDV2J6I8Q-1",
+      subject: "",
+      why: "",
+      text: "the mixture becomes richer.",
+    },
+    {
+      id: "QKDV2J6I8Q-2",
+      subject: "",
+      why: "",
+      text: "the power output reduces.",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QKDV2J6I8Q-3",
+      why: "",
+      text: "no change occurs in the mixture.",
+    },
+    {
+      id: "QKDV2J6I8Q-4",
+      why: "When",
+      text: "RPM increases immediately.",
+    },
+    {
+      id: "QKDV2J6I8Q-5",
+      why: "",
+      text: "the mixture becomes leaner.",
+    },
+    {
+      id: "QKDV2J6I8Q-6",
+      why: "",
+      text: "the power output increases.",
+    },
+  ],
+  explanation: dedent`
+    When applying carburettor heating, air is warmed before reaching the 
+    carburettor. This causes the density of air to drop, which in turn
+    causes the mixture ratio to increase.
+
+    > **Remember**: Mixture ratio is the ratio of mass of air over the mass of 
+    > fuel. If the air density is decreasing the mass of air is decreasing.
+
+    An increase in the mixture ratio will decrease the power output of the 
+    engine, as more fuel will go through the system unburned, carrying with it
+    energy that would otherwise be supplied to the crankshaft.
+  `,
 });
