@@ -1,10 +1,4 @@
-import { default as invariant } from "tiny-invariant";
-import {
-  FunctionQuestion,
-  LearningObjectiveId,
-  QuestionId,
-  QuestionOption,
-} from "../types";
+import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
 import { getRandomShuffler } from "./random";
 
 export const questionOneCorrect = (props: {
@@ -51,9 +45,7 @@ export const questionOneCorrect = (props: {
       const correctOption = resolvedCorrectOptionTemplates.find(
         ({ subject }) =>
           subject === correctSubject || subject.includes(correctSubject)
-      );
-
-      invariant(!!correctOption, "No correctOption option could be found!");
+      )!;
 
       const wrongOptions = shuffle([
         ...props.otherOptions,

@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es6",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "lib": ["es2021"],
     "declaration": true,
-    "outDir": "./lib-tsc-out/",
+    "outDir": "./lib",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }

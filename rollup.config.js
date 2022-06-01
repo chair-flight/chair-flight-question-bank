@@ -8,15 +8,15 @@ export default {
     typescript(),
     terser(),
     copy({
-      targets: [{ src: "pages/images/*", dest: "lib/images" }],
+      targets: [
+        {
+          src: "pages/images/*",
+          dest: "lib/images",
+        },
+      ],
     }),
   ],
   output: [
-    {
-      file: "./lib/index.esm.js",
-      format: "esm",
-      exports: "auto",
-    },
     {
       file: "./lib/index.js",
       format: "cjs",

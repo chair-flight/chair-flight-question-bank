@@ -1,22 +1,21 @@
 {
   "name": "chair-flight-question-bank",
-  "repository": "chair-flight/chair-flight-question-bank",
-  "version": "0.1.4",
   "description": "An open source Aviation Question bank",
-  "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "repository": "chair-flight/chair-flight-question-bank",
+  "version": "0.1.5",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "author": "PupoSDC",
   "license": "MIT",
   "files": [
-    "lib/**/*"
+    "lib/"
   ],
   "scripts": {
     "build": "rimraf lib && yarn pre-build && rollup -c rollup.config.js",
     "pre-build": "yarn run pre-build:los && yarn run pre-build:content && yarn run pre-build:contentTree && yarn run pre-build:coverage",
     "pre-build:los": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/parseLearningObjectives.ts",
     "pre-build:content": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/parseContent.ts",
-    "pre-build:contentTree": "node scripts/parseContentTree.js",
+    "pre-build:contentTree": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/parseContentTree.ts",
     "pre-build:coverage": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/calculateCoverage.ts",
     "clean": "rm -rf ./lib/",
     "prepare": "husky install",
@@ -29,9 +28,7 @@
   "engines": {
     "node": ">=12.0"
   },
-  "dependencies": {
-    "tiny-invariant": "^1.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@commitlint/config-conventional": "^16.0.0",
     "@types/jest": "^27.5.1",
