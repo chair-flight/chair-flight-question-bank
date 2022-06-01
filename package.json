@@ -1,7 +1,7 @@
 {
   "name": "chair-flight-question-bank",
   "repository": "chair-flight/chair-flight-question-bank",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "An open source Aviation Question bank",
   "type": "module",
   "main": "lib/index.js",
@@ -12,7 +12,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "build": "rimraf lib && yarn pre-build && tsc && rollup -c rollup.config.js",
+    "build": "rimraf lib && yarn pre-build && rollup -c rollup.config.js",
     "pre-build": "yarn run pre-build:los && yarn run pre-build:content && yarn run pre-build:contentTree && yarn run pre-build:coverage",
     "pre-build:los": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/parseLearningObjectives.ts",
     "pre-build:content": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/parseContent.ts",
@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^16.0.0",
-    "@open-wc/building-rollup": "^2.0.1",
     "@types/jest": "^27.5.1",
     "@types/lodash": "^4.14.178",
     "@types/node": "^12.20.11",
@@ -52,6 +51,8 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.75.3",
     "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-ts": "^3.0.1",
     "semantic-release": "^17.4.7",
     "ts-jest": "^28.0.3",
     "ts-node": "^10.2.1",
