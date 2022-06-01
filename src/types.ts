@@ -50,6 +50,7 @@ export type QuestionBankContentMap = Record<
 
 export type LearningObjectiveMetadata = {
   courses: CourseName[];
+  questions: QuestionId[];
   text: string;
 };
 

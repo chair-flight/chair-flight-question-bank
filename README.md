@@ -3,19 +3,19 @@
 An Open source aviation question bank. **Still in (super early) development ;)**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/coverage%20010-2%2F507%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20021-82%2F662%2012%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20022-30%2F471%206%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20010-3%2F507%201%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20021-47%2F662%207%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20022-0%2F471%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20031-0%2F86%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20032-0%2F243%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20033-0%2F118%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20034-0%2F85%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20040-0%2F363%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20050-0%2F465%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20061-15%2F119%2013%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20062-73%2F328%2022%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20061-0%2F119%200%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20062-0%2F328%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20071-0%2F388%200%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20081-2%2F498%200%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20081-0%2F498%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20082-0%2F204%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20090-0%2F79%200%25-red" />
 </p>

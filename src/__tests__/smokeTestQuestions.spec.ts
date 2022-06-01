@@ -1,7 +1,8 @@
-import * as questions from "../questions";
+import { questions } from "../questions";
 
 describe("smokeTestQuestions", () => {
   test.each(Object.entries(questions))("Smoke test (%s)", (key, question) => {
+    expect(question.id).toBe(key);
     for (let i = 0; i < 100; i++) {
       const q = question.generate(i.toString());
       const q2 = question.generate(i.toString());

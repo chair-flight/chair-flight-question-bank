@@ -13,9 +13,9 @@ export const questionOneTwo = (props: {
   explanation: string;
 }): FunctionQuestion => {
   return {
-    id: "Q2KVB38UME",
-    version: 1,
-    learningObjectives: ["010.01.01.03.03"],
+    id: props.id,
+    version: props.version,
+    learningObjectives: props.learningObjectives,
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
       const isFirstCorrect = shuffle([true, false])[0];

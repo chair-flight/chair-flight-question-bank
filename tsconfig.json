@@ -4,7 +4,7 @@
     "module": "esnext",
     "moduleResolution": "Node",
     "noEmitOnError": true,
-    "lib": ["ES2020"],
+    "lib": ["es2021"],
     "declaration": true,
     "outDir": "./lib-tsc-out/",
     "strict": true,

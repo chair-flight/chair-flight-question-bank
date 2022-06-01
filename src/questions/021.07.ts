@@ -1,7 +1,7 @@
 import dedent from "dedent";
 import { questionOneCorrect } from "../base/questionOneCorrect";
 
-export const QPMVEJTVHH = questionOneCorrect({
+export const VN4NNHQZ8P = questionOneCorrect({
   id: "VN4NNHQZ8P",
   version: 1,
   learningObjectives: ["021.07.01.01.04"],
