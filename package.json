@@ -19,11 +19,11 @@
     "pre-build:contentTree": "node scripts/parseContentTree.js",
     "pre-build:coverage": "node --experimental-specifier-resolution=node --loader ts-node/esm scripts/calculateCoverage.ts",
     "clean": "rm -rf ./lib/",
-    "prepare": "husky install && yarn pre-build",
+    "prepare": "husky install && yarn pre-build && yarn build",
     "format": "yarn prettier . --write",
     "semantic-release": "semantic-release",
-    "test:watch": "jest --watch",
-    "test": "jest --coverage",
+    "test": "jest --watch",
+    "test:coverage": "jest --coverage",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
@@ -54,6 +54,7 @@
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.75.3",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-esbuild": "^4.9.1",
     "semantic-release": "^17.4.7",

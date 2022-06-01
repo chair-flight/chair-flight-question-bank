@@ -1,5 +1,6 @@
 import dts from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
+import copy from "rollup-plugin-copy";
 
 const name = require("./package.json").main.replace(/\.js$/, "");
 
@@ -26,7 +27,12 @@ export default [
     ],
   }),
   bundle({
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      copy({
+        targets: [{ src: "pages", dest: "lib/pages" }],
+      }),
+    ],
     output: {
       file: `${name}.d.ts`,
       format: "es",
