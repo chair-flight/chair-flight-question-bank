@@ -194,3 +194,55 @@ export const Q183L3D0SR = questionOneCorrect({
     as soon as a load is applied.
   `,
 });
+
+export const QAOPVETDSM = questionOneCorrect({
+  id: "QAOPVETDSM",
+  version: 1,
+  learningObjectives: ["021.09.03.03.04"],
+  question: (subject) => dedent`
+    In flight, if the Constant Speed Drive (CSD) temperature indicator is in 
+    the red arc...
+  `,
+  correctOptions: [
+    {
+      id: "QAOPVETDSM-0",
+      subject: "",
+      why: "",
+      text: dedent`
+        The pilot must disconnect it. The generator is not available for the 
+        rest of flight.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QAOPVETDSM-1",
+      why: "",
+      text: dedent`
+        The pilot can disconnect it to allow it to cool down. After normal 
+        operating temperature is recovered, the CSD can be started again.
+      `,
+    },
+    {
+      id: "QAOPVETDSM-2",
+      why: "",
+      text: dedent`
+        The pilot must disconnect it to allow it to cool down. After normal 
+        operating temperature is recovered, the CSD can be started again.
+      `,
+    },
+    {
+      id: "QAOPVETDSM-3",
+      why: "",
+      text: dedent`
+        The pilot must disconnect it and manually control the alternator.
+      `,
+    },
+    {
+      id: "QAOPVETDSM-4",
+      why: "",
+      text: "The pilot has to throttle back.",
+    },
+  ],
+  explanation: dedent``,
+});

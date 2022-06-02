@@ -39,7 +39,7 @@ export const QLSJXPLEGC = questionOneCorrect({
 export const QBDPMAJHMY = questionOneCorrect({
   id: "QBDPMAJHMY",
   version: 1,
-  learningObjectives: [],
+  learningObjectives: ["021.13.01.01.01"],
   question: (subject) => dedent`
     What is the name of the mode in which ${subject}?
   `,
@@ -82,7 +82,7 @@ export const QBDPMAJHMY = questionOneCorrect({
 export const QGFNANJ8IW = questionOneCorrect({
   id: "QGFNANJ8IW",
   version: 1,
-  learningObjectives: [],
+  learningObjectives: ["021.13.01.01.05"],
   question: (subject) => dedent`
     In jet transport aeroplanes, oxygen for the ${subject}
     system is stored as a...

@@ -20,6 +20,12 @@ export const getLosFormMdx = (mdx: string) => {
     textSection
       ?.replace(MATCH_LOS_TABLE_REGEX, "")
       ?.split(MATCH_LOS_TEXT_REGEX)
+      ?.map((e) =>
+        e
+          .split("\n")
+          .map((e) => e.trim())
+          .join("\n")
+      )
       ?.map((n) => n.trim())
       ?.filter((n) => !!n) ?? [];
 

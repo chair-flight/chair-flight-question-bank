@@ -4,7 +4,7 @@ import { questionOneCorrect } from "./base/questionOneCorrect";
 export const QUENI5QDU1 = questionOneCorrect({
   id: "QUENI5QDU1",
   version: 1,
-  learningObjectives: [],
+  learningObjectives: ["021.10.02.01.04"],
   question: () => dedent`
     When detonation is recognised in a piston engine, the correct procedure is 
     to...

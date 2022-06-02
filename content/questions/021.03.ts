@@ -4,7 +4,7 @@ import { questionOneCorrect } from "./base/questionOneCorrect";
 export const QRQSE0BTIB = questionOneCorrect({
   id: "QRQSE0BTIB",
   version: 1,
-  learningObjectives: [],
+  learningObjectives: ["021.03.02.01.01"],
   question: (subject) => dedent`
     What is a ${subject} property of hydraulic fluids?
   `,
