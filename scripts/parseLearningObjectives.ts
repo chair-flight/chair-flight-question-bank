@@ -19,7 +19,8 @@ export const getLosFormMdx = (mdx: string) => {
   const losTextEntries =
     textSection
       ?.replace(MATCH_LOS_TABLE_REGEX, "")
-      ?.split(MATCH_LOS_TEXT_REGEX)
+      ?.replace(MATCH_LOS_TEXT_REGEX, "potato    ")
+      ?.split("potato")
       ?.map((e) =>
         e
           .split("\n")
