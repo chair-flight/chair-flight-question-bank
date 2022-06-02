@@ -21,6 +21,7 @@ export type QuestionOption = {
 };
 
 export type Question = {
+  key: string;
   question: string;
   correct: string;
   options: [QuestionOption, QuestionOption, QuestionOption, QuestionOption];
@@ -32,6 +33,11 @@ export type FunctionQuestion = {
   id: QuestionId;
   version: number;
   learningObjectives: LearningObjectiveId[];
+  search: {
+    texts: string[];
+    options: string[];
+    explanation: string[];
+  };
   generate: (seed: string) => Question;
 };
 

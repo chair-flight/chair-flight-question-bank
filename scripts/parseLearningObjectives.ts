@@ -1,5 +1,4 @@
 import { default as fs } from "fs";
-import { exit } from "process";
 import { questions } from "../src/questions";
 import { CourseName, QuestionBankIndex } from "../src/types";
 

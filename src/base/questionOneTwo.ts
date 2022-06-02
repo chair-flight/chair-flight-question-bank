@@ -16,6 +16,11 @@ export const questionOneTwo = (props: {
     id: props.id,
     version: props.version,
     learningObjectives: props.learningObjectives,
+    search: {
+      texts: [],
+      options: [],
+      explanation: [],
+    },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
       const isFirstCorrect = shuffle([true, false])[0];
@@ -74,6 +79,7 @@ export const questionOneTwo = (props: {
       })();
 
       return {
+        key: `${props.id}_${seed}`,
         question,
         correct,
         annexes: [],

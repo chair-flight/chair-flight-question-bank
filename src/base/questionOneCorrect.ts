@@ -19,10 +19,29 @@ export const questionOneCorrect = (props: {
   }>;
   explanation: string;
 }): FunctionQuestion => {
+  const subjects = props.correctOptions.reduce<string[]>((sum, option) => {
+    return Array.isArray(option.subject)
+      ? [...sum, ...option.subject]
+      : [...sum, option.subject];
+  }, []);
+  const searchTexts = (
+    Array.isArray(props.question) ? props.question : [props.question]
+  ).flatMap((fn) => subjects.map((s) => fn(s)));
+  const searchOptions = [
+    ...props.correctOptions.flatMap((o) =>
+      Array.isArray(o.text) ? o.text : [o.text]
+    ),
+    ...props.otherOptions.map((o) => o.text),
+  ];
   return {
     id: props.id,
     version: props.version,
     learningObjectives: props.learningObjectives,
+    search: {
+      texts: searchTexts,
+      options: searchOptions,
+      explanation: [props.explanation],
+    },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
       const correctSubject = shuffle(props.correctOptions).reduce<string[]>(
@@ -62,6 +81,7 @@ export const questionOneCorrect = (props: {
       const finalOptions = shuffle([...wrongOptions, correctOption]);
 
       return {
+        key: `${props.id}_${seed}`,
         question: questionFn(correctSubject),
         correct: correctOption.id,
         annexes: [],
