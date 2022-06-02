@@ -9,7 +9,7 @@ if (!fs.existsSync(TARGET_DIR)) {
 }
 
 const contentTree = fs
-  .readdirSync("./pages")
+  .readdirSync("./content/pages")
   .filter((fileName) => fileName.includes(".mdx"))
   .sort((a, b) => b.localeCompare(a))
   .map((f) => f.replace(".mdx", "").split("."))

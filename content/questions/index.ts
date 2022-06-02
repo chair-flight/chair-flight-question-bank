@@ -1,4 +1,4 @@
-import { QuestionBankIndex } from "../types";
+import { QuestionBankIndex } from "../../src/types";
 import * as q_10 from "./010";
 import * as q_021_01 from "./021.01";
 import * as q_021_02 from "./021.02";

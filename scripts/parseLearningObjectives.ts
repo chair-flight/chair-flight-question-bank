@@ -1,5 +1,5 @@
 import { default as fs } from "fs";
-import { questions } from "../src/questions";
+import { questions } from "../content/questions";
 import { CourseName, QuestionBankIndex } from "../src/types";
 
 const TARGET_DIR = "./src/generated";
@@ -49,9 +49,9 @@ export const getLosFormMdx = (mdx: string) => {
 };
 
 const learningObjectives = fs
-  .readdirSync("./pages")
+  .readdirSync("./content/pages")
   .filter((fileName) => fileName.includes(".mdx"))
-  .map((fileName) => fs.readFileSync(`./pages/${fileName}`).toString())
+  .map((fileName) => fs.readFileSync(`./content/pages/${fileName}`).toString())
   .reduce(
     (sum, doc) => ({
       ...sum,

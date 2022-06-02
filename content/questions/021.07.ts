@@ -1,5 +1,5 @@
-import { dedent } from "../base/dedent";
-import { questionOneCorrect } from "../base/questionOneCorrect";
+import { dedent } from "./base/dedent";
+import { questionOneCorrect } from "./base/questionOneCorrect";
 
 export const VN4NNHQZ8P = questionOneCorrect({
   id: "VN4NNHQZ8P",

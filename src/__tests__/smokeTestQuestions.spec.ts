@@ -1,4 +1,4 @@
-import { questions } from "../questions";
+import { questions } from "../../content/questions";
 
 describe("smokeTestQuestions", () => {
   test.each(Object.entries(questions))("Smoke test (%s)", (key, question) => {

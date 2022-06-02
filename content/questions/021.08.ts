@@ -1,7 +1,7 @@
-import { dedent } from "../base/dedent";
-import { mergeQuestionVariants } from "../base/mergeQuestionVariants";
-import { questionOneCorrect } from "../base/questionOneCorrect";
-import { questionOneTwo } from "../base/questionOneTwo";
+import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
+import { questionOneCorrect } from "./base/questionOneCorrect";
+import { questionOneTwo } from "./base/questionOneTwo";
 
 export const QQDKRGQGRI = mergeQuestionVariants(
   {

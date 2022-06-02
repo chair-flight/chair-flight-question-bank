@@ -1,6 +1,6 @@
 import { default as fs } from "fs";
 import { default as matter } from "gray-matter";
-import { questions } from "../src/questions";
+import { questions } from "../content/questions";
 import { QuestionBankIndex } from "../src/types";
 import { getLosFormMdx } from "./parseLearningObjectives";
 
@@ -11,9 +11,9 @@ if (!fs.existsSync(TARGET_DIR)) {
 }
 
 const content = fs
-  .readdirSync("./pages")
+  .readdirSync("./content/pages")
   .filter((fileName) => fileName.includes(".mdx"))
-  .map((fileName) => fs.readFileSync(`./pages/${fileName}`).toString())
+  .map((fileName) => fs.readFileSync(`./content/pages/${fileName}`).toString())
   .reduce<QuestionBankIndex["content"]>((sum, file) => {
     const { data: frontMatter, content } = matter(file);
     const id = frontMatter.SyllabusReference;

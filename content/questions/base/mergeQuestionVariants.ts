@@ -1,4 +1,4 @@
-import { FunctionQuestion } from "../types";
+import { FunctionQuestion } from "../../../src/types";
 import { getRandomShuffler } from "./random";
 
 type CommonProps = Pick<
@@ -11,14 +11,12 @@ export const mergeQuestionVariants = <T extends CommonProps>(
   ...args: Array<(props: T) => FunctionQuestion>
 ): FunctionQuestion => {
   const handlers = args.map((arg) => arg(props));
-  args;
-
   return {
     ...props,
     search: {
-      texts: [],
-      options: [],
-      explanation: [],
+      texts: handlers.flatMap((h) => h.search.texts),
+      options: handlers.flatMap((h) => h.search.options),
+      explanation: handlers.flatMap((h) => h.search.explanation),
     },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);

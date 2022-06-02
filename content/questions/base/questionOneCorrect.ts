@@ -1,4 +1,8 @@
-import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
+import {
+  FunctionQuestion,
+  LearningObjectiveId,
+  QuestionId,
+} from "../../../src/types";
 import { getRandomShuffler } from "./random";
 
 export const questionOneCorrect = (props: {

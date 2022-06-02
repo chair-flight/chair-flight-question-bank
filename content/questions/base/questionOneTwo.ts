@@ -1,4 +1,9 @@
-import { FunctionQuestion, LearningObjectiveId, QuestionId } from "../types";
+import { sum } from "lodash";
+import {
+  FunctionQuestion,
+  LearningObjectiveId,
+  QuestionId,
+} from "../../../src/types";
 import { dedent } from "./dedent";
 import { getRandomShuffler } from "./random";
 
@@ -12,14 +17,22 @@ export const questionOneTwo = (props: {
   }>;
   explanation: string;
 }): FunctionQuestion => {
+  const searchTexts = props.statementPairs.reduce<string[]>(
+    (sum, { correct, wrong }) => [
+      ...sum,
+      ...(Array.isArray(correct) ? correct : [correct]),
+      ...(Array.isArray(wrong) ? wrong : [wrong]),
+    ],
+    []
+  );
   return {
     id: props.id,
     version: props.version,
     learningObjectives: props.learningObjectives,
     search: {
-      texts: [],
+      texts: searchTexts,
       options: [],
-      explanation: [],
+      explanation: [props.explanation],
     },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
