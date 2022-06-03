@@ -52,7 +52,7 @@ export const QPEZPNSAVM = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QPEZPNSAVN-2",
+      id: "QPEZPNSAVN-1",
       subject: "damping",
       why: "Provides the damping function",
       text: "Hydraulically fluid.",
@@ -66,7 +66,7 @@ export const QPEZPNSAVM = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QPEZPNSAVN-0",
+      id: "QPEZPNSAVN-3",
       why: dedent`
       Springs provide damping function in cars but are not suitable for the
       loads experimented in aircraft
@@ -74,17 +74,17 @@ export const QPEZPNSAVM = questionOneCorrect({
       text: "springs.",
     },
     {
-      id: "QPEZPNSAVN-1",
+      id: "QPEZPNSAVN-4",
       why: "",
       text: "Water.",
     },
     {
-      id: "QPEZPNSAVN-3",
+      id: "QPEZPNSAVN-5",
       why: "",
       text: "Halon.",
     },
     {
-      id: "QPEZPNSAVN-3",
+      id: "QPEZPNSAVN-6",
       why: "",
       text: "Oxigen.",
     },
@@ -235,17 +235,17 @@ export const QOKLUX0MEE = questionOneCorrect({
       text: "in cargo compartments.",
     },
     {
-      id: "QOKLUX0MEE-3",
+      id: "QOKLUX0MEE-4",
       why: "",
       text: "in landing gear axels.",
     },
     {
-      id: "QOKLUX0MEE-3",
+      id: "QOKLUX0MEE-5",
       why: "",
       text: "in hydraulic dampers.",
     },
     {
-      id: "QOKLUX0MEE-3",
+      id: "QOKLUX0MEE-6",
       why: "Plugs are installed on the wheels themselves, not the tyres!",
       text: "in tyres.",
     },

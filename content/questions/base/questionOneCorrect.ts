@@ -65,16 +65,18 @@ export const questionOneCorrect = (props: {
         })
       );
 
-      const correctOption = resolvedCorrectOptionTemplates.find(
-        ({ subject }) =>
-          subject === correctSubject || subject.includes(correctSubject)
+      const correctOption = resolvedCorrectOptionTemplates.find(({ subject }) =>
+        Array.isArray(subject)
+          ? subject.includes(correctSubject)
+          : subject === correctSubject
       )!;
 
       const wrongOptions = shuffle([
         ...props.otherOptions,
-        ...resolvedCorrectOptionTemplates.filter(
-          ({ subject }) =>
-            subject !== correctSubject || !subject.includes(correctSubject)
+        ...resolvedCorrectOptionTemplates.filter(({ subject }) =>
+          Array.isArray(subject)
+            ? !subject.includes(correctSubject)
+            : subject !== correctSubject
         ),
       ]).slice(0, 3);
 
@@ -83,6 +85,10 @@ export const questionOneCorrect = (props: {
         : props.question;
 
       const finalOptions = shuffle([...wrongOptions, correctOption]);
+
+      if (new Set(finalOptions.map((o) => o.id)).size !== finalOptions.length) {
+        debugger;
+      }
 
       return {
         key: `${props.id}_${seed}`,

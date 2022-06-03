@@ -1,5 +1,135 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionOneCorrect } from "./base/questionOneCorrect";
+import { questionOneTwo } from "./base/questionOneTwo";
+
+export const ZRON7SV6I1 = mergeQuestionVariants(
+  {
+    id: "ZRON7SV6I1",
+    version: 1,
+    learningObjectives: ["021.01.01.01.01"],
+    explanation: dedent`
+  `,
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      Which Of these Statements about Structural design principles is correct?
+    `,
+      correctOptions: [
+        {
+          id: "correct-1",
+          subject: "",
+          text: "Fail Safe implies multiple load Paths",
+          why: dedent``,
+        },
+        {
+          id: "correct-1",
+          subject: "",
+          text: dedent`
+          A safe life structure is based on use during a limited time period or
+          number of cycles
+        `,
+          why: dedent``,
+        },
+        {
+          id: "correct-1",
+          subject: "",
+          text: dedent`
+          Safe life requires a structure to have a minimum stated design life 
+          within which no catastrophic damage will occur
+        `,
+          why: dedent``,
+        },
+      ],
+      otherOptions: [
+        {
+          id: "wrong-1",
+          text: dedent`
+          Fail Safe implies the structure will fail, when one component fails,
+        `,
+          why: dedent`
+        `,
+        },
+        {
+          id: "wrong-2",
+          text: dedent`
+            Safe life is the preferred design technique for aircraft
+          `,
+          why: dedent`
+          Safe life structures tend to be extremely complex, and expensive to
+          maintain, and are avoided for all systems where a duplication is not 
+          possible (like engine fans).
+        `,
+        },
+        {
+          id: "wrong-3",
+          text: dedent`
+          Safe life requires a structure to have a maximum stated design life 
+          within which no catastrophic damage will occur
+        `,
+          why: dedent`
+        `,
+        },
+        {
+          id: "wrong-4",
+          text: dedent`
+          Fail-safe Implies the structure will fail when one component fails
+        `,
+          why: dedent`
+        `,
+        },
+        {
+          id: "wrong-5",
+          text: dedent`
+          Fail-safe structures are preferred to damage tolerant structures 
+          as they are lighter due to not requiring extra structural members
+        `,
+          why: dedent`
+          Fail-safe structures are preferred, but not because their lighter. 
+          Also fail safe structures require extra redundant structural members.
+        `,
+        },
+      ],
+    }),
+  (props) =>
+    questionOneTwo({
+      ...props,
+      question: (options) => dedent`
+      Which Of these Statements about Structural design principles is correct?
+
+      ${options}
+    `,
+      statementPairs: [
+        {
+          correct: "Fail Safe implies multiple load Paths",
+          wrong:
+            "Fail Safe implies the structure will fail, when one component fails",
+        },
+        {
+          correct: dedent`
+          A safe life structure is based on use during a limited time period or 
+          number of cycles
+        `,
+          wrong: dedent`
+          A Safe life requires a structure to have a maximum stated design life 
+          within which no catastrophic damage will occur
+        `,
+        },
+        {
+          correct: dedent`
+          A Safe life requires a structure to have a minimum stated design life within
+          which no catastrophic damage will occur
+        `,
+          wrong: dedent`
+          A Safe life requires a structure to have a maximum stated design life 
+          within which no catastrophic damage will occur
+        `,
+        },
+      ],
+    })
+);
 
 export const DD5Q0CX1SK = questionOneCorrect({
   id: "DD5Q0CX1SK",
@@ -12,11 +142,9 @@ export const DD5Q0CX1SK = questionOneCorrect({
     {
       id: "fail-safe",
       subject: "a fail-safe designed structure",
-      text: [
-        dedent`
-          A structure that has built-in redundancy with multiple load paths
-        `,
-      ],
+      text: dedent`
+        A structure that has built-in redundancy with multiple load paths
+      `,
       why: dedent`
         Definition of Fail-safe structure
       `,
@@ -123,21 +251,13 @@ export const QJX11PHDQW = questionOneCorrect({
     },
     {
       id: "correct-2",
-      subject: "Normal aeroplanes",
+      subject: [
+        "Normal aeroplanes",
+        "Utility aeroplanes",
+        "Commuter aeroplanes",
+      ],
       text: "CS-23",
       why: "Normal aeroplanes => CS-23",
-    },
-    {
-      id: "correct-3",
-      subject: "Utility aeroplanes",
-      text: "CS-23",
-      why: "Utility aeroplanes => CS-23",
-    },
-    {
-      id: "correct-4",
-      subject: "Commuter aeroplanes",
-      text: "CS-23",
-      why: "Commuter aeroplanes => CS-23",
     },
   ],
   otherOptions: [
@@ -220,7 +340,7 @@ export const QOKF03CAOL = questionOneCorrect({
       text: "is temporary and is reversed after the force is removed.",
     },
     {
-      id: "QOKF03CAOL-1",
+      id: "QOKF03CAOL-2",
       subject: "Plastic",
       why: "Definition of plastic deformation",
       text: "will cause irreversible buckling of the aircraft`s skin.",
@@ -228,12 +348,12 @@ export const QOKF03CAOL = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QOKF03CAOL-0",
+      id: "QOKF03CAOL-3",
       why: "",
       text: "will cause visible cracks to appear in the aircraft`s skin.",
     },
     {
-      id: "QOKF03CAOL-3",
+      id: "QOKF03CAOL-4",
       why: "",
       text: "is temporary but its not reversed after the force is removed.",
     },

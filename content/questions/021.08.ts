@@ -46,12 +46,12 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       ],
       otherOptions: [
         {
-          id: "QQDKRGQGRI-1",
+          id: "QQDKRGQGRI-2",
           why: "",
           text: "Jet A-1, Jet B, Jet A",
         },
         {
-          id: "QQDKRGQGRI-2",
+          id: "QQDKRGQGRI-3",
           why: "",
           text: "Jet B, Jet A, Jet A-1",
         },
@@ -120,7 +120,7 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       otherOptions: [3, 4, 5, 6, 7, 9].map((i) => ({
         id: `QQDKRGQGRI-${i}`,
         why: "",
-        text: "0.3",
+        text: `0.${i}`,
       })),
     }),
   (props) =>
@@ -185,8 +185,8 @@ export const PO5CKPSPED = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "correct-1",
-      subject: "Prevent waxing of the fuel in low temperatures",
+      id: "correct-2",
+      subject: "",
       text: "Reduce the risk of ice crystal formation",
       why: dedent`
         waxing of jet fuel describe the transition of jet fuel into a partially 
@@ -394,6 +394,14 @@ export const CV2ZV15SWP = questionOneCorrect({
       `,
       why: dedent`Fuel dump system / jettison system`,
     },
+    {
+      id: "correct-8",
+      subject: ["feed-box"],
+      text: dedent`
+        To increase the fuel level at the boost pump location.
+      `,
+      why: dedent`Fuel dump system / jettison system`,
+    },
   ],
   otherOptions: [
     {
@@ -409,6 +417,19 @@ export const CV2ZV15SWP = questionOneCorrect({
         To detect particles and contaminants that could damage the engine.
       `,
       why: dedent``,
+    },
+    {
+      id: "wrong-4",
+      text: dedent`
+        It decreases the fuel level at the boost pump location and ventilates 
+        the tank during refuelling.
+      `,
+      why: dedent``,
+    },
+    {
+      id: "wrong-5",
+      why: "",
+      text: "It distributes the fuel to the various tanks during refuelling.",
     },
   ],
   explanation: dedent`
@@ -525,12 +546,12 @@ export const O687IQRFBO = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-1",
+      id: "wrong-2",
       text: dedent`1 to 5 PSI`,
       why: dedent``,
     },
     {
-      id: "wrong-1",
+      id: "wrong-3",
       text: dedent`100 to 300 PSI`,
       why: dedent``,
     },
@@ -585,4 +606,50 @@ export const CC915FWXQO = questionOneCorrect({
   ],
   explanation: dedent`
   `,
+});
+
+export const QT8SI2VBBQ = questionOneCorrect({
+  id: "QT8SI2VBBQ",
+  version: 1,
+  learningObjectives: ["021.08.02.02.010"],
+  question: () => dedent`
+    Concerning the fuel system high-pressure shut-off valve (HPSOV) 
+    of a gas turbine engine...
+  `,
+  correctOptions: [
+    {
+      id: "QT8SI2VBBQ-2",
+      subject: "",
+      why: "",
+      text: dedent`
+        ignition is activated before fuel is delivered by the HPSOV to the 
+        fuel nozzles.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QT8SI2VBBQ-0",
+      why: "",
+      text: dedent`
+        the HPSOV is mounted in the wing front spar near the pylon.`,
+    },
+    {
+      id: "QT8SI2VBBQ-1",
+      why: "",
+      text: dedent`
+        the HPSOV is located between the HP fuel pump and the fuel 
+        control unit.
+      `,
+    },
+    {
+      id: "QT8SI2VBBQ-3",
+      why: "",
+      text: dedent`
+        manual HPSOV control from the cockpit is not possible with 
+        FADEC equipped engines.
+      `,
+    },
+  ],
+  explanation: dedent``,
 });

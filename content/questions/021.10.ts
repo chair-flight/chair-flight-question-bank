@@ -192,3 +192,38 @@ export const QKDV2J6I8Q = questionOneCorrect({
     energy that would otherwise be supplied to the crankshaft.
   `,
 });
+
+export const QT4526LX2R = questionOneCorrect({
+  id: "QT4526LX2R",
+  version: 1,
+  learningObjectives: ["021.10.02.01.03"],
+  question: () => dedent`
+    A piston engine may use a fuel of a different grade than the recommended...
+  `,
+  correctOptions: [
+    {
+      id: "QT4526LX2R-2",
+      subject: "",
+      why: "",
+      text: "provided that the grade is higher",
+    },
+  ],
+  otherOptions: [
+    {
+      id: "QT4526LX2R-0",
+      why: "",
+      text: "provided that the grade is lower",
+    },
+    {
+      id: "QT4526LX2R-1",
+      why: "",
+      text: "never",
+    },
+    {
+      id: "QT4526LX2R-3",
+      why: "",
+      text: "provided that it is an aeronautical petrol",
+    },
+  ],
+  explanation: dedent``,
+});

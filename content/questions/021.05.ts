@@ -117,12 +117,12 @@ export const QVGG8YODIU = questionOneCorrect({
       text: "Flight envelope exceedance",
     },
     {
-      id: "QVGG8YODIU-2",
+      id: "QVGG8YODIU-4",
       why: "The aerodynamic characteristics of the aircraft are not changed",
       text: "Profile drag reduction",
     },
     {
-      id: "QVGG8YODIU-3",
+      id: "QVGG8YODIU-5",
       why: "The aerodynamic characteristics of the aircraft are not changed",
       text: "Mach number reduction",
     },
@@ -154,7 +154,7 @@ export const C470WY82 = questionOneCorrect({
       why: dedent`Definition of fully manual flight control system`,
     },
     {
-      id: "correct-1",
+      id: "correct-2",
       subject: "powered",
       text: dedent`
         The flight control surfaces are not connected to the flight deck 
@@ -243,7 +243,7 @@ export const PPZM66TKNR = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-2",
+      id: "wrong-3",
       text: dedent`
         The pilot does not feel any force when moving the flight control surface 
         in flight
@@ -272,7 +272,7 @@ export const QOMFNZ202J = questionOneCorrect({
       id: "correct-1",
       subject: "irreversible",
       text: dedent`
-        is achieved by adjusting the \"zero force point\" of the feel system
+        is achieved by adjusting the "zero force point" of the feel system
       `,
       why: dedent``,
     },
@@ -294,7 +294,7 @@ export const QOMFNZ202J = questionOneCorrect({
     },
     {
       id: "wrong-2",
-      text: "is not necesaary",
+      text: "is not necessary",
       why: dedent``,
     },
   ],

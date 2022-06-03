@@ -8,7 +8,7 @@ export const VN4NNHQZ8P = questionOneCorrect({
   question: (subject) => dedent`The ${subject} anti-ice system...`,
   correctOptions: [
     {
-      id: "VN4NNHQZ8P-1",
+      id: "VN4NNHQZ8P-0",
       subject: "wing",
       why: "",
       text: "The leading edge or the slats, either partially or completely.",
