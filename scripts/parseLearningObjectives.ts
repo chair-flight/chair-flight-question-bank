@@ -12,7 +12,7 @@ const MATCH_LOS_TABLE_REGEX = /^\|(.*)/gm;
 const MATCH_LOS_FROM_TABLE_REGEX = /(?=| ) (0.*) (?= \|)/gm;
 const MATCH_LOS_TEXT_REGEX = /(?:\d\.[ \t]+\*\*0.*\*\* -- )/gm;
 
-export const getLosFormMdx = (mdx: string) => {
+export const getLosFormMdx = (contentId: string, mdx: string) => {
   const textSection =
     mdx?.split("## Learning Objectives")[1]?.split("## Summary")[0] ?? "";
   const losTableEntries = textSection?.match(MATCH_LOS_FROM_TABLE_REGEX) ?? [];
@@ -39,6 +39,7 @@ export const getLosFormMdx = (mdx: string) => {
     (sum, entry, index) => {
       const [lo, ...values] = entry.split("|").map((e) => e.trim());
       sum[lo] = {
+        contentId,
         courses: Object.values(CourseName).filter(
           (_, i) => !!values[i]
         ) as CourseName[],
@@ -58,11 +59,15 @@ export const getLosFormMdx = (mdx: string) => {
 const learningObjectives = fs
   .readdirSync("./content/pages")
   .filter((fileName) => fileName.includes(".mdx"))
-  .map((fileName) => fs.readFileSync(`./content/pages/${fileName}`).toString())
+  .map((filename) => filename.replace(".mdx", ""))
+  .map((fileName) => [
+    fileName,
+    fs.readFileSync(`./content/pages/${fileName}.mdx`).toString(),
+  ])
   .reduce(
-    (sum, doc) => ({
+    (sum, [contentId, doc]) => ({
       ...sum,
-      ...getLosFormMdx(doc),
+      ...getLosFormMdx(contentId, doc),
     }),
     {}
   );

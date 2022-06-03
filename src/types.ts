@@ -58,6 +58,7 @@ export type LearningObjectiveMetadata = {
   courses: CourseName[];
   questions: QuestionId[];
   text: string;
+  contentId: string;
 };
 
 export type QuestionBankIndex = {

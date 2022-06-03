@@ -13,11 +13,14 @@ if (!fs.existsSync(TARGET_DIR)) {
 const content = fs
   .readdirSync("./content/pages")
   .filter((fileName) => fileName.includes(".mdx"))
-  .map((fileName) => fs.readFileSync(`./content/pages/${fileName}`).toString())
-  .reduce<QuestionBankIndex["content"]>((sum, file) => {
+  .map((fileName) => [
+    fileName,
+    fs.readFileSync(`./content/pages/${fileName}`).toString(),
+  ])
+  .reduce<QuestionBankIndex["content"]>((sum, [contentId, file]) => {
     const { data: frontMatter, content } = matter(file);
     const id = frontMatter.SyllabusReference;
-    const los = getLosFormMdx(file);
+    const los = getLosFormMdx(contentId, file);
 
     sum[id] = {
       id: id,
