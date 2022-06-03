@@ -7,10 +7,17 @@ import {
 import { dedent } from "./dedent";
 import { getRandomShuffler } from "./random";
 
+const defaultQuestion = (options: string) => dedent`
+Which of the following statements are correct?
+
+${options}
+`;
+
 export const questionOneTwo = (props: {
   id: QuestionId;
   version: number;
   learningObjectives: LearningObjectiveId[];
+  question?: (options: string) => string;
   statementPairs: Array<{
     correct: string | string[];
     wrong: string | string[];
@@ -44,16 +51,14 @@ export const questionOneTwo = (props: {
         return Array.isArray(arr) ? shuffle(arr)[0] : arr;
       };
 
-      const question = dedent`
-        Which of the following statements are correct?
-
+      const question = (props.question ?? defaultQuestion)(dedent`
         1. ${getText(
           shuffledStatements[0][isFirstCorrect ? "correct" : "wrong"]
         )}
         2. ${getText(
           shuffledStatements[1][isSecondCorrect ? "correct" : "wrong"]
         )}
-      `;
+      `);
 
       const finalOptions = shuffle([
         {
