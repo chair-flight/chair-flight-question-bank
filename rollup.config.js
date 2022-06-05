@@ -10,7 +10,7 @@ export default {
     copy({
       targets: [
         {
-          src: "pages/images/*",
+          src: "content/images/*",
           dest: "lib/images",
         },
       ],
