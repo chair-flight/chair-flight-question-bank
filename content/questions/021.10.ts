@@ -1,4 +1,5 @@
 import { dedent } from "./base/dedent";
+import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
 export const QUENI5QDU1 = questionOneCorrect({
@@ -223,6 +224,50 @@ export const QT4526LX2R = questionOneCorrect({
       id: "QT4526LX2R-3",
       why: "",
       text: "provided that it is an aeronautical petrol",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const Q7AIYLFNHA = questionMultipleCorrect({
+  id: "Q7AIYLFNHA",
+  version: 1,
+  learningObjectives: ["021.10.08.01.07", "021.10.07.01.06"],
+  question: (options) => dedent`
+    Given the following statements about diesel engines:
+
+    ${options}
+
+    The combination that regroups all of the correct statements is...
+  `,
+  statements: [
+    {
+      wrong: "power is set by the mixture control.",
+      correct: "there is no mixture control.",
+    },
+    {
+      correct: "the amount of power is determined by the fuel flow only.",
+      wrong:
+        "the amount of power is determined by the operation of a throttle valve.",
+    },
+    {
+      correct: "thermal efficiency is higher than that for a petrol engine.",
+      wrong: "thermal efficiency is lower than that for a petrol engine.",
+    },
+    {
+      correct: "compression rate is much higher than that for a petrol engine.",
+      wrong: "compression rate is much lower than that for a petrol engine.",
+    },
+    {
+      wrong: "diesel fuel is more inflammable than petrol.",
+    },
+  ],
+  select: [
+    {
+      minOptions: 4,
+      maxOptions: 5,
+      minCorrect: 3,
+      maxCorrect: 3,
     },
   ],
   explanation: dedent``,

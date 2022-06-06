@@ -1,5 +1,8 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
+import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
+import { questionOneTwo } from "./base/questionOneTwo";
 
 export const QLCIVHT8TY = questionOneCorrect({
   id: "QLCIVHT8TY",
@@ -208,7 +211,7 @@ export const QYLPO7LROI = questionOneCorrect({
     {
       id: "QYLPO7LROI-1",
       why: "",
-      text: "increase total pressure.",
+      text: "increase Static pressure.",
     },
     {
       id: "QYLPO7LROI-2",
@@ -551,3 +554,215 @@ export const QV6XVWMC52 = questionOneCorrect({
     something may be off.
   `,
 });
+
+export const QD8RYN3PMT = questionMultipleCorrect({
+  id: "QD8RYN3PMT",
+  version: 1,
+  learningObjectives: ["021.11.03.05.02"],
+  question: (options) => dedent`
+    The use of igniters in a gas turbine engine is required:
+    
+    ${options}
+
+    The combination that regroups all of the correct statements is...
+  `,
+  statements: [
+    {
+      wrong: "throughout the operating range of the engine",
+    },
+    {
+      wrong: "during engine acceleration",
+    },
+    {
+      correct: "for in-flight relights",
+    },
+  ],
+  select: [],
+  explanation: dedent``,
+});
+
+export const QB4G1PILCV = questionOneTwo({
+  id: "QB4G1PILCV",
+  version: 1,
+  learningObjectives: ["021.11.02.01.02"],
+  question: (options) => dedent`
+    Which of the following statements is correct about the flow in a 
+    divergent (subsonic) gas turbine engine intake?
+
+    ${options}
+  `,
+  statementPairs: [
+    {
+      correct: "The dynamic pressure decreases in flow direction.",
+      wrong: "The dynamic pressure increases in flow direction.",
+    },
+    {
+      correct: "The airflow velocity decreases in flow direction.",
+      wrong: "The airflow velocity increases in flow direction.",
+    },
+    {
+      correct: "The total pressure remains constant in flow direction.",
+      wrong: [
+        "The total pressure increases in flow direction.",
+        "The total pressure decreases in flow direction.",
+      ],
+    },
+    {
+      correct: "The total temperatures remains constant in flow direction.",
+      wrong: [
+        "The total temperatures increases in flow direction.",
+        "The total temperatures decreases in flow direction.",
+      ],
+    },
+    {
+      correct: "The static temperature increases in flow direction.",
+      wrong: "The static temperature decreases in flow direction.",
+    },
+    {
+      correct: "The static pressure increases in flow direction.",
+      wrong: "The static pressure decreases in flow direction.",
+    },
+  ],
+  explanation: dedent`
+    In a subsonic divergent intake we will observe air expansion. As such...
+
+    - **Total Pressure / Temperature** - Remains constant
+    - **Static Pressure / Temperature** - Increases
+    - **Dynamic pressure / flow velocity - Decreases
+  `,
+});
+
+export const QVEIKPL9TD = questionMultipleCorrect({
+  id: "QVEIKPL9TD",
+  version: 1,
+  learningObjectives: ["021.11.02.02.02"],
+  question: (options) => dedent`
+    The characteristics of an axial compressor in a gas turbine engine 
+    compared to a centrifugal compressor with the same engine diameter are:
+
+    ${options}
+
+    The combination that regroups all of the correct statements is...
+  `,
+  statements: [
+    {
+      correct: "A low pressure ratio by stage.",
+      wrong: "A high pressure ratio by stage.",
+    },
+    {
+      correct: "The possibility of compressing a large mass airflow.",
+      wrong: "The inability of compressing a large mass airflow.",
+    },
+  ],
+  select: [
+    {
+      minOptions: 4,
+      maxOptions: 4,
+      minCorrect: 2,
+      maxCorrect: 2,
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QXGASRA4NB = mergeQuestionVariants(
+  {
+    id: "QXGASRA4NB",
+    version: 1,
+    learningObjectives: ["021.11.02.04.02"],
+    explanation: dedent`
+      - **P** - Flow static Pressure
+      - **T** - Flow static Temperature
+      - **V** - Flow velocity
+      - **E** - Flow total energy - Kinetic Energy (from its velocity) + 
+        Potential Energy (from its pressure)
+
+      |                     | Impulse Turbine | Reaction Turbine |
+      | ------------------- | --------------- | ---------------- |
+      | P/T at Stator Vanes | Decreases       | Decreases        |
+      | V at Stator Vanes   | Increases       | Increases        |
+      | E at Stator Vanes   | Constant        | Constant         |
+      |                     |                 |                  |
+      | P/T at Rotor blades | Constant        | Decreases        |
+      | V at Rotor blades   | Decreases       | Decreases        |
+      | E at Rotor blades   | Decreases       | Decreases        |
+    `,
+    question: (subject: string) => (options: string) =>
+      dedent`
+      Which of these statements about an reaction turbine are correct or 
+      incorrect?
+
+      ${options}
+    `,
+  },
+  (props) =>
+    questionOneTwo({
+      ...props,
+      question: props.question("impulse"),
+      statementPairs: [
+        {
+          correct: [
+            "The pressure decreases across the nozzle guide vanes",
+            "The velocity increases across the nozzle guide vanes",
+            "The total energy remains constant across the nozzle guide vanes",
+          ],
+          wrong: [
+            "The pressure increases across the nozzle guide vanes",
+            "The velocity decreases across the nozzle guide vanes",
+            "The total energy increases across the nozzle guide vanes",
+            "The total energy decreases across the nozzle guide vanes",
+          ],
+        },
+        {
+          correct: [
+            "The pressure remains constant across the rotor blades",
+            "The velocity decreases across the rotor blades",
+            "The total energy decreases across the rotor blades",
+          ],
+          wrong: [
+            "The pressure increases across the rotor blades",
+            "The pressure decreases across the rotor blades",
+            "The velocity increases across the rotor blades",
+            "The velocity remains constant across the rotor blades",
+            "The total energy remains constant across the rotor blades",
+            "The total energy increases across the rotor blades",
+          ],
+        },
+      ],
+    }),
+  (props) =>
+    questionOneTwo({
+      ...props,
+      question: props.question("reaction"),
+      statementPairs: [
+        {
+          correct: [
+            "The pressure decreases across the nozzle guide vanes",
+            "The velocity increases across the nozzle guide vanes",
+            "The total energy remains constant across the nozzle guide vanes",
+          ],
+          wrong: [
+            "The pressure increases across the nozzle guide vanes",
+            "The velocity decreases across the nozzle guide vanes",
+            "The total energy increases across the nozzle guide vanes",
+            "The total energy decreases across the nozzle guide vanes",
+          ],
+        },
+        {
+          correct: [
+            "The pressure decreases across the rotor blades",
+            "The velocity decreases across the rotor blades",
+            "The total energy decreases across the rotor blades",
+          ],
+          wrong: [
+            "The pressure increases across the rotor blades",
+            "The pressure remains constant across the rotor blades",
+            "The velocity increases across the rotor blades",
+            "The velocity remains constant across the rotor blades",
+            "The total energy remains constant across the rotor blades",
+            "The total energy increases across the rotor blades",
+          ],
+        },
+      ],
+    })
+);
