@@ -247,8 +247,9 @@ export const Q7AIYLFNHA = questionMultipleCorrect({
     },
     {
       correct: "the amount of power is determined by the fuel flow only.",
-      wrong:
-        "the amount of power is determined by the operation of a throttle valve.",
+      wrong: dedent`
+        the amount of power is determined by the operation of a throttle valve.
+      `,
     },
     {
       correct: "thermal efficiency is higher than that for a petrol engine.",
@@ -262,13 +263,11 @@ export const Q7AIYLFNHA = questionMultipleCorrect({
       wrong: "diesel fuel is more inflammable than petrol.",
     },
   ],
-  select: [
-    {
-      minOptions: 4,
-      maxOptions: 5,
-      minCorrect: 3,
-      maxCorrect: 3,
-    },
-  ],
+  select: {
+    minOptions: 4,
+    maxOptions: 5,
+    minCorrect: 3,
+    maxCorrect: 3,
+  },
   explanation: dedent``,
 });

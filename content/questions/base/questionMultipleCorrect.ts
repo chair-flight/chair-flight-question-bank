@@ -18,12 +18,12 @@ export const questionMultipleCorrect = (props: {
   version: number;
   learningObjectives: LearningObjectiveId[];
   question?: (options: string) => string;
-  select: Array<{
+  select: {
     minOptions: number;
     maxOptions: number;
     minCorrect: number;
     maxCorrect: number;
-  }>;
+  };
   statements: Array<{
     correct?: string | string[];
     wrong?: string | string[];

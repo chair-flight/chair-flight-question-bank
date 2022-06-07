@@ -1,4 +1,6 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
+import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
 export const LAIVWRGDXF = questionOneCorrect({
@@ -310,5 +312,125 @@ export const QOMFNZ202J = questionOneCorrect({
     experience you get with a cheap joystick playing flight simulator. The stick 
     will always center in the same position, but you can still trim the 
     aircraft, but the "zero force point" of the feel system will change.
+  `,
+});
+
+export const WPE84BPS20 = mergeQuestionVariants(
+  {
+    id: "WPE84BPS20",
+    version: 1,
+    learningObjectives: [
+      "021.05.02.01.01",
+      "021.05.01.01.01",
+      "021.05.01.01.02",
+      "021.05.02.01.02",
+    ],
+    primaryFlightControls: [
+      "Aileron",
+      "Rudder",
+      "Elevator",
+      "Flaperon",
+      "Roll Spoilers",
+    ],
+    secondaryFlightControls: [
+      "Trimmable Stabilizer",
+      "Speed Brake",
+      "Flaps",
+      "Slats",
+      "Lift augmentation devices",
+    ],
+    question: (subject: string) => (options: string) =>
+      dedent`
+    Which of the following are ${subject} Flight Controls?
+
+    ${options},
+  `,
+    explanation: dedent`
+    Primary flight controls:
+
+    - Aileron
+    - Rudder
+    - Elevator
+    - Flaperon
+    - Roll Spoilers
+
+    Secondary flight controls:
+     
+    - Trimmable Stabilizer
+    - Speed Brake
+    - Flaps
+    - Slats
+    - Lift augmentation devices 
+  `,
+    select: {
+      minOptions: 4,
+      maxOptions: 4,
+      minCorrect: 2,
+      maxCorrect: 4,
+    },
+  },
+  (props) =>
+    questionMultipleCorrect({
+      ...props,
+      question: props.question("primary"),
+      statements: [
+        ...props.primaryFlightControls.map((correct) => ({ correct })),
+        ...props.secondaryFlightControls.map((wrong) => ({ wrong })),
+      ],
+    }),
+  (props) =>
+    questionMultipleCorrect({
+      ...props,
+      question: props.question("secondary"),
+      statements: [
+        ...props.secondaryFlightControls.map((correct) => ({ correct })),
+        ...props.primaryFlightControls.map((wrong) => ({ wrong })),
+      ],
+    })
+);
+
+export const N2HGF03ISU = questionOneCorrect({
+  id: "N2HGF03ISU",
+  version: 1,
+  learningObjectives: ["021.05.02.01.02"],
+  question: () => dedent`What is the purpose of a trim tab?`,
+  correctOptions: [
+    {
+      id: "correct-1",
+      subject: "",
+      text: dedent`
+        Reduce hinge moments, with the side-effect of reducing control surface
+        efficiency
+      `,
+      why: dedent``,
+    },
+  ],
+  otherOptions: [
+    {
+      id: "wrong-1",
+      text: dedent`
+        Increase hinge moments, with the side-effect of reducing control surface
+        efficiency
+      `,
+      why: dedent``,
+    },
+    {
+      id: "wrong-2",
+      text: dedent`
+        Reduce hinge moments, with the side-effect of increasing control surface
+        efficiency
+      `,
+      why: dedent``,
+    },
+    {
+      id: "wrong-3",
+      text: dedent`
+        Increase hinge moments, with the side-effect of increasing control 
+        surface efficiency
+      `,
+      why: dedent``,
+    },
+  ],
+  explanation: dedent`
   `,
 });
