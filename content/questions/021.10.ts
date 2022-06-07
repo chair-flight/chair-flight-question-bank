@@ -242,10 +242,8 @@ export const Q7AIYLFNHA = questionMultipleCorrect({
     },
   ],
   select: {
-    minOptions: 4,
-    maxOptions: 5,
-    minCorrect: 3,
-    maxCorrect: 3,
+    numberOfCorrectOptions: 3,
+    numberOfOptions: 5,
   },
   explanation: dedent``,
 });

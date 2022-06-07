@@ -330,12 +330,6 @@ export const WPE84BPS20 = mergeQuestionVariants(
     - Slats
     - Lift augmentation devices 
   `,
-    select: {
-      minOptions: 4,
-      maxOptions: 4,
-      minCorrect: 2,
-      maxCorrect: 4,
-    },
   },
   (props) =>
     questionMultipleCorrect({

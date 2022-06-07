@@ -523,12 +523,6 @@ export const QD8RYN3PMT = questionMultipleCorrect({
       correct: "for in-flight relights",
     },
   ],
-  select: {
-    minCorrect: 1,
-    maxCorrect: 3,
-    minOptions: 3,
-    maxOptions: 3,
-  },
   explanation: dedent``,
 });
 
@@ -606,10 +600,8 @@ export const QVEIKPL9TD = questionMultipleCorrect({
     },
   ],
   select: {
-    minOptions: 4,
-    maxOptions: 4,
-    minCorrect: 2,
-    maxCorrect: 2,
+    numberOfCorrectOptions: 2,
+    numberOfOptions: 4,
   },
   explanation: dedent``,
 });

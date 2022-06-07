@@ -14,9 +14,9 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
   (props) =>
     questionOneCorrect({
       ...props,
-      question: (subject) => dedent`
-      Which Of these Statements about Structural design principles is correct?
-    `,
+      question: () => dedent`
+        Which Of these Statements about Structural design principles is correct?
+      `,
       correctOptions: [
         {
           subject: "",
@@ -89,10 +89,10 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
     questionOneTwo({
       ...props,
       question: (options) => dedent`
-      Which Of these Statements about Structural design principles is correct?
+        Which Of these Statements about Structural design principles is correct?
 
-      ${options}
-    `,
+        ${options}
+      `,
       statementPairs: [
         {
           correct: "Fail Safe implies multiple load Paths",
@@ -101,23 +101,23 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
         },
         {
           correct: dedent`
-          A safe life structure is based on use during a limited time period or 
-          number of cycles
-        `,
+            A safe life structure is based on use during a limited time period or 
+            number of cycles
+          `,
           wrong: dedent`
-          A Safe life requires a structure to have a maximum stated design life 
-          within which no catastrophic damage will occur
-        `,
+            A Safe life requires a structure to have a maximum stated design life 
+            within which no catastrophic damage will occur
+          `,
         },
         {
           correct: dedent`
-          A Safe life requires a structure to have a minimum stated design life within
-          which no catastrophic damage will occur
-        `,
+            A Safe life requires a structure to have a minimum stated design 
+            life within which no catastrophic damage will occur
+          `,
           wrong: dedent`
-          A Safe life requires a structure to have a maximum stated design life 
-          within which no catastrophic damage will occur
-        `,
+            A Safe life requires a structure to have a maximum stated design 
+            life within which no catastrophic damage will occur
+          `,
         },
       ],
     })
