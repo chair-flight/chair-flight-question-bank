@@ -11,13 +11,11 @@ export const QPEZPNSAVN = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QPEZPNSAVN-1",
       subject: "usually operated",
       why: "",
       text: "an hydraulic system.",
     },
     {
-      id: "QPEZPNSAVN-2",
       subject: "operated in emergency situations",
       why: "System used as a method for emergency gear extension",
       text: [
@@ -29,12 +27,10 @@ export const QPEZPNSAVN = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QPEZPNSAVN-3",
       why: "",
       text: "an electric system.",
     },
     {
-      id: "QPEZPNSAVN-4",
       why: "",
       text: "a magnetic system.",
     },
@@ -52,13 +48,11 @@ export const QPEZPNSAVM = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QPEZPNSAVN-1",
       subject: "damping",
       why: "Provides the damping function",
       text: "Hydraulically fluid.",
     },
     {
-      id: "QPEZPNSAVN-2",
       subject: "spring",
       why: "Provides the spring function",
       text: "Nitrogen.",
@@ -66,7 +60,6 @@ export const QPEZPNSAVM = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QPEZPNSAVN-3",
       why: dedent`
       Springs provide damping function in cars but are not suitable for the
       loads experimented in aircraft
@@ -74,17 +67,14 @@ export const QPEZPNSAVM = questionOneCorrect({
       text: "springs.",
     },
     {
-      id: "QPEZPNSAVN-4",
       why: "",
       text: "Water.",
     },
     {
-      id: "QPEZPNSAVN-5",
       why: "",
       text: "Halon.",
     },
     {
-      id: "QPEZPNSAVN-6",
       why: "",
       text: "Oxigen.",
     },
@@ -115,7 +105,6 @@ export const QBMUUHFR4T = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QBMUUHFR4T-2",
       subject: "",
       why: "",
       text: dedent`
@@ -126,7 +115,6 @@ export const QBMUUHFR4T = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QBMUUHFR4T-0",
       why: "",
       text: dedent`
         Rudder pedal nose wheel steering functions on the ground as well as in 
@@ -134,14 +122,12 @@ export const QBMUUHFR4T = questionOneCorrect({
       `,
     },
     {
-      id: "QBMUUHFR4T-1",
       why: "",
       text: dedent`
         Rudder pedal nose wheel steering does not function during take-off.
       `,
     },
     {
-      id: "QBMUUHFR4T-3",
       why: "",
       text: dedent`
         Rudder pedal nose wheel steering provides a larger deflection of the 
@@ -161,7 +147,6 @@ export const QSXHKE4HRU = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QSXHKE4HRU-0",
       subject: "",
       why: "",
       text: dedent`
@@ -172,7 +157,6 @@ export const QSXHKE4HRU = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QSXHKE4HRU-1",
       why: "",
       text: dedent`
         An oscillatory longitudinal movement of the nose-wheel about the lateral 
@@ -181,14 +165,12 @@ export const QSXHKE4HRU = questionOneCorrect({
       `,
     },
     {
-      id: "QSXHKE4HRU-2",
       why: "",
       text: dedent`
         An oscillatory longitudinal movement of the nose-wheel about the lateral 
         axis of the aircraft when the nose wheel is in contact with the ground`,
     },
     {
-      id: "QSXHKE4HRU-3",
       why: "",
       text: dedent`
         An oscillatory lateral movement of the nose-wheel about the longitudinal 
@@ -209,7 +191,6 @@ export const QOKLUX0MEE = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QOKLUX0MEE-1",
       subject: "",
       why: dedent`
         Thermal plugs allow for tires to deflate when reaching critical 
@@ -220,32 +201,26 @@ export const QOKLUX0MEE = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QOKLUX0MEE-0",
       why: "",
       text: "on cabin windows.",
     },
     {
-      id: "QOKLUX0MEE-2",
       why: "",
       text: "in fire warning systems.",
     },
     {
-      id: "QOKLUX0MEE-3",
       why: "",
       text: "in cargo compartments.",
     },
     {
-      id: "QOKLUX0MEE-4",
       why: "",
       text: "in landing gear axels.",
     },
     {
-      id: "QOKLUX0MEE-5",
       why: "",
       text: "in hydraulic dampers.",
     },
     {
-      id: "QOKLUX0MEE-6",
       why: "Plugs are installed on the wheels themselves, not the tyres!",
       text: "in tyres.",
     },
@@ -262,7 +237,6 @@ export const QZNCPQHCBC = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QZNCPQHCBC-1",
       subject: "",
       why: "",
       text: dedent`
@@ -272,7 +246,6 @@ export const QZNCPQHCBC = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QZNCPQHCBC-0",
       why: "",
       text: dedent`
         A gradual decrease in the circumferential movement of the tyre due to 
@@ -280,7 +253,6 @@ export const QZNCPQHCBC = questionOneCorrect({
       `,
     },
     {
-      id: "QZNCPQHCBC-2",
       why: "",
       text: dedent`
         The decrease in inflation pressure due to increase in ambient 
@@ -288,7 +260,6 @@ export const QZNCPQHCBC = questionOneCorrect({
       `,
     },
     {
-      id: "QZNCPQHCBC-3",
       why: "",
       text: dedent`
         The increase in inflation pressure due to decrease in ambient 

@@ -10,13 +10,11 @@ export const Q5FKFF4KHA = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "Q5FKFF4KHA-3",
       subject: ["accelerometers required on an INS"],
       why: "INS: tree laser ring gyros, and two accelerometers",
       text: "Two",
     },
     {
-      id: "Q5FKFF4KHA-3",
       subject: [
         "accelerometers required on an IRS",
         "gyros required on an IRS",
@@ -28,12 +26,10 @@ export const Q5FKFF4KHA = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "Q5FKFF4KHA-0",
       why: "",
       text: "One",
     },
     {
-      id: "Q5FKFF4KHA-1",
       why: "",
       text: "Four",
     },

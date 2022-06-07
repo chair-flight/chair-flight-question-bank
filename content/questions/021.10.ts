@@ -12,7 +12,6 @@ export const QUENI5QDU1 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QUENI5QDU1-0",
       subject: "",
       why: "",
       text: "reduce manifold pressure and fully enrich the mixture.",
@@ -20,17 +19,14 @@ export const QUENI5QDU1 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QUENI5QDU1-1",
       why: "",
       text: "increase manifold pressure and fully enrich the mixture.",
     },
     {
-      id: "QUENI5QDU1-2",
       why: "",
       text: "increase manifold pressure and lean the mixture.",
     },
     {
-      id: "QUENI5QDU1-3",
       why: "",
       text: "reduce manifold pressure and lean the mixture.",
     },
@@ -60,7 +56,6 @@ export const QQOLLEVRAW = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QQOLLEVRAW-1",
       subject: "",
       why: "",
       text: dedent`
@@ -70,7 +65,6 @@ export const QQOLLEVRAW = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QQOLLEVRAW-0",
       why: dedent`
         NOTE: engines with accelerator pumps can use them to serve the function 
         of a primer
@@ -78,12 +72,10 @@ export const QQOLLEVRAW = questionOneCorrect({
       text: "enable engine starting.",
     },
     {
-      id: "QQOLLEVRAW-2",
       why: "",
       text: "enable engine idling.",
     },
     {
-      id: "QQOLLEVRAW-3",
       why: "",
       text: dedent`
         maintain a constant mixture in a piston engine at low and high power 
@@ -104,7 +96,6 @@ export const Q4O4T9FX57 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "Q4O4T9FX57-2",
       subject: "",
       why: "",
       text: dedent`
@@ -115,21 +106,18 @@ export const Q4O4T9FX57 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "Q4O4T9FX57-0",
       why: "",
       text: dedent`
         the periphery and leaves via the eye of the impeller.
       `,
     },
     {
-      id: "Q4O4T9FX57-1",
       why: "",
       text: dedent`
         a tangent to the rotor and leaves via the stator.
       `,
     },
     {
-      id: "Q4O4T9FX57-3",
       why: "",
       text: dedent`
         the diffuser and is fed to the impeller at the optimum angle of attack.
@@ -146,13 +134,11 @@ export const QKDV2J6I8Q = questionOneCorrect({
   question: () => dedent`When applying carburettor heating...`,
   correctOptions: [
     {
-      id: "QKDV2J6I8Q-1",
       subject: "",
       why: "",
       text: "the mixture becomes richer.",
     },
     {
-      id: "QKDV2J6I8Q-2",
       subject: "",
       why: "",
       text: "the power output reduces.",
@@ -160,22 +146,18 @@ export const QKDV2J6I8Q = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QKDV2J6I8Q-3",
       why: "",
       text: "no change occurs in the mixture.",
     },
     {
-      id: "QKDV2J6I8Q-4",
       why: "When",
       text: "RPM increases immediately.",
     },
     {
-      id: "QKDV2J6I8Q-5",
       why: "",
       text: "the mixture becomes leaner.",
     },
     {
-      id: "QKDV2J6I8Q-6",
       why: "",
       text: "the power output increases.",
     },
@@ -203,7 +185,6 @@ export const QT4526LX2R = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QT4526LX2R-2",
       subject: "",
       why: "",
       text: "provided that the grade is higher",
@@ -211,17 +192,14 @@ export const QT4526LX2R = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QT4526LX2R-0",
       why: "",
       text: "provided that the grade is lower",
     },
     {
-      id: "QT4526LX2R-1",
       why: "",
       text: "never",
     },
     {
-      id: "QT4526LX2R-3",
       why: "",
       text: "provided that it is an aeronautical petrol",
     },

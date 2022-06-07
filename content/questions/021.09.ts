@@ -10,7 +10,6 @@ export const QNY7QQYIBA = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QNY7QQYIBA-0",
       subject: "",
       why: "",
       text: "voltage and phase.",
@@ -18,17 +17,14 @@ export const QNY7QQYIBA = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QNY7QQYIBA-1",
       why: "",
       text: "frequency and amperage.",
     },
     {
-      id: "QNY7QQYIBA-2",
       why: "",
       text: "voltage and amperage.",
     },
     {
-      id: "QNY7QQYIBA-3",
       why: "",
       text: "amperage and kVAR.",
     },
@@ -53,7 +49,6 @@ export const QNBLC3VWYO = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QNBLC3VWYO-1",
       subject: "",
       why: "",
       text: "Short term overcurrent is normal.",
@@ -61,17 +56,14 @@ export const QNBLC3VWYO = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QNBLC3VWYO-0",
       why: "",
       text: "Overcurrent is normal.",
     },
     {
-      id: "QNBLC3VWYO-2",
       why: "",
       text: "Protective devices must trip as soon as a overcurrent is detected.",
     },
     {
-      id: "QNBLC3VWYO-3",
       why: "",
       text: "Any overcurrent is abnormal.",
     },
@@ -99,7 +91,6 @@ export const QNBLC3VWYP = questionOneCorrect({
   ],
   correctOptions: [
     {
-      id: "QNBLC3VWYO-1",
       subject: "",
       why: "",
       text: [
@@ -110,27 +101,22 @@ export const QNBLC3VWYP = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QNBLC3VWYO-0",
       why: "",
       text: "limit the current in the armature.",
     },
     {
-      id: "QNBLC3VWYO-2",
       why: "",
       text: "limit the current in the field circuit.",
     },
     {
-      id: "QNBLC3VWYO-3",
       why: "",
       text: "instantaneously rupture to limit the current in the load.",
     },
     {
-      id: "QNBLC3VWYP-2",
       why: "",
       text: "protect the system in the event of any overcurrent.",
     },
     {
-      id: "QNBLC3VWYP-3",
       why: "",
       text: "protect the system in the event of a prolonged overheating.",
     },
@@ -154,7 +140,6 @@ export const Q183L3D0SR = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "Q183L3D0SR-1",
       subject: "",
       why: "",
       text: dedent`
@@ -165,21 +150,18 @@ export const Q183L3D0SR = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "Q183L3D0SR-0",
       why: "",
       text: dedent`
         the load condition is unimportant.
       `,
     },
     {
-      id: "Q183L3D0SR-2",
       why: "",
       text: dedent`
         the battery should be isolated.
       `,
     },
     {
-      id: "Q183L3D0SR-3",
       why: "",
       text: dedent`
         no load should be applied to the battery because it would reduce the 
@@ -205,7 +187,6 @@ export const QAOPVETDSM = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QAOPVETDSM-0",
       subject: "",
       why: "",
       text: dedent`
@@ -216,7 +197,6 @@ export const QAOPVETDSM = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QAOPVETDSM-1",
       why: "",
       text: dedent`
         The pilot can disconnect it to allow it to cool down. After normal 
@@ -224,7 +204,6 @@ export const QAOPVETDSM = questionOneCorrect({
       `,
     },
     {
-      id: "QAOPVETDSM-2",
       why: "",
       text: dedent`
         The pilot must disconnect it to allow it to cool down. After normal 
@@ -232,14 +211,12 @@ export const QAOPVETDSM = questionOneCorrect({
       `,
     },
     {
-      id: "QAOPVETDSM-3",
       why: "",
       text: dedent`
         The pilot must disconnect it and manually control the alternator.
       `,
     },
     {
-      id: "QAOPVETDSM-4",
       why: "",
       text: "The pilot has to throttle back.",
     },

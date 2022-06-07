@@ -10,7 +10,6 @@ export const QQW4B4EAVJ = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QQW4B4EAVJ-2",
       subject: "",
       why: "",
       text: dedent`
@@ -19,7 +18,6 @@ export const QQW4B4EAVJ = questionOneCorrect({
       `,
     },
     {
-      id: "QQW4B4EAVJ-2",
       subject: "",
       why: "",
       text: dedent`
@@ -30,7 +28,6 @@ export const QQW4B4EAVJ = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QQW4B4EAVJ-0",
       why: "",
       text: dedent`
         passed across an expansion turbine, then through a secondary heat 
@@ -38,14 +35,12 @@ export const QQW4B4EAVJ = questionOneCorrect({
       `,
     },
     {
-      id: "QQW4B4EAVJ-1",
       why: "",
       text: dedent`
         passed across an expansion turbine, then directly to the heat exchanger.
       `,
     },
     {
-      id: "QQW4B4EAVJ-3",
       why: "",
       text: dedent`
         passed across an expansion turbine, then compressed and passed through 

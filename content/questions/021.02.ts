@@ -10,9 +10,11 @@ export const Q0KKWBVUUO = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "Q0KKWBVUUO-1",
       subject: "",
-      why: 'This is a "Keep it Simple stupid" system. It\'s also how most cheap eletric kitchen stoves work.',
+      why: dedent`
+        This is a "Keep it Simple stupid" system. It's also how most cheap 
+        electric kitchen stoves work.
+      `,
       text: dedent`
       cycle on/off to maintain a windscreen temperature within a specified 
       range.
@@ -21,14 +23,12 @@ export const Q0KKWBVUUO = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "Q0KKWBVUUO-0",
       why: "Window heating is AC!",
       text: dedent`
       are powered from the emergency DC Bus.
     `,
     },
     {
-      id: "Q0KKWBVUUO-2",
       why: "Window heating is done using electrical current",
       text: dedent`
       consist of warm air from the cabin conditioning system blown across the 
@@ -36,7 +36,6 @@ export const Q0KKWBVUUO = questionOneCorrect({
     `,
     },
     {
-      id: "Q0KKWBVUUO-3",
       why: "",
       text: dedent`
       depend upon the pilot monitoring the windscreen temperature probe for 

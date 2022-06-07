@@ -10,7 +10,6 @@ export const QLSJXPLEGC = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QLSJXPLEGC-1",
       subject: "",
       why: "",
       text: "should be used when there is smoke on the flight deck.",
@@ -18,17 +17,14 @@ export const QLSJXPLEGC = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QLSJXPLEGC-0",
       why: "",
       text: "should be used when the oxygen supply pressure starts to drop.",
     },
     {
-      id: "QLSJXPLEGC-2",
       why: "",
       text: "must be used during an emergency descent.",
     },
     {
-      id: "QLSJXPLEGC-3",
       why: "",
       text: "is the normal position of the oxygen mask regulator.",
     },
@@ -45,19 +41,16 @@ export const QBDPMAJHMY = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QBDPMAJHMY-0",
       subject: "100% oxygen is inhaled on demand",
       why: "100% mode",
       text: "100%.",
     },
     {
-      id: "QBDPMAJHMY-1",
       subject: "100% oxygen with positive pressure is supplied continuously",
       why: "Emergency mode",
       text: "Emergency.",
     },
     {
-      id: "QBDPMAJHMY-2",
       subject: "oxygen is mixed with cabin air",
       why: "Normal / Dilluter demand mode",
       text: ["Normal.", "Diluter-demand"],
@@ -65,7 +58,6 @@ export const QBDPMAJHMY = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QBDPMAJHMY-3",
       why: "",
       text: "Stand by.",
     },
@@ -89,13 +81,11 @@ export const QGFNANJ8IW = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QGFNANJ8IW-2",
       subject: "flight deck oxygen",
       why: "Flight deck systems are only gaseous",
       text: "gas.",
     },
     {
-      id: "QGFNANJ8IW-3",
       subject: "built-in passenger oxygen",
       why: "Passenger systems are usually chemical, but can also be gaseous",
       text: "chemical compound or a gas.",
@@ -103,12 +93,10 @@ export const QGFNANJ8IW = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QGFNANJ8IW-0",
       why: "",
       text: "chemical compound.",
     },
     {
-      id: "QGFNANJ8IW-1",
       why: "",
       text: "liquid.",
     },

@@ -19,77 +19,69 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
     `,
       correctOptions: [
         {
-          id: "correct-1",
           subject: "",
           text: "Fail Safe implies multiple load Paths",
           why: dedent``,
         },
         {
-          id: "correct-1",
           subject: "",
           text: dedent`
-          A safe life structure is based on use during a limited time period or
-          number of cycles
-        `,
+            A safe life structure is based on use during a limited time period or
+            number of cycles
+          `,
           why: dedent``,
         },
         {
-          id: "correct-1",
           subject: "",
           text: dedent`
-          Safe life requires a structure to have a minimum stated design life 
-          within which no catastrophic damage will occur
-        `,
+            Safe life requires a structure to have a minimum stated design life 
+            within which no catastrophic damage will occur
+          `,
           why: dedent``,
         },
       ],
       otherOptions: [
         {
-          id: "wrong-1",
           text: dedent`
-          Fail Safe implies the structure will fail, when one component fails,
-        `,
+            Fail Safe implies the structure will fail, when one component fails,
+          `,
           why: dedent`
-        `,
+          `,
         },
         {
-          id: "wrong-2",
           text: dedent`
             Safe life is the preferred design technique for aircraft
           `,
           why: dedent`
-          Safe life structures tend to be extremely complex, and expensive to
-          maintain, and are avoided for all systems where a duplication is not 
-          possible (like engine fans).
-        `,
+            Safe life structures tend to be extremely complex, and expensive to
+            maintain, and are avoided for all systems where a duplication is not 
+            possible (like engine fans).
+          `,
         },
         {
-          id: "wrong-3",
           text: dedent`
-          Safe life requires a structure to have a maximum stated design life 
-          within which no catastrophic damage will occur
-        `,
+            Safe life requires a structure to have a maximum stated design life 
+            within which no catastrophic damage will occur
+          `,
           why: dedent`
         `,
         },
         {
-          id: "wrong-4",
           text: dedent`
-          Fail-safe Implies the structure will fail when one component fails
-        `,
+            Fail-safe Implies the structure will fail when one component fails
+          `,
           why: dedent`
         `,
         },
         {
-          id: "wrong-5",
           text: dedent`
-          Fail-safe structures are preferred to damage tolerant structures 
-          as they are lighter due to not requiring extra structural members
-        `,
+            Fail-safe structures are preferred to damage tolerant structures 
+            as they are lighter due to not requiring extra structural members
+          `,
           why: dedent`
-          Fail-safe structures are preferred, but not because their lighter. 
-          Also fail safe structures require extra redundant structural members.
-        `,
+            Fail-safe structures are preferred, but not because their lighter. 
+            Also fail safe structures require extra redundant structural members.
+          `,
         },
       ],
     }),
@@ -140,7 +132,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "fail-safe",
       subject: "a fail-safe designed structure",
       text: dedent`
         A structure that has built-in redundancy with multiple load paths
@@ -150,7 +141,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
       `,
     },
     {
-      id: "safe-life",
       subject: "a Safe-life structure",
       text: [
         dedent`
@@ -167,7 +157,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
       `,
     },
     {
-      id: "damage-tolerant",
       subject: "a Damage tolerant structure",
       text: [
         dedent`
@@ -180,7 +169,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
       `,
     },
     {
-      id: "redundancy",
       subject: "Redundancy",
       text: [
         dedent`
@@ -195,7 +183,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`
         Multiple load paths through a structure that is replaced after limited 
         usage
@@ -205,7 +192,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-2",
       text: dedent`
         A single load path can withstand 1.5 times the maximum design load
       `,
@@ -214,7 +200,6 @@ export const DD5Q0CX1SK = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-3",
       text: dedent`
         One Load path is sufficient and the structure should be redundant
       `,
@@ -244,13 +229,11 @@ export const QJX11PHDQW = questionOneCorrect({
   ],
   correctOptions: [
     {
-      id: "correct-1",
       subject: "large aeroplanes",
       text: "CS-25",
       why: "Large aeroplanes => CS-25",
     },
     {
-      id: "correct-2",
       subject: [
         "Normal aeroplanes",
         "Utility aeroplanes",
@@ -262,12 +245,10 @@ export const QJX11PHDQW = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "CS-27",
       why: "Small Rotorcraft => CS-27",
     },
     {
-      id: "wrong-2",
       text: "CS-29",
       why: "Large Rotorcraft => CS-29",
     },
@@ -294,13 +275,11 @@ export const QJX11PHDQB = questionOneCorrect({
   ],
   correctOptions: [
     {
-      id: "correct-1",
       subject: "Small Rotorcraft",
       text: "CS-27",
       why: "Small Rotorcraft => CS-27",
     },
     {
-      id: "correct-2",
       subject: "Large Rotorcraft",
       text: "CS-29",
       why: "Large Rotorcraft => CS-29",
@@ -308,12 +287,10 @@ export const QJX11PHDQB = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "CS-25",
       why: "Large aeroplanes => CS-25",
     },
     {
-      id: "wrong-2",
       text: "CS-23",
       why: "Normal aeroplanes => CS-23",
     },
@@ -334,13 +311,11 @@ export const QOKF03CAOL = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QOKF03CAOL-1",
       subject: "Elastic",
       why: "Definition of elastic deformation",
       text: "is temporary and is reversed after the force is removed.",
     },
     {
-      id: "QOKF03CAOL-2",
       subject: "Plastic",
       why: "Definition of plastic deformation",
       text: "will cause irreversible buckling of the aircraft`s skin.",
@@ -348,12 +323,10 @@ export const QOKF03CAOL = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QOKF03CAOL-3",
       why: "",
       text: "will cause visible cracks to appear in the aircraft`s skin.",
     },
     {
-      id: "QOKF03CAOL-4",
       why: "",
       text: "is temporary but its not reversed after the force is removed.",
     },
@@ -379,7 +352,6 @@ export const QEXXTPLLUJ = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QEXXTPLLUJ-2",
       subject: "",
       why: "",
       text: "stress corrosion.",
@@ -387,17 +359,14 @@ export const QEXXTPLLUJ = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QEXXTPLLUJ-0",
       why: "",
       text: "intergrannular corrosion.",
     },
     {
-      id: "QEXXTPLLUJ-1",
       why: "",
       text: "creep.",
     },
     {
-      id: "QEXXTPLLUJ-3",
       why: "",
       text: "strain.",
     },
@@ -414,7 +383,6 @@ export const QP9EYOS6KH = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QP9EYOS6KH-0",
       subject: "",
       why: "",
       text: "in the line between the fuel control unit and the engine burners.",
@@ -422,17 +390,14 @@ export const QP9EYOS6KH = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QP9EYOS6KH-1",
       why: "",
       text: "in the line between the booster pump and the engine.",
     },
     {
-      id: "QP9EYOS6KH-2",
       why: "",
       text: "at the outlet of the high pressure fuel pump.",
     },
     {
-      id: "QP9EYOS6KH-3",
       why: "",
       text: "in the inlet of the high-pressure fuel pump.",
     },

@@ -13,7 +13,6 @@ export const QLCIVHT8TY = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QLCIVHT8TY-2",
       subject: "",
       why: "",
       text: "a fine filter located between the high-pressure fuel pump and the governor unit.",
@@ -21,17 +20,14 @@ export const QLCIVHT8TY = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QLCIVHT8TY-0",
       why: "The high pressure fuel pump is downstream from the fuel control unit.",
       text: "a fine filter located prior to the high-pressure fuel pump at the inlet to the fuel control unit.",
     },
     {
-      id: "QLCIVHT8TY-1",
       why: "Magnetic plugs are typically a feature of hydraulic systems, not fuel systems.",
       text: "magnetic plugs located at various positions throughout the fuel supply usually at the outlet of fuel pumps and valves.",
     },
     {
-      id: "QLCIVHT8TY-3",
       why: "",
       text: "strainers at the inlet to the low-pressure fuel pumps.",
     },
@@ -48,7 +44,6 @@ export const QVBSPAKI0H = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QVBSPAKI0H-1",
       subject: "",
       why: "",
       text: "Kg per Hour per unit of shaft power.",
@@ -56,17 +51,14 @@ export const QVBSPAKI0H = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QVBSPAKI0H-0",
       why: "",
       text: "Kg per Hour per NM.",
     },
     {
-      id: "QVBSPAKI0H-2",
       why: "",
       text: "Kg per Per unit of shaft power.",
     },
     {
-      id: "QVBSPAKI0H-3",
       why: "",
       text: "Kg per Hour per km.",
     },
@@ -83,7 +75,6 @@ export const AS8YOS0XWU = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "AS8YOS0XWU-1",
       subject: "",
       text: [
         dedent`
@@ -97,7 +88,6 @@ export const AS8YOS0XWU = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "AS8YOS0XWU-2",
       text: dedent`
         Convergent, to reduce airflow velocity and increase static pressure in 
         front of the fan.
@@ -108,7 +98,6 @@ export const AS8YOS0XWU = questionOneCorrect({
       `,
     },
     {
-      id: "AS8YOS0XWU-3",
       text: dedent`
         Divergent, to increase airflow velocity and decrease static pressure in 
         front of the fan.
@@ -119,7 +108,6 @@ export const AS8YOS0XWU = questionOneCorrect({
       `,
     },
     {
-      id: "AS8YOS0XWU-4",
       text: dedent`
         Convergent, to increase airflow velocity and decrease static pressure in front
         of the fan.
@@ -160,7 +148,6 @@ export const QOIGNO99US = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QOIGNO99US-2",
       subject: "",
       why: "",
       text: "an excessively high angle of attack of the rotor blades.",
@@ -168,17 +155,14 @@ export const QOIGNO99US = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QOIGNO99US-0",
       why: "",
       text: "an excessively high axial velocity.",
     },
     {
-      id: "QOIGNO99US-1",
       why: "",
       text: "an inadequate fuel flow.",
     },
     {
-      id: "QOIGNO99US-3",
       why: "",
       text: "an excessively low angle of attack of the rotor blades.",
     },
@@ -196,7 +180,6 @@ export const QYLPO7LROI = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QYLPO7LROI-3",
       subject: "",
       why: "",
       text: "decrease the flow velocity.",
@@ -204,17 +187,14 @@ export const QYLPO7LROI = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QYLPO7LROI-0",
       why: "",
       text: "convert kinetic energy into mechanical energy.",
     },
     {
-      id: "QYLPO7LROI-1",
       why: "",
       text: "increase Static pressure.",
     },
     {
-      id: "QYLPO7LROI-2",
       why: "",
       text: "increase the temperature of the compressed air.",
     },
@@ -231,7 +211,6 @@ export const QFCVDCFVC6 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QFCVDCFVC6-2",
       subject: "",
       why: "",
       text: "The high pressure shaft.",
@@ -239,17 +218,14 @@ export const QFCVDCFVC6 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QFCVDCFVC6-0",
       why: "",
       text: "An hydraulic motor.",
     },
     {
-      id: "QFCVDCFVC6-1",
       why: "",
       text: "An electric motor.",
     },
     {
-      id: "QFCVDCFVC6-3",
       why: "",
       text: "The fan shaft.",
     },
@@ -273,7 +249,6 @@ export const QSUFLLF9KW = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QSUFLLF9KW-2",
       subject: "",
       why: "",
       text: dedent`
@@ -284,7 +259,6 @@ export const QSUFLLF9KW = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QSUFLLF9KW-0",
       why: "",
       text: dedent`
         - m (vj - vv): the thrust of the core section. 
@@ -292,7 +266,6 @@ export const QSUFLLF9KW = questionOneCorrect({
        `,
     },
     {
-      id: "QSUFLLF9KW-1",
       why: "",
       text: dedent`
         - m (vj - vv): the thrust of the hot section 
@@ -300,7 +273,6 @@ export const QSUFLLF9KW = questionOneCorrect({
       `,
     },
     {
-      id: "QSUFLLF9KW-3",
       why: "",
       text: dedent`
         - m (vj - vv): the thrust of the propeller. 
@@ -321,7 +293,6 @@ export const QXXH3WQQMI = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QXXH3WQQMI-3",
       subject: "",
       why: "",
       text: dedent`
@@ -332,7 +303,6 @@ export const QXXH3WQQMI = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QXXH3WQQMI-0",
       why: "",
       text: dedent`
         allow oil to the fuel-oil heat exchanger, preventing ice crystals 
@@ -340,14 +310,12 @@ export const QXXH3WQQMI = questionOneCorrect({
       `,
     },
     {
-      id: "QXXH3WQQMI-1",
       why: "",
       text: dedent`
         prevent fuel leakage in the combustion chamber after engine shut-down.
       `,
     },
     {
-      id: "QXXH3WQQMI-2",
       why: "",
       text: dedent`
         prevent overpressure at the fuel nozzles.
@@ -367,7 +335,6 @@ export const QLIF9KJKLS = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QLIF9KJKLS-7",
       subject: "",
       why: "",
       text: dedent`
@@ -376,7 +343,6 @@ export const QLIF9KJKLS = questionOneCorrect({
       `,
     },
     {
-      id: "QSTBUWL1FM-8",
       subject: "",
       why: "",
       text: "a smaller air starter driving only a single spool can be used.",
@@ -384,21 +350,18 @@ export const QLIF9KJKLS = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QLIF9KJKLS-1",
       why: "",
       text: dedent`
         there is a lower fuel consumption and more thrust due to higher overall 
         pressure ratio.`,
     },
     {
-      id: "QLIF9KJKLS-2",
       why: "",
       text: dedent`
         fewer variable stator vanes and variable inlet guide vanes 
         are required to prevent compressor stall at high rotor speeds.`,
     },
     {
-      id: "QLIF9KJKLS-3",
       why: "",
       text: dedent`
         there is a lower fuel consumption due to a higher overall pressure
@@ -406,7 +369,6 @@ export const QLIF9KJKLS = questionOneCorrect({
       `,
     },
     {
-      id: "QLIF9KJKLS-4",
       why: "",
       text: dedent`
         if one spool seizes, the remaining spool(s) will continue to operate 
@@ -414,12 +376,10 @@ export const QLIF9KJKLS = questionOneCorrect({
       `,
     },
     {
-      id: "QLIF9KJKLS-5",
       why: "",
       text: dedent`a compressor stall cannot occur under any condition.`,
     },
     {
-      id: "QLIF9KJKLS-6",
       why: "",
       text: dedent`engine length can be reduced.`,
     },
@@ -437,7 +397,6 @@ export const QVZWMIKLSR = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QVZWMIKLSR-0",
       subject: "",
       why: "",
       text: "turbine section.",
@@ -445,17 +404,14 @@ export const QVZWMIKLSR = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QVZWMIKLSR-1",
       why: "",
       text: "compressor section.",
     },
     {
-      id: "QVZWMIKLSR-2",
       why: "",
       text: "casing of the combustion chamber.",
     },
     {
-      id: "QVZWMIKLSR-3",
       why: "",
       text: "jet pipe.",
     },
@@ -472,13 +428,11 @@ export const QN5ISCAVG5 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QN5ISCAVG5-0",
       subject: "",
       why: "",
       text: "at constant pressure.",
     },
     {
-      id: "QN5ISCAVG5-1",
       subject: "",
       why: "",
       text: "continuously.",
@@ -486,22 +440,18 @@ export const QN5ISCAVG5 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QN5ISCAVG5-2",
       why: "",
       text: "intermittently",
     },
     {
-      id: "QN5ISCAVG5-3",
       why: "",
       text: "at constant energy",
     },
     {
-      id: "QN5ISCAVG5-4",
       why: "This is the case for reciprocal engines.",
       text: "at constant volume",
     },
     {
-      id: "QN5ISCAVG5-5",
       why: "",
       text: "temperature",
     },
@@ -518,7 +468,6 @@ export const QV6XVWMC52 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QV6XVWMC52-1",
       subject: "",
       why: "",
       text: "enhance maintenance planning and detect anomalies.",
@@ -526,17 +475,14 @@ export const QV6XVWMC52 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QV6XVWMC52-0",
       why: "",
       text: "obtain a timely indication when an engine requires to be shut down due to problems.",
     },
     {
-      id: "QV6XVWMC52-2",
       why: "",
       text: "collect metal particles from the oil system.",
     },
     {
-      id: "QV6XVWMC52-3",
       why: "",
       text: "assess engine condition using non-destructive inspection.",
     },

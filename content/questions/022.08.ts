@@ -10,7 +10,6 @@ export const QTPNOXMREP = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QTPNOXMREP-2",
       subject: "",
       why: "",
       text: "no feedback is provided on the rudder pedals.",
@@ -18,17 +17,14 @@ export const QTPNOXMREP = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QTPNOXMREP-0",
       why: "",
       text: "a feedback is provided on the rudder pedals only.",
     },
     {
-      id: "QTPNOXMREP-1",
       why: "",
       text: "a feedback is provided on the rudder pedals and the roll trim.",
     },
     {
-      id: "QTPNOXMREP-3",
       why: "",
       text: "a feedback is provided on the roll trim only.",
     },

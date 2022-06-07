@@ -38,14 +38,18 @@ export const getRandomShuffler = (seed: string): (<T>(arr: T[]) => T[]) => {
   return (arr) => [...arr].sort(shuffleFn);
 };
 
-export const getRandomId = () => {
+export const getRandomIdGenerator = (seed: string) => {
   const LENGTH = 8;
   const VALID_CHARS =
     "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const random = getRandomGenerator(Math.random().toString());
-  let uid = "";
-  for (let i = 0; i < LENGTH; i++) {
-    uid = uid + VALID_CHARS[Math.floor(random() * VALID_CHARS.length)];
-  }
-  return uid;
+  const random = getRandomGenerator(seed);
+  return () => {
+    let uid = "";
+    for (let i = 0; i < LENGTH; i++) {
+      uid = uid + VALID_CHARS[Math.floor(random() * VALID_CHARS.length)];
+    }
+    return uid;
+  };
 };
+
+export const getRandomId = getRandomIdGenerator(Math.random().toString());

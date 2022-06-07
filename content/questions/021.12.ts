@@ -11,7 +11,6 @@ export const QJ1YAH5TJJ = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QJ1YAH5TJJ-3",
       subject: "",
       why: "",
       text: "No indication or a fault alert.",
@@ -19,17 +18,14 @@ export const QJ1YAH5TJJ = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QJ1YAH5TJJ-0",
       why: "",
       text: "A fault alert and a fire warning light.",
     },
     {
-      id: "QJ1YAH5TJJ-1",
       why: "",
       text: "A fault alert and a fire warning bell.",
     },
     {
-      id: "QJ1YAH5TJJ-2",
       why: "",
       text: "A fault alert and a red master warning light.",
     },
@@ -46,7 +42,6 @@ export const QYF5KU1GMF = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QYF5KU1GMF-2",
       subject: "",
       why: "",
       text: "a decrease in pressure, causing a loop fault indication.",
@@ -54,17 +49,14 @@ export const QYF5KU1GMF = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QYF5KU1GMF-0",
       why: "",
       text: "an increase in pressure, causing a fire warning.",
     },
     {
-      id: "QYF5KU1GMF-1",
       why: "",
       text: "a decrease in pressure, causing a fire warning.",
     },
     {
-      id: "QYF5KU1GMF-3",
       why: "",
       text: "an increase in pressure, causing a loop fault indication.",
     },
@@ -88,7 +80,6 @@ export const QRYNQ9UIYU = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QRYNQ9UIYU-3",
       subject: "",
       why: "",
       text: "increase, causing a fire warning indication.",
@@ -96,17 +87,14 @@ export const QRYNQ9UIYU = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QRYNQ9UIYU-0",
       why: "",
       text: "reduce, causing a fire warning indication.",
     },
     {
-      id: "QRYNQ9UIYU-1",
       why: "",
       text: "reduce, causing a loop fault indication.",
     },
     {
-      id: "QRYNQ9UIYU-2",
       why: "",
       text: "increase, causing a loop fault indication.",
     },

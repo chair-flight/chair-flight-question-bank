@@ -32,13 +32,11 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       ],
       correctOptions: [
         {
-          id: "QQDKRGQGRI-0",
           subject: "decreasing",
           why: "",
           text: "Jet A, Jet A-1, Jet B.",
         },
         {
-          id: "QQDKRGQGRI-1",
           subject: "increasing",
           why: "",
           text: "Jet B, Jet A-1, Jet A.",
@@ -46,12 +44,10 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       ],
       otherOptions: [
         {
-          id: "QQDKRGQGRI-2",
           why: "",
           text: "Jet A-1, Jet B, Jet A",
         },
         {
-          id: "QQDKRGQGRI-3",
           why: "",
           text: "Jet B, Jet A, Jet A-1",
         },
@@ -63,31 +59,26 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       question: (subject) => dedent`What is the ${subject}?`,
       correctOptions: [
         {
-          id: "QQDKRGQGRI-1",
           subject: "Freezing point of Jet A",
           why: "",
           text: "-40ºC",
         },
         {
-          id: "QQDKRGQGRI-2",
           subject: "Freezing point of Jet A1",
           why: "",
           text: "-47ºC",
         },
         {
-          id: "QQDKRGQGRI-3",
           subject: "Freezing point of Jet B",
           why: "",
           text: "-60ºC",
         },
         {
-          id: "QQDKRGQGRI-4",
           subject: "Flash point of Jet A",
           why: "",
           text: "38ºC",
         },
         {
-          id: "QQDKRGQGRI-5",
           subject: "Flash point of Jet B",
           why: "",
           text: "-20ºC",
@@ -95,7 +86,6 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       ],
       otherOptions: [
         {
-          id: "QQDKRGQGRI-6",
           why: "",
           text: "40ºC",
         },
@@ -111,7 +101,6 @@ export const QQDKRGQGRI = mergeQuestionVariants(
       ],
       correctOptions: [
         {
-          id: "QQDKRGQGRI-8",
           subject: "",
           why: "Jet A, Jet B, and Jet A1 all have about the same density",
           text: "0.8 kg/l",
@@ -179,13 +168,11 @@ export const PO5CKPSPED = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "",
       text: "Reduce the risk of ice crystal formation",
       why: dedent``,
     },
     {
-      id: "correct-2",
       subject: "",
       text: "Reduce the risk of ice crystal formation",
       why: dedent`
@@ -196,21 +183,18 @@ export const PO5CKPSPED = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`
         Increase viscosity at high temperatures
       `,
       why: dedent``,
     },
     {
-      id: "wrong-2",
       text: dedent`
         Enhance combustion temperature
       `,
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`
         Increase the freezing point when operating in low temperatures
       `,
@@ -219,7 +203,6 @@ export const PO5CKPSPED = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-4",
       text: dedent`
         Improve overall performance at all temperature ranges.
       `,
@@ -248,19 +231,16 @@ export const B27P8Z6JJI = mergeQuestionVariants(
     `,
       correctOptions: [
         {
-          id: "correct-1",
           subject: "",
           text: "increases the risk of Carburettor Icing",
           why: dedent``,
         },
         {
-          id: "correct-1",
           subject: "",
           text: "increases the risk of Engine Fire",
           why: dedent``,
         },
         {
-          id: "correct-1",
           subject: "",
           text: "increases the risk of Carburettor Icing",
           why: dedent``,
@@ -268,7 +248,6 @@ export const B27P8Z6JJI = mergeQuestionVariants(
       ],
       otherOptions: [
         {
-          id: "wrong-1",
           text: dedent` increases Manifold pressure`,
           why: dedent`
           it will decrease the maximum MAP since detonation will occur at a 
@@ -276,19 +255,16 @@ export const B27P8Z6JJI = mergeQuestionVariants(
         `,
         },
         {
-          id: "wrong-2",
           text: dedent`lowers the risk of Carburettor Icing`,
           why: dedent``,
         },
         {
-          id: "wrong-3",
           text: dedent`lowers the risk of Engine Fire`,
           why: dedent`
           
         `,
         },
         {
-          id: "wrong-4",
           text: dedent`lowers the risk of Detonation`,
           why: dedent``,
         },
@@ -329,7 +305,6 @@ export const CV2ZV15SWP = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: ["boost pump", "centrifugal boost pump"],
       text: dedent`
         To pressurize the fuel system so that fuel reaches the engines.
@@ -339,7 +314,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       `,
     },
     {
-      id: "correct-2",
       subject: ["pressure valves", "relief valves"],
       text: dedent`
         To prevent the accumulation of excessive pressure in the fuel system.
@@ -349,7 +323,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       `,
     },
     {
-      id: "correct-3",
       subject: ["filter", "strainer"],
       text: dedent`
         To remove solid particles that could otherwise damage the fuel system.
@@ -359,7 +332,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       `,
     },
     {
-      id: "correct-4",
       subject: "ventilation system",
       text: dedent`
         To prevent the creation of low pressure or excessive overpressure 
@@ -368,7 +340,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       why: dedent`Ventilation system`,
     },
     {
-      id: "correct-5",
       subject: "sump",
       text: dedent`
         To provide a single point in the fuel tank where fuel accumulates as 
@@ -377,7 +348,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "correct-6",
       subject: "drain valves",
       text: dedent`
         To take allow the sampling of fuel and the emptying of the tanks for
@@ -386,7 +356,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       why: dedent`Drain valves`,
     },
     {
-      id: "correct-7",
       subject: ["fuel dump system", "jettison system"],
       text: dedent`
         To allow for rapid fuel dumping in the case of emergency landing with an
@@ -395,7 +364,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       why: dedent`Fuel dump system / jettison system`,
     },
     {
-      id: "correct-8",
       subject: ["feed-box"],
       text: dedent`
         To increase the fuel level at the boost pump location.
@@ -405,21 +373,18 @@ export const CV2ZV15SWP = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`
         To prevent fuel freezing during flight in icing conditions.
       `,
       why: dedent``,
     },
     {
-      id: "wrong-2",
       text: dedent`
         To detect particles and contaminants that could damage the engine.
       `,
       why: dedent``,
     },
     {
-      id: "wrong-4",
       text: dedent`
         It decreases the fuel level at the boost pump location and ventilates 
         the tank during refuelling.
@@ -427,7 +392,6 @@ export const CV2ZV15SWP = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-5",
       why: "",
       text: "It distributes the fuel to the various tanks during refuelling.",
     },
@@ -445,19 +409,16 @@ export const IRRWA4K9AZ = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "wet wing aircraft wing tanks",
       text: ["Integral tanks"],
       why: dedent`used in wet wing aircraft wing tanks`,
     },
     {
-      id: "correct-2",
       subject: "dry wing aircraft wing tanks",
       text: ["Rigid tanks", "Drum tanks"],
       why: dedent`used in dry wing aircraft wing tanks`,
     },
     {
-      id: "correct-3",
       subject: "wing tips to store additional fuel",
       text: ["Tip tanks"],
       why: dedent`used in wing tips to store additional fuel`,
@@ -465,7 +426,6 @@ export const IRRWA4K9AZ = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`Removable tanks`,
       why: dedent`not relevant to LOs`,
     },
@@ -483,7 +443,6 @@ export const DKVGIVFZBT = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "Baffles",
       text: [
         "Dampen the movement of fuel inside the tank",
@@ -496,7 +455,6 @@ export const DKVGIVFZBT = questionOneCorrect({
       `,
     },
     {
-      id: "correct-2",
       subject: ["Baffle valves", "baffle check valves"],
       text: "Prevent fuel movement to the wing tips",
       why: dedent``,
@@ -504,17 +462,14 @@ export const DKVGIVFZBT = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "Close the vent lines in case of turbulence",
       why: "",
     },
     {
-      id: "wrong-2",
       text: "Prevent positive buildup inside the tank",
       why: "",
     },
     {
-      id: "wrong-3",
       text: "Limit high fuel flow during refuelling operations",
       why: "",
     },
@@ -533,7 +488,6 @@ export const O687IQRFBO = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "",
       text: dedent`20 to 100 PSI`,
       why: dedent``,
@@ -541,17 +495,14 @@ export const O687IQRFBO = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`5 to 20 PSI`,
       why: dedent``,
     },
     {
-      id: "wrong-2",
       text: dedent`1 to 5 PSI`,
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`100 to 300 PSI`,
       why: dedent``,
     },
@@ -570,7 +521,6 @@ export const CC915FWXQO = questionOneCorrect({
   ],
   correctOptions: [
     {
-      id: "correct-1",
       subject: "",
       text: dedent`
         measurements from the dip stick and data tables in the aircraft 
@@ -582,7 +532,6 @@ export const CC915FWXQO = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`measurements alone`,
       why: dedent`
         although this is commonly done in small aircraft, it's too unreliable 
@@ -590,14 +539,12 @@ export const CC915FWXQO = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-2",
       text: dedent`
         measurements from the dipstick and the fuel's specific gravity.
       `,
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`
         measurements from the dipstick and the current OAT.
       `,
@@ -618,7 +565,6 @@ export const QT8SI2VBBQ = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QT8SI2VBBQ-2",
       subject: "",
       why: "",
       text: dedent`
@@ -629,13 +575,11 @@ export const QT8SI2VBBQ = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QT8SI2VBBQ-0",
       why: "",
       text: dedent`
         the HPSOV is mounted in the wing front spar near the pylon.`,
     },
     {
-      id: "QT8SI2VBBQ-1",
       why: "",
       text: dedent`
         the HPSOV is located between the HP fuel pump and the fuel 
@@ -643,7 +587,6 @@ export const QT8SI2VBBQ = questionOneCorrect({
       `,
     },
     {
-      id: "QT8SI2VBBQ-3",
       why: "",
       text: dedent`
         manual HPSOV control from the cockpit is not possible with 

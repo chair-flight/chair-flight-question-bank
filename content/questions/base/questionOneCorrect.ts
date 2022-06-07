@@ -3,7 +3,7 @@ import {
   LearningObjectiveId,
   QuestionId,
 } from "../../../src/types";
-import { getRandomShuffler } from "./random";
+import { getRandomIdGenerator, getRandomShuffler } from "./random";
 
 export const questionOneCorrect = (props: {
   id: QuestionId;
@@ -11,13 +11,11 @@ export const questionOneCorrect = (props: {
   learningObjectives: LearningObjectiveId[];
   question: ((subject: string) => string) | ((subject: string) => string)[];
   correctOptions: Array<{
-    id: string;
     subject: string | string[];
     why: string;
     text: string | string[];
   }>;
   otherOptions: Array<{
-    id: string;
     why: string;
     text: string;
   }>;
@@ -48,6 +46,7 @@ export const questionOneCorrect = (props: {
     },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
+      const getRandomId = getRandomIdGenerator(seed);
       const correctSubject = shuffle(props.correctOptions).reduce<string[]>(
         (sum, item) =>
           Array.isArray(item.subject)
@@ -58,18 +57,24 @@ export const questionOneCorrect = (props: {
 
       const resolvedCorrectOptionTemplates = shuffle(props.correctOptions).map(
         (item) => ({
-          id: item.id,
           why: item.why,
           text: Array.isArray(item.text) ? shuffle(item.text)[0] : item.text,
           subject: item.subject,
         })
       );
 
-      const correctOption = resolvedCorrectOptionTemplates.find(({ subject }) =>
-        Array.isArray(subject)
-          ? subject.includes(correctSubject)
-          : subject === correctSubject
+      const selectedCorrectOptionTemplate = resolvedCorrectOptionTemplates.find(
+        ({ subject }) =>
+          Array.isArray(subject)
+            ? subject.includes(correctSubject)
+            : subject === correctSubject
       )!;
+
+      const correctOption = {
+        id: getRandomId(),
+        why: selectedCorrectOptionTemplate.why,
+        text: selectedCorrectOptionTemplate.text,
+      };
 
       const wrongOptions = shuffle([
         ...props.otherOptions,
@@ -78,17 +83,18 @@ export const questionOneCorrect = (props: {
             ? !subject.includes(correctSubject)
             : subject !== correctSubject
         ),
-      ]).slice(0, 3);
+      ])
+        .slice(0, 3)
+        .map((obj) => ({
+          ...obj,
+          id: getRandomId(),
+        }));
 
       const questionFn = Array.isArray(props.question)
         ? shuffle(props.question)[0]
         : props.question;
 
       const finalOptions = shuffle([...wrongOptions, correctOption]);
-
-      if (new Set(finalOptions.map((o) => o.id)).size !== finalOptions.length) {
-        debugger;
-      }
 
       return {
         key: `${props.id}_${seed}`,

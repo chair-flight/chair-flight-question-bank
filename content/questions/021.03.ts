@@ -11,73 +11,61 @@ export const QRQSE0BTIB = questionOneCorrect({
   correctOptions: [
     {
       subject: "desirable",
-      id: "High thermal stability.",
       text: "High thermal stability.",
       why: "",
     },
     {
       subject: "desirable",
-      id: "Low corrosiveness.",
       text: "Low corrosiveness.",
       why: "",
     },
     {
       subject: "desirable",
-      id: "High flashpoint.",
       text: "High flashpoint.",
       why: "",
     },
     {
       subject: "desirable",
-      id: "Low flammability.",
       text: "Low flammability.",
       why: "",
     },
     {
       subject: "desirable",
-      id: "Low volatility.",
       text: "Low volatility.",
       why: "",
     },
     {
       subject: "desirable",
-      id: "Low viscosity.",
       text: "Low viscosity.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "Low thermal stability.",
       text: "Low thermal stability.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "High corrosiveness.",
       text: "High corrosiveness.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "Low flashpoint.",
       text: "Low flashpoint.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "High flammability.",
       text: "High flammability.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "High volatility.",
       text: "High volatility.",
       why: "",
     },
     {
       subject: "undesirable",
-      id: "High viscosity.",
       text: "High viscosity.",
       why: "",
     },
@@ -104,13 +92,11 @@ export const MAK4NBVY3 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "MAK4NBVY3-1",
       subject: "synthetic",
       text: "Purple",
       why: "",
     },
     {
-      id: "MAK4NBVY3-2",
       subject: "mineral",
       text: "Red",
       why: "",
@@ -118,17 +104,14 @@ export const MAK4NBVY3 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "MAK4NBVY3-3",
       text: "Pink",
       why: "",
     },
     {
-      id: "MAK4NBVY3-4",
       text: "Yellow",
       why: "",
     },
     {
-      id: "MAK4NBVY3-5",
       text: "Green",
       why: "",
     },
@@ -149,13 +132,11 @@ export const MSA1Z4BVY2 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "typical",
       text: "3000 psi",
       why: "EASA Value for Typical hydraulic pressure",
     },
     {
-      id: "correct-2",
       subject: "maximum",
       text: ["4000 psi", "5000 psi"],
       why: "EASA value for Maximum hydraulic pressure (4000 - 5000 psi)",
@@ -163,17 +144,14 @@ export const MSA1Z4BVY2 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "1000",
       why: "",
     },
     {
-      id: "wrong-2",
       text: "2000",
       why: "",
     },
     {
-      id: "wrong-3",
       text: "6000",
       why: "",
     },

@@ -12,37 +12,31 @@ export const LAIVWRGDXF = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "",
       text: "PCUs are operated by analogue signals",
       why: dedent``,
     },
     {
-      id: "correct-2",
       subject: "",
       text: "PCUs operate an hydraulic actuator",
       why: dedent``,
     },
     {
-      id: "correct-3",
       subject: "",
       text: "ACEs are operated by digital signals",
       why: dedent``,
     },
     {
-      id: "correct-4",
       subject: "",
       text: "ACEs convert digital signals into analogue signals",
       why: dedent``,
     },
     {
-      id: "correct-5",
       subject: "",
       text: "ACEs operate the PCU using an analogue signal",
       why: dedent``,
     },
     {
-      id: "correct-5",
       subject: "",
       text: "PFCs send digital signals to the ACE",
       why: dedent``,
@@ -51,32 +45,26 @@ export const LAIVWRGDXF = questionOneCorrect({
   otherOptions: [
     {
       text: "PCUs covert digital signals into analogue signals",
-      id: "wrong-1",
       why: "",
     },
     {
       text: "PCUs covert digital signals into hydraulic actuator movements",
-      id: "wrong-2",
       why: "",
     },
     {
       text: "Control wires feed pilot control movements into the PCUs",
-      id: "wrong-3",
       why: "",
     },
     {
       text: "ACEs convert analogue signals into digital signals",
-      id: "wrong-4",
       why: "",
     },
     {
       text: "ACEs convert digital signals into hydraulic actuator movements",
-      id: "wrong-5",
       why: "",
     },
     {
       text: "Flight controls are connected to control surfaces directly",
-      id: "wrong-6",
       why: "",
     },
   ],
@@ -94,19 +82,16 @@ export const QVGG8YODIU = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "QVGG8YODIU-1",
       subject: "",
       why: "",
       text: "Weight saving",
     },
     {
-      id: "QVGG8YODIU-2",
       subject: "",
       why: "",
       text: "Reduced pilot workload",
     },
     {
-      id: "QVGG8YODIU-3",
       subject: "",
       why: "",
       text: "Flight envelope protection",
@@ -114,17 +99,14 @@ export const QVGG8YODIU = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "QVGG8YODIU-0",
       why: "The aerodynamic characteristics of the aircraft are not changed",
       text: "Flight envelope exceedance",
     },
     {
-      id: "QVGG8YODIU-4",
       why: "The aerodynamic characteristics of the aircraft are not changed",
       text: "Profile drag reduction",
     },
     {
-      id: "QVGG8YODIU-5",
       why: "The aerodynamic characteristics of the aircraft are not changed",
       text: "Mach number reduction",
     },
@@ -147,7 +129,6 @@ export const C470WY82 = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "manual",
       text: dedent`
         The flight control surfaces are connected to the flight deck controls 
@@ -156,7 +137,6 @@ export const C470WY82 = questionOneCorrect({
       why: dedent`Definition of fully manual flight control system`,
     },
     {
-      id: "correct-2",
       subject: "powered",
       text: dedent`
         The flight control surfaces are not connected to the flight deck 
@@ -167,7 +147,6 @@ export const C470WY82 = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`
         A system that is an irreversible system because there is no flight deck 
         flight control feedback when a flight control surface is in motion.
@@ -178,7 +157,6 @@ export const C470WY82 = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-2",
       text: dedent`
         A system that is manually operated by the pilot by means of the flight 
         control elements and is powered by an hydraulic system.
@@ -186,7 +164,6 @@ export const C470WY82 = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`
         The deflection angle of the flight control surface will vary with 
         airspeed, therefore, the flight control forces are constant.
@@ -207,7 +184,6 @@ export const PPZM66TKNR = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "irreversible",
       text: dedent`
         There is no feedback to the pilot's controls of the aerodynamic forces
@@ -216,7 +192,6 @@ export const PPZM66TKNR = questionOneCorrect({
       why: dedent`Definition of irreversible system`,
     },
     {
-      id: "correct-2",
       subject: "reversible",
       text: dedent`
         There is feedback to the pilot's controls of the aerodynamic forces 
@@ -227,7 +202,6 @@ export const PPZM66TKNR = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "There is a need to have an artificial feel system",
       why: dedent`
         **Caution**: This is not the definition of an irreversible system.
@@ -237,7 +211,6 @@ export const PPZM66TKNR = questionOneCorrect({
       `,
     },
     {
-      id: "wrong-2",
       text: dedent`
         The flight control system has an alternate means of control in case of a
         control jam
@@ -245,7 +218,6 @@ export const PPZM66TKNR = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`
         The pilot does not feel any force when moving the flight control surface 
         in flight
@@ -271,7 +243,6 @@ export const QOMFNZ202J = questionOneCorrect({
   `,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "irreversible",
       text: dedent`
         is achieved by adjusting the "zero force point" of the feel system
@@ -279,7 +250,6 @@ export const QOMFNZ202J = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "correct-2",
       subject: "reversible",
       text: dedent`
         is achieved by adjusting the neutral point of the flight control 
@@ -290,12 +260,10 @@ export const QOMFNZ202J = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: "is not possible",
       why: dedent``,
     },
     {
-      id: "wrong-2",
       text: "is not necessary",
       why: dedent``,
     },
@@ -396,7 +364,6 @@ export const N2HGF03ISU = questionOneCorrect({
   question: () => dedent`What is the purpose of a trim tab?`,
   correctOptions: [
     {
-      id: "correct-1",
       subject: "",
       text: dedent`
         Reduce hinge moments, with the side-effect of reducing control surface
@@ -407,7 +374,6 @@ export const N2HGF03ISU = questionOneCorrect({
   ],
   otherOptions: [
     {
-      id: "wrong-1",
       text: dedent`
         Increase hinge moments, with the side-effect of reducing control surface
         efficiency
@@ -415,7 +381,6 @@ export const N2HGF03ISU = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-2",
       text: dedent`
         Reduce hinge moments, with the side-effect of increasing control surface
         efficiency
@@ -423,7 +388,6 @@ export const N2HGF03ISU = questionOneCorrect({
       why: dedent``,
     },
     {
-      id: "wrong-3",
       text: dedent`
         Increase hinge moments, with the side-effect of increasing control 
         surface efficiency
