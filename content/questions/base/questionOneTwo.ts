@@ -19,13 +19,13 @@ export const questionOneTwo = (props: {
   learningObjectives: LearningObjectiveId[];
   question?: (options: string) => string;
   statementPairs: Array<{
-    correct: string | string[];
-    wrong: string | string[];
+    correct?: string | string[];
+    wrong?: string | string[];
   }>;
   explanation: string;
 }): FunctionQuestion => {
   const searchTexts = props.statementPairs.reduce<string[]>(
-    (sum, { correct, wrong }) => [
+    (sum, { correct = "", wrong = "" }) => [
       ...sum,
       ...(Array.isArray(correct) ? correct : [correct]),
       ...(Array.isArray(wrong) ? wrong : [wrong]),
@@ -43,9 +43,26 @@ export const questionOneTwo = (props: {
     },
     generate: (seed: string) => {
       const shuffle = getRandomShuffler(seed);
-      const isFirstCorrect = shuffle([true, false])[0];
-      const isSecondCorrect = shuffle([true, false])[0];
       const shuffledStatements = shuffle(props.statementPairs);
+
+      const isFirstCorrect = (() => {
+        if (!shuffledStatements[0].correct) {
+          return false;
+        }
+        if (!shuffledStatements[0].wrong) {
+          return true;
+        }
+        return shuffle([true, false])[0];
+      })();
+      const isSecondCorrect = (() => {
+        if (!shuffledStatements[1].correct) {
+          return false;
+        }
+        if (!shuffledStatements[1].wrong) {
+          return true;
+        }
+        return shuffle([true, false])[0];
+      })();
 
       const getText = (arr: string | string[]): string => {
         return Array.isArray(arr) ? shuffle(arr)[0] : arr;
@@ -53,10 +70,10 @@ export const questionOneTwo = (props: {
 
       const question = (props.question ?? defaultQuestion)(dedent`
         1. ${getText(
-          shuffledStatements[0][isFirstCorrect ? "correct" : "wrong"]
+          shuffledStatements[0][isFirstCorrect ? "correct" : "wrong"] ?? ""
         )}
         2. ${getText(
-          shuffledStatements[1][isSecondCorrect ? "correct" : "wrong"]
+          shuffledStatements[1][isSecondCorrect ? "correct" : "wrong"] ?? ""
         )}
       `);
 
