@@ -1,5 +1,6 @@
 import { dedent } from "./base/dedent";
 import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
+import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 import { questionOneTwo } from "./base/questionOneTwo";
 
@@ -15,7 +16,7 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
     questionOneCorrect({
       ...props,
       question: () => dedent`
-        Which Of these Statements about Structural design principles is correct?
+        Which of these statements about structural design principles is correct?
       `,
       correctOptions: [
         {
@@ -342,37 +343,112 @@ export const QOKF03CAOL = questionOneCorrect({
   `,
 });
 
-export const QEXXTPLLUJ = questionOneCorrect({
-  id: "QEXXTPLLUJ",
+export const QQXG5U56AN = questionOneCorrect({
+  id: "QQXG5U56AN",
   version: 1,
-  learningObjectives: ["021.01.03.01.04"],
+  learningObjectives: ["021.01.02.01.01"],
   question: () => dedent`
-    A steady tensile load combined with corrosive conditions, can produce a 
-    form of metal fatigue known as...
+    The property of a material to return to its original shape after 
+    the stress has been removed is called...
   `,
   correctOptions: [
     {
       subject: "",
       why: "",
-      text: "stress corrosion.",
+      text: "elastic deformation",
     },
   ],
   otherOptions: [
     {
       why: "",
-      text: "intergrannular corrosion.",
+      text: "strain",
     },
     {
       why: "",
-      text: "creep.",
+      text: "strength",
     },
     {
       why: "",
-      text: "strain.",
+      text: "plastic deformation",
     },
   ],
-  explanation: dedent``,
+  explanation: dedent`
+    This question is not explicitly mentioned in any Learning Objective, but you
+    are expected to know the difference between Elastic and plastic deformation
+
+    - **Elastic deformation**: The material returns to its original shape after
+      the stress has been removed (like an elastic band)
+    - **Plastic deformation**: The material is permanently deformed and no longer
+      returns to its original shape once the stress has been removed
+  `,
 });
+
+export const QEXXTPLLUJ = mergeQuestionVariants(
+  {
+    id: "QEXXTPLLUJ",
+    version: 1,
+    learningObjectives: ["021.01.03.01.04"],
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+      A steady tensile load combined with corrosive conditions, can produce a 
+      form of metal fatigue known as...
+    `,
+      correctOptions: [
+        {
+          subject: "",
+          why: "",
+          text: "stress corrosion.",
+        },
+      ],
+      otherOptions: [
+        {
+          why: "",
+          text: "intergrannular corrosion.",
+        },
+        {
+          why: "",
+          text: "creep.",
+        },
+        {
+          why: "",
+          text: "strain.",
+        },
+      ],
+      explanation: dedent``,
+    }),
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+      Stress corrosion cracking is caused by a combination of...
+    `,
+      correctOptions: [
+        {
+          subject: "",
+          why: "",
+          text: "tensile load and corrosive condition.",
+        },
+      ],
+      otherOptions: [
+        {
+          why: "",
+          text: "high airframe cycles and corrosive condition.",
+        },
+        {
+          why: "",
+          text: "hard landings and high aircraft mass.",
+        },
+        {
+          why: "",
+          text: "high aircraft mass and adverse weather conditions.",
+        },
+      ],
+      explanation: dedent``,
+    })
+);
 
 export const QP9EYOS6KH = questionOneCorrect({
   id: "QP9EYOS6KH",
@@ -408,4 +484,230 @@ export const QP9EYOS6KH = questionOneCorrect({
     measured at the latest possible point, before going to the burners, and
     after passing through the fuel control unit.
   `,
+});
+
+export const MSA1Z4BVY9 = questionOneCorrect({
+  id: "MSA1Z4BVY9",
+  version: 1,
+  learningObjectives: ["021.01.02.01.01"],
+  question: (subject) => {
+    switch (subject) {
+      case "stress":
+        return dedent`
+          When a structure is under the effect of a continuos internal force, it 
+          is experiencing...
+        `;
+      case "strain":
+        return dedent`
+          When a structure is changed from a non-deformed to a deformed state, 
+          it has experienced...
+        `;
+      case "corrosion":
+        return dedent`
+          When a structure chemical composition changes after exposure to 
+          oxidizing elements, it has experienced...
+        `;
+      case "bending":
+        return dedent`
+          When a structure is subjected to an external load applied 
+          perpendicularly to a longitudinal axis of the element, it has 
+          experienced...
+        `;
+      default:
+        throw new Error("missing case :)");
+    }
+  },
+  correctOptions: [
+    {
+      subject: "stress",
+      text: dedent`Stress`,
+      why: dedent`
+        Experienced when a structure is under the effect of a continuos internal 
+        force
+      `,
+    },
+    {
+      subject: "strain",
+      text: dedent`Strain`,
+      why: dedent`
+        Experienced when a structure is changed from a non-deformed to a 
+        deformed state.
+      `,
+    },
+    {
+      subject: "corrosion",
+      text: dedent`Corrosion`,
+      why: dedent`
+        Experienced when the structure's chemical composition changes after 
+        exposure to oxidizing elements
+      `,
+    },
+    {
+      subject: "bending",
+      text: dedent`Bending`,
+      why: dedent`
+        Experienced when an external load is applied  perpendicularly to a 
+        longitudinal axis of the element,
+      `,
+    },
+  ],
+  otherOptions: [],
+  explanation: dedent`
+    - **Stress** - Experienced when a structure is under the effect of a 
+      continuos internal force
+    - **Strain** - Experienced when a structure is changed from a 
+      non-deformed to a deformed state.
+    - **Bending** - Experienced when an external load is applied  
+      perpendicularly to a longitudinal axis of the element
+    - **Corrosion** - Experienced when the structure's chemical composition 
+      changes after exposure to oxidizing elements
+  `,
+});
+
+export const LYARH7K1PV = questionOneCorrect({
+  id: "LYARH7K1PV",
+  version: 1,
+  learningObjectives: ["021.01.02.01.01"],
+  question: () => dedent`What causes stress?`,
+  correctOptions: [
+    {
+      subject: "",
+      text: dedent`Cycle loads`,
+      why: dedent``,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`Ageing`,
+      why: dedent``,
+    },
+    {
+      text: dedent`Fatigue`,
+      why: dedent`
+        Mechanical fatigue is a consequence of cyclic stress loads, and not a 
+        cause of stress
+      `,
+    },
+    {
+      text: dedent`Long working hours`,
+      why: dedent``,
+    },
+    {
+      text: dedent`Corrosion`,
+      why: dedent``,
+    },
+    {
+      text: dedent`High aircraft mass`,
+      why: dedent``,
+    },
+  ],
+  explanation: dedent`
+    Sometimes Context is important. This is AGK, so it's implicit that we are
+    talking about Mechanical Stress.
+  `,
+});
+
+export const QO18F0ONTF = questionOneCorrect({
+  id: "QO18F0ONTF",
+  version: 1,
+  learningObjectives: ["021.01.02.01.03"],
+  question: (subject) => dedent`
+    During a pre-flight inspection, what could indicate stress damage on an
+    aircraft?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      text: dedent`Wrinkled or stretched skin`,
+      why: dedent``,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`Loose or missing screws`,
+      why: dedent``,
+    },
+    {
+      text: dedent`Hydraulic leak in the landing gear`,
+      why: dedent``,
+    },
+    {
+      text: dedent`Flight control movement is restricted`,
+      why: dedent``,
+    },
+  ],
+  explanation: dedent`
+    Key word here is "stress damage". All other options refer to other types of
+    damage
+  `,
+});
+
+export const QPGA2BGJXE = questionMultipleCorrect({
+  id: "QPGA2BGJXE",
+  version: 1,
+  learningObjectives: ["021.01.02.01.03"],
+  question: (options) => dedent`
+    Which one of the following areas are most prone to experiencing stress and 
+    should be given particular attention during a walk around?
+
+    ${options}
+    1. .
+    2.
+    3. Fuselage skin near the bulkhead.
+    4. 
+    5. 
+    6. 
+  `,
+  statements: [
+    {
+      correct: "Wing spar and skin near the root of the wing",
+    },
+    {
+      wrong: "Wing spar and skin near the tip of the wing",
+    },
+    {
+      correct: "Fuselage skin near the bulkhead",
+    },
+    {
+      correct: "Aircraft skin on the bottom and top of the fuselage",
+    },
+    {
+      correct: "Fuselage around the windows",
+    },
+    {
+      wrong: "Engine nacelles",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QTBTFC1YKE = questionOneCorrect({
+  id: "QTBTFC1YKE",
+  version: 1,
+  learningObjectives: ["021.01.05.01.01"],
+  question: () => dedent`
+    In a hard-time maintenance programme, a component must be replaced...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "at a specified number of flight cycles or hours.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "if there is evidence of stress loads.",
+    },
+    {
+      why: "",
+      text: "after a complaint from the flight crew.",
+    },
+    {
+      why: "",
+      text: "if it fails a visual inspection.",
+    },
+  ],
+  explanation: dedent``,
 });

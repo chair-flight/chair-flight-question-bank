@@ -223,3 +223,125 @@ export const QAOPVETDSM = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QJVPKUBN6G = questionOneCorrect({
+  id: "QJVPKUBN6G",
+  version: 1,
+  learningObjectives: ["021.09.01.01.04"],
+  question: () => dedent`
+    Electrical bonding of an aircraft is used to..
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "equalise the electrical potential of the different aircraft parts",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "prevent the aircraft from being struck by lightning",
+    },
+    {
+      why: "",
+      text: dedent`
+        ensure the electrical potential of the aircraft structure remains at 
+        0 volts
+      `,
+    },
+    {
+      why: "",
+      text: "eliminate the need for grounding the aircraft during refuelling",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QUSW1EXVRD = questionOneCorrect({
+  id: "QUSW1EXVRD",
+  version: 1,
+  learningObjectives: [
+    "021.09.01.02.04",
+    "021.09.01.02.08",
+    "021.09.01.03.04",
+    "021.09.04.03.05",
+    "021.09.02.01.06",
+  ],
+  question: (subject) => dedent`
+    What unit of measurement is used to express ${subject}?
+  `,
+  correctOptions: [
+    {
+      subject: ["voltage", "difference of potential"],
+      why: "Unit for voltage / difference of potential",
+      text: "Volt",
+    },
+    {
+      subject: "electrical resistance",
+      why: "Unit for electrical resistance",
+      text: "Ohm",
+    },
+    {
+      why: "Unit for electrical work (and any other type of work)",
+      subject: "electrical work",
+      text: "Joule",
+    },
+    {
+      why: "Unit for electrical power (and any other type of power)",
+      subject: "electrical power",
+      text: "Watt",
+    },
+    {
+      why: "Unit for electrical current",
+      subject: "electrical current",
+      text: "Ampere",
+    },
+    {
+      why: "Unit for frequency",
+      subject: "frequency",
+      text: "Hertz",
+    },
+    {
+      why: "Unit for frequency",
+      subject: "battery capacity",
+      text: "Ampere Hour",
+    },
+    {
+      why: "Unit for total power consumed in an AC system",
+      subject: "total power consumed in an AC system",
+      text: "Volt Ampere",
+    },
+  ],
+  otherOptions: [
+    {
+      text: "RPM",
+      why: dedent`( Ω)
+        Implicitly, it represent a frequency, but it's not the 
+        unit of measurement of frequency. That would be Hz
+      `,
+    },
+    {
+      text: "Ampere per hour",
+      why: dedent`
+        Ampere per hour is a unit that has no significant physical meaning.
+      `,
+    },
+  ],
+  explanation: dedent`
+    Units of measurement in the field of Electrics:
+
+    - **Voltage / Difference of potential - Volt (V)
+    - **Electrical Resistance** - Ohm (Ω)
+    - **Electrical Work** - Joule (J)
+    - **Electrical Power** - Watt (W = J/s)
+    - **Electrical Current** - Ampere (A)
+    - **Frequency - Hertz (Hz = 1/s)
+    - **Battery capacity - Ampere Hour (Ah)
+    - **total power consumed in an AC system** - Volt Ampere
+
+    Pitfalls: 
+    
+    - Ampere per hour is not the same as Ampere hour (A/h ≠ Ah)
+  `,
+});
