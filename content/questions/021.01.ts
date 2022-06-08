@@ -486,84 +486,6 @@ export const QP9EYOS6KH = questionOneCorrect({
   `,
 });
 
-export const MSA1Z4BVY9 = questionOneCorrect({
-  id: "MSA1Z4BVY9",
-  version: 1,
-  learningObjectives: ["021.01.02.01.01"],
-  question: (subject) => {
-    switch (subject) {
-      case "stress":
-        return dedent`
-          When a structure is under the effect of a continuos internal force, it 
-          is experiencing...
-        `;
-      case "strain":
-        return dedent`
-          When a structure is changed from a non-deformed to a deformed state, 
-          it has experienced...
-        `;
-      case "corrosion":
-        return dedent`
-          When a structure chemical composition changes after exposure to 
-          oxidizing elements, it has experienced...
-        `;
-      case "bending":
-        return dedent`
-          When a structure is subjected to an external load applied 
-          perpendicularly to a longitudinal axis of the element, it has 
-          experienced...
-        `;
-      default:
-        throw new Error("missing case :)");
-    }
-  },
-  correctOptions: [
-    {
-      subject: "stress",
-      text: dedent`Stress`,
-      why: dedent`
-        Experienced when a structure is under the effect of a continuos internal 
-        force
-      `,
-    },
-    {
-      subject: "strain",
-      text: dedent`Strain`,
-      why: dedent`
-        Experienced when a structure is changed from a non-deformed to a 
-        deformed state.
-      `,
-    },
-    {
-      subject: "corrosion",
-      text: dedent`Corrosion`,
-      why: dedent`
-        Experienced when the structure's chemical composition changes after 
-        exposure to oxidizing elements
-      `,
-    },
-    {
-      subject: "bending",
-      text: dedent`Bending`,
-      why: dedent`
-        Experienced when an external load is applied  perpendicularly to a 
-        longitudinal axis of the element,
-      `,
-    },
-  ],
-  otherOptions: [],
-  explanation: dedent`
-    - **Stress** - Experienced when a structure is under the effect of a 
-      continuos internal force
-    - **Strain** - Experienced when a structure is changed from a 
-      non-deformed to a deformed state.
-    - **Bending** - Experienced when an external load is applied  
-      perpendicularly to a longitudinal axis of the element
-    - **Corrosion** - Experienced when the structure's chemical composition 
-      changes after exposure to oxidizing elements
-  `,
-});
-
 export const LYARH7K1PV = questionOneCorrect({
   id: "LYARH7K1PV",
   version: 1,
@@ -651,12 +573,6 @@ export const QPGA2BGJXE = questionMultipleCorrect({
     should be given particular attention during a walk around?
 
     ${options}
-    1. .
-    2.
-    3. Fuselage skin near the bulkhead.
-    4. 
-    5. 
-    6. 
   `,
   statements: [
     {
@@ -711,3 +627,70 @@ export const QTBTFC1YKE = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const A49I12JXEM = mergeQuestionVariants(
+  {
+    id: "A49I12JXEM",
+    version: 1,
+    learningObjectives: ["021.01.05.01.01"],
+    definitions: {
+      "Fixed Time maintenance": dedent`
+      Replacement of a part based on the number of cycles or on the time of use, 
+      regardless of its actual condition state
+    `,
+      "Condition monitoring": dedent`
+      Using continuos means of observation to determine the optimal time to 
+      perform component maintenance
+    `,
+      "On Condition maintenance": dedent`
+      Replacing a part based on indicators of its deteriorating condition
+    `,
+      "Soft time maintenance": dedent`
+      A component getting replaced at some point when convenient to the 
+      operator
+    `,
+    } as Record<string, string>,
+
+    explanation: dedent`
+    - **Fixed Time / Hard time maintenance** - Replacement of a part based on 
+      the number of cycles or on the time of use, regardless of its actual 
+      condition state
+    - **Condition monitoring** - Using continuos means of observation to 
+      determine the optimal time to perform component maintenance
+    - **On Condition maintenance** - Replacing a part based on indicators of 
+      its deteriorating condition
+    - **Soft time maintenance** - A component getting replaced at some point 
+      when convenient to the operator
+  `,
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      ${props.definitions[subject]} is the definition of...
+    `,
+      correctOptions: Object.entries(props.definitions).map(
+        ([term, definition]) => ({
+          subject: term,
+          text: term,
+          why: definition,
+        })
+      ),
+      otherOptions: [],
+    }),
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      What statement best describes ${subject}
+    `,
+      correctOptions: Object.entries(props.definitions).map(
+        ([term, definition]) => ({
+          subject: term,
+          text: definition,
+          why: term,
+        })
+      ),
+      otherOptions: [],
+    })
+);
