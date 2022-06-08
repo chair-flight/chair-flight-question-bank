@@ -51,7 +51,7 @@ export const questionMultipleCorrect = (props: {
       const numberOfCorrectStatements =
         props.select?.numberOfCorrectOptions ??
         Math.round(
-          1 + random() * (Math.min(1, numberOfOptions, totalCorrect) - 1)
+          1 + random() * (Math.min(numberOfOptions, totalCorrect) - 1)
         );
 
       const selectedCorrect = shuffledStatements
@@ -70,11 +70,31 @@ export const questionMultipleCorrect = (props: {
 
       const correctOptionId = getRandomId();
       const correctOptionText = statements
-        .map((s, i) => (selectedCorrect.includes(s) ? i : undefined))
+        .map((s, i) => (selectedCorrect.includes(s) ? i + 1 : undefined))
         .filter((s) => !!s)
         .join(", ");
 
-      const wrongOptionTexts = ["potato", "kiwi", "banana"];
+      let iterations = 0;
+      const wrongOptionTexts: string[] = [];
+      while (wrongOptionTexts.length < 3) {
+        iterations++;
+        const length =
+          props.select?.numberOfCorrectOptions ??
+          1 + Math.round(random() * (numberOfOptions - 1));
+        const newText = shuffle(statements.map((_, i) => i + 1))
+          .slice(0, length)
+          .sort()
+          .join(", ");
+        if (
+          newText !== correctOptionText &&
+          !wrongOptionTexts.includes(newText)
+        ) {
+          wrongOptionTexts.push(newText);
+        }
+        if (iterations > 100) {
+          throw new Error("Too many iterations to find valid options");
+        }
+      }
 
       const options = shuffle([
         {
