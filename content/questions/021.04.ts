@@ -1,5 +1,6 @@
 import { dedent } from "./base/dedent";
 import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
+import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 import { questionOneTwo } from "./base/questionOneTwo";
 
@@ -451,7 +452,7 @@ export const JU456HPUIB = mergeQuestionVariants(
     version: 1,
     learningObjectives: ["021.04.01.02.09"],
     explanation: dedent`
-  `,
+    `,
   },
   (props) =>
     questionOneCorrect({
@@ -583,3 +584,189 @@ export const MSA1Z4BVY1 = questionOneCorrect({
   explanation: dedent`
   `,
 });
+
+export const EDPTV2Y3SJ = mergeQuestionVariants(
+  {
+    id: "EDPTV2Y3SJ",
+    version: 1,
+    learningObjectives: [
+      "021.04.03.04.01",
+      "021.04.03.04.02",
+      "021.04.03.04.04",
+    ],
+    explanation: dedent`
+    `,
+    correctOptions: [
+      {
+        text: dedent`
+          Without pilot interference an autobrake system continues to operate
+          until standstill
+        `,
+        why: dedent`
+          This is true, and required by technical requirements for type 
+          certification.
+        `,
+      },
+      {
+        text: dedent`
+          During landing and RTO, an autobrake keeps operating until the pilot 
+          presses the brake pedals
+        `,
+        why: dedent``,
+      },
+      {
+        text: dedent`
+          During landing an autobrake keeps operating when reverse thrust is 
+          selected
+        `,
+        why: dedent`
+        `,
+      },
+      {
+        text: dedent`
+          When using the lowest autobrake setting and reverse thrust, the brake
+          temperature will be reduced.
+        `,
+        why: dedent`
+        `,
+      },
+      {
+        text: dedent`
+          An autobrake gives constant deceleration on dry runway
+        `,
+        why: dedent`
+          The autobrake system maintains a pre-selected deceleration rate, 
+          adapting the brake force as the plane slows down, or as other means 
+          of breaking become active (i.e: thrust reverser). Do not confuse 
+          with RTO mode where all the available brake pressure is applied!
+        `,
+      },
+    ],
+    otherOptions: [
+      {
+        text: dedent`
+          In general, if the autobrake system is inoperative, take-off is 
+          forbidden as manual braking will never achieve the brake rate of the 
+          autobrake system.
+        `,
+        why: dedent`
+          Although the second part of the statement is correct, an INOP 
+          autobrake just increases the Take off distance required. If enough 
+          runway is available, take off is still allowed.
+        `,
+      },
+      {
+        text: dedent`
+          An armed autobrake system will always try to achieve the selected 
+          deceleration level directly after main wheel touchdown
+        `,
+        why: dedent`
+          Not correct since in most aircraft the autobrake engages a couple of 
+          seconds after touch down
+        `,
+      },
+      {
+        text: dedent`
+          Manual braking while taxing will disarm the RTO mode
+        `,
+        why: dedent`
+          RTO is only disabled if braking occurs above a relatively high speed 
+          (90kts for a 737-800).
+        `,
+      },
+      {
+        text: dedent`
+          For a given touchdown speed on a dry runway without the use of 
+          reverse thrust, the stopping distance solely depends on the selected 
+          ABS setting and weight of the aeroplane.
+        `,
+        why: dedent`
+          Not correct since it also depends on pressure altitude, temperature, 
+          and a myriad of other factors
+        `,
+      },
+      {
+        text: dedent`
+          A take-off warning will be generated if the autobrake system has not 
+          been armed.
+        `,
+        why: dedent`
+          This is not necessarily true, and depends a lot on aircraft type.
+        `,
+      },
+      {
+        text: dedent`
+          In most aircraft, there is an option in the autobrake to select the 
+          exact landing distance.
+        `,
+        why: dedent`
+          Autobrake control determines the constant deceleration profile 
+          of the aircraft, not the exact distance as this depends on other
+          factors like the touch down speed and point.
+        `,
+      },
+      {
+        text: dedent`
+          An autobrake can be used if anti-skid is inoperative
+        `,
+        why: dedent`
+          Aerobraking with INOP anti-skid would result in a hydroplaning 
+          aircraft for wet runways which is not a good idea.
+        `,
+      },
+      {
+        text: dedent`
+          An autobrake will always stop the aeroplane within the shortest 
+          possible distance
+        `,
+        why: dedent`
+          This is not correct, as the autobrake maintains a constant deceleration 
+          ratio. Only in RTO mode is the deceleration rate maximum
+        `,
+      },
+    ],
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+        The correct statement in relation to the autobrake system is...
+      `,
+    }),
+  (props) =>
+    questionOneTwo({
+      ...props,
+      question: (options) => dedent`
+        Which of these statements in relation to the autobrake system are 
+        correct?
+
+        ${options}
+      `,
+      statementPairs: [
+        ...props.correctOptions.map(({ text }) => ({
+          correct: text,
+        })),
+        ...props.otherOptions.map(({ text }) => ({
+          wrong: text,
+        })),
+      ],
+    }),
+  (props) =>
+    questionMultipleCorrect({
+      ...props,
+      question: (options) => dedent`
+        Which of these statements in relation to the autobrake system are 
+        correct?
+
+        ${options}
+      `,
+      statements: [
+        ...props.correctOptions.map(({ text }) => ({
+          correct: text,
+        })),
+        ...props.otherOptions.map(({ text }) => ({
+          wrong: text,
+        })),
+      ],
+    })
+);

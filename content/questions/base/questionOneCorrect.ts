@@ -11,21 +11,21 @@ export const questionOneCorrect = (props: {
   learningObjectives: LearningObjectiveId[];
   question: ((subject: string) => string) | ((subject: string) => string)[];
   correctOptions: Array<{
-    subject: string | string[];
-    why: string;
+    subject?: string | string[];
+    why?: string;
     text: string | string[];
   }>;
   otherOptions: Array<{
-    why: string;
+    why?: string;
     text: string;
   }>;
   explanation: string;
 }): FunctionQuestion => {
-  const subjects = props.correctOptions.reduce<string[]>((sum, option) => {
-    return Array.isArray(option.subject)
-      ? [...sum, ...option.subject]
-      : [...sum, option.subject];
-  }, []);
+  const subjects = props.correctOptions.reduce<string[]>(
+    (sum, { subject = "" }) =>
+      Array.isArray(subject) ? [...sum, ...subject] : [...sum, subject],
+    []
+  );
   const searchTexts = (
     Array.isArray(props.question) ? props.question : [props.question]
   ).flatMap((fn) => subjects.map((s) => fn(s)));
@@ -48,10 +48,8 @@ export const questionOneCorrect = (props: {
       const shuffle = getRandomShuffler(seed);
       const getRandomId = getRandomIdGenerator(seed);
       const correctSubject = shuffle(props.correctOptions).reduce<string[]>(
-        (sum, item) =>
-          Array.isArray(item.subject)
-            ? [...sum, ...item.subject]
-            : [...sum, item.subject],
+        (sum, { subject = "" }) =>
+          Array.isArray(subject) ? [...sum, ...subject] : [...sum, subject],
         []
       )[0];
 
@@ -64,7 +62,7 @@ export const questionOneCorrect = (props: {
       );
 
       const selectedCorrectOptionTemplate = resolvedCorrectOptionTemplates.find(
-        ({ subject }) =>
+        ({ subject = "" }) =>
           Array.isArray(subject)
             ? subject.includes(correctSubject)
             : subject === correctSubject
@@ -78,7 +76,7 @@ export const questionOneCorrect = (props: {
 
       const wrongOptions = shuffle([
         ...props.otherOptions,
-        ...resolvedCorrectOptionTemplates.filter(({ subject }) =>
+        ...resolvedCorrectOptionTemplates.filter(({ subject = "" }) =>
           Array.isArray(subject)
             ? !subject.includes(correctSubject)
             : subject !== correctSubject
@@ -94,7 +92,12 @@ export const questionOneCorrect = (props: {
         ? shuffle(props.question)[0]
         : props.question;
 
-      const finalOptions = shuffle([...wrongOptions, correctOption]);
+      const finalOptions = shuffle([...wrongOptions, correctOption]).map(
+        (obj) => ({
+          why: "",
+          ...obj,
+        })
+      );
 
       return {
         key: `${props.id}_${seed}`,
