@@ -10,7 +10,7 @@ if (!fs.existsSync(TARGET_DIR)) {
 
 const MATCH_LOS_TABLE_REGEX = /^\|(.*)/gm;
 const MATCH_LOS_FROM_TABLE_REGEX = /(?=| ) (0.*) (?= \|)/gm;
-const MATCH_LOS_TEXT_REGEX = /(?:\d\.[ \t]+\*\*0.*\*\* -- )/gm;
+const MATCH_LOS_TEXT_REGEX = /(?:\d+\.[ \t]+\*\*0.*\*\* -- )/gm;
 
 export const getLosFormMdx = (contentId: string, mdx: string) => {
   const textSection =
