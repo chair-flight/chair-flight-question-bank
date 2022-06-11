@@ -345,3 +345,39 @@ export const QUSW1EXVRD = questionOneCorrect({
     - Ampere per hour is not the same as Ampere hour (A/h ≠ Ah)
   `,
 });
+
+export const QE7NZ238BD = questionOneCorrect({
+  id: "QE7NZ238BD",
+  version: 1,
+  learningObjectives: ["021.09.03.04.01", "021.09.03.04.03", "021.09.03.04.02"],
+  question: (subject) => dedent`
+    ${subject} by...
+  `,
+  correctOptions: [
+    {
+      subject: "Alternating current can be derived from direct current",
+      why: "",
+      text: "an inverter.",
+    },
+    {
+      subject: "Direct current can be derived from alternate current",
+      why: "",
+      text: "a rectifier.",
+    },
+    {
+      subject: dedent`
+        Direct current with a different voltage can be derived from 
+        direct current
+      `,
+      why: "",
+      text: "a transformer.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "an alternating current motor.",
+    },
+  ],
+  explanation: dedent``,
+});

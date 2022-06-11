@@ -694,3 +694,37 @@ export const A49I12JXEM = mergeQuestionVariants(
       otherOptions: [],
     })
 );
+
+export const Q5WBWLA1YM = questionOneCorrect({
+  id: "Q5WBWLA1YM",
+  version: 1,
+  learningObjectives: ["021.01.02.01.02"],
+  question: () => dedent`
+    Consider an aircraft on the ground in a hangar. 
+    
+    Which loads are acting in the skin of a cantilever wing outboard of the 
+    wing landing gear?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "Tension in the upper skin, compression in the lower skin.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "Tension in both the upper and the lower skin.",
+    },
+    {
+      why: "",
+      text: "Compression in the upper surface, tension in the lower skin.",
+    },
+    {
+      why: "",
+      text: "Compression in both the upper and the lower skin.",
+    },
+  ],
+  explanation: dedent``,
+});

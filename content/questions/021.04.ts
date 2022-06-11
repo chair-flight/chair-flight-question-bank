@@ -770,3 +770,115 @@ export const EDPTV2Y3SJ = mergeQuestionVariants(
       ],
     })
 );
+
+/** TODO Finish implementation :) */
+const RESK47GB58 = mergeQuestionVariants(
+  {
+    id: "RESK47GB58",
+    version: 1,
+    learningObjectives: ["021.04.03.04.01"],
+    explanation: dedent`
+  `,
+    correctOptions: [
+      {
+        text: dedent`
+        With RTO inoperable, take off might not be allowed because the minimum 
+        break distance with manual braking is much longer.
+      `,
+        why: "",
+      },
+      {
+        text: dedent`
+        After RTO braking action, the brakes block the wheel rims.
+      `,
+        why: dedent`
+      `,
+      },
+    ],
+    wrongOptions: [
+      {
+        text: [
+          dedent`
+          After RTO braking action, the hydraulic pressure is reduced to zero
+        `,
+          dedent`
+          After RTO braking action, The brake pressure is released.
+        `,
+        ],
+        why: dedent`
+        After RTO braking action, brakes remain in the locked position, so 
+        pressure remains.
+      `,
+      },
+      {
+        text: dedent`
+        RTO mode can be used for take-off and Landing
+      `,
+        why: dedent`
+        RTO mode can only be used for take off.
+      `,
+      },
+      {
+        text: dedent`
+        Manual braking is the most efficient way to decelerate an aircraft
+      `,
+        why: dedent`
+      `,
+      },
+      {
+        text: dedent`
+        RTO has a fixed force with which the aircraft must be decelerated
+      `,
+        why: dedent`
+        the RTO applies a fixed hydraulic pressure, but the force that is 
+        applied varies with weight on the wheels.
+      `,
+      },
+    ],
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+      The correct statement in relation to the autobrake system in RTO mode 
+      is...
+    `,
+      correctOptions: props.correctOptions,
+      otherOptions: props.wrongOptions,
+    })
+);
+
+export const FIAR77L7GS = questionOneCorrect({
+  id: "FIAR77L7GS",
+  version: 1,
+  learningObjectives: ["021.04.03.04.03"],
+  question: (subject) => dedent`
+    Assume an autobrake system that is ON and armed. When will the system revert
+    to normal anti-skid function?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      text: dedent`
+        When any of the throttle levers are advanced to take-off thrust
+      `,
+      why: dedent``,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`Once the nose wheel touches the ground`,
+      why: dedent``,
+    },
+    {
+      text: dedent`When spoilers are manually deployed`,
+      why: dedent``,
+    },
+    {
+      text: dedent`If skidding occurs on any wheel`,
+      why: dedent``,
+    },
+  ],
+  explanation: dedent`
+  `,
+});

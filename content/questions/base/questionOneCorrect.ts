@@ -17,7 +17,7 @@ export const questionOneCorrect = (props: {
   }>;
   otherOptions: Array<{
     why?: string;
-    text: string;
+    text: string | string[];
   }>;
   explanation: string;
 }): FunctionQuestion => {
@@ -33,7 +33,9 @@ export const questionOneCorrect = (props: {
     ...props.correctOptions.flatMap((o) =>
       Array.isArray(o.text) ? o.text : [o.text]
     ),
-    ...props.otherOptions.map((o) => o.text),
+    ...props.otherOptions.flatMap((o) =>
+      Array.isArray(o.text) ? o.text : [o.text]
+    ),
   ];
   return {
     id: props.id,
@@ -85,6 +87,7 @@ export const questionOneCorrect = (props: {
         .slice(0, 3)
         .map((obj) => ({
           ...obj,
+          text: Array.isArray(obj.text) ? shuffle(obj.text)[0] : obj.text,
           id: getRandomId(),
         }));
 

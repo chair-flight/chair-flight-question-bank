@@ -1,4 +1,5 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
 export const QJ1YAH5TJJ = questionOneCorrect({
@@ -105,3 +106,89 @@ export const QRYNQ9UIYU = questionOneCorrect({
     the opposite effect reducing the pressure. 
   `,
 });
+
+export const QA4RSZFTUS = mergeQuestionVariants(
+  {
+    id: "QA4RSZFTUS",
+    version: 1,
+    learningObjectives: ["021.12.01.01.01"],
+    explanation: dedent``,
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+    Optical smoke detectors work on the principle that smoke particles...
+  `,
+      correctOptions: [
+        {
+          subject: "",
+          why: "",
+          text: "reflect and scatter light.",
+        },
+      ],
+      otherOptions: [
+        {
+          why: "",
+          text: "are negatively charged.",
+        },
+        {
+          why: "",
+          text: "are positively charged.",
+        },
+        {
+          why: "",
+          text: "are visible using internal optical lenses.",
+        },
+      ],
+    }),
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+      Which of these correctly describes a smoke detection mechanism:
+    `,
+      correctOptions: [
+        {
+          text: dedent`
+          Labyrinth detector: Light reflects towards the photosensitive cell 
+          and the labyrinth has a shielding function
+        `,
+        },
+        {
+          text: dedent`
+          Light attenuation detector: Detect the diffusion of a beam of light
+          which occurs when the beam is interrupted by smoke
+        `,
+        },
+      ],
+      otherOptions: [
+        {
+          why: "",
+          text: dedent`
+          Labyrinth detector: The photosensitive cell is blocked from the light by smoke
+        `,
+        },
+        {
+          why: "",
+          text: dedent`
+         Labyrinth detector: Light reflects away from the photosensitive cell
+        `,
+        },
+        {
+          why: "",
+          text: dedent`
+          Light Attenuation Detector: Light reflects away from the 
+          photosensitive cell
+        `,
+        },
+        {
+          why: "",
+          text: dedent`
+          Light Attenuation Detector: Light reflects towards the photosensitive 
+          cell and the labyrinth has a shielding function
+        `,
+        },
+      ],
+    })
+);

@@ -2,6 +2,7 @@ import { dedent } from "./base/dedent";
 import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
+import { questionOneTwo } from "./base/questionOneTwo";
 
 export const LAIVWRGDXF = questionOneCorrect({
   id: "LAIVWRGDXF",
@@ -387,6 +388,232 @@ export const N2HGF03ISU = questionOneCorrect({
         surface efficiency
       `,
       why: dedent``,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const BFGC5S8IHG = questionOneTwo({
+  id: "BFGC5S8IHG",
+  version: 1,
+  question: (options) => dedent`
+    Which of these statements about rudder limiting are correct?
+
+    ${options}
+  `,
+  learningObjectives: ["021.05.01.05.05"],
+  statementPairs: [
+    {
+      correct: [
+        dedent`
+          A rudder ratio changer system reduces the rudder deflection for a 
+          given pedal deflection as the IAS increases
+        `,
+        dedent`
+          A rudder ratio changer system increases the rudder deflection for a 
+          given pedal deflection as the IAS decreases
+        `,
+      ],
+      wrong: [
+        dedent`
+          A rudder ratio changer system reduces the rudder deflection for a 
+          given pedal deflection as the IAS decreases
+        `,
+        dedent`
+          A rudder ratio changer system increases the rudder deflection for a 
+          given pedal deflection as the IAS increases
+        `,
+        dedent`
+          A rudder ratio changer system limits both rudder and rudder pedal 
+          deflection as the IAS increases.
+        `,
+      ],
+    },
+    {
+      correct: [
+        dedent`
+          A variable stop system limits both rudder and rudder pedal deflection 
+          as the IAS increases.
+        `,
+      ],
+      wrong: [
+        dedent`
+          A variable stop system limits both rudder and rudder pedal deflection 
+          as the IAS decreases.
+        `,
+        dedent`
+          A variable stop system reduces the rudder deflection for a given pedal
+          deflection as the IAS increases.
+        `,
+      ],
+    },
+  ],
+  explanation: dedent`
+  
+  `,
+});
+
+export const ZF5WXIL87B = questionOneTwo({
+  id: "ZF5WXIL87B",
+  version: 1,
+  learningObjectives: ["021.05.01.05.04"],
+  statementPairs: [
+    {
+      correct: [
+        dedent`Manual Flight Controls should have a gust lock.`,
+        dedent`Reversible Flight Controls should have a gust lock.`,
+      ],
+      wrong: [
+        dedent`Manual Flight Controls do not need to have a gust lock.`,
+        dedent`Reversible Flight Controls do not need to have a gust lock.`,
+      ],
+    },
+    {
+      correct: [
+        dedent`Irreversible Flight Controls do not need to have aa gust lock.`,
+      ],
+      wrong: [dedent`Irreversible Flight Controls must have a gust lock.`],
+    },
+    {
+      correct: dedent`
+        There should be suitable design precautions to prevent flight with the 
+        gust lock engaged.`,
+    },
+    {
+      wrong: dedent`
+        A gust lock can be used in flight to reduce the effects of turbulence.
+      `,
+    },
+  ],
+  explanation: dedent`
+    Summary of correct statements:
+
+    - Reversible / Manual flight controls **Need a gust lock**
+    - Irreversible / Fully powered controls **Need not a gust lock***
+    - There should be suitable design precautions to prevent flight with the 
+      gust lock engaged.
+    - A gust lock can't be used in flight.
+    
+    * In irreversible systems, a gust lock is not needed since the hydraulic 
+    actuator is able to lock itself in the failed or neutral position.
+  `,
+});
+
+export const G5SGAS2QF0 = questionOneCorrect({
+  id: "G5SGAS2QF0",
+  version: 1,
+  learningObjectives: ["021.05.02.01.06", "021.05.02.01.07", "021.05.02.01.08"],
+  question: (subject) => dedent`
+    What best describes a ${subject} device?
+  `,
+  correctOptions: [
+    {
+      subject: ["flap load relief", "flap load-limiting protection"],
+      text: dedent`
+        A system that retracts the flaps when the airspeed is becoming too high 
+        and exceeds operation limit
+      `,
+      why: dedent`
+      `,
+    },
+    {
+      subject: ["auto slat"],
+      text: dedent`
+        A system that extends slats automatically when the angle of attack 
+        becomes too high
+      `,
+      why: dedent`
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        A system that extends flaps automatically when the ange of attack 
+        becomes too high
+      `,
+      why: dedent`
+      `,
+    },
+    {
+      text: dedent`
+        A system that retracts flaps automatically when the ange of attack 
+        becomes too high
+      `,
+      why: dedent`
+      `,
+    },
+    {
+      text: dedent`
+        A system that retracts slats automatically when the ange of attack 
+        becomes too high
+      `,
+      why: dedent`
+      `,
+    },
+    {
+      text: dedent`
+        A system that retracts slats automatically when the airspeed is becoming 
+        too high and exceeds operation limit
+      `,
+      why: dedent`
+      `,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const SCBXUGU7W3 = questionOneCorrect({
+  id: "SCBXUGU7W3",
+  version: 1,
+  learningObjectives: ["021.05.02.01.03"],
+  question: (subject) => dedent`
+    On large transport category aircraft, ${subject} are typically powered
+    by....
+  `,
+  correctOptions: [
+    {
+      subject: ["trailing edge flaps", "leading edge devices", " slats"],
+      text: dedent`
+        The Hydraulic system, with an electrical system backup
+      `,
+      why: dedent`
+        True for "trailing edge flaps", "leading edge devices", and " slats".
+
+        These are critical systems whose failure would drastically endanger the 
+        safe conduct of a flight
+      `,
+    },
+    {
+      subject: ["horizontal stabilizer", "speed brakes"],
+      text: dedent`
+        The hydraulic system, with no backup system
+      `,
+      why: dedent`
+        True for "horizontal stabilizer" and "speed brakes".
+
+        These systems are not as essential as the other primary and secondary 
+        systems. In case of failure, the plane is still flyable.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`The electrical system, with an Hydraulic backup`,
+    },
+    {
+      text: dedent`The Pneumatic system, with an Hydraulic backup`,
+    },
+    {
+      text: dedent`The Pneumatic system, with an Electrical backup`,
+    },
+    {
+      text: dedent`The Hydraulic system, with a Manual backup`,
+    },
+    {
+      text: dedent`The Hydraulic system, with a Electrical backup`,
     },
   ],
   explanation: dedent`
