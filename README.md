@@ -4,7 +4,7 @@ An Open source aviation question bank. **Still in (super early) development ;)**
 
 <p align="center">
   <img src="https://img.shields.io/badge/coverage%20010-3%2F507%201%25-red" />
-  <img src="https://img.shields.io/badge/coverage%20021-95%2F662%2014%25-red" />
+  <img src="https://img.shields.io/badge/coverage%20021-103%2F662%2016%25-red" />
   <img src="https://img.shields.io/badge/coverage%20022-0%2F471%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20031-0%2F86%200%25-red" />
   <img src="https://img.shields.io/badge/coverage%20032-0%2F243%200%25-red" />

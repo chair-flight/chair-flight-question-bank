@@ -707,3 +707,138 @@ export const QXGASRA4NB = mergeQuestionVariants(
       ],
     })
 );
+
+export const Q5MKRFZN3V = questionOneCorrect({
+  id: "Q5MKRFZN3V",
+  version: 1,
+  learningObjectives: ["021.11.02.04.06"],
+  question: () => dedent`
+    A gas turbine engine turbine section may employ active clearance control...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+        to provide enhanced clearances between the blade tips and the casing.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: dedent`
+        to cool the turbine disc.
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        as a method of attaching the stators and rotors to the hub of the disc.
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        to reduce “creep” in the blades.
+      `,
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QZCLPLEQKT = questionMultipleCorrect({
+  id: "QZCLPLEQKT",
+  version: 1,
+  learningObjectives: ["021.10.10.02.06"],
+  question: (options) => dedent`
+    The FADEC (Full Authority Digital Engine Control) can provide...
+
+    ${options}
+  `,
+  statements: [
+    {
+      correct: "thrust reverser control.",
+    },
+    {
+      correct: "engine operation within safe limits.",
+    },
+    {
+      correct: "automatic engine starting sequence.",
+    },
+    {
+      correct: "automatic thrust rating control.",
+    },
+  ],
+  explanation: dedent``,
+  select: {
+    numberOfOptions: 4,
+    numberOfCorrectOptions: 4,
+  },
+});
+
+export const QX8ZENGWBV = questionOneCorrect({
+  id: "QX8ZENGWBV",
+  version: 1,
+  learningObjectives: ["021.11.03.02.08"],
+  question: () => dedent`
+    What is the source of power for a FADEC?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "The FADEC must have its own source of electrical power",
+      text: "the FADEC power source(s) on the engine.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "the APU generator.",
+    },
+    {
+      why: "",
+      text: "the aircraft battery.",
+    },
+    {
+      why: "",
+      text: "the aircraft generator.",
+    },
+  ],
+  explanation: dedent`
+    This question and answer combo might look a bit redundant, but the important
+    takeaway is that the FADEC must have it's own power source. All other 
+    listed power sources are generic power shared by multiple systems.
+  `,
+});
+
+export const QGGKJVQKHC = questionOneCorrect({
+  id: "QGGKJVQKHC",
+  version: 1,
+  learningObjectives: ["021.11.01.02.10"],
+  question: () => dedent`
+    By-pass ratio in a turbine engine is the ratio of the:
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "cold air mass flow to the hot air mass flow.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "speed of the combusted air to the speed of the by-pass air.",
+    },
+    {
+      why: "",
+      text: "intake air pressure to the turbine delivery air pressure.",
+    },
+    {
+      why: "",
+      text: "tertiary air mass flow to the primary air mass flow.",
+    },
+  ],
+  explanation: dedent``,
+});

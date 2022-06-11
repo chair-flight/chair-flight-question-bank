@@ -1,4 +1,5 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionMultipleCorrect } from "./base/questionMultipleCorrect";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
@@ -247,3 +248,134 @@ export const Q7AIYLFNHA = questionMultipleCorrect({
   },
   explanation: dedent``,
 });
+
+export const QL4UXT8LNI = questionOneCorrect({
+  id: "QL4UXT8LNI",
+  version: 1,
+  learningObjectives: ["021.10.01.02.01"],
+  question: () => dedent`
+    The formula to calculate the total displacement of a multi-cylinder 
+    piston engine is..
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "piston area x piston stroke x number of cylinders.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "piston area x piston stroke.",
+    },
+    {
+      why: "",
+      text: "cylinder volume x number of cylinders.",
+    },
+    {
+      why: "",
+      text: "cylinder length x cylinder diameter.",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const R124VAFAC5 = mergeQuestionVariants(
+  {
+    id: "R124VAFAC5",
+    version: 1,
+    learningObjectives: ["021.10.01.02.01"],
+    correctOptions: [
+      {
+        subject: "a crankcase",
+        text: dedent`
+        To house the crankshaft in a reciprocating internal combustion 
+        engine.
+      `,
+      },
+      {
+        subject: "a crankshaft",
+        text: dedent`
+        To perform a conversion between the reciprocating motion of the pistons 
+        to a rotational motion.
+      `,
+      },
+      {
+        subject: "a connecting rod",
+        text: dedent`
+        To convert the reciprocating motion of a single piston into the rotation 
+        of the crankshaft
+      `,
+      },
+      {
+        subject: "a piston",
+        text: dedent`
+        To transfer force from expanding gas in the cylinder to the crankshaft. 
+      `,
+      },
+      {
+        subject: "a piston pin",
+        text: dedent`
+        To provide a bearing for the connecting rod to pivot upon as the 
+        piston moves
+      `,
+      },
+      {
+        subject: "piston rings",
+        text: dedent`
+        to seal the combustion chamber so that there is minimal loss of gases 
+        to the crank case.
+      `,
+      },
+      {
+        subject: "valves",
+        text: dedent`
+        To allow or restrict the flow of fluid or gas to and from the combustion 
+        chambers or cylinders during engine operation.
+      `,
+      },
+      {
+        subject: "a push rod",
+        text: dedent`
+        To convert a rotational motion from the camshaft to a reciprocal motion 
+        of a specific valve
+      `,
+      },
+      {
+        subject: "a camshaft",
+        text: dedent`
+        To convert a rotational motion to a reciprocal motion
+      `,
+      },
+      {
+        subject: "rocker arm",
+        text: dedent`
+        To transfer the motion of a pushrod to the corresponding intake/exhaust 
+        valve.
+      `,
+      },
+      {
+        subject: "camshaft gear",
+        text: dedent`
+        To keep the valve timing and crank strokes working in tune.
+      `,
+      },
+    ],
+    otherOptions: [],
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      In a piston engine, what is the function of ${subject}?
+    `,
+      explanation: dedent`
+    You should be familiar with the following components and their definitions:
+
+    ${props.correctOptions
+      .map(({ text, subject }) => `- **${subject}**: ${text}`)
+      .join("\n")}
+  `,
+    })
+);

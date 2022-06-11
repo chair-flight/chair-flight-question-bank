@@ -192,3 +192,85 @@ export const QA4RSZFTUS = mergeQuestionVariants(
       ],
     })
 );
+
+export const QKXCOQUSZ6 = questionOneCorrect({
+  id: "QKXCOQUSZ6",
+  version: 1,
+  learningObjectives: ["021.12.02.01.01"],
+  question: () => dedent`
+    In the event of a fire in a gas turbine engine...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "the fuel supply is isolated from the engine by pilot action.",
+    },
+    {
+      subject: "",
+      why: "",
+      text: "the engine fire extinguisher is discharged by pilot action.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "the fuel installation is protected by an automatic fire extinguishing system.",
+    },
+    {
+      why: "",
+      text: "an automatic shut off valve is moved to the closed position controlled by the fire sensing system.",
+    },
+    {
+      why: "",
+      text: "the fuel supply is disconnected by a quick release coupling.",
+    },
+    {
+      why: "",
+      text: "the engine fire extinguisher is automatically activated.",
+    },
+  ],
+  explanation: dedent`
+    Despite the increasing automation of modern airplanes, in case of engine
+    fire some operations still require manual intervention by the pilot. 
+
+    The two most notable manual pilot actions are:
+    - Shutting off Fuel supply to the affected engine
+    - Discharging the fire extinguisher
+  `,
+});
+
+export const QPBIISLIBJ = questionOneCorrect({
+  id: "QPBIISLIBJ",
+  version: 1,
+  learningObjectives: ["021.12.02.02.01"],
+  question: () => dedent`
+    In a resistive single-loop continuous fire detection system without fault 
+    protection, if the outer capillary tube is inadvertently crushed and the 
+    inner core contacts the outer casing...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "the fire alarm is triggered.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "there will be no effect on the system",
+    },
+    {
+      why: "",
+      text: "the power supply is cut off automatically.",
+    },
+    {
+      why: "",
+      text: "the main engine fire extinguisher is automatically activated.",
+    },
+  ],
+  explanation: dedent`
+
+  `,
+});

@@ -127,7 +127,7 @@ export const ZRON7SV6I1 = mergeQuestionVariants(
 export const DD5Q0CX1SK = questionOneCorrect({
   id: "DD5Q0CX1SK",
   version: 1,
-  learningObjectives: ["021.01.01.01.01", "021.01.01.01.02"],
+  learningObjectives: ["021.01.01.01.01", "021.01.01.01.02", "021.01.01.02.01"],
   question: (subject) => dedent`
     Select the option that best describes ${subject}.
   `,
@@ -727,4 +727,43 @@ export const Q5WBWLA1YM = questionOneCorrect({
     },
   ],
   explanation: dedent``,
+});
+
+export const QSILUO0NHD = questionMultipleCorrect({
+  id: "QSILUO0NHD",
+  version: 1,
+  learningObjectives: ["021.01.03.01.03"],
+  question: (options) => dedent`
+    Which one of the following liquids are considered highly corrosive?
+
+    ${options}
+  `,
+  statements: [
+    {
+      wrong: "Anti-icing fluid",
+    },
+    {
+      wrong: "De-icing fluid",
+    },
+    {
+      wrong: "Window washer",
+    },
+    {
+      correct: "Hydraulic fluid",
+    },
+    {
+      wrong: "Engine oil",
+    },
+  ],
+  explanation: dedent`
+    This question is a bit special. Learning objective \`021.03.02.01.01\` tries
+    to highlight the ideal properties of hydraulic fluids which include being
+    "non corrosive". Despite this you should be aware that Skydrol, the hydraulic
+    fluid most commonly used in modern airliners is highly corrosive, specially
+    at high temperatures.
+
+    You should also be aware that Skydrol is highly toxic to humans. 
+
+    All other fluids are relatively non corrosive.
+  `,
 });
