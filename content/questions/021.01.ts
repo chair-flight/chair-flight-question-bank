@@ -767,3 +767,58 @@ export const QSILUO0NHD = questionMultipleCorrect({
     All other fluids are relatively non corrosive.
   `,
 });
+
+// TODO create question sort
+export const Q6NILX4ZZZ = questionOneCorrect({
+  id: "Q6NILX4ZZZ",
+  version: 1,
+  learningObjectives: ["021.01.03.01.02"],
+  question: () => dedent`
+    Organise the following environments from the highest to the lowest rates of 
+    corrosion:
+
+    1. Desert  
+    2. Mediterranean 
+    3. Rainforest  
+    4. Arctic
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "3, 2, 1, 4.",
+    },
+  ],
+  otherOptions: [
+    {
+      text: "3, 2, 4, 1.",
+    },
+    {
+      why: "",
+      text: "1, 2, 3, 4.",
+    },
+    {
+      why: "",
+      text: "2, 3, 1, 4.",
+    },
+    {
+      why: "",
+      text: "4, 1, 2, 3.",
+    },
+  ],
+  explanation: dedent`
+    The primary drive for an accelerated corrosion is humidity. As such you 
+    can put in the top of the list a Rainforest (close to 100% humidity), and
+    Mediterranean climate (70%+ humidity on a daily basis). 
+
+    The arctic climate, despite of being full of water in frozen state has a 
+    permanent humidity of 0%, while a desert still experiences some degree
+    of humidity, albeit very low. As such the correct ordering from the 
+    highest to the lowest rate of corrosion should be:
+   
+    3. Rainforest  
+    2. Mediterranean 
+    1. Desert  
+    4. Arctic
+  `,
+});

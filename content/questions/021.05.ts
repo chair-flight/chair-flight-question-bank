@@ -619,3 +619,27 @@ export const SCBXUGU7W3 = questionOneCorrect({
   explanation: dedent`
   `,
 });
+
+export const QN0PK15VDM = questionOneCorrect({
+  id: "QN0PK15VDM",
+  version: 1,
+  learningObjectives: ["021.05.04.01.02", "021.05.04.01.05"],
+  question: (subject) => dedent`
+    Which of the following protections is available ona fly-by-wire control
+    system?
+  `,
+  correctOptions: [
+    { text: "Excessive g load" },
+    { text: "Stall" },
+    { text: "Excessive Bank Angle" },
+    { text: "Excessive Pitch Angle" },
+    { text: "Overspeed" },
+  ],
+  otherOptions: [
+    { text: "Ground obstacle" },
+    { text: "Other aircraft collision" },
+    { text: "Restricted airspeed " },
+  ],
+  explanation: dedent`
+  `,
+});

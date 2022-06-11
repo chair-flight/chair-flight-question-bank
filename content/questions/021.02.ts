@@ -1,4 +1,5 @@
 import { dedent } from "./base/dedent";
+import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
 export const Q0KKWBVUUO = questionOneCorrect({
@@ -150,3 +151,124 @@ export const PE0CKDB02M = questionOneCorrect({
     greatly diminish their lifespan, and severely impact their economic return.
   `,
 });
+
+export const RFVS4ACASN = mergeQuestionVariants(
+  {
+    id: "RFVS4ACASN",
+    version: 1,
+    learningObjectives: ["021.02.04.01.02"],
+    explanation: dedent`
+  
+  `,
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      What is the function of the ${subject} in an aeroplane fuselage?
+    `,
+      correctOptions: [
+        {
+          subject: "frames",
+          why: "Function of the frames",
+          text: dedent`To provide the fuselage with it's sectional shape`,
+        },
+        {
+          subject: "bulkheads",
+          why: "Function of the bulkheads",
+          text: dedent`
+          To provide the fuselage with it's sectional shape and additional 
+          structural rigidity
+        `,
+        },
+        {
+          subject: "pressure bulkhead",
+          why: "Function of the pressure bulkhead",
+          text: dedent`
+          To seal the cabin section in order to allow for pressurization.
+        `,
+        },
+        {
+          subject: "firewall.",
+          why: "Function of the firewall.",
+          text: dedent`
+          A sectional shape designed to separate the engine from the rest of
+          the fuselage
+        `,
+        },
+        {
+          subject: "longerons",
+          why: "Function of the longerons",
+          text: dedent`
+          To provide longitudinal rigidity to the structure
+        `,
+        },
+        {
+          subject: "skin",
+          why: "Function of the skin",
+          text: dedent`
+          carry the loads due to pressurization and convert them into tensile
+          stress
+        `,
+        },
+      ],
+      otherOptions: [],
+    }),
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      What is the function of the ${subject} in an aeroplane fuselage?
+    `,
+      correctOptions: [
+        {
+          subject: "stiffeners",
+          why: "Function of the stiffeners",
+          text: dedent`
+          To provide additional rigidity to webs.
+        `,
+        },
+        {
+          subject: "stringers",
+          why: "Function of the stringers",
+          text: dedent`
+          Assist the skin absorb longitudinal compressive loads
+        `,
+        },
+      ],
+      otherOptions: [
+        {
+          text: "absorb sheer stress",
+        },
+        {
+          text: "provide attachment points for sound and and thermal insulation",
+        },
+      ],
+    })
+  // TODO
+  // (props) => questionOneCorrect({
+  //   ...props,
+  //   question: (subject) => dedent`
+  //     What is the function of the ${subject} in an aeroplane fuselage?
+  //   `,
+  //   correctOptions: [
+  //     {
+  //       subject: "floor suspension",
+  //       why: "Function of the floor suspension",
+  //       text: dedent``,
+  //     },
+  //     {
+  //       subject: "(crossbeams)",
+  //       why: "Function of the (crossbeams)",
+  //       text: dedent``,
+  //     },
+  //     {
+  //       subject: "floor panels",
+  //       why: "Function of the floor panels",
+  //       text: dedent``,
+  //     },
+  //   ],
+  //   otherOptions: [
+  //   ],
+  // }),
+);

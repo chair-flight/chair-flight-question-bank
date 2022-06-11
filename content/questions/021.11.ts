@@ -842,3 +842,87 @@ export const QGGKJVQKHC = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QA0UV21SNS = questionOneCorrect({
+  id: "QA0UV21SNS",
+  version: 1,
+  learningObjectives: ["021.11.02.02.11"],
+  question: () => dedent`
+    Which of the following statements regarding variable inlet guide vanes 
+    (VIGVs) and variable stator vanes (VSVs) on a high-bypass turbine 
+    engine is correct?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+        VIGVs are located at the front of the HP compressor and, together with 
+        the VSVs, control compressor airflow.
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: dedent`
+        VIGVs are located in the front of the fan and control both fan and 
+        compressor air flow. VSVs are used in the compressor only and are used 
+        to increase pressure ratio.
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        VIGVs prevent LP compressor stall and VSVs prevent HP compressor stall.
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        If VIGVs move towards the open position, VSVs move towards the closed 
+        position.
+      `,
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QA0UV21SNT = questionOneCorrect({
+  id: "QA0UV21SNS",
+  version: 1,
+  learningObjectives: ["021.11.02.02.11"],
+  question: () => dedent`
+    What is the purpose of IGVs?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+        Optimize the angle of the air flow in the first stage of the compressor
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: dedent`
+        Reduce velocity y of the air flow in the combustion chamber.
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        Increase the velocity of the air flow in the first stage of the compressor
+      `,
+    },
+    {
+      why: "",
+      text: dedent`
+        Optimize the angle of the air flow in the diffuser
+      `,
+    },
+  ],
+  explanation: dedent``,
+});

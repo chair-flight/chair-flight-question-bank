@@ -2,87 +2,117 @@ import { dedent } from "./base/dedent";
 import { mergeQuestionVariants } from "./base/mergeQuestionVariants";
 import { questionOneCorrect } from "./base/questionOneCorrect";
 
-export const QRQSE0BTIB = questionOneCorrect({
-  id: "QRQSE0BTIB",
-  version: 1,
-  learningObjectives: ["021.03.02.01.01"],
-  question: (subject) => dedent`
-    What is a ${subject} property of hydraulic fluids?
-  `,
-  correctOptions: [
-    {
-      subject: "desirable",
-      text: "High thermal stability.",
-      why: "",
-    },
-    {
-      subject: "desirable",
-      text: "Low corrosiveness.",
-      why: "",
-    },
-    {
-      subject: "desirable",
-      text: "High flashpoint.",
-      why: "",
-    },
-    {
-      subject: "desirable",
-      text: "Low flammability.",
-      why: "",
-    },
-    {
-      subject: "desirable",
-      text: "Low volatility.",
-      why: "",
-    },
-    {
-      subject: "desirable",
-      text: "Low viscosity.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "Low thermal stability.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "High corrosiveness.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "Low flashpoint.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "High flammability.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "High volatility.",
-      why: "",
-    },
-    {
-      subject: "undesirable",
-      text: "High viscosity.",
-      why: "",
-    },
-  ],
-  otherOptions: [],
-  explanation: dedent`
-    Desirable properties:
+export const QRQSE0BTIB = mergeQuestionVariants(
+  {
+    id: "QRQSE0BTIB",
+    version: 1,
+    learningObjectives: ["021.03.02.01.01"],
+    correctOptions: [
+      {
+        subject: "desirable",
+        text: "High thermal stability.",
+        why: "",
+      },
+      {
+        subject: "desirable",
+        text: "Low corrosiveness.",
+        why: "",
+      },
+      {
+        subject: "desirable",
+        text: "High flashpoint.",
+        why: "",
+      },
+      {
+        subject: "desirable",
+        text: "Low flammability.",
+        why: "",
+      },
+      {
+        subject: "desirable",
+        text: "Low volatility.",
+        why: "",
+      },
+      {
+        subject: "desirable",
+        text: "Low viscosity.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "Low thermal stability.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "High corrosiveness.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "Low flashpoint.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "High flammability.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "High volatility.",
+        why: "",
+      },
+      {
+        subject: "undesirable",
+        text: "High viscosity.",
+        why: "",
+      },
+    ],
+  },
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: (subject) => dedent`
+      What is a ${subject} property of hydraulic fluids?
+    `,
+      otherOptions: [],
+      explanation: dedent`
+      Desirable properties:
 
-    - High thermal stability.
-    - Low corrosiveness.
-    - High flashpoint.
-    - Low flammability.
-    - Low volatility.
-    - Low viscosity.
-  `,
-});
+      - High thermal stability.
+      - Low corrosiveness.
+      - High flashpoint.
+      - Low flammability.
+      - Low volatility.
+      - Low viscosity.
+    `,
+    }),
+  (props) =>
+    questionOneCorrect({
+      ...props,
+      question: () => dedent`
+      Which property must a fluid have for a hydraulic system to 
+      operate correctly?
+    `,
+      correctOptions: props.correctOptions.filter(
+        ({ subject }) => subject === "desirable"
+      ),
+      otherOptions: props.correctOptions.filter(
+        ({ subject }) => subject !== "desirable"
+      ),
+      explanation: dedent`
+      Desirable properties:
+
+      - High thermal stability.
+      - Low corrosiveness.
+      - High flashpoint.
+      - Low flammability.
+      - Low volatility.
+      - Low viscosity.
+    `,
+    })
+);
 
 export const MAK4NBVY3 = questionOneCorrect({
   id: "MAK4NBVY3",
