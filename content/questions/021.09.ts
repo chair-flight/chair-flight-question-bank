@@ -381,3 +381,158 @@ export const QE7NZ238BD = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const QE7NZ238B2 = questionOneCorrect({
+  id: "QE7NZ238B2",
+  version: 1,
+  learningObjectives: ["021.09.03.04.01", "021.09.03.04.03", "021.09.03.04.02"],
+  question: (subject) => dedent`
+    ${subject} converts...
+  `,
+  correctOptions: [
+    {
+      text: "28V DC to 115V AC",
+      subject: "An inverter",
+    },
+    {
+      text: "115V AC to 28V DC",
+      subject: "A rectifier",
+    },
+    {
+      text: "28V DC to 14V DC",
+      subject: "A transformer",
+    },
+  ],
+  otherOptions: [
+    {
+      text: "115V AC to 115V AC at a different frequency",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const M74281FMAC = questionOneCorrect({
+  id: "M74281FMAC",
+  version: 1,
+  learningObjectives: ["021.09.01.07.06"],
+  question: (subject) => dedent`
+    If a circuit overload is not detected, what may occur?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      text: dedent`
+         The electrical line could overheat and cause a fire.
+      `,
+      why: dedent`
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        The fuse may trigger.
+      `,
+      why: dedent`
+        In this case the overload was detected.
+      `,
+    },
+    {
+      text: dedent`
+        The generators will overheat and cause a fire.
+      `,
+      why: dedent`
+        
+      `,
+    },
+    {
+      text: dedent`
+        The bypass line will be activated
+      `,
+      why: dedent`
+        No such thing as a bypass line on an electrical circuit. 
+      `,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const GNDAMDASFC = questionOneCorrect({
+  id: "GNDAMDASFC",
+  version: 1,
+  learningObjectives: ["021.09.02.01.08"],
+  question: () => dedent`
+    During cruise, all generators aboard have failed. You have connected
+    all the critical electrical equipment to the Battery Bus bar as per the QRH.
+    What must you be aware of?
+  `,
+  correctOptions: [
+    {
+      text: dedent`
+         The batteries have a limited charge, so you won't be able to operate
+         your electrical equipment indefinitely. 
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        You must closely monitor the battery temperature to avoid thermal 
+        runaway.
+      `,
+    },
+    {
+      text: dedent`
+        AC equipment can't be powered by the battery and can't be used for 
+        the rest of the flight
+      `,
+      why: dedent`
+        An inverter can be sued to convert from DC to AC. 
+      `,
+    },
+    {
+      text: dedent`
+        DC equipment can't be powered by the battery and can't be used for 
+        the rest of the flight
+      `,
+      why: dedent`
+        The battery supplies DC.
+      `,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const QGT6FQPXLD = questionOneCorrect({
+  id: "QGT6FQPXLD",
+  version: 1,
+  learningObjectives: ["021.09.03.02.04"],
+  question: () => dedent`
+    "Frequency wild" in relation to a AC generation system means the 
+    generator...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "output frequency varies with engine speed.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "output frequency is too low.",
+    },
+    {
+      why: "",
+      text: "voltage regulator is out of adjustment.",
+    },
+    {
+      why: "",
+      text: "output frequency is too high.",
+    },
+  ],
+  explanation: dedent``,
+});

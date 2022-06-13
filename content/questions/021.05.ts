@@ -723,3 +723,43 @@ export const AVM46F35MB = questionOneCorrect({
   explanation: dedent`
   `,
 });
+
+export const N53N8MVSCZ = questionOneCorrect({
+  id: "N53N8MVSCZ",
+  version: 1,
+  learningObjectives: ["021.05.01.05.01"],
+  question: (subject) => dedent`
+    What is the function of a control valve in a Fly by Wire system?
+  `,
+  correctOptions: [
+    {
+      text: dedent`
+        Control valves act on hydraulic actuators which move the control
+        surfaces    
+      `,
+      why: dedent`
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        Hydraulic actuators act on control valves which move the control 
+        surface
+      `,
+      why: dedent`
+      `,
+    },
+    {
+      text: dedent`
+        Control valves move the surface directly, without the use of hydraulic
+        actuators
+      `,
+      why: dedent`
+        Control valves are not used in FBW systems
+      `,
+    },
+  ],
+  explanation: dedent`
+  `,
+});

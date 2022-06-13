@@ -110,9 +110,14 @@ export const WNR5OTGE1K = questionOneCorrect({
   id: "WNR5OTGE1K",
   version: 1,
   learningObjectives: ["021.07.02.01.01"],
-  question: (subject) => dedent`
-    ecrease in dynamic pressure
-  `,
+  question: [
+    () => dedent`
+      The differential pressure ice detector is activated by...
+    `,
+    () => dedent`
+      The Smith's Ice detector is activated by...
+    `,
+  ],
   correctOptions: [{ text: dedent`Decrease in dynamic pressure` }],
   otherOptions: [
     { text: dedent`Decrease in static pressure` },
@@ -165,6 +170,55 @@ export const B05R40DDBT = questionOneCorrect({
     },
   ],
   otherOptions: [],
+  explanation: dedent`
+  `,
+});
+
+export const HBNJ59MNCS = questionOneCorrect({
+  id: "HBNJ59MNCS",
+  version: 1,
+  learningObjectives: ["021.07.01.01.04"],
+  question: (subject) => dedent`
+    A ${subject} anti-icing system on a modern jet aircraft works via...
+  `,
+  correctOptions: [
+    {
+      subject: ["thermal", "hot air"],
+      text: dedent`
+        hot bleed air from the compressor
+      `,
+      why: dedent`
+        True for thermal / hot air anti-icing
+      `,
+    },
+    {
+      subject: ["electrical"],
+      text: dedent`
+        electrical heating elements
+      `,
+      why: dedent`
+        true for electrical anti-icing
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        mechanical boots which inflate on the wing leading edge
+      `,
+      why: dedent`
+        Describes a de-icing system commonly seen in turboprops, but not 
+        on jets.
+      `,
+    },
+    {
+      text: dedent`
+        ram air, warmed by heat exchangers
+      `,
+      why: dedent`
+      `,
+    },
+  ],
   explanation: dedent`
   `,
 });
