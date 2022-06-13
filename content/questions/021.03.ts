@@ -353,3 +353,55 @@ export const NBF1Z4BVY2 = questionOneCorrect({
   explanation: dedent`
   `,
 });
+
+export const FASF124FJQ = questionOneCorrect({
+  id: "FASF124FJQ",
+  version: 1,
+  learningObjectives: ["021.03.02.02.18"],
+  question: (subject) => dedent`
+    What instruments readings would you expect when experiencing a slow internal
+    leak in the hydraulic system?
+  `,
+  correctOptions: [
+    {
+      text: dedent`
+        A fluctuating lower than usual pressure reading and a high fluid 
+        temperature.
+      `,
+      why: dedent`
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        A fluctuating lower than usual pressure reading and a low fluid 
+        temperature.
+      `,
+    },
+    {
+      text: dedent`
+        A fluctuating higher than usual pressure reading and a low fluid 
+        temperature.
+      `,
+    },
+    {
+      text: dedent`
+        A fluctuating higher than usual pressure reading and a high fluid 
+        temperature.
+      `,
+    },
+    {
+      text: dedent`
+        A steady decrease in the hydraulic fluid quantity indicator
+      `,
+    },
+  ],
+  explanation: dedent`
+    An internal leak is a leak where the fluid is still recovered and is returned
+    to the reservoir. As such no loss of hydraulic fluid is observed. However
+    the pressure at the actuators will be decreased, and as a consequence the
+    remaining fluid will experience an increase in heat as there is less fluid
+    to transport the generated heat. 
+  `,
+});

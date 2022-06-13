@@ -272,3 +272,25 @@ export const RFVS4ACASN = mergeQuestionVariants(
   //   ],
   // }),
 );
+
+export const VA4SVAQASF = questionOneCorrect({
+  id: "VA4SVAQASF",
+  version: 1,
+  learningObjectives: ["021.02.03.03.03"],
+  question: () => dedent`
+    Flutter occurs when an external force introduces an oscillation whose 
+    frequency is (1)_______ the natural structural oscillation frequency. The 
+    risk of flutter can be reduced by staying within the flight envelops and 
+    respect limitations around (2)_______.
+  `,
+  correctOptions: [{ text: dedent`(1) the same as; (2) airspeed` }],
+  otherOptions: [
+    { text: dedent`(1) higher than; (2) airspeed` },
+    { text: dedent`(1) lower than; (2) airspeed` },
+    { text: dedent`(1) the same as; (2) CG position` },
+    { text: dedent`(1) higher than; (2) CG position` },
+    { text: dedent`(1) lower than; (2) CG position` },
+  ],
+  explanation: dedent`
+  `,
+});

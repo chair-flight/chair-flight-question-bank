@@ -124,7 +124,11 @@ export const QVGG8YODIU = questionOneCorrect({
 export const C470WY82 = questionOneCorrect({
   id: "C470WY82",
   version: 1,
-  learningObjectives: ["021.05.01.02.01", "021.05.01.03.01"],
+  learningObjectives: [
+    "021.05.01.02.01",
+    "021.05.01.03.01",
+    "021.05.01.03.02.02",
+  ],
   question: (subject) => dedent`
     What is the basic principle of a fully ${subject} flight control system?
   `,
@@ -179,7 +183,7 @@ export const C470WY82 = questionOneCorrect({
 export const PPZM66TKNR = questionOneCorrect({
   id: "PPZM66TKNR",
   version: 1,
-  learningObjectives: ["021.05.01.03.02"],
+  learningObjectives: ["021.05.01.03.02", "021.05.01.03.01", "021.05.01.02.01"],
   question: (subject: string) => dedent`
     A flight control is said to be  ${subject} when...
   `,
@@ -471,7 +475,7 @@ export const ZF5WXIL87B = questionOneTwo({
     },
     {
       correct: [
-        dedent`Irreversible Flight Controls do not need to have aa gust lock.`,
+        dedent`Irreversible Flight Controls do not need to have a gust lock.`,
       ],
       wrong: [dedent`Irreversible Flight Controls must have a gust lock.`],
     },
@@ -639,6 +643,82 @@ export const QN0PK15VDM = questionOneCorrect({
     { text: "Ground obstacle" },
     { text: "Other aircraft collision" },
     { text: "Restricted airspeed " },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const QNVAK15VDM = questionOneCorrect({
+  id: "QNVAK15VDM",
+  version: 1,
+  learningObjectives: ["021.05.01.03.02"],
+  question: (subject) => dedent`
+    After turning off all systems in your aircraft you notice the rudder is 
+    fully deflected to the right, but the rudder pedals are centered. Which type
+    of control system does your aircraft have?
+  `,
+  correctOptions: [
+    {
+      text: ["Irreversible controls", "Fully powered controls"],
+    },
+  ],
+  otherOptions: [
+    {
+      text: ["Reversible controls", "Fully Manual controls"],
+    },
+    {
+      text: "Power assisted controls",
+    },
+    {
+      text: dedent`
+        It's impossible to say as all types of controls behave the same after 
+        power down.
+      `,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const AVM46F35MB = questionOneCorrect({
+  id: "AVM46F35MB",
+  version: 1,
+  learningObjectives: ["021.05.02.01.02"],
+  question: [
+    () => dedent`
+      Air brakes usage is limited by a maximum operating air speed. Why is such
+      a limit imposed?
+    `,
+    () => dedent`
+      Spoiler usage is limited by a maximum operating air speed. Why is such
+      a limit imposed?
+    `,
+  ],
+  correctOptions: [
+    {
+      text: dedent`
+        To prevent structural damage to the spoilers caused by excessive 
+        dynamic pressure
+      `,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`
+        To prevent excessive yawing moments caused by asymmetrical spoiler
+        deployment
+      `,
+    },
+    {
+      text: dedent`
+        To avoid longitudinal instability at high speeds
+      `,
+    },
+    {
+      text: dedent`
+        Because braking at very high speeds is not very fuel efficient.
+      `,
+    },
   ],
   explanation: dedent`
   `,

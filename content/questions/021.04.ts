@@ -115,6 +115,14 @@ export const QBMUUHFR4T = questionOneCorrect({
         nose wheel than the hand wheel steering (tiller).
       `,
     },
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+        When testing the rudder function during taxi, additional pilot input
+        is needed to prevent nose wheel steering.
+      `,
+    },
   ],
   otherOptions: [
     {
@@ -615,10 +623,16 @@ export const EDPTV2Y3SJ = mergeQuestionVariants(
         why: dedent``,
       },
       {
-        text: dedent`
-          During landing an autobrake keeps operating when reverse thrust is 
-          selected
-        `,
+        text: [
+          dedent`
+            During landing an autobrake keeps operating when reverse thrust is 
+            selected
+          `,
+          dedent`
+            It will remain active until the aircraft comes to a stop, unless
+            disconnected by the pilot
+          `,
+        ],
         why: dedent`
         `,
       },
@@ -722,6 +736,16 @@ export const EDPTV2Y3SJ = mergeQuestionVariants(
         why: dedent`
           This is not correct, as the autobrake maintains a constant deceleration 
           ratio. Only in RTO mode is the deceleration rate maximum
+        `,
+      },
+      {
+        text: dedent`
+          If used at low setting, using a thrust reverser will have no effect.
+        `,
+      },
+      {
+        text: dedent`
+          It is disconnected automatically if thrust reversers are deployed.
         `,
       },
     ],
@@ -877,6 +901,80 @@ export const FIAR77L7GS = questionOneCorrect({
     {
       text: dedent`If skidding occurs on any wheel`,
       why: dedent``,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const MBNASF124A = questionMultipleCorrect({
+  id: "MBNASF124A",
+  learningObjectives: ["021.04.04.01.06"],
+  version: 1,
+  statements: [
+    {
+      correct: "Small cuts in the tread surface",
+    },
+    {
+      correct: "A bulge in the sidewall",
+    },
+    {
+      correct: "tread detachment",
+    },
+    {
+      wrong: "Oil spots on the tyre surface",
+    },
+    {
+      wrong: "Uneven tread wear",
+    },
+  ],
+  question: (options) => dedent`
+    Which of the following conditions would require tyre replacement before the
+    next flight?
+
+    ${options}
+  `,
+  explanation: dedent`
+    Require replacement when...
+
+    - **Small cuts in the tread surface**: tyre cut deepness is hard to 
+      evaluate. Any detected cut should result in tyre replacement or repair
+    - **A bulge in the sidewall**: Indicates an air leak. 
+    - **tread detachment**: Similar to cuts.
+
+    Not a factor
+
+    - **Uneven tread wear**: This is normal so long as the tread wearing remains
+      below the maximum wear.
+    - **Oil spots on the tyre surface** this indicates a potential issue with 
+      the breaking system, or the gear hydraulic strut, but the tyre is not at
+      risk.
+  `,
+});
+
+export const BKF2Q804CL = questionOneCorrect({
+  id: "BKF2Q804CL",
+  version: 1,
+  learningObjectives: ["021.04.04.01.02"],
+  question: (subject) => dedent`
+    An under-inflated tyre will ...
+  `,
+  correctOptions: [
+    { text: "be prone to creep" },
+    { text: "experience increased wear at the shoulders" },
+  ],
+  otherOptions: [
+    {
+      text: "be prone to viscous water planning",
+      why: "",
+    },
+    {
+      text: "have an increased hydroplanning speed",
+      why: "The hydroplanning speed increases with tyre pressure",
+    },
+    {
+      text: "experience reduced wear at the shoulders",
+      why: "The tendecy is to experience increased wear at the shoulders",
     },
   ],
   explanation: dedent`
