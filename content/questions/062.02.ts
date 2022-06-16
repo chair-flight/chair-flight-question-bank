@@ -135,3 +135,41 @@ export const QATJRKDUEQ = questionOneCorrect({
   ],
   explanation: dedent``,
 });
+
+export const Q1YDKY48UG = questionOneCorrect({
+  id: "Q1YDKY48UG",
+  version: 1,
+  learningObjectives: ["062.02.03.04.02"],
+  question: (subject) => dedent`
+    A pilot is tracking inbound to a VOR grounds located on an area with varying 
+    terrain and  man-made obstructions. 
+    
+    The pilot notices that the CDI is fluctuating slightly, even though they are 
+    constantly and accurately tracking inbound to the  station and there is no
+    apparent wind effect.
+    
+    What is the term used to describe these fluctuations?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "Scalloping",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "Coastal refraction",
+    },
+    {
+      why: "",
+      text: "Quadrantal error",
+    },
+    {
+      why: "",
+      text: "Night effect",
+    },
+  ],
+  explanation: dedent``,
+});

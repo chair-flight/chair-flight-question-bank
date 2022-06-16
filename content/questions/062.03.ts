@@ -115,3 +115,192 @@ export const QDSM9AOF8K = mergeQuestionVariants(
       explanation: dedent``,
     })
 );
+
+export const QFTNAGTDHA = questionOneCorrect({
+  id: "QFTNAGTDHA",
+  version: 1,
+  learningObjectives: ["062.03.03.02.01"],
+  question: (subject) => dedent`
+    Which of the following statements is correct about the "gain" knob of an AWR?
+  `,
+  correctOptions: [
+    {
+      subject: "gain",
+      why: "",
+      text: dedent`
+      It adjusts the receiver sensitivity in order to achieve optium target 
+      acquisition.
+    `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "tilt",
+      text: dedent`
+      It is used to adjust antenna tilt.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      It can be used to activate the automatic gain control of the AWR.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      It adjusts the brightness of the display.
+    `,
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const B8W81K94OL = questionOneCorrect({
+  id: "B8W81K94OL",
+  version: 1,
+  learningObjectives: ["062.03.03.02.02"],
+  question: (subject) => dedent`
+    On the AWR display the most severe turbulence will be shown...
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      text: dedent`by a steep colour gradient.`,
+      why: dedent``,
+    },
+  ],
+  otherOptions: [
+    {
+      text: dedent`alternating red and white.`,
+      why: dedent``,
+    },
+    {
+      text: dedent`by a black hole.`,
+      why: dedent``,
+    },
+    {
+      text: dedent`in flashing red.`,
+      why: dedent``,
+    },
+  ],
+  explanation: dedent`
+  `,
+});
+
+export const QUMT0CBYDR = questionOneCorrect({
+  id: "QUMT0CBYDR",
+  version: 1,
+  learningObjectives: [],
+  question: (subject) => dedent`
+    The Airborne Weather Radar (AWR) is displayed on a coloured screen showing 
+    the different contours associated with thunderstorms. What procedure should 
+    be adopted to avoid a thunderstorm using the AWR?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+      Fly on the upwind side of the thunderstorm and avoid red or magenta 
+      coloured areas.
+    `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: dedent`
+      Aim to avoid the thunderstorm by at least 5NM so as to avoid any 
+      turbulence.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      Fly towards the area where the contours are the steepest and avoid any 
+      areas that are yellow.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      The areas that have the worst precipitation are coloured yellow and they 
+      should be avoided at all times.
+    `,
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const Q8C5BGHHKG = questionOneCorrect({
+  id: "Q8C5BGHHKG",
+  version: 1,
+  learningObjectives: ["062.03.04.02.09"],
+  question: (subject) => dedent`
+    Which of the following types of interrogations will a mode S transponder 
+    reply to?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: "SSR and TCAS interrogations.",
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: "TCAS and ADS-B interrogations.",
+    },
+    {
+      why: "",
+      text: "SSR and primary radar interrogations.",
+    },
+    {
+      why: "",
+      text: "SSR and ADS-B interrogations.",
+    },
+  ],
+  explanation: dedent``,
+});
+
+export const QKJJDM3FCZ = questionOneCorrect({
+  id: "QKJJDM3FCZ",
+  version: 1,
+  learningObjectives: ["062.03.03.06.02"],
+  question: (subject) => dedent`
+    How should one avoid a thunderstorm?
+  `,
+  correctOptions: [
+    {
+      subject: "",
+      why: "",
+      text: dedent`
+      Fly on the upwind side of the storm, avoiding red and magenta coloured 
+      areas on the screen.
+    `,
+    },
+  ],
+  otherOptions: [
+    {
+      why: "",
+      text: dedent`
+      Fly through, turning on the anti-icing equipment available.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      Fly through, avoiding magenta on your AWR.
+    `,
+    },
+    {
+      why: "",
+      text: dedent`
+      Fly 5 NM to the side of the thunderstorm.
+    `,
+    },
+  ],
+  explanation: dedent``,
+});
