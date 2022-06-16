@@ -14,6 +14,9 @@ import * as q_021_11 from "./021.11";
 import * as q_021_12 from "./021.12";
 import * as q_021_13 from "./021.13";
 import * as q_062_01 from "./062.01";
+import * as q_062_02 from "./062.02";
+import * as q_062_03 from "./062.03";
+import * as q_062_06 from "./062.06";
 
 export const questions: QuestionBankIndex["questions"] = {
   ...q_10,
@@ -31,4 +34,7 @@ export const questions: QuestionBankIndex["questions"] = {
   ...q_021_12,
   ...q_021_13,
   ...q_062_01,
+  ...q_062_02,
+  ...q_062_03,
+  ...q_062_06,
 };
