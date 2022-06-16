@@ -2,7 +2,7 @@
   "name": "chair-flight-question-bank",
   "description": "An open source Aviation Question bank",
   "repository": "chair-flight/chair-flight-question-bank",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "author": "PupoSDC",
