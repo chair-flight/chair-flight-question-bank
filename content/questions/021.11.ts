@@ -889,7 +889,7 @@ export const QA0UV21SNS = questionOneCorrect({
 });
 
 export const QA0UV21SNT = questionOneCorrect({
-  id: "QA0UV21SNS",
+  id: "QA0UV21SNT",
   version: 1,
   learningObjectives: ["021.11.02.02.11"],
   question: () => dedent`
